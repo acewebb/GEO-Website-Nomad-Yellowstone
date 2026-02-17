@@ -5,21 +5,42 @@ import Link from "next/link";
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    "name": "Nomad Yellowstone Expeditions",
-    "description": "Private, guide-driven ATV expeditions in the Yellowstone backcountry. Open-air, passenger-only tours.",
-    "url": "https://nomadyellowstone.com",
-    "provider": {
-      "@type": "Organization",
-      "name": "Nomad Yellowstone",
-      "telephone": "+1-208-555-0123"
-    },
-    "offer": {
-      "@type": "Offer",
-      "price": "225.00",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.yellowstonebike.com/#website",
+        "url": "https://www.yellowstonebike.com/",
+        "name": "Nomad Yellowstone",
+        "description": "A premier adventure tourism provider in Island Park, Idaho, specializing in guided ATV and backcountry tours near Yellowstone National Park.",
+        "publisher": {
+          "@id": "https://www.yellowstonebike.com/#organization"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.yellowstonebike.com/#organization",
+        "name": "Nomad Yellowstone",
+        "url": "https://www.yellowstonebike.com/",
+        "description": "The home page for Nomad Yellowstone, offering guided backcountry ATV tours in the Island Park area.",
+        "founder": {
+          "@type": "Person",
+          "name": "Ayson Webb"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Island Park",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Idaho"
+          }
+        },
+        "knowsAbout": [
+          "ATV Tours",
+          "Backcountry Guided Tours",
+          "Island Park Tourism"
+        ]
+      }
+    ]
   };
 
   return (
