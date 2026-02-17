@@ -1,113 +1,238 @@
 'use client';
-import React, { useState } from 'react';
-import { Outfit } from "next/font/google";
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
-const outfit = Outfit({ subsets: ["latin"] });
+function BookingContent() {
+    const searchParams = useSearchParams();
+    const initialObjective = searchParams.get('objective');
 
-export default function Booking() {
     const [selectedDate, setSelectedDate] = useState('');
-    const [selectedTime, setSelectedTime] = useState('');
+    const [missionType, setMissionType] = useState(initialObjective === 'golden' ? 'golden' : 'morning');
+    const [guestCount, setGuestCount] = useState(2);
+    const [isBuyout, setIsBuyout] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const timeSlots = ["9:00 AM", "12:00 PM", "3:00 PM", "6:00 PM"];
+    // Pricing Constants
+    const PRICE_PER_PASSENGER = 225;
+    const BUYOUT_PRICE = 1250; // Flat rate for 6 seats (private)
+    const MAX_GUESTS = 6;
+
+    const missions = [
+        { id: 'morning', label: 'The Morning Scout', time: '8:00 AM', icon: 'Sun' },
+        { id: 'golden', label: 'The Golden Hour', time: '5:00 PM', icon: 'Sunset' }
+    ];
+
+    const currentPrice = isBuyout ? BUYOUT_PRICE : (guestCount * PRICE_PER_PASSENGER);
 
     return (
-        <div className={`min-h-screen flex flex-col font-sans ${outfit.className} bg-background text-foreground selection:bg-accent selection:text-white`}>
-            <header className="p-6 border-b border-mist/10">
+        <div className="min-h-screen flex flex-col font-body bg-charcoal text-foreground selection:bg-accent selection:text-white bg-topo">
+            {/* Header */}
+            <header className="p-6 border-b border-white/5 glass-panel">
                 <div className="container mx-auto flex justify-between items-center">
-                    <Link href="/" className="text-2xl font-bold text-white tracking-tight">Nomad Yellowstone</Link>
-                    <nav className="space-x-4 text-sm font-medium">
-                        <Link href="/blog" className="text-mist hover:text-white transition-colors">Blog</Link>
-                        <Link href="/" className="text-mist hover:text-white transition-colors">Home</Link>
+                    <Link href="/" className="text-xl font-heading tracking-widest text-white hover:text-accent transition-colors uppercase">
+                        Nomad<span className="text-accent">/</span>Yellowstone
+                    </Link>
+                    <nav className="space-x-8 text-xs font-mono tracking-widest text-frost/80 hidden md:block">
+                        <Link href="/" className="hover:text-white transition-colors">[RETURN TO HOME]</Link>
+                        <Link href="/intel" className="hover:text-white transition-colors">[JOURNAL]</Link>
                     </nav>
                 </div>
             </header>
 
             <main className="flex-grow container mx-auto px-4 py-12 md:py-20 flex flex-col items-center">
-                <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-                    {/* Left: Booking Details */}
-                    <div className="space-y-8">
+                    {/* Left: Mission Parameters */}
+                    <div className="space-y-10">
                         <div>
-                            <span className="text-accent font-bold uppercase tracking-widest text-sm">Start Your Adventure</span>
-                            <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-white leading-tight">Book Your Guided <br /><span className="text-gradient">ATV Tour</span></h1>
-                            <p className="text-mist/80 text-lg">Small groups, expert guides, and exclusive access to the best views in Island Park.</p>
+                            <span className="font-mono text-accent text-xs tracking-widest mb-2 block">// STEP 01: CHOOSE ADVENTURE</span>
+                            <h1 className="font-heading text-5xl md:text-6xl text-white uppercase leading-none mb-6">
+                                Secure Your <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Start Time</span>
+                            </h1>
+                            <p className="text-frost text-lg font-light border-l-2 border-accent/20 pl-4">
+                                Select your trip and group size. All tours include pro guide, safety gear, and refreshments.
+                            </p>
                         </div>
 
-                        <div className="glass p-6 rounded-2xl border border-mist/10">
-                            <h3 className="text-xl font-semibold text-white mb-4">Tour Details</h3>
-                            <ul className="space-y-4 text-mist/70">
-                                <li className="flex justify-between border-b border-mist/5 pb-2">
-                                    <span>Duration</span>
-                                    <span className="text-white font-medium">3 Hours</span>
-                                </li>
-                                <li className="flex justify-between border-b border-mist/5 pb-2">
-                                    <span>Season</span>
-                                    <span className="text-white font-medium">May 15 - Oct 31</span>
-                                </li>
-                                <li className="flex justify-between border-b border-mist/5 pb-2">
-                                    <span>Group Size</span>
-                                    <span className="text-white font-medium">Max 6 Vehicles</span>
-                                </li>
-                                <li className="flex justify-between pt-2">
-                                    <span className="text-lg">Price</span>
-                                    <span className="text-accent text-xl font-bold">$450 <span className="text-xs font-normal text-mist/50">/ vehicle</span></span>
-                                </li>
-                            </ul>
+                        {/* Mission Selector */}
+                        <div className="space-y-4">
+                            <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Select Trip</label>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {missions.map((mission) => (
+                                    <button
+                                        key={mission.id}
+                                        onClick={() => setMissionType(mission.id)}
+                                        className={`glass-panel p-4 text-left border transition-all ${missionType === mission.id ? 'border-accent bg-accent/5' : 'border-white/10 hover:border-white/30'}`}
+                                    >
+                                        <div className="flex justify-between items-start mb-2">
+                                            <span className={`font-heading text-xl uppercase ${missionType === mission.id ? 'text-accent' : 'text-white'}`}>{mission.label}</span>
+                                            {missionType === mission.id && <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>}
+                                        </div>
+                                        <p className="font-mono text-xs tracking-widest">{mission.time}</p>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Guest Count & Buyout */}
+                        <div className="space-y-6 bg-surface/30 p-6 rounded-sm border border-white/5">
+                            <div className="flex items-center justify-between">
+                                <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Group Size</label>
+                                <span className="font-heading text-2xl text-white">{isBuyout ? 'PRIVATE TOUR' : `${guestCount} PASSENGER${guestCount > 1 ? 'S' : ''}`}</span>
+                            </div>
+
+                            {!isBuyout ? (
+                                <div className="flex items-center gap-4">
+                                    <input
+                                        type="range"
+                                        min="1"
+                                        max={MAX_GUESTS}
+                                        step="1"
+                                        value={guestCount}
+                                        onChange={(e) => setGuestCount(parseInt(e.target.value))}
+                                        className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-accent [&::-webkit-slider-thumb]:rounded-full"
+                                    />
+                                    <div className="font-mono text-sm w-12 text-center border border-white/10 py-1 rounded-sm">{guestCount}</div>
+                                </div>
+                            ) : (
+                                <div className="p-3 bg-accent/10 border border-accent/30 text-accent text-xs font-mono text-center">
+                                    FULL VEHICLE EXCLUSIVE ACCESS UNLOCKED
+                                </div>
+                            )}
+
+                            <div className="flex items-center gap-3 pt-4 border-t border-white/5">
+                                <button
+                                    onClick={() => { setIsBuyout(!isBuyout); if (!isBuyout) setGuestCount(6); }}
+                                    className={`w-5 h-5 border flex items-center justify-center transition-colors ${isBuyout ? 'border-accent bg-accent' : 'border-white/30'}`}
+                                >
+                                    {isBuyout && <span className="text-charcoal font-bold text-xs">✓</span>}
+                                </button>
+                                <span className="text-sm text-frost uppercase tracking-wide cursor-pointer" onClick={() => setIsBuyout(!isBuyout)}>
+                                    Upgrade to Private Tour (+${BUYOUT_PRICE - (guestCount * PRICE_PER_PASSENGER)} flat rate)
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Total Estimator */}
+                        <div className="flex justify-between items-end border-t border-white/10 pt-8">
+                            <div>
+                                <span className="font-mono text-xs text-frost/50 uppercase tracking-widest block mb-1">Estimated Total</span>
+                                <span className="font-heading text-4xl text-accent">${currentPrice}</span>
+                            </div>
+                            <div className="text-right">
+                                <p className="text-accent font-mono text-xs uppercase tracking-widest mb-1">Includes</p>
+                                <ul className="text-xs text-frost/70 text-right space-y-1">
+                                    <li>Professional Guide</li>
+                                    <li>Dust Protection Gear</li>
+                                    <li>Binoculars & Headsets</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Right: Booking Form */}
-                    <div className="glass-card p-8 rounded-3xl border border-accent/20 shadow-2xl relative">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-[50px] -translate-y-1/2 translate-x-1/2" />
+                    {/* Right: Guest Details Form */}
+                    <div className="relative">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-accent to-orange-600 rounded-sm opacity-20 blur"></div>
+                        <div className="glass-panel p-8 rounded-sm border border-white/10 relative h-full flex flex-col justify-center min-h-[600px]">
 
-                        <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-wider text-mist/60 block">Select Date</label>
-                                <input
-                                    type="date"
-                                    min="2026-05-15"
-                                    max="2026-10-31"
-                                    className="w-full bg-surface border border-mist/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors"
-                                    onChange={(e) => setSelectedDate(e.target.value)}
-                                />
-                            </div>
+                            {!isSubmitted ? (
+                                <>
+                                    <h3 className="font-heading text-3xl text-white uppercase mb-6 flex items-center gap-3">
+                                        <span className="w-2 h-8 bg-accent block"></span>
+                                        Guest Details
+                                    </h3>
 
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-wider text-mist/60 block">Select Time</label>
-                                <div className="grid grid-cols-2 gap-3">
-                                    {timeSlots.map((time) => (
-                                        <button
-                                            key={time}
-                                            type="button"
-                                            onClick={() => setSelectedTime(time)}
-                                            className={`px-4 py-3 rounded-xl text-sm font-semibold transition-all border ${selectedTime === time ? 'bg-accent text-white border-accent' : 'bg-surface text-mist border-mist/10 hover:border-mist/30 hover:bg-surface-hover'}`}
-                                        >
-                                            {time}
-                                        </button>
-                                    ))}
+                                    <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setIsSubmitted(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                                        <div className="space-y-2">
+                                            <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Preferred Date</label>
+                                            <input
+                                                required
+                                                type="date"
+                                                min="2026-05-15"
+                                                max="2026-10-31"
+                                                onChange={(e) => setSelectedDate(e.target.value)}
+                                                className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono placeholder-white/20 transition-all"
+                                            />
+                                        </div>
+
+                                        <div className="grid grid-cols-2 gap-4">
+                                            <div className="space-y-2">
+                                                <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Full Name</label>
+                                                <input required type="text" placeholder="NAME" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Email Address</label>
+                                                <input required type="email" placeholder="EMAIL" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Notes / Requests</label>
+                                            <textarea placeholder="DIETARY RESTRICTIONS, SPECIAL OCCASIONS, ETC." className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs h-24 resize-none transition-all"></textarea>
+                                        </div>
+
+                                        <div className="pt-2">
+                                            <button type="submit" className="btn-primary w-full py-5 text-lg shadow-xl shadow-accent/20 hover:shadow-accent/40 relative overflow-hidden group">
+                                                <span className="relative z-10">Request Booking</span>
+                                                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                                            </button>
+                                            <p className="text-center text-xs font-mono text-frost/30 mt-4 uppercase tracking-widest">
+                                                Secure Booking // No Charge Until Confirmation
+                                            </p>
+                                        </div>
+                                    </form>
+                                </>
+                            ) : (
+                                <div className="text-center animate-in fade-in zoom-in duration-500">
+                                    <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-accent">
+                                        <div className="text-4xl text-accent">✓</div>
+                                    </div>
+                                    <h3 className="font-heading text-4xl text-white uppercase mb-4">Request Received</h3>
+                                    <p className="text-frost text-lg mb-8 max-w-md mx-auto">
+                                        Stand by. Our team is verifying availability for your requested date. You will receive a confirmation email within 2 hours.
+                                    </p>
+                                    <div className="bg-surface/50 p-6 rounded-sm border border-white/10 mb-8 text-left max-w-xs mx-auto">
+                                        <div className="flex justify-between mb-2">
+                                            <span className="font-mono text-xs text-frost/50 uppercase">Trip:</span>
+                                            <span className="font-heading text-white uppercase">{missions.find(m => m.id === missionType)?.label}</span>
+                                        </div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="font-mono text-xs text-frost/50 uppercase">Guests:</span>
+                                            <span className="font-heading text-white">{guestCount}</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span className="font-mono text-xs text-frost/50 uppercase">Est. Total:</span>
+                                            <span className="font-heading text-accent">${currentPrice}</span>
+                                        </div>
+                                    </div>
+                                    <Link href="/" className="btn-outline px-8 py-3 text-sm inline-block">
+                                        Return to Home
+                                    </Link>
                                 </div>
-                            </div>
-
-                            <div className="space-y-4 pt-4 border-t border-mist/10">
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-mist/60 block">Full Name</label>
-                                    <input type="text" placeholder="John Doe" className="w-full bg-surface border border-mist/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-mist/60 block">Email Address</label>
-                                    <input type="email" placeholder="john@example.com" className="w-full bg-surface border border-mist/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-colors" />
-                                </div>
-                            </div>
-
-                            <button className="w-full py-4 rounded-xl bg-accent hover:bg-accent/90 text-white font-bold text-lg transition-all shadow-lg transform hover:-translate-y-1 mt-4">
-                                Confirm Booking Request
-                            </button>
-                            <p className="text-center text-xs text-mist/40">No payment required today. We will confirm availability within 24 hours.</p>
-                        </form>
+                            )}
+                        </div>
                     </div>
                 </div>
             </main>
+
+            <footer className="py-12 bg-black border-t border-white/10 font-mono text-xs text-frost/40 mt-auto">
+                <div className="container mx-auto px-4 text-center">
+                    <p className="mb-4">NOMAD YELLOWSTONE // EST. 2026 // ISLAND PARK, ID</p>
+                    <div className="flex justify-center gap-6 opacity-50">
+                        <Link href="/privacy" className="hover:text-white transition-colors">PRIVACY</Link>
+                        <Link href="/terms" className="hover:text-white transition-colors">TERMS</Link>
+                    </div>
+                </div>
+            </footer>
         </div>
+    );
+}
+
+export default function Booking() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-charcoal flex items-center justify-center text-white">Loading config...</div>}>
+            <BookingContent />
+        </Suspense>
     );
 }

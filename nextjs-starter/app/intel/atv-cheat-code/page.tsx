@@ -13,15 +13,15 @@ export const metadata = {
 export default function BlogPost() {
     return (
         <div className={`min-h-screen flex flex-col font-sans ${outfit.className} bg-background text-foreground selection:bg-accent selection:text-white`}>
-            <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-mist/10 backdrop-blur-md">
+            <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-frost/10 backdrop-blur-md">
                 <div className="container mx-auto px-6 py-4 flex items-center justify-between">
                     <Link href="/" className="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
                         Nomad Yellowstone
                     </Link>
 
                     <nav className="hidden md:flex items-center gap-8">
-                        <Link href="/blog" className="text-mist hover:text-white transition-colors text-sm font-medium">Crowd Avoidance Guides</Link>
-                        <Link href="/blog" className="text-mist hover:text-white transition-colors text-sm font-medium">Blog</Link>
+                        <Link href="/blog" className="text-frost hover:text-white transition-colors text-sm font-medium">Crowd Avoidance Guides</Link>
+                        <Link href="/blog" className="text-frost hover:text-white transition-colors text-sm font-medium">Blog</Link>
                     </nav>
 
                     <div className="flex items-center gap-4">
@@ -39,7 +39,7 @@ export default function BlogPost() {
                         <h1 className="text-4xl md:text-6xl font-bold mt-4 mb-6 leading-tight">
                             Why an ATV is the Ultimate <br /><span className="text-gradient">"Cheat Code"</span> for Yellowstone Solitude in 2026
                         </h1>
-                        <p className="text-xl text-mist/80 max-w-2xl mx-auto">
+                        <p className="text-xl text-frost/80 max-w-2xl mx-auto">
                             Every summer, the West Yellowstone entrance becomes a bottleneck. Here is how to skip it entirely.
                         </p>
                     </div>
@@ -55,7 +55,7 @@ export default function BlogPost() {
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
                     </div>
 
-                    <div className="space-y-8 text-mist/90 leading-relaxed">
+                    <div className="space-y-8 text-frost/90 leading-relaxed">
                         <p>
                             Every summer, the West Yellowstone entrance becomes a bottleneck of bison jams and tour buses. But if you look west toward the Island Park Trail Network, there is a <strong className="text-white">500-mile system of rugged terrain</strong> that leads to the most spectacular views in the lower 48—and you won't see a single paved road.
                         </p>
@@ -72,15 +72,15 @@ export default function BlogPost() {
                             The Continental Divide isn't just a line on a map; it's a rugged ridge where you can see into three states at once. Navigating these trails requires the <strong className="text-white">clearance and torque of a 4x4 vehicle</strong>. It is raw, unfiltered nature at its finest.
                         </p>
 
-                        <h3 className="text-2xl font-bold text-accent mt-8 mb-4">Logistics of Solitude</h3>
+                        <h3 className="text-2xl font-bold text-accent mt-8 mb-4">Lobg-frostics of Solitude</h3>
                         <p>
                             By starting your journey at Nomad Yellowstone, you are already positioned outside the "Park Bubble." You can be at a 10,000-foot overlook in the time it takes most people just to wait in the park entrance line.
                         </p>
 
                         <div className="glass p-8 rounded-2xl my-12 border-l-4 border-accent">
                             <h3 className="text-2xl font-bold text-white mb-4">The Verdict</h3>
-                            <p className="text-lg italic text-mist/80">
-                                "If you want to see the Yellowstone ecosystem as it was meant to be seen—wild, quiet, and vast—you have to leave the asphalt behind. A guided ATV tour isn't just a rental; it’s your key to the <strong className="text-white">Exclusive Backcountry Access</strong> that defines the Nomad experience."
+                            <p className="text-lg italic text-frost/80">
+                                "If you want to see the Yellowstone ecosystem as it was meant to be seen—wild, quiet, and vast—you have to leave the asphalt behind. A guided ATV expedition is your key to the <strong className="text-white">Exclusive Backcountry Access</strong> that defines the Nomad experience."
                             </p>
                         </div>
 
@@ -93,7 +93,7 @@ export default function BlogPost() {
                 </article>
             </main>
 
-            <footer className="w-full border-t border-mist/5 py-8 mt-12 bg-[#0E1817] text-center text-mist/60 text-sm">
+            <footer className="w-full border-t border-frost/5 py-8 mt-12 bg-[#0E1817] text-center text-frost/60 text-sm">
                 <p>&copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> Nomad Yellowstone. All rights reserved.</p>
             </footer>
         </div>

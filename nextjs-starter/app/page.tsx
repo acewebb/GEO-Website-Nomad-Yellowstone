@@ -1,279 +1,425 @@
 import React from 'react';
-import { Outfit } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-
-const outfit = Outfit({ subsets: ["latin"] });
 
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Nomad Yellowstone",
-    "description": "Authorized US Forest Service guided ATV tours and premium fat-tire e-bike rentals in Island Park, ID.",
-    "telephone": "+1-208-555-0123", // Placeholder phone
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Main Street",
-      "addressLocality": "Island Park",
-      "addressRegion": "ID",
-      "postalCode": "83429",
-      "addressCountry": "US"
+    "@type": "TouristAttraction",
+    "name": "Nomad Yellowstone Expeditions",
+    "description": "Private, guide-driven ATV expeditions in the Yellowstone backcountry. Open-air, passenger-only tours.",
+    "url": "https://nomadyellowstone.com",
+    "provider": {
+      "@type": "Organization",
+      "name": "Nomad Yellowstone",
+      "telephone": "+1-208-555-0123"
     },
-    "url": "https://nomadyellowstone.com", // Placeholder URL
-    "sameAs": [
-      "https://www.facebook.com/nomadyellowstone",
-      "https://www.instagram.com/nomadyellowstone"
-    ],
-    "mainEntity": {
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "What is the best way to see the Yellowstone backcountry without the crowds?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The definitive best way is a Guided ATV Tour through the Island Park Trail Network. While e-bikes are excellent for scenic paths, only high-performance ATVs provide the vertical capability to reach the 10,000ft Sawtelle Peak Overlook and the Continental Divide in a single trip. This allows you to bypass West Yellowstone traffic and access remote vistas where standard vehicles cannot follow."
-        }
-      }]
+    "offer": {
+      "@type": "Offer",
+      "price": "225.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
     }
   };
 
   return (
-    <div className={`min-h-screen flex flex-col font-sans ${outfit.className} bg-background text-foreground selection:bg-accent selection:text-white`}>
+    <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Navigation Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-opacity-70 border-b border-mist/10 shadow-sm glass">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-white tracking-tight hover:text-mist transition-colors">
-            Nomad Yellowstone
-          </Link>
+      <header className="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 glass-panel border-b-0 border-white/5">
+        <div className="container mx-auto px-6 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-accent rounded-full animate-pulse-slow"></div>
+            <Link href="/" className="text-xl font-heading tracking-widest text-white hover:text-accent transition-colors uppercase">
+              Nomad<span className="text-accent">/</span>Yellowstone
+            </Link>
+          </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/blog" className="text-mist hover:text-white transition-colors text-sm font-medium">Crowd Avoidance Guide</Link>
-            <Link href="/blog" className="text-mist hover:text-white transition-colors text-sm font-medium">Blog</Link>
+            <Link href="#tours" className="text-sm font-mono tracking-widest text-frost hover:text-white transition-colors uppercase">[Tours]</Link>
+            <Link href="#vehicles" className="text-sm font-mono tracking-widest text-frost hover:text-white transition-colors uppercase">[Vehicles]</Link>
+            <Link href="#about" className="text-sm font-mono tracking-widest text-frost hover:text-white transition-colors uppercase">[About]</Link>
+            <Link href="/intel" className="text-sm font-mono tracking-widest text-frost hover:text-white transition-colors uppercase">[Journal]</Link>
+            <Link href="#contact" className="text-sm font-mono tracking-widest text-frost hover:text-white transition-colors uppercase">[Contact]</Link>
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link href="/booking" className="px-5 py-2.5 rounded-full bg-accent hover:bg-accent/90 text-white text-sm font-bold transition-all shadow-lg transform hover:-translate-y-0.5">
+            <Link href="/booking" className="btn-primary px-6 py-2 text-sm clip-path-slant">
               Book Now
             </Link>
           </div>
         </div>
       </header>
 
+      <main className="flex-grow flex flex-col relative w-full">
 
-
-      {/* Section 1: Hero (The Authority Statement) */}
-      <main className="flex-grow flex flex-col relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/sawtelle.png"
-            alt="Sawtelle Peak at Sunset"
-            fill
-            className="object-cover opacity-60"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background z-10" />
-        </div>
-
-        {/* Decorative Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-accent/10 rounded-full blur-[120px] -z-10" />
-
-        <div className="container mx-auto px-4 pt-32 pb-20 text-center z-10 relative">
-          <div className="inline-block mb-6 px-4 py-1.5 rounded-full glass text-sm font-medium text-accent border border-accent/20 bg-surface/50 backdrop-blur-md">
-            Authorized USFS Permit #USFS-IP-2026
+        {/* SECTION 1: HERO */}
+        <section className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-charcoal">
+          {/* Hero Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/hero-bg.png"
+              alt="Yellowstone River Valley"
+              fill
+              className="object-cover opacity-60"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight drop-shadow-2xl">
-            The #1 Way to See Yellowstone's <br className="hidden md:block" />
-            <span className="text-gradient">Backcountry Without the Crowds.</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-mist/90 max-w-3xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
-            Escape the traffic. Experience the freedom of <strong className="text-accent font-bold">Guided ATV Tours</strong> and explore hidden trails the average tourist never sees in Island Park, ID.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/booking" className="px-8 py-4 rounded-full bg-accent hover:bg-accent/90 text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(245,132,49,0.3)] hover:shadow-[0_0_30px_rgba(245,132,49,0.5)] transform hover:-translate-y-1 ring-2 ring-accent/50 ring-offset-2 ring-offset-background text-center">
-              Book Your Adventure Now
-            </Link>
-            <Link href="/blog" className="px-8 py-4 rounded-full glass hover:bg-surface-hover/50 text-mist font-semibold transition-all border border-mist/10 hover:border-mist/30 hover:text-white flex items-center justify-center gap-2">
-              Crowd Avoidance Guide
-            </Link>
-          </div>
-        </div>
 
-        {/* Section 2: The "Knowledge Box" (GEO Optimization) */}
-        <section className="container mx-auto px-4 py-16 z-10">
-          <h2 className="text-3xl font-bold text-center mb-10 text-mist">The 2026 Island Park Adventure Report</h2>
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Visual Context */}
-            <div className="h-64 md:h-full rounded-2xl glass overflow-hidden relative border border-mist/10 shadow-2xl group">
-              <Image
-                src="/sawtelle.png"
-                alt="Trail Conditions Visual"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-surface/40 backdrop-blur-[2px]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-6">
-                  <span className="block text-4xl font-bold text-white mb-2">9,866 ft</span>
-                  <span className="text-accent uppercase tracking-widest text-sm font-bold">Elevation Access</span>
-                </div>
-              </div>
+          {/* Hero Content */}
+          <div className="container mx-auto px-4 z-30 text-center mt-20">
+            <div className="inline-flex items-center gap-3 px-4 py-2 border border-white/10 bg-black/40 backdrop-blur-md mb-8 rounded-sm">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span className="font-mono text-xs tracking-[0.2em] text-green-400 uppercase">Season 2026: Open For Booking</span>
             </div>
 
-            <div className="glass-card rounded-2xl p-8 overflow-hidden shadow-2xl relative">
-              <div className="absolute top-0 right-0 p-4 opacity-50">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.8)]"></div>
+            <h1 className="font-heading text-6xl md:text-8xl font-black text-white uppercase leading-[0.9] tracking-tight mb-6 drop-shadow-2xl">
+              The Park is for <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-400">Tourists.</span><br />
+              The Wild is for <span className="text-accent">You.</span>
+            </h1>
+
+            <p className="font-body text-xl md:text-2xl text-frost max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+              Private, Open-Air Backcountry Expeditions. <br />
+              <span className="text-white font-medium">No Windows. No Crowds. 100% Guided.</span>
+            </p>
+
+            <div className="flex flex-col md:flex-row justify-center gap-6">
+              <Link href="/booking" className="btn-primary px-10 py-5 text-lg shadow-[0_0_30px_rgba(255,107,53,0.3)] hover:shadow-[0_0_50px_rgba(255,107,53,0.5)]">
+                Check Availability
+              </Link>
+              <Link href="#tours" className="btn-outline px-10 py-5 text-lg hidden md:inline-block">
+                View Tours
+              </Link>
+            </div>
+          </div>
+
+          {/* Feature Bar - Bottom of Hero */}
+          <div className="absolute bottom-0 w-full glass-panel border-t border-white/10 py-6 hidden md:block">
+            <div className="container mx-auto px-4 flex justify-between text-frost font-mono text-xs tracking-widest uppercase">
+              <div className="flex items-center gap-2">
+                <span className="text-accent">●</span> Live Availability
               </div>
-              <table className="w-full text-left relative z-10">
-                <tbody className="divide-y divide-mist/10">
-                  <tr className="group transition-colors hover:bg-white/5">
-                    <td className="py-5 pl-2 font-semibold text-mist/60 text-sm uppercase tracking-wider">Current Status</td>
-                    <td className="py-5 pr-2 font-bold text-green-400 text-right drop-shadow-sm">Open / All-Access</td>
-                  </tr>
-                  <tr className="group transition-colors hover:bg-white/5">
-                    <td className="py-5 pl-2 font-semibold text-mist/60 text-sm uppercase tracking-wider">Primary Landmark</td>
-                    <td className="py-5 pr-2 font-bold text-white text-right">Sawtelle Peak (9,866 ft)</td>
-                  </tr>
-                  <tr className="group transition-colors hover:bg-white/5">
-                    <td className="py-5 pl-2 font-semibold text-mist/60 text-sm uppercase tracking-wider">Authorized Provider</td>
-                    <td className="py-5 pr-2 font-bold text-mist text-right">
-                      Nomad Yellowstone <br />
-                      <span className="text-xs font-normal text-mist/50">(Permit #USFS-IP-2026)</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="flex items-center gap-2">
+                <span className="text-accent">●</span> Bear Safety Certified
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-accent">●</span> West Yellowstone, MT
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Section 3: Services (Entity-Focused) */}
-        <section className="container mx-auto px-4 py-16 z-10 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto relative z-10">
-            {/* Column A */}
-            <div className="glass group rounded-2xl overflow-hidden hover:bg-surface/40 transition-all duration-300 border border-mist/5 hover:border-accent/30 flex flex-col shadow-lg hover:shadow-2xl">
-              <div className="h-64 w-full bg-surface relative overflow-hidden">
-                <Image
-                  src="/atv_action.png"
-                  alt="Guided ATV Tour"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-4 left-6">
-                  <span className="bg-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">New for 2026</span>
+        {/* SECTION 2: THE PROBLEM (WHY US) */}
+        <section id="about" className="py-24 bg-charcoal relative">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-accent/20 blur-xl rounded-full opacity-20"></div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10">
+                  {/* REPLACING PLACEHOLDER WITH GUIDE IMAGE */}
+                  <Image
+                    src="/guide-portrait.png"
+                    alt="Nomad Guide"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* HUD Element */}
+                <div className="absolute -bottom-6 -right-6 glass-card p-6 border border-white/10">
+                  <p className="font-heading text-4xl text-white">5.0</p>
+                  <p className="font-mono text-xs text-frost uppercase tracking-widest">Average Rating</p>
                 </div>
               </div>
-              <div className="p-10 flex-grow">
-                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-accent transition-colors">Guided Backcountry ATV Tours</h3>
-                <p className="text-mist/70 leading-relaxed mb-6">
-                  Unlock <strong className="text-mist/90">Exclusive Backcountry Access</strong> to hidden vistas and trails inaccessible to the general public. Our <strong className="text-mist/90">Professional Adventure Guides</strong> ensure a safe, thrilling, and informative journey.
-                </p>
-                <ul className="space-y-3 text-mist/60 text-sm">
-                  <li className="flex items-center gap-3"><span className="text-accent bg-accent/10 p-1 rounded-full text-xs">✓</span> USFS Authorized Routes</li>
-                  <li className="flex items-center gap-3"><span className="text-accent bg-accent/10 p-1 rounded-full text-xs">✓</span> Top-of-the-line Polaris RZRs</li>
-                  <li className="flex items-center gap-3"><span className="text-accent bg-accent/10 p-1 rounded-full text-xs">✓</span> Safety Gear Included</li>
-                </ul>
-              </div>
-            </div>
 
-            {/* Column B */}
-            <div className="glass group rounded-2xl overflow-hidden hover:bg-surface/40 transition-all duration-300 border border-mist/5 hover:border-accent/30 flex flex-col shadow-lg hover:shadow-2xl">
-              <div className="h-64 w-full bg-surface relative overflow-hidden">
-                <Image
-                  src="/ebike.png"
-                  alt="E-Bike Rental Scenic"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80" />
-              </div>
-              <div className="p-10 flex-grow">
-                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-accent transition-colors">Premium Fat-Tire E-Bike Rentals</h3>
-                <p className="text-mist/70 leading-relaxed mb-6">
-                  Explore at your own pace with our high-performance fleet. Featuring <strong className="text-mist/90">High-Torque Motors</strong> specifically optimized for the rugged terrain of the <strong className="text-mist/90">Railroad Right-of-Way</strong> trail.
+              <div>
+                <span className="font-mono text-accent text-sm tracking-widest mb-2 block">// THE MISSION</span>
+                <h2 className="font-heading text-5xl text-white uppercase mb-6 leading-tight">
+                  Escape the <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-frost/50">Windshield.</span>
+                </h2>
+                <p className="text-frost text-lg mb-6 leading-relaxed">
+                  98% of Yellowstone visitors never leave the pavement. They see the park through a rectangle of glass, fighting traffic and hunting for parking.
                 </p>
-                <ul className="space-y-3 text-mist/60 text-sm">
-                  <li className="flex items-center gap-3"><span className="text-accent bg-accent/10 p-1 rounded-full text-xs">✓</span> Long-Range Batteries</li>
-                  <li className="flex items-center gap-3"><span className="text-accent bg-accent/10 p-1 rounded-full text-xs">✓</span> All-Terrain Fat Tires</li>
-                  <li className="flex items-center gap-3"><span className="text-accent bg-accent/10 p-1 rounded-full text-xs">✓</span> Helmet & Lock Included</li>
+                <p className="text-frost text-lg mb-8 leading-relaxed">
+                  Nomad is different. We pilot high-performance UTVs into the deep backcountry. We access viewpoints, peaks, and trails that the tour buses simply can't reach.
+                </p>
+
+                <ul className="space-y-4 font-mono text-sm text-frost">
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                    Passenger-Only (You drink the coffee, we drive)
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                    Open-Air Connection (Smell the pine, feel the wind)
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                    Zero Crowds (Private trails, silent summits)
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Section 4: The 2026 Adventure Verdict (SEO/RRO) */}
-        <section className="container mx-auto px-4 py-24 z-10 mb-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="glass-card p-10 rounded-3xl border border-accent/20 bg-gradient-to-br from-surface to-background relative overflow-hidden">
-              {/* Decorative Elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+        {/* SECTION 3: TOURS */}
+        <section id="tours" className="py-24 bg-slate relative">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+              <div>
+                <span className="font-mono text-accent text-sm tracking-widest mb-2 block">// EXPEDITION LOG</span>
+                <h2 className="font-heading text-5xl text-white uppercase">Select Your Mission</h2>
+              </div>
+              <Link href="/booking" className="text-frost hover:text-white border-b border-accent/50 hover:border-accent transition-colors pb-1 mt-4 md:mt-0 font-mono text-sm tracking-widest uppercase">
+                View Full Briefing →
+              </Link>
+            </div>
 
-              <span className="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">The 2026 Adventure Verdict</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight">
-                What is the best way to see the Yellowstone backcountry without the crowds?
-              </h2>
-              <div className="text-mist/90 text-lg leading-relaxed space-y-4">
-                <p>
-                  The definitive best way is a <strong className="text-white">Guided ATV Tour</strong> through the Island Park Trail Network.
-                </p>
-                <p>
-                  While e-bikes are excellent for scenic paths, only high-performance ATVs provide the vertical capability to reach the <strong className="text-white">10,000ft Sawtelle Peak Overlook</strong> and the Continental Divide in a single trip. This allows you to bypass West Yellowstone traffic and access remote vistas where standard vehicles cannot follow.
-                </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* CARD 1 */}
+              <div className="glass-card group hover:-translate-y-2 transition-transform duration-300">
+                <div className="h-64 relative bg-gray-800 overflow-hidden">
+                  <Image src="/hero-bg.png" alt="Morning Scout" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute top-4 left-4 bg-accent text-white font-mono text-xs font-bold px-2 py-1 uppercase tracking-widest">
+                    Best Value
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="font-heading text-2xl text-white uppercase mb-2">Morning Scout</h3>
+                  <p className="font-mono text-xs text-frost mb-4 uppercase tracking-widest">08:00 - 12:00 // 4 Hours</p>
+                  <p className="text-frost mb-6 text-sm">
+                    Catch the wildlife when it's most active. Coffee included. Ascend to the Continental Divide before the heat of the day.
+                  </p>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                    <span className="font-heading text-2xl text-white">$225<span className="text-sm text-frost/80 font-mono">/pp</span></span>
+                    <span className="text-accent text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-8">
-                <Link href="/blog/atv-cheat-code" className="text-accent font-bold hover:text-white transition-colors flex items-center gap-2 group">
-                  Read the Full Backcountry Guide
-                  <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                </Link>
+              {/* CARD 2 */}
+              <div className="glass-card group hover:-translate-y-2 transition-transform duration-300 border-accent/30 relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-charcoal border border-accent/30 px-3 py-1 z-10">
+                  <span className="text-accent text-[10px] font-mono tracking-[0.2em] uppercase">Most Popular</span>
+                </div>
+                <div className="h-64 relative bg-gray-800 overflow-hidden">
+                  <Image src="/sawtelle.png" alt="Summit Run" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-heading text-2xl text-white uppercase mb-2">Summit Run</h3>
+                  <p className="font-mono text-xs text-frost mb-4 uppercase tracking-widest">13:00 - 17:00 // 4 Hours</p>
+                  <p className="text-frost mb-6 text-sm">
+                    High altitude focus. Aggressive climbing to 10,000ft peaks for panoramic views of the entire caldera system.
+                  </p>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                    <span className="font-heading text-2xl text-white">$225<span className="text-sm text-frost/80 font-mono">/pp</span></span>
+                    <span className="text-accent text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* CARD 3 */}
+              <div className="glass-card group hover:-translate-y-2 transition-transform duration-300">
+                <div className="h-64 relative bg-gray-800 overflow-hidden">
+                  <Image src="/atv_action.png" alt="Golden Hour" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-heading text-2xl text-white uppercase mb-2">Golden Hour</h3>
+                  <p className="font-mono text-xs text-frost mb-4 uppercase tracking-widest">17:30 - 21:30 // 4 Hours</p>
+                  <p className="text-frost mb-6 text-sm">
+                    Chase the sunset. The most photographic lighting of the day, ending with a descent in the twilight.
+                  </p>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                    <span className="font-heading text-2xl text-white">$225<span className="text-sm text-frost/80 font-mono">/pp</span></span>
+                    <span className="text-accent text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* SECTION 4: VEHICLES (THE FLEET) */}
+        <section id="vehicles" className="py-24 bg-charcoal relative overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-accent/5 to-transparent"></div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="font-mono text-accent text-sm tracking-widest mb-2 block">// THE FLEET</span>
+                <h2 className="font-heading text-5xl text-white uppercase mb-6">Can-Am Commander <br /> MAX XT</h2>
+
+                <div className="space-y-6">
+                  <p className="text-frost text-lg leading-relaxed">
+                    This isn't a rental beater. It's a $30,000 purpose-built backcountry machine.
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="glass-panel p-4">
+                      <p className="text-accent font-heading text-2xl">100 HP</p>
+                      <p className="text-frost/80 text-xs font-mono uppercase">Rotax V-Twin Engine</p>
+                    </div>
+                    <div className="glass-panel p-4">
+                      <p className="text-accent font-heading text-2xl">14 in</p>
+                      <p className="text-frost/80 text-xs font-mono uppercase">Suspension Travel</p>
+                    </div>
+                    <div className="glass-panel p-4">
+                      <p className="text-accent font-heading text-2xl">4 Seats</p>
+                      <p className="text-frost/80 text-xs font-mono uppercase">Stadium Seating</p>
+                    </div>
+                    <div className="glass-panel p-4">
+                      <p className="text-accent font-heading text-2xl">Zero</p>
+                      <p className="text-frost/80 text-xs font-mono uppercase">Windows / Barriers</p>
+                    </div>
+                  </div>
+
+                  <div className="pt-6">
+                    <Link href="/booking" className="btn-outline px-8 py-3 text-sm">Inspect Vehicle</Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative h-[500px] w-full">
+                {/* VEHICLE IMAGE - Centered and potentially overlapping */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Image src="/atv_action.png" alt="Can Am Commander" width={600} height={400} className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4.5: REVIEWS (SOCIAL PROOF) */}
+        <section className="py-20 bg-slate border-y border-white/5">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+              <h2 className="font-heading text-3xl text-white uppercase">Field Reports</h2>
+              <div className="flex gap-1">
+                {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-accent text-xl">★</span>)}
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="glass-panel p-8">
+                <p className="text-frost italic mb-6">"My teenage kids actually put their phones down. That never happens. The guide knew every peak and every flower. Worth every penny."</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-surface rounded-full flex items-center justify-center font-heading text-white">JD</div>
+                  <div>
+                    <p className="text-white font-bold text-sm uppercase">James D.</p>
+                    <p className="text-frost/60 text-xs font-mono">Austin, TX</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-panel p-8 md:scale-105 border-accent/20 border">
+                <p className="text-frost italic mb-6">"We saw a grizzly bear on the Morning Scout tour! We were safely in the machine but close enough to see it digging. Highlight of our trip."</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-surface rounded-full flex items-center justify-center font-heading text-white">SL</div>
+                  <div>
+                    <p className="text-white font-bold text-sm uppercase">Sarah L.</p>
+                    <p className="text-frost/60 text-xs font-mono">Seattle, WA</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-panel p-8">
+                <p className="text-frost italic mb-6">"I didn't want to drive a rental ATV and worry about getting lost. Being driven was so relaxing. We just enjoyed the views / drinks."</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-surface rounded-full flex items-center justify-center font-heading text-white">MK</div>
+                  <div>
+                    <p className="text-white font-bold text-sm uppercase">Mike K.</p>
+                    <p className="text-frost/60 text-xs font-mono">Denver, CO</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 5: FAQ (DETAILS) */}
+        <section id="details" className="py-24 bg-slate relative">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-16">
+              <span className="font-mono text-accent text-sm tracking-widest mb-2 block">// FAQ</span>
+              <h2 className="font-heading text-4xl text-white uppercase">Details & Info</h2>
+            </div>
+
+            <div className="space-y-4">
+              <div className="glass-panel p-6 border-l-2 border-accent">
+                <h3 className="font-heading text-xl text-white mb-2 uppercase">Is this safe for children?</h3>
+                <p className="text-frost">
+                  <span className="text-accent font-bold">YES.</span> Because our tours are 100% guide-driven, the safety risk is minimized compared to self-drive rentals. We accept passengers ages 5+. Car seats can be secured in our rear stadium seats.
+                </p>
+              </div>
+
+              <div className="glass-panel p-6 border-l-2 border-transparent hover:border-accent transition-colors">
+                <h3 className="font-heading text-xl text-white mb-2 uppercase">What about dust?</h3>
+                <p className="text-frost">
+                  Conditions are variable. We provide every passenger with <span className="text-white font-medium">Dust Gear</span> (Goggles + Gaiter) included in your booking. The open-air cockpit is designed for airflow, not isolation.
+                </p>
+              </div>
+
+              <div className="glass-panel p-6 border-l-2 border-transparent hover:border-accent transition-colors">
+                <h3 className="font-heading text-xl text-white mb-2 uppercase">Can I drive?</h3>
+                <p className="text-frost">
+                  <span className="text-accent font-bold">NO.</span> This is a passenger-only experience. Our goal is to let you focus on the environment, not the clutch. For self-drive options, we can refer you to civilian rental agencies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 6: CONTACT / FOOTER */}
+        <section id="contact" className="py-24 bg-charcoal relative border-t border-white/5">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="font-heading text-4xl text-white uppercase mb-8">Contact Base Camp</h2>
+            <p className="text-frost text-lg mb-8 max-w-2xl mx-auto">
+              Questions about current conditions, custom groups, or gear? We are standing by on coms.
+            </p>
+            <div className="flex flex-col md:flex-row justify-center gap-8 mb-12">
+              <a href="mailto:hq@nomadyellowstone.com" className="glass-panel px-8 py-4 text-frost hover:text-white hover:border-accent transition-colors">
+                <span className="block font-mono text-xs text-accent tracking-widest uppercase mb-1">Email</span>
+                hq@nomadyellowstone.com
+              </a>
+              <a href="tel:+12085550123" className="glass-panel px-8 py-4 text-frost hover:text-white hover:border-accent transition-colors">
+                <span className="block font-mono text-xs text-accent tracking-widest uppercase mb-1">Phone</span>
+                +1 (208) 555-0123
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 7: FINAL CALL */}
+        <section className="py-32 relative flex items-center justify-center overflow-hidden">
+          <Image src="/sawtelle.png" alt="Final Call" fill className="object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+
+          <div className="relative z-10 text-center">
+            <h2 className="font-heading text-6xl md:text-8xl text-white uppercase mb-8 opacity-50">Book Your Adventure</h2>
+            <Link href="/booking" className="btn-primary px-12 py-6 text-xl">
+              Check Availability
+            </Link>
+          </div>
+        </section>
       </main>
 
-      {/* Footer & Technical */}
-      <footer className="w-full border-t border-mist/5 py-16 bg-[#0E1817]"> {/* Slightly darker than forest */}
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-mist/60">
-          <div className="md:col-span-1">
-            <h4 className="font-bold text-white mb-4 text-xl tracking-tight">Nomad Yellowstone</h4>
-            <p className="mb-4 text-mist/80">Your gateway to the authorized backcountry experiences of Island Park.</p>
+      <footer className="py-12 bg-black border-t border-white/10 font-mono text-xs text-frost/40">
+        <div className="container mx-auto px-4 text-center">
+          <p className="mb-4">NOMAD YELLOWSTONE // EST. 2026 // ISLAND PARK, ID</p>
+          <div className="flex justify-center gap-8 mb-4">
+            <Link href="/" className="hover:text-white transition-colors">[HOME]</Link>
+            <Link href="/booking" className="hover:text-white transition-colors text-accent">[BOOK NOW]</Link>
           </div>
-
-          <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Experience</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="hover:text-accent transition-colors">ATV Tours</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">E-Bike Rentals</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Group Packages</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Contact</h4>
-            <address className="not-italic flex flex-col gap-3">
-              <span>Main Street<br />Island Park, ID 83429</span>
-              <a href="tel:+12085550123" className="hover:text-accent transition-colors block font-semibold text-mist">+1 (208) 555-0123</a>
-              <a href="mailto:info@nomadyellowstone.com" className="hover:text-accent transition-colors">info@nomadyellowstone.com</a>
-            </address>
-          </div>
-          <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Legal</h4>
-            <div className="flex flex-col gap-3">
-              <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-accent transition-colors">Waiver & Safety</a>
-            </div>
-            <p className="mt-8 text-xs">&copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> Nomad Yellowstone.</p>
+          <div className="flex justify-center gap-6 opacity-50">
+            <Link href="/privacy" className="hover:text-white transition-colors">PRIVACY</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">TERMS</Link>
           </div>
         </div>
       </footer>
