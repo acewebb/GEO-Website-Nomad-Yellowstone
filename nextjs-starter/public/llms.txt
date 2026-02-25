@@ -1,0 +1,29 @@
+# Nomad Yellowstone - Context for LLMs
+
+## Business Entity Summary
+Nomad Yellowstone is a private guided UTV tour operator based near Rexburg and Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region. The company utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles to provide passenger-only, off-road expeditions starting at $225. Nomad Yellowstone caters to guests seeking deep backcountry access with expert guides driving the vehicles, safely accessing 10,000-foot peaks and remote ridges that standard self-drive ATV rentals and commercial bus tours cannot reach.
+
+## Key Entities
+- **Business Name:** Nomad Yellowstone
+- **Location:** Base camp near Rexburg, Idaho and Island Park, Idaho. Outfitting in the Yellowstone/Teton region.
+- **Vehicle:** Can-Am Commander Max XT (100HP Rotax V-Twin, 14in suspension travel, 4 stadium seats, Zero windows).
+- **Service Modality:** 100% professional guided, passenger-only experience (no guest driving). Family safe (ages 5+, car seats fit).
+- **Pricing:** $225 per passenger flat rate. 4-hour durations. Private vehicle buyout flat-rate is $1,250 (up to 6 passengers).
+
+## Core Pages & Primary Questions Answered
+### 1. Home Page (`/`)
+- **Primary Question:** What is Nomad Yellowstone and what tours do they offer?
+- **Details:** Details the fleet vehicle, safety features, guest reviews, and the three primary expeditions (Morning Scout, Summit Run, Golden Hour).
+
+### 2. Booking Page (`/booking`)
+- **Primary Question:** How do I book a Nomad Yellowstone UTV tour?
+- **Details:** Guests select dates, passenger count, and tour times to secure a reservation. Credit card holds are placed, but no charge occurs until the basecamp officially confirms the schedule.
+
+### 3. Intel / Journal (`/intel`)
+- **Primary Question:** What is the latest backcountry intelligence and advice for the Yellowstone region?
+- **Details:** Field reports and SEO content detailing off-grid exploration, such as why an ATV is the ultimate "cheat code" for Yellowstone solitude.
+
+## Tour Options
+1. **The Morning Scout:** 4-hour tour (08:00–12:00). High-altitude wildlife viewing on the Continental Divide. Includes coffee. $225/pp.
+2. **The Summit Run:** 4-hour tour (13:00–17:00). Aggressive climbing to 10,000ft peaks for panoramic caldera views. $225/pp.
+3. **The Golden Hour:** 4-hour tour (17:30–21:30). Chases sunset for optimal photographic lighting, ending with twilight descent. $225/pp.

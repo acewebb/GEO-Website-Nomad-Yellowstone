@@ -26,14 +26,14 @@ function BookingContent() {
     const currentPrice = isBuyout ? BUYOUT_PRICE : (guestCount * PRICE_PER_PASSENGER);
 
     return (
-        <div className="min-h-screen flex flex-col font-body bg-charcoal text-foreground selection:bg-accent selection:text-white bg-topo">
+        <div className="min-h-screen flex flex-col font-body bg-nomad-black text-white selection:bg-accent selection:text-white">
             {/* Header */}
             <header className="p-6 border-b border-white/5 glass-panel">
                 <div className="container mx-auto flex justify-between items-center">
                     <Link href="/" className="text-xl font-heading tracking-widest text-white hover:text-accent transition-colors uppercase">
                         Nomad<span className="text-accent">/</span>Yellowstone
                     </Link>
-                    <nav className="space-x-8 text-xs font-mono tracking-widest text-frost/80 hidden md:block">
+                    <nav className="space-x-8 text-xs font-mono tracking-widest text-nomad-paper/80 hidden md:block">
                         <Link href="/" className="hover:text-white transition-colors">[RETURN TO HOME]</Link>
                         <Link href="/intel" className="hover:text-white transition-colors">[JOURNAL]</Link>
                     </nav>
@@ -50,14 +50,14 @@ function BookingContent() {
                             <h1 className="font-heading text-5xl md:text-6xl text-white uppercase leading-none mb-6">
                                 Secure Your <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Start Time</span>
                             </h1>
-                            <p className="text-frost text-lg font-light border-l-2 border-accent/20 pl-4">
-                                Select your trip and group size. All tours include pro guide, safety gear, and refreshments.
+                            <p className="text-nomad-paper/80 text-sm md:text-base font-light border-l-2 border-accent/20 pl-4 max-w-2xl leading-relaxed">
+                                <strong>How do I book a Nomad Yellowstone UTV tour?</strong> Guests can book a private guided UTV tour by selecting a preferred trip time, such as the Morning Scout or Golden Hour, and entering their group size. The Can-Am Commander Max XT accommodates up to 4 standard passengers, with private vehicle buyouts available for larger groups. All 4-hour backcountry expeditions start at $225 per seat and include a professional driver, dust protection gear, and headsets. Nomad Yellowstone secures the reservation without charging the payment method until the departure date and guide availability are officially confirmed.
                             </p>
                         </div>
 
                         {/* Mission Selector */}
                         <div className="space-y-4">
-                            <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Select Trip</label>
+                            <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Select Trip</label>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {missions.map((mission) => (
                                     <button
@@ -78,7 +78,7 @@ function BookingContent() {
                         {/* Guest Count & Buyout */}
                         <div className="space-y-6 bg-surface/30 p-6 rounded-sm border border-white/5">
                             <div className="flex items-center justify-between">
-                                <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Group Size</label>
+                                <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Group Size</label>
                                 <span className="font-heading text-2xl text-white">{isBuyout ? 'PRIVATE TOUR' : `${guestCount} PASSENGER${guestCount > 1 ? 'S' : ''}`}</span>
                             </div>
 
@@ -108,7 +108,7 @@ function BookingContent() {
                                 >
                                     {isBuyout && <span className="text-charcoal font-bold text-xs">✓</span>}
                                 </button>
-                                <span className="text-sm text-frost uppercase tracking-wide cursor-pointer" onClick={() => setIsBuyout(!isBuyout)}>
+                                <span className="text-sm text-nomad-paper/80 uppercase tracking-wide cursor-pointer" onClick={() => setIsBuyout(!isBuyout)}>
                                     Upgrade to Private Tour (+${BUYOUT_PRICE - (guestCount * PRICE_PER_PASSENGER)} flat rate)
                                 </span>
                             </div>
@@ -117,12 +117,12 @@ function BookingContent() {
                         {/* Total Estimator */}
                         <div className="flex justify-between items-end border-t border-white/10 pt-8">
                             <div>
-                                <span className="font-mono text-xs text-frost/50 uppercase tracking-widest block mb-1">Estimated Total</span>
+                                <span className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest block mb-1">Estimated Total</span>
                                 <span className="font-heading text-4xl text-accent">${currentPrice}</span>
                             </div>
                             <div className="text-right">
                                 <p className="text-accent font-mono text-xs uppercase tracking-widest mb-1">Includes</p>
-                                <ul className="text-xs text-frost/70 text-right space-y-1">
+                                <ul className="text-xs text-nomad-paper/70 text-right space-y-1">
                                     <li>Professional Guide</li>
                                     <li>Dust Protection Gear</li>
                                     <li>Binoculars & Headsets</li>
@@ -145,31 +145,31 @@ function BookingContent() {
 
                                     <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setIsSubmitted(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                                         <div className="space-y-2">
-                                            <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Preferred Date</label>
+                                            <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Preferred Date</label>
                                             <input
                                                 required
                                                 type="date"
                                                 min="2026-05-15"
                                                 max="2026-10-31"
                                                 onChange={(e) => setSelectedDate(e.target.value)}
-                                                className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono placeholder-white/20 transition-all"
+                                                className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono placeholder-white/20 transition-all"
                                             />
                                         </div>
 
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-2">
-                                                <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Full Name</label>
-                                                <input required type="text" placeholder="NAME" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
+                                                <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Full Name</label>
+                                                <input required type="text" placeholder="NAME" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Email Address</label>
-                                                <input required type="email" placeholder="EMAIL" className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
+                                                <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Email Address</label>
+                                                <input required type="email" placeholder="EMAIL" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
                                             </div>
                                         </div>
 
                                         <div className="space-y-2">
-                                            <label className="font-mono text-xs text-frost/50 uppercase tracking-widest">Notes / Requests</label>
-                                            <textarea placeholder="DIETARY RESTRICTIONS, SPECIAL OCCASIONS, ETC." className="w-full bg-charcoal border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs h-24 resize-none transition-all"></textarea>
+                                            <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Notes / Requests</label>
+                                            <textarea placeholder="DIETARY RESTRICTIONS, SPECIAL OCCASIONS, ETC." className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs h-24 resize-none transition-all"></textarea>
                                         </div>
 
                                         <div className="pt-2">
@@ -177,7 +177,7 @@ function BookingContent() {
                                                 <span className="relative z-10">Request Booking</span>
                                                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                                             </button>
-                                            <p className="text-center text-xs font-mono text-frost/30 mt-4 uppercase tracking-widest">
+                                            <p className="text-center text-xs font-mono text-nomad-paper/30 mt-4 uppercase tracking-widest">
                                                 Secure Booking // No Charge Until Confirmation
                                             </p>
                                         </div>
@@ -189,20 +189,20 @@ function BookingContent() {
                                         <div className="text-4xl text-accent">✓</div>
                                     </div>
                                     <h3 className="font-heading text-4xl text-white uppercase mb-4">Request Received</h3>
-                                    <p className="text-frost text-lg mb-8 max-w-md mx-auto">
+                                    <p className="text-nomad-paper/80 text-lg mb-8 max-w-md mx-auto">
                                         Stand by. Our team is verifying availability for your requested date. You will receive a confirmation email within 2 hours.
                                     </p>
                                     <div className="bg-surface/50 p-6 rounded-sm border border-white/10 mb-8 text-left max-w-xs mx-auto">
                                         <div className="flex justify-between mb-2">
-                                            <span className="font-mono text-xs text-frost/50 uppercase">Trip:</span>
+                                            <span className="font-mono text-xs text-nomad-paper/50 uppercase">Trip:</span>
                                             <span className="font-heading text-white uppercase">{missions.find(m => m.id === missionType)?.label}</span>
                                         </div>
                                         <div className="flex justify-between mb-2">
-                                            <span className="font-mono text-xs text-frost/50 uppercase">Guests:</span>
+                                            <span className="font-mono text-xs text-nomad-paper/50 uppercase">Guests:</span>
                                             <span className="font-heading text-white">{guestCount}</span>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span className="font-mono text-xs text-frost/50 uppercase">Est. Total:</span>
+                                            <span className="font-mono text-xs text-nomad-paper/50 uppercase">Est. Total:</span>
                                             <span className="font-heading text-accent">${currentPrice}</span>
                                         </div>
                                     </div>
@@ -216,7 +216,7 @@ function BookingContent() {
                 </div>
             </main>
 
-            <footer className="py-12 bg-black border-t border-white/10 font-mono text-xs text-frost/40 mt-auto">
+            <footer className="py-12 bg-black border-t border-white/10 font-mono text-xs text-nomad-paper/40 mt-auto">
                 <div className="container mx-auto px-4 text-center">
                     <p className="mb-4">NOMAD YELLOWSTONE // EST. 2026 // ISLAND PARK, ID</p>
                     <div className="flex justify-center gap-6 opacity-50">
@@ -231,7 +231,7 @@ function BookingContent() {
 
 export default function Booking() {
     return (
-        <Suspense fallback={<div className="min-h-screen bg-charcoal flex items-center justify-center text-white">Loading config...</div>}>
+        <Suspense fallback={<div className="min-h-screen bg-nomad-black flex items-center justify-center text-white">Loading config...</div>}>
             <BookingContent />
         </Suspense>
     );
