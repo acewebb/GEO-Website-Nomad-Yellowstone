@@ -2,20 +2,93 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, endOfWeek, isSameMonth, isSameDay, addDays, isBefore, startOfDay } from 'date-fns';
+
+function BookingCalendar({ selectedDate, onSelect, disabledDates }: { selectedDate: Date | null, onSelect: (d: Date) => void, disabledDates: Date[] }) {
+    const [currentMonth, setCurrentMonth] = useState(startOfMonth(new Date()));
+
+    const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
+    const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
+
+    const monthStart = startOfMonth(currentMonth);
+    const monthEnd = endOfMonth(monthStart);
+    const startDate = startOfWeek(monthStart);
+    const endDate = endOfWeek(monthEnd);
+
+    const today = startOfDay(new Date());
+
+    const days = [];
+    let day = startDate;
+
+    while (day <= endDate) {
+        for (let i = 0; i < 7; i++) {
+            const cloneDay = day;
+            const isSelected = selectedDate ? isSameDay(day, selectedDate) : false;
+            const isMockDisabled = disabledDates.some(d => isSameDay(d, day));
+            const isPast = isBefore(day, today);
+            const isDisabled = isPast || isMockDisabled;
+
+            days.push(
+                <button
+                    key={day.toString()}
+                    type="button"
+                    disabled={isDisabled}
+                    onClick={() => !isDisabled && onSelect(cloneDay)}
+                    className={`h-10 w-full rounded-sm flex items-center justify-center font-mono text-sm transition-colors border border-transparent
+                        ${!isSameMonth(day, monthStart) ? 'text-white/20' : ''}
+                        ${isDisabled ? 'opacity-20 cursor-not-allowed bg-red-900/30 line-through decoration-red-500/50' : 'hover:border-accent/50'}
+                        ${isSelected ? 'bg-accent text-white font-bold shadow-[0_0_15px_rgba(200,60,60,0.5)]' : ''}
+                        ${!isSelected && !isDisabled ? 'text-white bg-white/5' : ''}
+                    `}
+                >
+                    {format(day, 'd')}
+                </button>
+            );
+            day = addDays(day, 1);
+        }
+    }
+
+    const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
+        <div key={day} className="text-center font-mono text-xs text-nomad-paper/50 uppercase mb-2">
+            {day}
+        </div>
+    ));
+
+    return (
+        <div className="bg-nomad-black p-4 border border-white/10 rounded-sm">
+            <div className="flex justify-between items-center mb-4 border-b border-white/10 pb-4">
+                <button type="button" onClick={prevMonth} className="text-nomad-paper hover:text-accent font-mono px-3 py-1 bg-white/5 hover:bg-white/10 rounded-sm transition-colors">&lt; PREV</button>
+                <div className="font-heading text-xl uppercase text-white tracking-widest drop-shadow-sm">
+                    {format(currentMonth, 'MMMM yyyy')}
+                </div>
+                <button type="button" onClick={nextMonth} className="text-nomad-paper hover:text-accent font-mono px-3 py-1 bg-white/5 hover:bg-white/10 rounded-sm transition-colors">NEXT &gt;</button>
+            </div>
+            <div className="grid grid-cols-7 gap-1">
+                {weekDays}
+                {days}
+            </div>
+        </div>
+    );
+}
 
 function BookingContent() {
     const searchParams = useSearchParams();
     const initialObjective = searchParams.get('objective');
 
-    const [selectedDate, setSelectedDate] = useState('');
+    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+    const [bookedDates, setBookedDates] = useState<Date[]>([
+        addDays(startOfDay(new Date()), 2),
+        addDays(startOfDay(new Date()), 5),
+        addDays(startOfDay(new Date()), 6),
+    ]);
     const [missionType, setMissionType] = useState(initialObjective === 'golden' ? 'golden' : 'morning');
     const [guestCount, setGuestCount] = useState(2);
     const [isBuyout, setIsBuyout] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     // Pricing Constants
-    const PRICE_PER_PASSENGER = 225;
-    const BUYOUT_PRICE = 1250; // Flat rate for 6 seats (private)
+    const PRICE_PER_PASSENGER = 149;
+    const BUYOUT_PRICE = 600; // Flat rate for 6 seats (private)
     const MAX_GUESTS = 6;
 
     const missions = [
@@ -51,7 +124,7 @@ function BookingContent() {
                                 Secure Your <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Start Time</span>
                             </h1>
                             <p className="text-nomad-paper/80 text-sm md:text-base font-light border-l-2 border-accent/20 pl-4 max-w-2xl leading-relaxed">
-                                <strong>How do I book a Nomad Yellowstone UTV tour?</strong> Guests can book a private guided UTV tour by selecting a preferred trip time, such as the Morning Scout or Golden Hour, and entering their group size. The Can-Am Commander Max XT accommodates up to 4 standard passengers, with private vehicle buyouts available for larger groups. All 4-hour backcountry expeditions start at $225 per seat and include a professional driver, dust protection gear, and headsets. Nomad Yellowstone secures the reservation without charging the payment method until the departure date and guide availability are officially confirmed.
+                                <strong>How do I book a Nomad Yellowstone UTV tour?</strong> Guests can book a private guided UTV tour by selecting a preferred trip time, such as the Morning Scout or Golden Hour, and entering their group size. The Can-Am Commander Max XT accommodates up to 4 standard passengers, with private vehicle buyouts available for larger groups. All 4-hour backcountry expeditions start at $149 per seat and include a professional driver, dust protection gear, and headsets. Nomad Yellowstone secures the reservation without charging the payment method until the departure date and guide availability are officially confirmed.
                             </p>
                         </div>
 
@@ -143,16 +216,25 @@ function BookingContent() {
                                         Guest Details
                                     </h3>
 
-                                    <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setIsSubmitted(true); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-                                        <div className="space-y-2">
-                                            <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Preferred Date</label>
-                                            <input
-                                                required
-                                                type="date"
-                                                min="2026-05-15"
-                                                max="2026-10-31"
-                                                onChange={(e) => setSelectedDate(e.target.value)}
-                                                className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono placeholder-white/20 transition-all"
+                                    <form className="space-y-6" onSubmit={(e) => {
+                                        e.preventDefault();
+                                        if (!selectedDate) {
+                                            alert("Please select an expedition date.");
+                                            return;
+                                        }
+                                        setBookedDates([...bookedDates, selectedDate]);
+                                        setIsSubmitted(true);
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}>
+                                        <div className="space-y-4">
+                                            <div className="flex justify-between items-baseline">
+                                                <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Preferred Date</label>
+                                                {selectedDate && <span className="text-accent font-mono text-sm tracking-widest uppercase bg-accent/10 px-2 py-1 border border-accent/20">{format(selectedDate, 'MMM do, yyyy')}</span>}
+                                            </div>
+                                            <BookingCalendar
+                                                selectedDate={selectedDate}
+                                                onSelect={setSelectedDate}
+                                                disabledDates={bookedDates}
                                             />
                                         </div>
 
@@ -206,9 +288,14 @@ function BookingContent() {
                                             <span className="font-heading text-accent">${currentPrice}</span>
                                         </div>
                                     </div>
-                                    <Link href="/" className="btn-outline px-8 py-3 text-sm inline-block">
-                                        Return to Home
-                                    </Link>
+                                    <div className="flex flex-col items-center gap-4">
+                                        <button onClick={() => { setIsSubmitted(false); setSelectedDate(null); }} className="btn-outline px-8 py-3 text-sm inline-block">
+                                            Book Another Mission
+                                        </button>
+                                        <Link href="/" className="text-xs font-mono text-nomad-paper/50 hover:text-white transition-colors uppercase tracking-widest inline-block border-b border-transparent hover:border-white pb-1">
+                                            Return Home
+                                        </Link>
+                                    </div>
                                 </div>
                             )}
                         </div>
