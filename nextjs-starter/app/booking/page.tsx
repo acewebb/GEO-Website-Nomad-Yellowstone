@@ -5,7 +5,16 @@ import Link from 'next/link';
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, endOfWeek, isSameMonth, isSameDay, addDays, isBefore, startOfDay } from 'date-fns';
 
 function BookingCalendar({ selectedDate, onSelect, disabledDates }: { selectedDate: Date | null, onSelect: (d: Date) => void, disabledDates: Date[] }) {
-    const [currentMonth, setCurrentMonth] = useState(startOfMonth(new Date()));
+    // Automatically start on May if accessed outside of the tour season (May - Oct)
+    const getInitialMonth = () => {
+        const today = new Date();
+        const month = today.getMonth();
+        if (month < 4) return startOfMonth(new Date(today.getFullYear(), 4, 1)); // May this year
+        if (month > 9) return startOfMonth(new Date(today.getFullYear() + 1, 4, 1)); // May next year
+        return startOfMonth(today); // Current month if in season
+    };
+
+    const [currentMonth, setCurrentMonth] = useState(getInitialMonth());
 
     const nextMonth = () => setCurrentMonth(addMonths(currentMonth, 1));
     const prevMonth = () => setCurrentMonth(subMonths(currentMonth, 1));
