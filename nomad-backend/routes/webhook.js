@@ -26,7 +26,7 @@ router.post("/stripe", async (req, res) => {
         const session = event.data.object;
 
         // Retrieve metadata passed during session creation
-        const { bookingId, date, tourId, seats } = session.metadata;
+        const { bookingId, Tour_Date, Tour_Time_Slot, Guest_Count, Booking_Type } = session.metadata;
 
         try {
             const bookingRef = db.collection("bookings").doc(bookingId);
@@ -46,9 +46,9 @@ router.post("/stripe", async (req, res) => {
                 await sendConfirmationEmail({
                     name: bookingData.name,
                     email: bookingData.email,
-                    tourId: tourId,
-                    date: date,
-                    seats: Number(seats)
+                    tourId: Tour_Time_Slot,
+                    date: Tour_Date,
+                    seats: Number(Guest_Count)
                 });
 
                 console.log(`Booking ${bookingId} confirmed and email dispatched.`);

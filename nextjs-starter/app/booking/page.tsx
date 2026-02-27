@@ -26,7 +26,13 @@ function BookingCalendar({ selectedDate, onSelect, disabledDates }: { selectedDa
             const isSelected = selectedDate ? isSameDay(day, selectedDate) : false;
             const isMockDisabled = disabledDates.some(d => isSameDay(d, day));
             const isPast = isBefore(day, today);
-            const isDisabled = isPast || isMockDisabled;
+
+            // Allow only May 15 to Oct 31
+            const month = day.getMonth(); // 0-indexed, May is 4, Oct is 9
+            const dayOfMonth = day.getDate();
+            const isOutsideSeason = month < 4 || (month === 4 && dayOfMonth < 15) || month > 9;
+
+            const isDisabled = isPast || isMockDisabled || isOutsideSeason;
 
             days.push(
                 <button
@@ -76,25 +82,61 @@ function BookingContent() {
     const initialObjective = searchParams.get('objective');
 
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-    const [bookedDates, setBookedDates] = useState<Date[]>([
-        addDays(startOfDay(new Date()), 2),
-        addDays(startOfDay(new Date()), 5),
-        addDays(startOfDay(new Date()), 6),
-    ]);
-    const [missionType, setMissionType] = useState(initialObjective === 'golden' ? 'golden' : 'morning');
-    const [guestCount, setGuestCount] = useState(2);
+    const [bookedDates, setBookedDates] = useState<Date[]>([]);
+    const [availability, setAvailability] = useState<any>(null);
+    const [isLoadingSlots, setIsLoadingSlots] = useState(false);
+
+    const [missionType, setMissionType] = useState('9am');
+    const [guestCount, setGuestCount] = useState(1);
     const [isBuyout, setIsBuyout] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    useEffect(() => {
+        if (selectedDate) {
+            const fetchAvailability = async () => {
+                setIsLoadingSlots(true);
+                try {
+                    const dateStr = format(selectedDate, 'yyyy-MM-dd');
+                    const res = await fetch(`http://localhost:5001/api/v1/availability/${dateStr}`);
+                    const data = await res.json();
+                    if (data.success) {
+                        setAvailability(data.slots);
+                    }
+                } catch (error) {
+                    console.error("Failed to fetch availability", error);
+                } finally {
+                    setIsLoadingSlots(false);
+                }
+            };
+            fetchAvailability();
+        } else {
+            setAvailability(null);
+        }
+    }, [selectedDate]);
+
     // Pricing Constants
     const PRICE_PER_PASSENGER = 149;
-    const BUYOUT_PRICE = 600; // Flat rate for 6 seats (private)
-    const MAX_GUESTS = 6;
+    const BUYOUT_PRICE = 699;
 
     const missions = [
-        { id: 'morning', label: 'The Morning Scout', time: '8:00 AM', icon: 'Sun' },
-        { id: 'golden', label: 'The Golden Hour', time: '5:00 PM', icon: 'Sunset' }
+        { id: '9am', label: 'Morning Expedition', time: '9:00 AM' },
+        { id: '12pm', label: 'Mid-Day Run', time: '12:00 PM' },
+        { id: '3pm', label: 'Evening Scout', time: '3:00 PM' }
     ];
+
+    const currentSlotAvailability = availability ? availability[missionType]?.seatsAvailable : 5;
+    const maxGuests = currentSlotAvailability !== undefined ? currentSlotAvailability : 5;
+    const canBuyout = maxGuests === 5;
+
+    // Constrain guest count if slot availability drops below selection
+    useEffect(() => {
+        if (guestCount > maxGuests && maxGuests > 0) {
+            setGuestCount(maxGuests);
+        }
+        if (!canBuyout && isBuyout) {
+            setIsBuyout(false);
+        }
+    }, [maxGuests, canBuyout, isBuyout, guestCount]);
 
     const currentPrice = isBuyout ? BUYOUT_PRICE : (guestCount * PRICE_PER_PASSENGER);
 
@@ -132,19 +174,32 @@ function BookingContent() {
                         <div className="space-y-4">
                             <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Select Trip</label>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {missions.map((mission) => (
-                                    <button
-                                        key={mission.id}
-                                        onClick={() => setMissionType(mission.id)}
-                                        className={`glass-panel p-4 text-left border transition-all ${missionType === mission.id ? 'border-accent bg-accent/5' : 'border-white/10 hover:border-white/30'}`}
-                                    >
-                                        <div className="flex justify-between items-start mb-2">
-                                            <span className={`font-heading text-xl uppercase ${missionType === mission.id ? 'text-accent' : 'text-white'}`}>{mission.label}</span>
-                                            {missionType === mission.id && <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>}
-                                        </div>
-                                        <p className="font-mono text-xs tracking-widest">{mission.time}</p>
-                                    </button>
-                                ))}
+                                {missions.map((mission) => {
+                                    const seatsLeft = availability ? availability[mission.id]?.seatsAvailable : 5;
+                                    const isSoldOut = availability && seatsLeft === 0;
+
+                                    return (
+                                        <button
+                                            key={mission.id}
+                                            onClick={() => !isSoldOut && setMissionType(mission.id)}
+                                            disabled={isSoldOut}
+                                            className={`glass-panel p-4 text-left border transition-all ${isSoldOut ? 'opacity-30 cursor-not-allowed border-white/5' : missionType === mission.id ? 'border-accent bg-accent/5' : 'border-white/10 hover:border-white/30'}`}
+                                        >
+                                            <div className="flex justify-between items-start mb-2">
+                                                <span className={`font-heading text-xl uppercase ${missionType === mission.id && !isSoldOut ? 'text-accent' : 'text-white'}`}>{mission.label}</span>
+                                                {missionType === mission.id && !isSoldOut && <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>}
+                                            </div>
+                                            <div className="flex justify-between items-center mt-2">
+                                                <p className="font-mono text-xs tracking-widest">{mission.time}</p>
+                                                {selectedDate && (
+                                                    <span className={`font-mono text-[10px] px-2 py-0.5 rounded-sm ${isSoldOut ? 'bg-red-900/50 text-red-200' : 'bg-white/10 text-nomad-paper/80'}`}>
+                                                        {isLoadingSlots ? '...' : isSoldOut ? 'SOLD OUT' : `${seatsLeft} SEATS`}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </div>
 
@@ -160,7 +215,7 @@ function BookingContent() {
                                     <input
                                         type="range"
                                         min="1"
-                                        max={MAX_GUESTS}
+                                        max={maxGuests || 1}
                                         step="1"
                                         value={guestCount}
                                         onChange={(e) => setGuestCount(parseInt(e.target.value))}
@@ -176,13 +231,15 @@ function BookingContent() {
 
                             <div className="flex items-center gap-3 pt-4 border-t border-white/5">
                                 <button
-                                    onClick={() => { setIsBuyout(!isBuyout); if (!isBuyout) setGuestCount(6); }}
-                                    className={`w-5 h-5 border flex items-center justify-center transition-colors ${isBuyout ? 'border-accent bg-accent' : 'border-white/30'}`}
+                                    type="button"
+                                    onClick={() => { if (canBuyout) { setIsBuyout(!isBuyout); if (!isBuyout) setGuestCount(5); } }}
+                                    disabled={!canBuyout}
+                                    className={`w-5 h-5 border flex items-center justify-center transition-colors ${!canBuyout ? 'opacity-30 cursor-not-allowed' : ''} ${isBuyout ? 'border-accent bg-accent' : 'border-white/30'}`}
                                 >
                                     {isBuyout && <span className="text-charcoal font-bold text-xs">✓</span>}
                                 </button>
-                                <span className="text-sm text-nomad-paper/80 uppercase tracking-wide cursor-pointer" onClick={() => setIsBuyout(!isBuyout)}>
-                                    Upgrade to Private Tour (+${BUYOUT_PRICE - (guestCount * PRICE_PER_PASSENGER)} flat rate)
+                                <span className={`text-sm tracking-wide ${canBuyout ? 'text-nomad-paper/80 cursor-pointer uppercase' : 'text-nomad-paper/40 cursor-not-allowed'}`} onClick={() => { if (canBuyout) { setIsBuyout(!isBuyout); if (!isBuyout) setGuestCount(5); } }}>
+                                    {canBuyout ? `Upgrade to Private Tour (+$${Math.max(0, BUYOUT_PRICE - (guestCount * PRICE_PER_PASSENGER))} flat rate)` : 'Private Tour Unavailable (Seats Already Booked)'}
                                 </span>
                             </div>
                         </div>
@@ -216,15 +273,46 @@ function BookingContent() {
                                         Guest Details
                                     </h3>
 
-                                    <form className="space-y-6" onSubmit={(e) => {
+                                    <form className="space-y-6" onSubmit={async (e) => {
                                         e.preventDefault();
                                         if (!selectedDate) {
                                             alert("Please select an expedition date.");
                                             return;
                                         }
-                                        setBookedDates([...bookedDates, selectedDate]);
-                                        setIsSubmitted(true);
-                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                                        const formData = new FormData(e.currentTarget);
+                                        const name = formData.get('name');
+                                        const email = formData.get('email');
+                                        const notes = formData.get('notes');
+
+                                        try {
+                                            setIsSubmitted(true); // show loading state momentarily if needed or just disable buttons
+                                            const res = await fetch('http://localhost:5001/api/v1/book', {
+                                                method: 'POST',
+                                                headers: { 'Content-Type': 'application/json' },
+                                                body: JSON.stringify({
+                                                    name,
+                                                    email,
+                                                    phone: '000-000-0000', // Need to add phone input or hardocde
+                                                    tourId: missionType,
+                                                    date: format(selectedDate, 'yyyy-MM-dd'),
+                                                    seats: isBuyout ? 5 : guestCount,
+                                                    bookingType: isBuyout ? 'private' : 'individual',
+                                                    notes
+                                                })
+                                            });
+                                            const data = await res.json();
+                                            if (data.success && data.url) {
+                                                window.location.href = data.url;
+                                            } else {
+                                                setIsSubmitted(false);
+                                                alert("Booking failed: " + data.message);
+                                            }
+                                        } catch (err) {
+                                            setIsSubmitted(false);
+                                            console.error(err);
+                                            alert("An error occurred connecting to the booking engine.");
+                                        }
                                     }}>
                                         <div className="space-y-4">
                                             <div className="flex justify-between items-baseline">
@@ -241,23 +329,23 @@ function BookingContent() {
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-2">
                                                 <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Full Name</label>
-                                                <input required type="text" placeholder="NAME" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
+                                                <input required name="name" type="text" placeholder="NAME" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
                                             </div>
                                             <div className="space-y-2">
                                                 <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Email Address</label>
-                                                <input required type="email" placeholder="EMAIL" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
+                                                <input required name="email" type="email" placeholder="EMAIL" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
                                             </div>
                                         </div>
 
                                         <div className="space-y-2">
                                             <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Notes / Requests</label>
-                                            <textarea placeholder="DIETARY RESTRICTIONS, SPECIAL OCCASIONS, ETC." className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs h-24 resize-none transition-all"></textarea>
+                                            <textarea name="notes" placeholder="DIETARY RESTRICTIONS, SPECIAL OCCASIONS, ETC." className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs h-24 resize-none transition-all"></textarea>
                                         </div>
 
                                         <div className="pt-2">
-                                            <button type="submit" className="btn-primary w-full py-5 text-lg shadow-xl shadow-accent/20 hover:shadow-accent/40 relative overflow-hidden group">
-                                                <span className="relative z-10">Request Booking</span>
-                                                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                                            <button type="submit" disabled={isSubmitted} className={`btn-primary w-full py-5 text-lg shadow-xl shadow-accent/20 hover:shadow-accent/40 relative overflow-hidden group ${isSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                                                <span className="relative z-10">{isSubmitted ? 'Processing...' : 'Proceed to Checkout'}</span>
+                                                {!isSubmitted && <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>}
                                             </button>
                                             <p className="text-center text-xs font-mono text-nomad-paper/30 mt-4 uppercase tracking-widest">
                                                 Secure Booking // No Charge Until Confirmation

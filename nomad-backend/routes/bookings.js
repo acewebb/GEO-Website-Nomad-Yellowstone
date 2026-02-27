@@ -7,14 +7,15 @@ const { requireAdmin } = require("../middlewares/adminAuth");
 const publicRouter = express.Router();
 const adminRouter = express.Router();
 
-const TOUR_PRICE = 225; // Define fixed price per seat
+const INDIVIDUAL_PRICE = 149;
+const PRIVATE_BUYOUT_PRICE = 699;
 
 // -- PUBLIC ROUTES --
 
 // POST /api/v1/book
 publicRouter.post("/", validateBooking, async (req, res, next) => {
     try {
-        const { name, email, phone, tourId, date, seats } = req.body;
+        const { name, email, phone, tourId, date, seats, bookingType } = req.body; // bookingType: 'individual' | 'private'
 
         // 1. Check availability inside a Firestore Transaction
         const checkoutSession = await db.runTransaction(async (t) => {
@@ -29,8 +30,15 @@ publicRouter.post("/", validateBooking, async (req, res, next) => {
             const currentSlot = tourData.slots[tourId];
 
             if (!currentSlot) throw new Error("Invalid tour ID.");
-            if (currentSlot.seatsAvailable < seats) {
-                throw new Error(`Not enough seats available. Only ${currentSlot.seatsAvailable} left.`);
+
+            const seatsToDeduct = bookingType === "private" ? 5 : seats;
+
+            if (currentSlot.seatsAvailable < seatsToDeduct) {
+                throw new Error(
+                    bookingType === "private"
+                        ? `Cannot book a private tour. The vehicle is already partially booked.`
+                        : `Not enough seats available. Only ${currentSlot.seatsAvailable} left.`
+                );
             }
 
             // 2. We have seats. Let's create a pending booking record.
@@ -38,6 +46,7 @@ publicRouter.post("/", validateBooking, async (req, res, next) => {
             const bookingId = bookingRef.id;
 
             // 3. Create Stripe Checkout Session
+            const isPrivate = bookingType === "private";
             const session = await stripe.checkout.sessions.create({
                 payment_method_types: ["card"],
                 line_items: [
@@ -45,12 +54,12 @@ publicRouter.post("/", validateBooking, async (req, res, next) => {
                         price_data: {
                             currency: "usd",
                             product_data: {
-                                name: `Nomad Yellowstone UTV Tour (${tourId})`,
-                                description: `Date: ${date} | Passenger: ${name}`,
+                                name: isPrivate ? `Private UTV Tour Buyout (${tourId})` : `Nomad Yellowstone UTV Tour (${tourId})`,
+                                description: `Date: ${date} | Guests: ${seats} | Passenger: ${name}`,
                             },
-                            unit_amount: TOUR_PRICE * 100, // Stripe expects cents
+                            unit_amount: isPrivate ? PRIVATE_BUYOUT_PRICE * 100 : INDIVIDUAL_PRICE * 100,
                         },
-                        quantity: seats,
+                        quantity: isPrivate ? 1 : seats,
                     },
                 ],
                 mode: "payment",
@@ -60,15 +69,16 @@ publicRouter.post("/", validateBooking, async (req, res, next) => {
                 customer_email: email,
                 metadata: {
                     bookingId: bookingId,
-                    date: date,
-                    tourId: tourId,
-                    seats: seats
+                    Tour_Date: date,
+                    Tour_Time_Slot: tourId,
+                    Booking_Type: bookingType,
+                    Guest_Count: seats
                 }
             });
 
             // 4. Update the available seats in the transaction
             const updatedSlots = { ...tourData.slots };
-            updatedSlots[tourId].seatsAvailable -= seats;
+            updatedSlots[tourId].seatsAvailable -= seatsToDeduct;
 
             t.update(tourDocRef, { slots: updatedSlots });
 
@@ -81,6 +91,7 @@ publicRouter.post("/", validateBooking, async (req, res, next) => {
                 tourId,
                 date,
                 seats,
+                bookingType,
                 status: "pending",
                 stripeSessionId: session.id,
                 createdAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -150,10 +161,12 @@ adminRouter.put("/:id/cancel", requireAdmin, async (req, res, next) => {
                 const tourData = tourDoc.data();
                 const updatedSlots = { ...tourData.slots };
 
-                // Add seats back, ensuring we don't exceed 4
+                const seatsToRestore = bookingData.bookingType === "private" ? 5 : bookingData.seats;
+
+                // Add seats back, ensuring we don't exceed 5
                 updatedSlots[bookingData.tourId].seatsAvailable = Math.min(
-                    4,
-                    updatedSlots[bookingData.tourId].seatsAvailable + bookingData.seats
+                    5,
+                    updatedSlots[bookingData.tourId].seatsAvailable + seatsToRestore
                 );
 
                 t.update(tourDocRef, { slots: updatedSlots });

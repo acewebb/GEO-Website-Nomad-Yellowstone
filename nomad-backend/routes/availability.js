@@ -4,9 +4,9 @@ const { db } = require("../config/firebase");
 
 // Default availability schema per day
 const defaultSlots = {
-    "9am": { seatsAvailable: 4, tourTime: "09:00 - 13:00" },
-    "1pm": { seatsAvailable: 4, tourTime: "13:00 - 17:00" },
-    "5pm": { seatsAvailable: 4, tourTime: "17:00 - 21:00" },
+    "9am": { seatsAvailable: 5, tourTime: "09:00 - 12:00" },
+    "12pm": { seatsAvailable: 5, tourTime: "12:00 - 15:00" },
+    "3pm": { seatsAvailable: 5, tourTime: "15:00 - 18:00" },
 };
 
 // GET /api/v1/availability/:date
