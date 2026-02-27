@@ -1,0 +1,89 @@
+
+> nextjs-starter@0.1.0 lint
+> eslint
+
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/api/v1/admin/bookings/[id]/cancel/route.ts
+  53:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/api/v1/admin/bookings/route.ts
+  14:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  22:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/api/v1/availability/[date]/route.ts
+  36:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/api/v1/book/route.ts
+  113:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/api/v1/webhook/stripe/route.ts
+  22:19  error    Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+  29:46  error    Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+  32:68  warning  'Booking_Type' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/booking/page.tsx
+   82:11   warning  'initialObjective' is assigned a value but never used                   @typescript-eslint/no-unused-vars
+   85:25   warning  'setBookedDates' is assigned a value but never used                     @typescript-eslint/no-unused-vars
+   86:54   error    Unexpected any. Specify a different type                                @typescript-eslint/no-explicit-any
+  164:104  error    Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/contact/page.tsx
+    1:8    warning  'Image' is defined but never used                                       @typescript-eslint/no-unused-vars
+  156:110  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+  156:241  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+  167:110  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+  167:248  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+  178:110  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+  178:117  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`         react/no-unescaped-entities
+  178:242  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`         react/no-unescaped-entities
+  195:117  error    Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/expeditions/page.tsx
+  111:113  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/fleet/page.tsx
+  75:123  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+  80:49   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`         react/no-unescaped-entities
+  80:71   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`         react/no-unescaped-entities
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/intel/[slug]/page.tsx
+  45:31  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+  85:32  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`         react/no-unescaped-entities
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/intel/atv-cheat-code/page.tsx
+  40:94   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  40:105  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  60:336  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  67:34   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  67:52   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  72:55   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  72:82   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  77:115  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  77:128  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  83:33   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  83:312  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/intel/page.tsx
+  24:96  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/not-found.tsx
+  18:74  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/terms/page.tsx
+  45:247  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/app/trip-prep/page.tsx
+    1:8    warning  'Image' is defined but never used                                       @typescript-eslint/no-unused-vars
+   66:113  error    Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+  114:113  error    Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/lib/firebase.ts
+  14:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/aysonwebb/GEO-Website-Nomad-Yellowstone/nextjs-starter/lib/transporter.ts
+  13:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 48 problems (43 errors, 5 warnings)
+
