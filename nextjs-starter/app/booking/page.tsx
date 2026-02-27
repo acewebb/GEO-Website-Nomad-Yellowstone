@@ -97,7 +97,7 @@ function BookingContent() {
                 setIsLoadingSlots(true);
                 try {
                     const dateStr = format(selectedDate, 'yyyy-MM-dd');
-                    const res = await fetch(`http://localhost:5001/api/v1/availability/${dateStr}`);
+                    const res = await fetch(`/api/v1/availability/${dateStr}`);
                     const data = await res.json();
                     if (data.success) {
                         setAvailability(data.slots);
@@ -287,7 +287,7 @@ function BookingContent() {
 
                                         try {
                                             setIsSubmitted(true); // show loading state momentarily if needed or just disable buttons
-                                            const res = await fetch('http://localhost:5001/api/v1/book', {
+                                            const res = await fetch(`/api/v1/book`, {
                                                 method: 'POST',
                                                 headers: { 'Content-Type': 'application/json' },
                                                 body: JSON.stringify({
