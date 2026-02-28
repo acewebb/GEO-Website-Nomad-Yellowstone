@@ -56,13 +56,13 @@ export default function BlogIndex() {
                                 {/* Content */}
                                 <div className="p-6 flex flex-col flex-grow">
                                     <div className="mb-4">
-                                        <span className="font-mono text-xs text-frost/40 tracking-widest uppercase block mb-2">{post.date}</span>
+                                        <span className="font-mono text-xs text-white/60 tracking-widest uppercase block mb-2">{post.date}</span>
                                         <h2 className="font-heading text-2xl text-white uppercase group-hover:text-accent transition-colors leading-tight">
                                             {post.title}
                                         </h2>
                                     </div>
 
-                                    <p className="text-frost/70 text-sm line-clamp-3 mb-6 flex-grow">
+                                    <p className="text-white/80 text-sm line-clamp-3 mb-6 flex-grow">
                                         {post.description}
                                     </p>
 

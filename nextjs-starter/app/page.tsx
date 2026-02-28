@@ -1,6 +1,10 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import PricingSection from '@/components/PricingSection';
+import GlobalHeader from '@/components/GlobalHeader';
+import FadeIn from '@/components/FadeIn';
+import MissionMap from '@/components/MissionMap';
 
 export default function Home() {
   const jsonLd = {
@@ -196,36 +200,27 @@ export default function Home() {
       />
 
       {/* Navigation Header */}
-      <header className="relative w-full z-50 py-6 bg-nomad-black border-b-[8px] border-nomad-black">
-        <div className="container mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-nomad-paper rounded-full opacity-50"></div>
-            <Link href="/" className="text-3xl font-heading tracking-widest text-nomad-paper hover:text-white transition-colors uppercase font-black">
-              Nomad
-              <span className="block text-xs tracking-[0.3em] text-nomad-paper/60 border-t border-nomad-paper/30 mt-1 pt-1">Yellowstone</span>
-            </Link>
-          </div>
+      <GlobalHeader />
 
-          <nav className="flex items-center gap-8">
-            <Link href="/" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">HOME</Link>
-            <Link href="#tours" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">EXPEDITIONS</Link>
-            <Link href="#vehicles" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">GEAR</Link>
-            <Link href="/intel" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">GALLERY</Link>
-            <Link href="#contact" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">CONTACT</Link>
-          </nav>
-        </div>
-      </header>
-
-      <main className="flex-grow flex flex-col relative w-full pt-0">
+      <main className="flex-grow flex flex-col relative w-full pt-16 md:pt-24">
 
         {/* SECTION 1: HERO (Individual Film Frames) */}
         <section className="relative w-full py-8 md:py-16 flex flex-col items-center overflow-hidden bg-transparent z-10">
           <div className="w-full text-center mb-8 z-20 relative px-4">
-            <h2 className="font-heading text-xl md:text-3xl text-nomad-black text-distressed uppercase tracking-[0.2em] font-light drop-shadow-md">
-              We take you where the pavement ends
-              <br className="hidden md:block" />
-              <span className="text-nomad-red font-bold"> and the real Yellowstone begins.</span>
-            </h2>
+            <FadeIn>
+              <div className="flex flex-col items-center justify-center">
+                <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.2em] mb-4 block font-bold uppercase drop-shadow-sm">
+                  Premier Private Expeditions
+                </span>
+                <h1 className="font-heading text-5xl md:text-7xl lg:text-[6rem] text-nomad-black uppercase leading-[0.85] tracking-tight mb-6 text-distressed drop-shadow-md">
+                  BACKCOUNTRY TOURS<br />
+                  <span className="text-nomad-red font-light">IN YELLOWSTONE</span>
+                </h1>
+                <p className="font-mono text-xs md:text-sm text-nomad-black/80 font-bold uppercase tracking-[0.15em] max-w-xl mx-auto drop-shadow-sm leading-relaxed">
+                  Nomad Yellowstone specializes in exclusive, passenger-only UTV expeditions to the most remote and scenic locations surrounding the park.
+                </p>
+              </div>
+            </FadeIn>
           </div>
           <div className="relative w-full h-[35vh] md:h-[50vh] flex flex-col">
             {/* Central Scrolling Image Carousel */}
@@ -235,14 +230,14 @@ export default function Home() {
                 <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full">
                   {[
                     "/creek_bw_film.png",
-                    "/teton_bw_1.png",
-                    "/teton_bw_2.png",
+                    "/utv-muddy-tire.jpg",
+                    "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/teton_bw_1.png",
-                    "/teton_bw_2.png",
+                    "/utv-muddy-tire.jpg",
+                    "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/teton_bw_1.png",
-                    "/teton_bw_2.png"
+                    "/utv-muddy-tire.jpg",
+                    "/moody-silhouette.jpg"
                   ].map((src, idx) => (
                     <div key={idx} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                       {/* Top film margin */}
@@ -274,14 +269,14 @@ export default function Home() {
                 <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full" aria-hidden="true">
                   {[
                     "/creek_bw_film.png",
-                    "/teton_bw_1.png",
-                    "/teton_bw_2.png",
+                    "/utv-muddy-tire.jpg",
+                    "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/teton_bw_1.png",
-                    "/teton_bw_2.png",
+                    "/utv-muddy-tire.jpg",
+                    "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/teton_bw_1.png",
-                    "/teton_bw_2.png"
+                    "/utv-muddy-tire.jpg",
+                    "/moody-silhouette.jpg"
                   ].map((src, idx) => (
                     <div key={`dup-${idx}`} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                       {/* Top film margin */}
@@ -311,13 +306,25 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TRUST BANNER */}
+        <section className="w-full bg-nomad-black py-5 border-y border-white/5 relative z-20 shadow-xl">
+          <div className="container mx-auto px-4 overflow-hidden">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-16 font-mono text-[10px] md:text-xs tracking-widest text-nomad-paper/60 uppercase text-center w-full">
+              <FadeIn delay={0.1} className="flex items-center gap-2"><span className="text-nomad-red">✪</span> Permitted & Insured</FadeIn>
+              <FadeIn delay={0.2} className="flex items-center gap-2 hidden md:flex"><span className="text-nomad-red">✚</span> Wilderness First Responder Certified</FadeIn>
+              <FadeIn delay={0.3} className="flex items-center gap-2"><span className="text-nomad-red">★</span> Elite TripAdvisor Rated</FadeIn>
+              <FadeIn delay={0.4} className="flex items-center gap-2 hidden lg:flex"><span className="text-nomad-red">✓</span> Zero Client Liability Program</FadeIn>
+            </div>
+          </div>
+        </section>
+
         {/* SECTION 2: THE SPLIT (Main Content Grid matching mockup) */}
         <section id="about" className="py-24 bg-transparent relative z-10">
           <div className="container mx-auto px-6 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
               {/* Left: Text Block */}
-              <div className="flex flex-col items-start justify-center">
+              <FadeIn className="flex flex-col items-start justify-center">
                 <span className="font-mono text-nomad-red text-sm tracking-widest mb-4 block font-bold uppercase drop-shadow-sm">
                   Passenger Only • Expert Guided UTV Tours
                 </span>
@@ -346,20 +353,20 @@ export default function Home() {
                   </li>
                 </ul>
 
-                <Link href="/booking" className="btn-primary px-12 py-4 text-xl hover:text-white transition-colors">
+                <Link href="/booking" className="btn-primary px-12 py-4 text-xl hover:text-white transition-colors mt-4">
                   BOOK NOW
                 </Link>
-              </div>
+              </FadeIn>
 
               {/* Right: Map Feature */}
-              <div className="relative aspect-square w-full max-w-lg mx-auto bg-nomad-paper shadow-2xl overflow-hidden border-[12px] border-nomad-paper mix-blend-multiply">
+              <FadeIn delay={0.2} className="relative aspect-square w-full max-w-lg mx-auto bg-nomad-paper shadow-2xl overflow-hidden border-[12px] border-nomad-paper mix-blend-multiply">
                 <Image
                   src="/map_placeholder.png"
                   alt="Nomad Yellowstone base camp in Island Park, Idaho, featuring purpose-built backcountry UTV vehicles."
                   fill
                   className="object-cover opacity-90 mix-blend-multiply"
                 />
-              </div>
+              </FadeIn>
 
             </div>
           </div>
@@ -372,7 +379,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION 3: THE DIVIDER BAR */}
+        {/* SECTION 4: PRICING VALUE STACK */}
+        <PricingSection />
+
+        {/* SECTION 5: THE DIVIDER BAR */}
         <section className="relative py-32 w-full flex items-center justify-center border-y border-nomad-black/10">
           {/* The global before/after pseudo elements handle the grunge. We don't need explicit backgrounds here anymore. */}
           <div className="relative z-10 text-center px-4">
@@ -380,16 +390,21 @@ export default function Home() {
           </div>
         </section>
 
+        {/* SECTION 6: INTERACTIVE MISSION MAP */}
+        <MissionMap />
+
         {/* SECTION 7: FINAL CALL */}
         <section className="py-32 relative flex items-center justify-center overflow-hidden z-10 border-t border-[rgba(0,0,0,0.1)]">
           <Image src="/sawtelle.png" alt="Professional Nomad Yellowstone guide driving a Can-Am Commander UTV through deep backcountry trails in Island Park, Idaho." fill className="object-cover opacity-15 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-nomad-paper via-transparent to-transparent opacity-50 pointer-events-none"></div>
 
           <div className="relative z-10 text-center px-4">
-            <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-12 opacity-100 text-distressed drop-shadow-md">Book Your Adventure</h2>
-            <Link href="/booking" className="btn-primary px-12 py-6 text-xl">
-              CHECK AVAILABILITY
-            </Link>
+            <FadeIn>
+              <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-12 opacity-100 text-distressed drop-shadow-md">Book Your<br />Expedition</h2>
+              <Link href="/booking" className="btn-primary px-12 py-6 text-xl">
+                CHECK AVAILABILITY
+              </Link>
+            </FadeIn>
           </div>
         </section>
       </main>
@@ -398,16 +413,19 @@ export default function Home() {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-1.5 h-1.5 bg-nomad-red rounded-full shadow-[0_0_5px_rgba(184,59,59,0.8)]"></div>
-            <p className="tracking-widest font-bold drop-shadow-sm">NOMAD YELLOWSTONE // 2026</p>
+            <p className="tracking-widest font-bold drop-shadow-sm text-[10px] md:text-xs">SERVING WEST YELLOWSTONE, BIG SKY, ISLAND PARK, & THE GREATER YELLOWSTONE ECOSYSTEM.</p>
           </div>
           <div className="flex flex-wrap justify-center md:items-center gap-4 md:gap-8 font-bold text-center">
             <Link href="/" className="hover:text-nomad-red transition-colors drop-shadow-sm">[HOME]</Link>
             <Link href="/intel" className="hover:text-nomad-red transition-colors drop-shadow-sm">[JOURNAL]</Link>
+            <Link href="/intel/answers" className="hover:text-nomad-red transition-colors drop-shadow-sm">[AEO HUB]</Link>
+            <Link href="/location" className="hover:text-nomad-red transition-colors drop-shadow-sm">[DIRECTIONS]</Link>
+            <Link href="/safety" className="hover:text-nomad-red transition-colors drop-shadow-sm">[SAFETY & SPECS]</Link>
             <a href="(LINK)" target="_blank" rel="noopener noreferrer" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR]</a>
             <Link href="/booking" className="text-nomad-red hover:text-black transition-colors drop-shadow-sm">[BOOK NOW]</Link>
           </div>
         </div>
       </footer>
-    </div>
+    </div >
   );
 }

@@ -35,19 +35,30 @@ export default function RootLayout({
 }>) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "TouristAttraction",
+    "@type": ["SportsActivityLocation", "LocalBusiness"],
     "name": "Nomad Yellowstone",
-    "description": "Nomad Yellowstone is a private Guided Adventure Tours company based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region.",
+    "description": "Nomad Yellowstone is a private Guided Adventure Tours company based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region with high-performance UTVs.",
     "url": "https://nomadyellowstone.com",
+    "logo": "https://nomadyellowstone.com/logo.png",
+    "image": "https://nomadyellowstone.com/sawtelle.png",
     "telephone": "+12087452088",
     "email": "hq@nomadyellowstone.com",
-    "priceRange": "$149 - $600",
+    "priceRange": "$149 - $1997",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Island Park",
       "addressRegion": "ID",
       "addressCountry": "US"
-    }
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 44.4221,
+      "longitude": -111.3733
+    },
+    "sameAs": [
+      "https://www.instagram.com/nomadyellowstone",
+      "https://www.facebook.com/nomadyellowstone"
+    ]
   };
 
   return (
