@@ -184,6 +184,57 @@ export default function Home() {
             "reviewBody": "Being driven was so relaxing. We just enjoyed the views."
           }
         ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "TouristAttraction"],
+        "@id": "https://nomadyellowstone.com/#localbusiness",
+        "name": "Nomad Yellowstone",
+        "description": "Premium Wilderness Outfitter providing private, passenger-only Can-Am UTV expeditions into the deep Yellowstone and Grand Teton backcountry.",
+        "url": "https://nomadyellowstone.com",
+        "telephone": "+1-800-555-0199",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Island Park",
+          "addressRegion": "ID",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "44.4216",
+          "longitude": "-111.3322"
+        },
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Guided Meditation",
+            "value": "true"
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "4K Media Package",
+            "value": "true"
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Private Transport",
+            "value": "true"
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Professional Driver",
+            "value": "true"
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "149.00",
+            "priceCurrency": "USD"
+          }
+        },
+        "priceRange": "$$$$"
       }
     ]
   };
@@ -208,6 +259,7 @@ export default function Home() {
 
           <nav className="flex items-center gap-8">
             <Link href="/" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">HOME</Link>
+            <Link href="/about" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">ABOUT THE OUTFITTER</Link>
             <Link href="#tours" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">EXPEDITIONS</Link>
             <Link href="#vehicles" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">GEAR</Link>
             <Link href="/intel" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">GALLERY</Link>
@@ -402,6 +454,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center md:items-center gap-4 md:gap-8 font-bold text-center">
             <Link href="/" className="hover:text-nomad-red transition-colors drop-shadow-sm">[HOME]</Link>
+            <Link href="/about" className="hover:text-nomad-red transition-colors drop-shadow-sm">[ABOUT]</Link>
             <Link href="/intel" className="hover:text-nomad-red transition-colors drop-shadow-sm">[JOURNAL]</Link>
             <a href="(LINK)" target="_blank" rel="noopener noreferrer" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR]</a>
             <Link href="/booking" className="text-nomad-red hover:text-black transition-colors drop-shadow-sm">[BOOK NOW]</Link>
