@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { db, admin } from '@/lib/firebase';
-import { sendConfirmationEmail } from '@/lib/transporter';
+import { sendConfirmationEmail, sendAdminNotificationEmail } from '@/lib/transporter';
 
 export async function POST(request: Request) {
     const sig = request.headers.get("stripe-signature");
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
         const session = event.data.object as any;
 
         // Retrieve metadata passed during session creation
-        const { bookingId, Tour_Date, Tour_Time_Slot, Guest_Count, Booking_Type } = session.metadata;
+        const { bookingId, Tour_Date, Tour_Time_Slot, Guest_Count, Booking_Type, Guest_Phone } = session.metadata;
 
         try {
             const bookingRef = db.collection("bookings").doc(bookingId);
@@ -54,9 +54,19 @@ export async function POST(request: Request) {
                         date: Tour_Date,
                         seats: Number(Guest_Count)
                     });
+
+                    // 3. Dispatch admin notification
+                    await sendAdminNotificationEmail({
+                        name: bookingData.name,
+                        email: bookingData.email,
+                        phone: Guest_Phone,
+                        tourId: Tour_Time_Slot,
+                        date: Tour_Date,
+                        seats: Number(Guest_Count)
+                    });
                 }
 
-                console.log(`Booking ${bookingId} confirmed and email dispatched.`);
+                console.log(`Booking ${bookingId} confirmed and emails dispatched.`);
             }
         } catch (dbError) {
             console.error("Error updating booking on webhook success:", dbError);

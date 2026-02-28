@@ -292,6 +292,7 @@ function BookingContent() {
                                         const formData = new FormData(e.currentTarget);
                                         const name = formData.get('name');
                                         const email = formData.get('email');
+                                        const phone = formData.get('phone');
                                         const notes = formData.get('notes');
 
                                         try {
@@ -302,7 +303,7 @@ function BookingContent() {
                                                 body: JSON.stringify({
                                                     name,
                                                     email,
-                                                    phone: '000-000-0000', // Need to add phone input or hardocde
+                                                    phone,
                                                     tourId: missionType,
                                                     date: format(selectedDate, 'yyyy-MM-dd'),
                                                     seats: isBuyout ? 5 : guestCount,
@@ -335,7 +336,7 @@ function BookingContent() {
                                             />
                                         </div>
 
-                                        <div className="grid grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <div className="space-y-2">
                                                 <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Full Name</label>
                                                 <input required name="name" type="text" placeholder="NAME" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
@@ -343,6 +344,10 @@ function BookingContent() {
                                             <div className="space-y-2">
                                                 <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Email Address</label>
                                                 <input required name="email" type="email" placeholder="EMAIL" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
+                                            </div>
+                                            <div className="space-y-2 md:col-span-2">
+                                                <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Phone Number</label>
+                                                <input required name="phone" type="tel" placeholder="PHONE NUMBER" className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs transition-all" />
                                             </div>
                                         </div>
 

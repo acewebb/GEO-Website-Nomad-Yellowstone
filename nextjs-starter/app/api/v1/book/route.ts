@@ -77,7 +77,8 @@ export async function POST(request: Request) {
                     Tour_Date: date,
                     Tour_Time_Slot: tourId,
                     Booking_Type: bookingType,
-                    Guest_Count: seats
+                    Guest_Count: seats,
+                    Guest_Phone: phone
                 }
             });
 
