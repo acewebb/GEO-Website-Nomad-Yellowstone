@@ -50,6 +50,9 @@ export async function POST(request: Request) {
             const bookingRef = db.collection("bookings").doc();
             const bookingId = bookingRef.id;
 
+            // Get the origin dynamically from headers, with env var and localhost fallbacks
+            const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000";
+
             // 4. Create Stripe Checkout Session
             const isPrivate = bookingType === "private";
             const session = await stripe.checkout.sessions.create({
@@ -68,8 +71,8 @@ export async function POST(request: Request) {
                     },
                 ],
                 mode: "payment",
-                success_url: `${process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000"}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
-                cancel_url: `${process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000"}/booking?canceled=true`,
+                success_url: `${origin}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${origin}/booking?canceled=true`,
                 client_reference_id: bookingId,
                 customer_email: email,
                 metadata: {
