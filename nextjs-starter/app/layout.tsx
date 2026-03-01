@@ -22,8 +22,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nomad Yellowstone | Private Guided UTV Backcountry Tours",
-  description: "Experience private, fully-guided UTV backcountry tours near Yellowstone National Park. Passenger-only expeditions—leave the driving to us. 4-hour tours mapped from $149.",
+  title: "Nomad Yellowstone | Private Guided ATV Backcountry Tours",
+  description: "Experience private, fully-guided ATV backcountry tours near Yellowstone National Park. Passenger-only expeditions—leave the driving to us. 4-hour tours mapped from $149.",
 };
 
 import Analytics from "@/components/Analytics";
@@ -37,7 +37,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": ["SportsActivityLocation", "LocalBusiness"],
     "name": "Nomad Yellowstone",
-    "description": "Nomad Yellowstone is a private Guided Adventure Tours company based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region with high-performance UTVs.",
+    "description": "Nomad Yellowstone is a private Guided Adventure Tours company based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region with high-performance ATVs.",
     "url": "https://nomadyellowstone.com",
     "logo": "https://nomadyellowstone.com/logo.png",
     "image": "https://nomadyellowstone.com/sawtelle.png",

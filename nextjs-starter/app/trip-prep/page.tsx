@@ -4,10 +4,10 @@ import Script from "next/script";
 
 export const metadata = {
     title: "Trip Preparation & Knowledge Hub | Nomad Yellowstone",
-    description: "Prepare for your Island Park backcountry UTV expedition. View live National Park Service trails status, National Weather Service alerts, and expert guides.",
+    description: "Prepare for your Island Park backcountry ATV expedition. View live National Park Service trails status, National Weather Service alerts, and expert guides.",
     openGraph: {
         title: "Trip Preparation & Knowledge Hub | Nomad Yellowstone",
-        description: "Prepare for your Island Park backcountry UTV expedition. View live National Park Service trails status, National Weather Service alerts, and expert guides.",
+        description: "Prepare for your Island Park backcountry ATV expedition. View live National Park Service trails status, National Weather Service alerts, and expert guides.",
         url: "https://nomadyellowstone.com/trip-prep",
         siteName: "Nomad Yellowstone",
         locale: "en_US",
@@ -20,7 +20,7 @@ export default function TripPrepPage() {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Trip Preparation & Knowledge Hub",
-        "description": "Essential preparation information and official external resources for backcountry UTV expeditions originating in Island Park, Idaho.",
+        "description": "Essential preparation information and official external resources for backcountry ATV expeditions originating in Island Park, Idaho.",
         "relatedLink": [
             "https://www.nps.gov/yell/planyourvisit/conditions.htm",
             "https://forecast.weather.gov/MapClick.php?lat=44.4215&lon=-111.3831"
@@ -66,7 +66,7 @@ export default function TripPrepPage() {
                         <span className="font-mono text-nomad-red text-sm tracking-widest mb-2 block font-bold">// PRE-DEPLOYMENT</span>
                         <h1 className="font-heading text-6xl text-nomad-black uppercase mb-8 text-distressed drop-shadow-sm">Trip Preparation</h1>
                         <p className="text-nomad-black font-medium text-xl max-w-3xl mx-auto drop-shadow-sm">
-                            The backcountry surrounding Island Park and Yellowstone operates on its own terms. Before deploying on a Nomad Yellowstone UTV expedition, consult these official channels for real-time intelligence.
+                            The backcountry surrounding Island Park and Yellowstone operates on its own terms. Before deploying on a Nomad Yellowstone ATV expedition, consult these official channels for real-time intelligence.
                         </p>
                     </div>
                 </section>

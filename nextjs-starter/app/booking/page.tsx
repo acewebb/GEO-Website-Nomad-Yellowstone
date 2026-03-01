@@ -52,7 +52,7 @@ function BookingCalendar({ selectedDate, onSelect, disabledDates }: { selectedDa
                     className={`h-10 w-full rounded-sm flex items-center justify-center font-mono text-sm transition-colors border border-transparent
                         ${!isSameMonth(day, monthStart) ? 'text-white/20' : ''}
                         ${isDisabled ? 'opacity-20 cursor-not-allowed bg-red-900/30 line-through decoration-red-500/50' : 'hover:border-accent/50'}
-                        ${isSelected ? 'bg-accent text-white font-bold shadow-[0_0_15px_rgba(200,60,60,0.5)]' : ''}
+                        ${isSelected ? 'bg-accent text-white font-bold' : ''}
                         ${!isSelected && !isDisabled ? 'text-white bg-white/5' : ''}
                     `}
                 >
@@ -175,7 +175,7 @@ function BookingContent() {
                                 Secure Your <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Start Time</span>
                             </h1>
                             <p className="text-nomad-paper/80 text-sm md:text-base font-light border-l-2 border-accent/20 pl-4 max-w-2xl leading-relaxed">
-                                <strong>How do I book a Nomad Yellowstone UTV tour?</strong> Guests can book a private guided UTV tour by selecting a preferred trip time, such as the Morning Scout or Golden Hour, and entering their group size. The Can-Am Commander Max XT accommodates up to 4 standard passengers, with private vehicle buyouts available for larger groups. All 4-hour backcountry expeditions start at $149 per seat and include a professional driver, dust protection gear, and headsets. Nomad Yellowstone secures the reservation without charging the payment method until the departure date and guide availability are officially confirmed.
+                                <strong>How do I book a Nomad Yellowstone ATV tour?</strong> Guests can book a private guided ATV tour by selecting a preferred trip time, such as the Morning Scout or Golden Hour, and entering their group size. The Can-Am Commander Max XT accommodates up to 4 standard passengers, with private vehicle buyouts available for larger groups. All 4-hour backcountry expeditions start at $149 per seat and include a professional driver, dust protection gear, and headsets. Nomad Yellowstone secures the reservation without charging the payment method until the departure date and guide availability are officially confirmed.
                             </p>
                         </div>
 
@@ -245,7 +245,7 @@ function BookingContent() {
                                     disabled={!canBuyout}
                                     className={`w-5 h-5 border flex items-center justify-center transition-colors ${!canBuyout ? 'opacity-30 cursor-not-allowed' : ''} ${isBuyout ? 'border-accent bg-accent' : 'border-white/30'}`}
                                 >
-                                    {isBuyout && <span className="text-charcoal font-bold text-xs">✓</span>}
+                                    {isBuyout && <span className="text-nomad-black font-bold text-xs">✓</span>}
                                 </button>
                                 <span className={`text-sm tracking-wide ${canBuyout ? 'text-nomad-paper/80 cursor-pointer uppercase' : 'text-nomad-paper/40 cursor-not-allowed'}`} onClick={() => { if (canBuyout) { setIsBuyout(!isBuyout); if (!isBuyout) setGuestCount(5); } }}>
                                     {canBuyout ? `Upgrade to Private Tour (+$${Math.max(0, BUYOUT_PRICE - (guestCount * PRICE_PER_PASSENGER))} flat rate)` : 'Private Tour Unavailable (Seats Already Booked)'}
@@ -357,7 +357,7 @@ function BookingContent() {
                                         </div>
 
                                         <div className="pt-2">
-                                            <button type="submit" disabled={isSubmitted} className={`btn-primary w-full py-5 text-lg shadow-xl shadow-accent/20 hover:shadow-accent/40 relative overflow-hidden group ${isSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                                            <button type="submit" disabled={isSubmitted} className={`btn-primary w-full py-5 text-lg relative overflow-hidden group ${isSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}>
                                                 <span className="relative z-10">{isSubmitted ? 'Processing...' : 'Proceed to Checkout'}</span>
                                                 {!isSubmitted && <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>}
                                             </button>

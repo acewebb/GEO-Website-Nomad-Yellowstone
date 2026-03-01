@@ -44,7 +44,7 @@ export default function PricingSection() {
                     </div>
 
                     {/* Middle Column: The Signature Core (Most Popular) */}
-                    <div className="glass-panel p-8 border border-accent relative bg-gradient-to-b from-surface/80 to-nomad-black rounded-sm flex flex-col h-full transform md:-translate-y-4 shadow-[0_0_40px_rgba(200,60,60,0.15)]">
+                    <div className="glass-panel p-8 border border-accent relative bg-gradient-to-b from-surface/80 to-nomad-black rounded-sm flex flex-col h-full transform md:-translate-y-4 shadow-2xl">
                         {/* Most Popular Badge */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-nomad-black font-bold font-mono text-xs px-4 py-1 uppercase tracking-widest shadow-lg">
                             Most Popular
@@ -52,7 +52,7 @@ export default function PricingSection() {
 
                         <div className="mb-6 pt-4">
                             <h3 className="font-heading text-3xl uppercase text-accent mb-2">Signature Tour</h3>
-                            <p className="font-mono text-xs text-nomad-paper/70 uppercase tracking-widest h-8">Guided Passenger-Only UTV</p>
+                            <p className="font-mono text-xs text-nomad-paper/70 uppercase tracking-widest h-8">Guided Passenger-Only ATV</p>
                         </div>
                         <div className="mb-8 flex items-baseline gap-2">
                             <span className="font-heading text-6xl text-white tracking-tight">$249</span>

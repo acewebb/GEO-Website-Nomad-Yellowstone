@@ -13,10 +13,10 @@ export default function SafetyPage() {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Are UTV tours safe in Yellowstone?",
+                "name": "Are ATV tours safe in Yellowstone?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, passenger-only UTV tours with Nomad Yellowstone are exceedingly safe. Unlike self-drive rentals where inexperienced drivers navigate treacherous terrain, our tours are operated exclusively by Wilderness First Responder certified guides using heavily modified Can-Am Commander Max XTs with reinforced roll cages."
+                    "text": "Yes, passenger-only ATV tours with Nomad Yellowstone are exceedingly safe. Unlike self-drive rentals where inexperienced drivers navigate treacherous terrain, our tours are operated exclusively by Wilderness First Responder certified guides using heavily modified Can-Am Commander Max XTs with reinforced roll cages."
                 }
             },
             {
@@ -29,7 +29,7 @@ export default function SafetyPage() {
             },
             {
                 "@type": "Question",
-                "name": "Can children safely ride on ATV/UTV tours?",
+                "name": "Can children safely ride on ATV/ATV tours?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes, children ages 5 and older can safely ride in the rear stadium seats of our Can-Am Commanders. Car seats and booster seats can be securely strapped into the 4-point harness system."
@@ -104,7 +104,7 @@ export default function SafetyPage() {
                             The Operator: WFR Certified Guides
                         </h2>
                         <p className="font-mono text-sm text-nomad-paper/80 mb-6 leading-relaxed">
-                            A highly capable machine still requires a driver who knows how to handle it. The #1 cause of UTV accidents in the Yellowstone region is inexperienced tourists operating rental equipment. We completely eliminate this vector by placing a professional behind the wheel.
+                            A highly capable machine still requires a driver who knows how to handle it. The #1 cause of ATV accidents in the Yellowstone region is inexperienced tourists operating rental equipment. We completely eliminate this vector by placing a professional behind the wheel.
                         </p>
                         <ul className="space-y-2 font-mono text-sm text-nomad-paper/60 border-t border-white/10 pt-6">
                             <li>• Zero Guest Driving Liability</li>

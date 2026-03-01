@@ -45,12 +45,12 @@ export default function GlobalHeader() {
                     <Link href="/about" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">THE GUIDES</Link>
                     <Link href="/location" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">LOCATION</Link>
                     <Link href="/intel" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">JOURNAL</Link>
-                    <Link href="/booking" className="text-xs font-heading font-black tracking-widest px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-nomad-black transition-all uppercase rounded-sm shadow-[0_0_15px_rgba(200,60,60,0.2)]">BOOK NOW</Link>
+                    <Link href="/booking" className="text-xs font-heading font-black tracking-widest px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-nomad-black transition-all uppercase rounded-sm">BOOK NOW</Link>
                 </nav>
 
                 {/* Right: Mobile Hamburger & Quick Book */}
                 <div className="flex md:hidden items-center gap-3">
-                    <Link href="/booking" className="text-[9px] font-heading font-black tracking-widest px-3 py-2 border border-accent text-accent hover:bg-accent hover:text-nomad-black transition-all uppercase rounded-sm shadow-[0_0_15px_rgba(200,60,60,0.2)]">BOOK</Link>
+                    <Link href="/booking" className="text-[9px] font-heading font-black tracking-widest px-3 py-2 border border-accent text-accent hover:bg-accent hover:text-nomad-black transition-all uppercase rounded-sm">BOOK</Link>
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="text-nomad-paper focus:outline-none flex flex-col justify-center items-center w-8 h-8 relative"

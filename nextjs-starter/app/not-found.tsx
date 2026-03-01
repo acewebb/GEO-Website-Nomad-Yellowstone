@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function NotFound() {
     return (
-        <div className="min-h-screen bg-charcoal text-foreground font-body bg-topo flex flex-col items-center justify-center p-4 text-center">
+        <div className="min-h-screen bg-nomad-black text-foreground font-body bg-topo flex flex-col items-center justify-center p-4 text-center">
 
             <div className="mb-12 relative w-full max-w-2xl aspect-video mx-auto">
                 <Image
@@ -24,7 +24,7 @@ export default function NotFound() {
                 </Link>
             </div>
 
-            <div className="fixed bottom-8 text-xs font-mono text-frost/20">
+            <div className="fixed bottom-8 text-xs font-mono text-nomad-paper/20">
                 NOMAD YELLOWSTONE // SYSTEM DIAGNOSTIC
             </div>
         </div>

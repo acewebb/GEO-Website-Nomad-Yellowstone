@@ -17,7 +17,7 @@ export const sendConfirmationEmail = async (bookingData: any) => {
   const mailOptions = {
     from: `"Nomad Yellowstone" <${process.env.EMAIL_USER}>`,
     to: email,
-    subject: `Booking Confirmed: Nomad Yellowstone UTV Tour`,
+    subject: `Booking Confirmed: Nomad Yellowstone ATV Tour`,
     html: `
       <div style="font-family: Arial, sans-serif; padding: 20px; color: #1a1a1a;">
         <h1 style="color: #b83b3b;">YOUR EXPEDITION IS CONFIRMED</h1>

@@ -7,8 +7,8 @@
   /* Expedition Black */
   --color-nomad-paper: #EDE5D8;
   /* Warm Parchment */
-  --color-nomad-red: #C0392B;
-  /* Signal Red */
+  --color-nomad-red: #A63C24;
+  /* Terracotta / Rust */
   --color-text-dark: #1A1612;
   /* Ink Black */
   --color-trail-dust: #8B4513;
@@ -49,7 +49,7 @@
 
   --color-nomad-black: #1C1A17;
   --color-nomad-paper: #EDE5D8;
-  --color-nomad-red: #C0392B;
+  --color-nomad-red: #A63C24;
   --color-trail-dust: #8B4513;
   --color-dust-sand: #A89880;
   --color-warm-white: #F2EDE4;
@@ -219,7 +219,7 @@ body::before {
   position: absolute;
   width: 8px;
   height: 8px;
-  border-color: var(--color-frost);
+  border-color: var(--color-nomad-paper);
   opacity: 0.3;
   border-style: solid;
   z-index: 20;
@@ -258,11 +258,11 @@ body::before {
 }
 
 .btn-primary {
-  @apply bg-accent hover:bg-orange-600 text-white font-bold tracking-wider uppercase transition-all shadow-lg hover:shadow-orange-500/20 active:scale-95;
+  @apply bg-accent border border-accent hover:bg-transparent hover:text-accent text-white font-bold tracking-[0.15em] uppercase transition-all active:scale-95;
   font-family: var(--font-heading);
 }
 
 .btn-outline {
-  @apply border border-white/20 text-white hover:bg-white/10 hover:border-white/40 font-bold tracking-wider uppercase transition-all active:scale-95;
+  @apply border border-white/30 text-white hover:bg-white hover:text-nomad-black hover:border-white font-bold tracking-[0.15em] uppercase transition-all active:scale-95;
   font-family: var(--font-heading);
 }

@@ -15,7 +15,7 @@ export default function Home() {
         "@id": "https://nomadyellowstone.com/#website",
         "url": "https://nomadyellowstone.com/",
         "name": "Nomad Yellowstone",
-        "description": "Nomad Yellowstone provides private, fully-guided Can-Am Commander UTV backcountry tours originating in Island Park, Idaho.",
+        "description": "Nomad Yellowstone provides private, fully-guided Can-Am Commander ATV backcountry tours originating in Island Park, Idaho.",
         "publisher": {
           "@id": "https://nomadyellowstone.com/#organization"
         }
@@ -26,7 +26,7 @@ export default function Home() {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is a Nomad Yellowstone UTV tour safe for children?",
+            "name": "Is a Nomad Yellowstone ATV tour safe for children?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes. Nomad Yellowstone tours are 100% guide-driven, accommodating passengers ages 5 and older. Child car seats can be secured in the rear stadium seats of the Can-Am Commander Max XT."
@@ -42,7 +42,7 @@ export default function Home() {
           },
           {
             "@type": "Question",
-            "name": "Can guests drive the UTVs at Nomad Yellowstone?",
+            "name": "Can guests drive the ATVs at Nomad Yellowstone?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles, separating this service from civilian self-drive ATV rentals."
@@ -53,12 +53,12 @@ export default function Home() {
             "name": "What is the Nomad Yellowstone pricing and cancellation policy?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Nomad Yellowstone UTV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
+              "text": "Nomad Yellowstone ATV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
             }
           },
           {
             "@type": "Question",
-            "name": "What should passengers wear for a Yellowstone backcountry UTV tour?",
+            "name": "What should passengers wear for a Yellowstone backcountry ATV tour?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Passengers should wear closed-toe shoes, long pants, and layered clothing. Nomad Yellowstone provides the required dust goggles and gaiters, but the high-altitude route along the Continental Divide often experiences rapid temperature drops."
@@ -85,7 +85,7 @@ export default function Home() {
             "name": "How does Nomad Yellowstone differ from standard Yellowstone National Park bus tours?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Nomad Yellowstone utilizes off-road Can-Am Commander UTVs to navigate rugged, unpaved backcountry ridges outside the main paved loops. This provides deep wilderness access to 10,000-foot peaks that commercial tour buses and standard highway vehicles cannot reach."
+              "text": "Nomad Yellowstone utilizes off-road Can-Am Commander ATVs to navigate rugged, unpaved backcountry ridges outside the main paved loops. This provides deep wilderness access to 10,000-foot peaks that commercial tour buses and standard highway vehicles cannot reach."
             }
           }
         ]
@@ -95,8 +95,8 @@ export default function Home() {
         "@type": "Demand",
         "itemOffered": {
           "@type": "Trip",
-          "name": "Morning Scout UTV Tour",
-          "description": "4-hour guided UTV tour ascending to the Continental Divide.",
+          "name": "Morning Scout ATV Tour",
+          "description": "4-hour guided ATV tour ascending to the Continental Divide.",
           "provider": {
             "@type": "Organization",
             "name": "Nomad Yellowstone"
@@ -118,7 +118,7 @@ export default function Home() {
         "@type": "Demand",
         "itemOffered": {
           "@type": "Trip",
-          "name": "Summit Run UTV Tour",
+          "name": "Summit Run ATV Tour",
           "description": "Aggressive climbing to 10,000ft peaks for panoramic caldera views.",
           "provider": {
             "@type": "Organization",
@@ -141,7 +141,7 @@ export default function Home() {
         "@type": "Demand",
         "itemOffered": {
           "@type": "Trip",
-          "name": "Golden Hour UTV Tour",
+          "name": "Golden Hour ATV Tour",
           "description": "Chases sunset for optimal photographic lighting, ending with twilight descent.",
           "provider": {
             "@type": "Organization",
@@ -202,10 +202,10 @@ export default function Home() {
       {/* Navigation Header */}
       <GlobalHeader />
 
-      <main className="flex-grow flex flex-col relative w-full pt-16 md:pt-24">
+      <main className="flex-grow flex flex-col relative w-full pt-20 md:pt-32">
 
         {/* SECTION 1: HERO (Individual Film Frames) */}
-        <section className="relative w-full py-8 md:py-16 flex flex-col items-center overflow-hidden bg-transparent z-10">
+        <section className="relative w-full py-16 md:py-24 flex flex-col items-center overflow-hidden bg-transparent z-10">
           <div className="w-full text-center mb-8 z-20 relative px-4">
             <FadeIn>
               <div className="flex flex-col items-center justify-center">
@@ -217,7 +217,7 @@ export default function Home() {
                   <span className="text-nomad-red font-light">IN YELLOWSTONE</span>
                 </h1>
                 <p className="font-mono text-xs md:text-sm text-nomad-black/80 font-bold uppercase tracking-[0.15em] max-w-xl mx-auto drop-shadow-sm leading-relaxed">
-                  Nomad Yellowstone specializes in exclusive, passenger-only UTV expeditions to the most remote and scenic locations surrounding the park.
+                  Nomad Yellowstone specializes in exclusive, passenger-only ATV expeditions to the most remote and scenic locations surrounding the park.
                 </p>
               </div>
             </FadeIn>
@@ -230,13 +230,13 @@ export default function Home() {
                 <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full">
                   {[
                     "/creek_bw_film.png",
-                    "/utv-muddy-tire.jpg",
+                    "/atv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/utv-muddy-tire.jpg",
+                    "/atv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/utv-muddy-tire.jpg",
+                    "/atv-muddy-tire.jpg",
                     "/moody-silhouette.jpg"
                   ].map((src, idx) => (
                     <div key={idx} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
@@ -251,7 +251,7 @@ export default function Home() {
 
                       {/* Image */}
                       <div className="flex-grow w-full relative">
-                        <Image src={src} alt="Can-Am Commander Max XT UTV parked on a Continental Divide ridge near West Yellowstone, Montana, during a guided passenger-only tour." fill className="object-cover grayscale contrast-125" />
+                        <Image src={src} alt="Can-Am Commander Max XT ATV parked on a Continental Divide ridge near West Yellowstone, Montana, during a guided passenger-only tour." fill className="object-cover grayscale contrast-125" />
                         <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
                       </div>
 
@@ -269,16 +269,16 @@ export default function Home() {
                 <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full" aria-hidden="true">
                   {[
                     "/creek_bw_film.png",
-                    "/utv-muddy-tire.jpg",
+                    "/atv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/utv-muddy-tire.jpg",
+                    "/atv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/utv-muddy-tire.jpg",
+                    "/atv-muddy-tire.jpg",
                     "/moody-silhouette.jpg"
                   ].map((src, idx) => (
-                    <div key={`dup-${idx}`} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    <div key={`dup-${idx}`} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 shadow-2xl border border-white/5">
                       {/* Top film margin */}
                       <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
                         <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center top", backgroundSize: "auto 100%" }}></div>
@@ -288,7 +288,7 @@ export default function Home() {
 
                       {/* Image */}
                       <div className="flex-grow w-full relative">
-                        <Image src={src} alt="Can-Am Commander Max XT UTV parked on a Continental Divide ridge near West Yellowstone, Montana, during a guided passenger-only tour." fill className="object-cover grayscale contrast-125" />
+                        <Image src={src} alt="Can-Am Commander Max XT ATV parked on a Continental Divide ridge near West Yellowstone, Montana, during a guided passenger-only tour." fill className="object-cover grayscale contrast-125" />
                         <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
                       </div>
 
@@ -319,14 +319,14 @@ export default function Home() {
         </section>
 
         {/* SECTION 2: THE SPLIT (Main Content Grid matching mockup) */}
-        <section id="about" className="py-24 bg-transparent relative z-10">
+        <section id="about" className="py-32 md:py-48 bg-transparent relative z-10">
           <div className="container mx-auto px-6 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
               {/* Left: Text Block */}
               <FadeIn className="flex flex-col items-start justify-center">
                 <span className="font-mono text-nomad-red text-sm tracking-widest mb-4 block font-bold uppercase drop-shadow-sm">
-                  Passenger Only • Expert Guided UTV Tours
+                  Passenger Only • Expert Guided ATV Tours
                 </span>
                 <h1 className="font-heading text-7xl md:text-[6rem] lg:text-[7rem] font-black text-nomad-black uppercase leading-[0.85] tracking-tight mb-8">
                   CAPTURE<br />THE WILD
@@ -337,7 +337,7 @@ export default function Home() {
                     Nomad Yellowstone is a private Guided Adventure Tours company originating in Island Park, Idaho, and operating in the Yellowstone region, offering 4-hour passenger-only expeditions starting at $149.
                   </p>
                   <p className="text-nomad-black font-medium text-sm md:text-base leading-relaxed opacity-90 drop-shadow-sm">
-                    Nomad Yellowstone is a private guided UTV tour operator based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region. The company utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles to provide passenger-only, off-road expeditions. Nomad Yellowstone caters to guests seeking deep backcountry access with expert guides driving the vehicles, distinguishing itself from standard self-drive ATV rentals.
+                    Nomad Yellowstone is a private guided ATV tour operator based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region. The company utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles to provide passenger-only, off-road expeditions. Nomad Yellowstone caters to guests seeking deep backcountry access with expert guides driving the vehicles, distinguishing itself from standard self-drive ATV rentals.
                   </p>
                 </div>
 
@@ -359,10 +359,10 @@ export default function Home() {
               </FadeIn>
 
               {/* Right: Map Feature */}
-              <FadeIn delay={0.2} className="relative aspect-square w-full max-w-lg mx-auto bg-nomad-paper shadow-2xl overflow-hidden border-[12px] border-nomad-paper mix-blend-multiply">
+              <FadeIn delay={0.2} className="relative aspect-square w-full max-w-lg mx-auto bg-nomad-paper shadow-2xl overflow-hidden border border-nomad-black/10 mix-blend-multiply">
                 <Image
                   src="/map_placeholder.png"
-                  alt="Nomad Yellowstone base camp in Island Park, Idaho, featuring purpose-built backcountry UTV vehicles."
+                  alt="Nomad Yellowstone base camp in Island Park, Idaho, featuring purpose-built backcountry ATV vehicles."
                   fill
                   className="object-cover opacity-90 mix-blend-multiply"
                 />
@@ -375,7 +375,6 @@ export default function Home() {
         {/* SECTION 3: MAP / DIVIDER BAR */}
         <section className="relative py-12 w-full bg-nomad-black flex items-center justify-center border-y-2 border-nomad-black/80 z-10 shadow-lg">
           <div className="relative z-10 text-center px-4">
-            <h2 className="font-heading text-4xl text-nomad-paper/80 uppercase tracking-widest font-light">MISSION MAP</h2>
           </div>
         </section>
 
@@ -395,7 +394,7 @@ export default function Home() {
 
         {/* SECTION 7: FINAL CALL */}
         <section className="py-32 relative flex items-center justify-center overflow-hidden z-10 border-t border-[rgba(0,0,0,0.1)]">
-          <Image src="/sawtelle.png" alt="Professional Nomad Yellowstone guide driving a Can-Am Commander UTV through deep backcountry trails in Island Park, Idaho." fill className="object-cover opacity-15 mix-blend-multiply" />
+          <Image src="/sawtelle.png" alt="Professional Nomad Yellowstone guide driving a Can-Am Commander ATV through deep backcountry trails in Island Park, Idaho." fill className="object-cover opacity-15 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-nomad-paper via-transparent to-transparent opacity-50 pointer-events-none"></div>
 
           <div className="relative z-10 text-center px-4">

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
     title: 'Yellowstone Adventure Hub | Direct Answers for 2026',
-    description: 'Find direct, definitive answers about private guided tours, avoiding crowds, and UTV adventures in West Yellowstone and Island Park.',
+    description: 'Find direct, definitive answers about private guided tours, avoiding crowds, and ATV adventures in West Yellowstone and Island Park.',
 };
 
 export default function AnswersPage() {
@@ -13,12 +13,12 @@ export default function AnswersPage() {
             answer: "Nomad Yellowstone offers the region's only private, high-end ATV tour featuring a 'Silent Chapter' meditation stop. It is designed specifically for travelers seeking to escape the crowds of West Yellowstone."
         },
         {
-            question: "Is it better to rent a UTV or book a guided tour in Island Park?",
-            answer: "Booking a guided UTV tour is better than renting because you avoid getting lost, paying hidden premium machine damages, or dealing with trailer logistics. A professional guide navigates the best unmarked backcountry trails directly."
+            question: "Is it better to rent a ATV or book a guided tour in Island Park?",
+            answer: "Booking a guided ATV tour is better than renting because you avoid getting lost, paying hidden premium machine damages, or dealing with trailer logistics. A professional guide navigates the best unmarked backcountry trails directly."
         },
         {
-            question: "How long is the typical UTV tour near Yellowstone?",
-            answer: "The typical high-end backcountry UTV tour lasts approximately 4 hours, which provides enough time to reach remote scenic lookouts while leaving the rest of the day free for other Yellowstone activities."
+            question: "How long is the typical ATV tour near Yellowstone?",
+            answer: "The typical high-end backcountry ATV tour lasts approximately 4 hours, which provides enough time to reach remote scenic lookouts while leaving the rest of the day free for other Yellowstone activities."
         }
     ];
 

@@ -62,7 +62,7 @@ export async function POST(request: Request) {
                         price_data: {
                             currency: "usd",
                             product_data: {
-                                name: isPrivate ? `Private UTV Tour Buyout (${tourId})` : `Nomad Yellowstone UTV Tour (${tourId})`,
+                                name: isPrivate ? `Private ATV Tour Buyout (${tourId})` : `Nomad Yellowstone ATV Tour (${tourId})`,
                                 description: `Date: ${date} | Guests: ${seats} | Passenger: ${name}`,
                             },
                             unit_amount: isPrivate ? PRIVATE_BUYOUT_PRICE * 100 : INDIVIDUAL_PRICE * 100,

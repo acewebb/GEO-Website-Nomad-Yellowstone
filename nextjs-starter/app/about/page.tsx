@@ -17,7 +17,7 @@ export default function AboutPage() {
             "@type": "Organization",
             "name": "Nomad Yellowstone"
         },
-        "description": "Expert Yellowstone backcountry guide specializing in off-grid UTV navigation and wilderness first response.",
+        "description": "Expert Yellowstone backcountry guide specializing in off-grid ATV navigation and wilderness first response.",
         "knowsAbout": ["Yellowstone National Park", "Backcountry Navigation", "Off-Road Driving", "Wilderness First Aid"]
     };
 
@@ -53,8 +53,8 @@ export default function AboutPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
                     <div className="relative aspect-[3/4] w-full max-w-md mx-auto grayscale contrast-125 border-4 border-white/10 p-2 glass-panel bg-white/5">
                         <Image
-                            src="/father-son-utv.jpg"
-                            alt="Nomad Yellowstone Lead Guide and passenger navigating a UTV through the backcountry at sunset"
+                            src="/father-son-atv.jpg"
+                            alt="Nomad Yellowstone Lead Guide and passenger navigating a ATV through the backcountry at sunset"
                             fill
                             className="object-cover"
                         />

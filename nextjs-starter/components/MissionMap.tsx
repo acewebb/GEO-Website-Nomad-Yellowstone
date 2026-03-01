@@ -150,7 +150,7 @@ export default function MissionMap() {
                                 className="absolute w-8 h-8 rounded-full bg-accent/40"
                             />
                             {/* Core Dot */}
-                            <div className={`w-3 h-3 rounded-full border border-black shadow-[0_0_10px_rgba(200,60,60,0.8)] transition-colors duration-300 ${activeWaypoint?.id === wp.id ? 'bg-white scale-125' : 'bg-accent group-hover:bg-white'} z-10 relative`} />
+                            <div className={`w-3 h-3 rounded-full border border-black transition-colors duration-300 ${activeWaypoint?.id === wp.id ? 'bg-white scale-125' : 'bg-accent group-hover:bg-white'} z-10 relative`} />
 
                             {/* Floating Label (Visible on hover or active) */}
                             <div className={`absolute top-full mt-2 font-mono text-[10px] tracking-widest whitespace-nowrap transition-all duration-300 ${activeWaypoint?.id === wp.id ? 'opacity-100 text-white translate-y-0' : 'opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 text-nomad-paper/60'} bg-black/80 px-2 py-1 border border-white/10 pointer-events-none`}>

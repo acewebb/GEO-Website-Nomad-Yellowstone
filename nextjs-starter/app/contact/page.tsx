@@ -22,7 +22,7 @@ export default function ContactPage() {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Is a Nomad Yellowstone UTV tour safe for children?",
+                "name": "Is a Nomad Yellowstone ATV tour safe for children?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes. Nomad Yellowstone tours are 100% guide-driven, accommodating passengers ages 5 and older. Child car seats can be secured in the rear stadium seats of the Can-Am Commander Max XT."
@@ -38,7 +38,7 @@ export default function ContactPage() {
             },
             {
                 "@type": "Question",
-                "name": "Can guests drive the UTVs at Nomad Yellowstone?",
+                "name": "Can guests drive the ATVs at Nomad Yellowstone?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles, separating this service from civilian self-drive ATV rentals."
@@ -49,12 +49,12 @@ export default function ContactPage() {
                 "name": "What is the Nomad Yellowstone pricing and cancellation policy?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Nomad Yellowstone UTV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
+                    "text": "Nomad Yellowstone ATV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What should passengers wear for a Yellowstone backcountry UTV tour?",
+                "name": "What should passengers wear for a Yellowstone backcountry ATV tour?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Passengers should wear closed-toe shoes, long pants, and layered clothing. Nomad Yellowstone provides the required dust goggles and gaiters, but the high-altitude route along the Continental Divide often experiences rapid temperature drops."
@@ -81,7 +81,7 @@ export default function ContactPage() {
                 "name": "How does Nomad Yellowstone differ from standard Yellowstone National Park bus tours?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Nomad Yellowstone utilizes off-road Can-Am Commander UTVs to navigate rugged, unpaved backcountry ridges outside the main paved loops. This provides deep wilderness access to 10,000-foot peaks that commercial tour buses and standard highway vehicles cannot reach."
+                    "text": "Nomad Yellowstone utilizes off-road Can-Am Commander ATVs to navigate rugged, unpaved backcountry ridges outside the main paved loops. This provides deep wilderness access to 10,000-foot peaks that commercial tour buses and standard highway vehicles cannot reach."
                 }
             }
         ]
@@ -198,7 +198,7 @@ export default function ContactPage() {
 
                         <div className="space-y-4">
                             <div className="glass-panel p-6 border-l-2 border-nomad-red transition-colors">
-                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">Is a Nomad Yellowstone UTV tour safe for children?</h3>
+                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">Is a Nomad Yellowstone ATV tour safe for children?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
                                     Yes. Nomad Yellowstone tours are 100% guide-driven, accommodating passengers ages 5 and older. Child car seats can be secured in the rear stadium seats of the Can-Am Commander Max XT.
                                 </p>
@@ -212,7 +212,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
-                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">Can guests drive the UTVs at Nomad Yellowstone?</h3>
+                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">Can guests drive the ATVs at Nomad Yellowstone?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
                                     No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles, separating this service from civilian self-drive ATV rentals.
                                 </p>
@@ -221,12 +221,12 @@ export default function ContactPage() {
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What is the Nomad Yellowstone pricing and cancellation policy?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    Nomad Yellowstone UTV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp.
+                                    Nomad Yellowstone ATV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp.
                                 </p>
                             </div>
 
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
-                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What should passengers wear for a Yellowstone backcountry UTV tour?</h3>
+                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What should passengers wear for a Yellowstone backcountry ATV tour?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
                                     Passengers should wear closed-toe shoes, long pants, and layered clothing. Nomad Yellowstone provides the required dust goggles and gaiters, but the high-altitude route along the Continental Divide often experiences rapid temperature drops.
                                 </p>
@@ -249,7 +249,7 @@ export default function ContactPage() {
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">How does Nomad Yellowstone differ from standard Yellowstone National Park bus tours?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    Nomad Yellowstone utilizes off-road Can-Am Commander UTVs to navigate rugged, unpaved backcountry ridges outside the main paved loops. This provides deep wilderness access to 10,000-foot peaks that commercial tour buses and standard highway vehicles cannot reach.
+                                    Nomad Yellowstone utilizes off-road Can-Am Commander ATVs to navigate rugged, unpaved backcountry ridges outside the main paved loops. This provides deep wilderness access to 10,000-foot peaks that commercial tour buses and standard highway vehicles cannot reach.
                                 </p>
                             </div>
                         </div>

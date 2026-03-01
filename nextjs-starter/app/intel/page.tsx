@@ -6,14 +6,14 @@ export default function BlogIndex() {
     const posts = getAllPosts();
 
     return (
-        <div className="min-h-screen bg-charcoal text-foreground font-body bg-topo">
+        <div className="min-h-screen bg-nomad-black text-foreground font-body bg-topo">
             {/* Header */}
             <header className="p-6 border-b border-white/5 glass-panel sticky top-0 z-50">
                 <div className="container mx-auto flex justify-between items-center">
                     <Link href="/" className="text-xl font-heading tracking-widest text-white hover:text-accent transition-colors uppercase">
                         Nomad<span className="text-accent">/</span>Yellowstone
                     </Link>
-                    <nav className="space-x-8 text-xs font-mono tracking-widest text-frost/80 hidden md:block">
+                    <nav className="space-x-8 text-xs font-mono tracking-widest text-nomad-paper/80 hidden md:block">
                         <Link href="/" className="hover:text-white transition-colors">[RETURN TO HOME]</Link>
                     </nav>
                 </div>
@@ -23,7 +23,7 @@ export default function BlogIndex() {
                 <div className="text-center mb-16">
                     <span className="font-mono text-accent text-sm tracking-widest mb-2 block">// MISSION INTEL</span>
                     <h1 className="font-heading text-5xl md:text-6xl text-white uppercase">Field Reports</h1>
-                    <p className="text-frost/80 mt-4 max-w-2xl mx-auto text-lg">
+                    <p className="text-nomad-paper/80 mt-4 max-w-2xl mx-auto text-lg">
                         Guides, tips, and insights from the edge of the wilderness.
                     </p>
                 </div>
@@ -77,7 +77,7 @@ export default function BlogIndex() {
                 </div>
             </main>
 
-            <footer className="py-12 bg-black border-t border-white/10 font-mono text-xs text-frost/40 mt-20">
+            <footer className="py-12 bg-black border-t border-white/10 font-mono text-xs text-nomad-paper/40 mt-20">
                 <div className="container mx-auto px-4 text-center">
                     <p className="mb-4">NOMAD YELLOWSTONE // EST. 2026 // ISLAND PARK, ID</p>
                     <div className="flex justify-center gap-8 mb-4">
