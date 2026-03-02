@@ -3,7 +3,7 @@ import { db, admin } from '@/lib/firebase';
 import { stripe } from '@/lib/stripe';
 import { bookingSchema } from '@/lib/validateInput';
 
-const INDIVIDUAL_PRICE = 149;
+const INDIVIDUAL_PRICE = 189;
 const PRIVATE_BUYOUT_PRICE = 699;
 
 export async function POST(request: Request) {

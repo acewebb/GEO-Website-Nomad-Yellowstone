@@ -23,7 +23,7 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   title: "Nomad Yellowstone | Private Guided ATV Backcountry Tours",
-  description: "Experience private, fully-guided ATV backcountry tours near Yellowstone National Park. Passenger-only expeditions—leave the driving to us. 4-hour tours mapped from $149.",
+  description: "Experience private, fully-guided ATV backcountry tours near Yellowstone National Park. Passenger-only expeditions—leave the driving to us. 4-hour tours mapped from $189.",
 };
 
 import Analytics from "@/components/Analytics";
@@ -43,7 +43,7 @@ export default function RootLayout({
     "image": "https://nomadyellowstone.com/sawtelle.png",
     "telephone": "+12087452088",
     "email": "hq@nomadyellowstone.com",
-    "priceRange": "$149 - $1997",
+    "priceRange": "$189 - $1997",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Island Park",

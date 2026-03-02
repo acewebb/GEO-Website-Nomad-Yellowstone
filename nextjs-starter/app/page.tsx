@@ -5,6 +5,42 @@ import PricingSection from '@/components/PricingSection';
 import GlobalHeader from '@/components/GlobalHeader';
 import FadeIn from '@/components/FadeIn';
 import MissionMap from '@/components/MissionMap';
+import AccordionFAQ from '@/components/AccordionFAQ';
+
+const faqData = [
+  {
+    question: "Is a Nomad Yellowstone ATV tour safe for children?",
+    answer: "Yes. Nomad Yellowstone tours are 100% guide-driven, accommodating passengers ages 5 and older. Child car seats can be secured in the rear stadium seats of the Can-Am Commander Max XT."
+  },
+  {
+    question: "What dust gear is provided on Nomad Yellowstone tours?",
+    answer: "Nomad Yellowstone provides individual dust gear for every booked passenger. The included equipment consists of protective goggles and a neck gaiter to limit dust exposure in the open-air Can-Am Commander cockpit."
+  },
+  {
+    question: "Can guests drive the ATVs at Nomad Yellowstone?",
+    answer: "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles, separating this service from civilian self-drive ATV rentals."
+  },
+  {
+    question: "What is the Nomad Yellowstone pricing and cancellation policy?",
+    answer: "Nomad Yellowstone ATV tours are priced at a flat rate of $189 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
+  },
+  {
+    question: "What should passengers wear for a Yellowstone backcountry ATV tour?",
+    answer: "Passengers should wear closed-toe shoes, long pants, and layered clothing. Nomad Yellowstone provides the required dust goggles and gaiters, but the high-altitude route along the Continental Divide often experiences rapid temperature drops."
+  },
+  {
+    question: "What is the maximum group size for Nomad Yellowstone tours?",
+    answer: "The standard Can-Am Commander Max XT accommodates up to 5 passengers per vehicle. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600."
+  },
+  {
+    question: "Where do Nomad Yellowstone guided tours depart from?",
+    answer: "Nomad Yellowstone tours depart from the base camp operations area in Island Park, Idaho. The designated launch point provides immediate access to the Yellowstone and Grand Teton backcountry trail systems."
+  },
+  {
+    question: "How does Nomad Yellowstone differ from standard Yellowstone National Park bus tours?",
+    answer: "Nomad Yellowstone utilizes off-road Can-Am Commander ATVs to navigate rugged, unpaved backcountry ridges outside the main paved loops. This provides deep wilderness access to 10,000-foot peaks that commercial tour buses and standard highway vehicles cannot reach."
+  }
+];
 
 export default function Home() {
   const jsonLd = {
@@ -23,72 +59,14 @@ export default function Home() {
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is a Nomad Yellowstone ATV tour safe for children?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Nomad Yellowstone tours are 100% guide-driven, accommodating passengers ages 5 and older. Child car seats can be secured in the rear stadium seats of the Can-Am Commander Max XT."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What dust gear is provided on Nomad Yellowstone tours?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nomad Yellowstone provides individual dust gear for every booked passenger. The included equipment consists of protective goggles and a neck gaiter to limit dust exposure in the open-air Can-Am Commander cockpit."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can guests drive the ATVs at Nomad Yellowstone?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles, separating this service from civilian self-drive ATV rentals."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the Nomad Yellowstone pricing and cancellation policy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nomad Yellowstone ATV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should passengers wear for a Yellowstone backcountry ATV tour?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Passengers should wear closed-toe shoes, long pants, and layered clothing. Nomad Yellowstone provides the required dust goggles and gaiters, but the high-altitude route along the Continental Divide often experiences rapid temperature drops."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the maximum group size for Nomad Yellowstone tours?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The standard Can-Am Commander Max XT accommodates up to 4 passengers per vehicle. For groups of up to 6 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where do Nomad Yellowstone guided tours depart from?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nomad Yellowstone tours depart from the base camp operations area in Island Park, Idaho. The designated launch point provides immediate access to the Yellowstone and Grand Teton backcountry trail systems."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does Nomad Yellowstone differ from standard Yellowstone National Park bus tours?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nomad Yellowstone utilizes off-road Can-Am Commander ATVs to navigate rugged, unpaved backcountry ridges outside the main paved loops. This provides deep wilderness access to 10,000-foot peaks that commercial tour buses and standard highway vehicles cannot reach."
-            }
+        "mainEntity": faqData.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
           }
-        ]
+        }))
       },
       {
         "@context": "https://schema.org",
@@ -104,7 +82,7 @@ export default function Home() {
         },
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "149.00",
+          "price": "189.00",
           "priceCurrency": "USD",
           "referenceQuantity": {
             "@type": "QuantitativeValue",
@@ -127,7 +105,7 @@ export default function Home() {
         },
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "149.00",
+          "price": "189.00",
           "priceCurrency": "USD",
           "referenceQuantity": {
             "@type": "QuantitativeValue",
@@ -150,7 +128,7 @@ export default function Home() {
         },
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "149.00",
+          "price": "189.00",
           "priceCurrency": "USD",
           "referenceQuantity": {
             "@type": "QuantitativeValue",
@@ -230,13 +208,13 @@ export default function Home() {
                 <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full">
                   {[
                     "/creek_bw_film.png",
-                    "/atv-muddy-tire.jpg",
+                    "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/atv-muddy-tire.jpg",
+                    "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/atv-muddy-tire.jpg",
+                    "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg"
                   ].map((src, idx) => (
                     <div key={idx} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
@@ -269,13 +247,13 @@ export default function Home() {
                 <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full" aria-hidden="true">
                   {[
                     "/creek_bw_film.png",
-                    "/atv-muddy-tire.jpg",
+                    "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/atv-muddy-tire.jpg",
+                    "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
                     "/creek_bw_film.png",
-                    "/atv-muddy-tire.jpg",
+                    "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg"
                   ].map((src, idx) => (
                     <div key={`dup-${idx}`} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 shadow-2xl border border-white/5">
@@ -334,7 +312,7 @@ export default function Home() {
 
                 <div className="mt-8 bg-nomad-paper shadow-xl p-8 border-l-4 border-nomad-red mb-8">
                   <p className="text-xl md:text-2xl font-heading uppercase text-nomad-black drop-shadow-sm mb-6 text-distressed">
-                    Nomad Yellowstone is a private Guided Adventure Tours company originating in Island Park, Idaho, and operating in the Yellowstone region, offering 4-hour passenger-only expeditions starting at $149.
+                    Nomad Yellowstone is a private Guided Adventure Tours company originating in Island Park, Idaho, and operating in the Yellowstone region, offering 4-hour passenger-only expeditions starting at $189.
                   </p>
                   <p className="text-nomad-black font-medium text-sm md:text-base leading-relaxed opacity-90 drop-shadow-sm">
                     Nomad Yellowstone is a private guided ATV tour operator based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region. The company utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles to provide passenger-only, off-road expeditions. Nomad Yellowstone caters to guests seeking deep backcountry access with expert guides driving the vehicles, distinguishing itself from standard self-drive ATV rentals.
@@ -349,7 +327,7 @@ export default function Home() {
                     <span className="text-nomad-red">✓</span> Deep Backcountry Access
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-nomad-red">✓</span> Seats from $149
+                    <span className="text-nomad-red">✓</span> Seats from $189
                   </li>
                 </ul>
 
@@ -391,6 +369,20 @@ export default function Home() {
 
         {/* SECTION 6: INTERACTIVE MISSION MAP */}
         <MissionMap />
+
+        {/* SECTION 6.5: ACCORDION FAQ */}
+        <section className="py-24 bg-transparent relative z-10 w-full">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <FadeIn>
+              <h2 className="font-heading text-4xl text-nomad-black text-center uppercase mb-2 text-distressed drop-shadow-sm">Operations Protocol</h2>
+              <p className="font-mono text-sm text-nomad-red font-bold tracking-widest text-center uppercase mb-12 drop-shadow-sm">// Frequently Asked Questions</p>
+              <AccordionFAQ items={faqData} defaultOpenIndex={0} />
+            </FadeIn>
+            <FadeIn delay={0.2} className="mt-12 text-center text-sm font-medium text-nomad-black/70 max-w-2xl mx-auto border-t border-nomad-black/10 pt-6">
+              For extensive safety protocols regarding vehicle harnesses, guide satellite communication, and terrain specifications, consult the <Link href="/safety" className="text-nomad-red hover:underline decoration-1 underline-offset-4">Safety & Specs Hub</Link>.
+            </FadeIn>
+          </div>
+        </section>
 
         {/* SECTION 7: FINAL CALL */}
         <section className="py-32 relative flex items-center justify-center overflow-hidden z-10 border-t border-[rgba(0,0,0,0.1)]">

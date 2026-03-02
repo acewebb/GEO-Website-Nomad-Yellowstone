@@ -7,7 +7,7 @@ const { requireAdmin } = require("../middlewares/adminAuth");
 const publicRouter = express.Router();
 const adminRouter = express.Router();
 
-const INDIVIDUAL_PRICE = 149;
+const INDIVIDUAL_PRICE = 189;
 const PRIVATE_BUYOUT_PRICE = 699;
 
 // -- PUBLIC ROUTES --

@@ -90,7 +90,7 @@ export default function FleetPage() {
                                             <p className="text-white text-xs font-mono uppercase font-bold drop-shadow-sm mt-2">Suspension Travel</p>
                                         </div>
                                         <div className="bg-nomad-black p-6 border border-nomad-black/20 text-center">
-                                            <p className="text-nomad-red font-heading text-4xl font-black drop-shadow-md tracking-wider">4 Seats</p>
+                                            <p className="text-nomad-red font-heading text-4xl font-black drop-shadow-md tracking-wider">5 Seats</p>
                                             <p className="text-white text-xs font-mono uppercase font-bold drop-shadow-sm mt-2">Stadium Seating</p>
                                         </div>
                                         <div className="bg-nomad-black p-6 border border-nomad-black/20 text-center">

@@ -124,7 +124,7 @@ function BookingContent() {
     }, [selectedDate]);
 
     // Pricing Constants
-    const PRICE_PER_PASSENGER = 149;
+    const PRICE_PER_PASSENGER = 189;
     const BUYOUT_PRICE = 699;
 
     const missions = [
@@ -175,7 +175,7 @@ function BookingContent() {
                                 Secure Your <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Start Time</span>
                             </h1>
                             <p className="text-nomad-paper/80 text-sm md:text-base font-light border-l-2 border-accent/20 pl-4 max-w-2xl leading-relaxed">
-                                <strong>How do I book a Nomad Yellowstone ATV tour?</strong> Guests can book a private guided ATV tour by selecting a preferred trip time, such as the Morning Scout or Golden Hour, and entering their group size. The Can-Am Commander Max XT accommodates up to 4 standard passengers, with private vehicle buyouts available for larger groups. All 4-hour backcountry expeditions start at $149 per seat and include a professional driver, dust protection gear, and headsets. Nomad Yellowstone secures the reservation without charging the payment method until the departure date and guide availability are officially confirmed.
+                                <strong>How do I book a Nomad Yellowstone ATV tour?</strong> Guests can book a private guided ATV tour by selecting a preferred trip time, such as the Morning Scout or Golden Hour, and entering their group size. The Can-Am Commander Max XT accommodates up to 5 standard passengers, with private vehicle buyouts available. All 4-hour backcountry expeditions start at $189 per seat and include a professional driver, dust protection gear, and headsets. Nomad Yellowstone secures the reservation without charging the payment method until the departure date and guide availability are officially confirmed.
                             </p>
                         </div>
 

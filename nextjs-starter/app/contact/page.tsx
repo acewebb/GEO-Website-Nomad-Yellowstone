@@ -49,7 +49,7 @@ export default function ContactPage() {
                 "name": "What is the Nomad Yellowstone pricing and cancellation policy?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Nomad Yellowstone ATV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
+                    "text": "Nomad Yellowstone ATV tours are priced at a flat rate of $189 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
                 }
             },
             {
@@ -65,7 +65,7 @@ export default function ContactPage() {
                 "name": "What is the maximum group size for Nomad Yellowstone tours?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The standard Can-Am Commander Max XT accommodates up to 4 passengers per vehicle. For groups of up to 6 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600."
+                    "text": "The standard Can-Am Commander Max XT accommodates up to 5 passengers per vehicle. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600."
                 }
             },
             {
@@ -221,7 +221,7 @@ export default function ContactPage() {
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What is the Nomad Yellowstone pricing and cancellation policy?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    Nomad Yellowstone ATV tours are priced at a flat rate of $149 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp.
+                                    Nomad Yellowstone ATV tours are priced at a flat rate of $189 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp.
                                 </p>
                             </div>
 
@@ -235,7 +235,7 @@ export default function ContactPage() {
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What is the maximum group size for Nomad Yellowstone tours?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    The standard Can-Am Commander Max XT accommodates up to 4 passengers per vehicle. For groups of up to 6 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600.
+                                    The standard Can-Am Commander Max XT accommodates up to 5 passengers per vehicle. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600.
                                 </p>
                             </div>
 

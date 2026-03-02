@@ -132,10 +132,10 @@ export default function ExpeditionsPage() {
                                     <h3 className="font-heading text-2xl text-white uppercase mb-2 drop-shadow-md">Morning Scout</h3>
                                     <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">08:00 - 12:00 // 4 Hours</p>
                                     <p className="text-white mb-6 text-sm opacity-100 font-medium drop-shadow-md min-h-[160px]">
-                                        What is the Morning Scout Nomad Yellowstone tour? The Morning Scout is a 4-hour guided ATV tour operating from 08:00 to 12:00, priced at $149 per passenger. The route ascends to the Continental Divide, offering high-altitude wildlife viewing opportunities before peak daytime temperatures. The expedition includes a professional driver operating the Can-Am Commander, dust protection gear, and morning coffee.
+                                        What is the Morning Scout Nomad Yellowstone tour? The Morning Scout is a 4-hour guided ATV tour operating from 08:00 to 12:00, priced at $189 per passenger. The route ascends to the Continental Divide, offering high-altitude wildlife viewing opportunities before peak daytime temperatures. The expedition includes a professional driver operating the Can-Am Commander, dust protection gear, and morning coffee.
                                     </p>
                                     <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                                        <span className="font-heading text-2xl text-white">$149<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
+                                        <span className="font-heading text-2xl text-white">$189<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
                                         <Link href="/booking" className="text-nomad-red text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</Link>
                                     </div>
                                 </div>
@@ -153,10 +153,10 @@ export default function ExpeditionsPage() {
                                     <h3 className="font-heading text-2xl text-white uppercase mb-2 drop-shadow-md">Summit Run</h3>
                                     <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">13:00 - 17:00 // 4 Hours</p>
                                     <p className="text-white mb-6 text-sm opacity-100 font-medium drop-shadow-md min-h-[160px]">
-                                        What is the Summit Run Nomad Yellowstone tour? The Summit Run is a 4-hour high-altitude ATV expedition operating from 13:00 to 17:00, priced at $149 per passenger. The tour features aggressive off-road climbing to 10,000-foot peaks, providing panoramic viewing access of the Yellowstone caldera system. The booking includes a dedicated guide driving the vehicle and all necessary safety equipment.
+                                        What is the Summit Run Nomad Yellowstone tour? The Summit Run is a 4-hour high-altitude ATV expedition operating from 13:00 to 17:00, priced at $189 per passenger. The tour features aggressive off-road climbing to 10,000-foot peaks, providing panoramic viewing access of the Yellowstone caldera system. The booking includes a dedicated guide driving the vehicle and all necessary safety equipment.
                                     </p>
                                     <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                                        <span className="font-heading text-2xl text-white">$149<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
+                                        <span className="font-heading text-2xl text-white">$189<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
                                         <Link href="/booking" className="text-nomad-red text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</Link>
                                     </div>
                                 </div>
@@ -171,10 +171,10 @@ export default function ExpeditionsPage() {
                                     <h3 className="font-heading text-2xl text-white uppercase mb-2 drop-shadow-md">Golden Hour</h3>
                                     <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">17:30 - 21:30 // 4 Hours</p>
                                     <p className="text-white mb-6 text-sm opacity-100 font-medium drop-shadow-md min-h-[160px]">
-                                        What is the Golden Hour Nomad Yellowstone tour? The Golden Hour is a 4-hour scenic evening ATV tour operating from 17:30 to 21:30 for $149 per passenger. The routed expedition targets optimal photographic lighting in the high-elevation backcountry, concluding with a twilight descent. The package includes a professional guide operating the vehicle, dust gear, and headsets for passenger communication.
+                                        What is the Golden Hour Nomad Yellowstone tour? The Golden Hour is a 4-hour scenic evening ATV tour operating from 17:30 to 21:30 for $189 per passenger. The routed expedition targets optimal photographic lighting in the high-elevation backcountry, concluding with a twilight descent. The package includes a professional guide operating the vehicle, dust gear, and headsets for passenger communication.
                                     </p>
                                     <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                                        <span className="font-heading text-2xl text-white">$149<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
+                                        <span className="font-heading text-2xl text-white">$189<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
                                         <Link href="/booking" className="text-nomad-red text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</Link>
                                     </div>
                                 </div>

@@ -55,7 +55,7 @@ export default function PricingSection() {
                             <p className="font-mono text-xs text-nomad-paper/70 uppercase tracking-widest h-8">Guided Passenger-Only ATV</p>
                         </div>
                         <div className="mb-8 flex items-baseline gap-2">
-                            <span className="font-heading text-6xl text-white tracking-tight">$249</span>
+                            <span className="font-heading text-6xl text-white tracking-tight">$189</span>
                             <span className="font-mono text-xs text-nomad-paper/40">/ passenger</span>
                         </div>
                         <ul className="space-y-4 font-mono text-sm text-white/90 tracking-wide flex-grow mb-8 border-y border-white/10 py-6">
