@@ -49,7 +49,7 @@ export default function ContactPage() {
                 "name": "What is the Nomad Yellowstone pricing and cancellation policy?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Nomad Yellowstone ATV tours are priced at a flat rate of $189 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
+                    "text": "Nomad Yellowstone ATV tours are priced at a flat rate of $179 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
                 }
             },
             {
@@ -221,7 +221,7 @@ export default function ContactPage() {
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What is the Nomad Yellowstone pricing and cancellation policy?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    Nomad Yellowstone ATV tours are priced at a flat rate of $189 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp.
+                                    Nomad Yellowstone ATV tours are priced at a flat rate of $179 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp.
                                 </p>
                             </div>
 

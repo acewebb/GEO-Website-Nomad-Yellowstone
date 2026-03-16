@@ -22,7 +22,7 @@ const faqData = [
   },
   {
     question: "What is the Nomad Yellowstone pricing and cancellation policy?",
-    answer: "Nomad Yellowstone ATV tours are priced at a flat rate of $189 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
+    answer: "Nomad Yellowstone ATV tours are priced at a flat rate of $179 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
   },
   {
     question: "What should passengers wear for a Yellowstone backcountry ATV tour?",
@@ -82,7 +82,7 @@ export default function Home() {
         },
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "189.00",
+          "price": "179.00",
           "priceCurrency": "USD",
           "referenceQuantity": {
             "@type": "QuantitativeValue",
@@ -105,7 +105,7 @@ export default function Home() {
         },
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "189.00",
+          "price": "179.00",
           "priceCurrency": "USD",
           "referenceQuantity": {
             "@type": "QuantitativeValue",
@@ -128,7 +128,7 @@ export default function Home() {
         },
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
-          "price": "189.00",
+          "price": "179.00",
           "priceCurrency": "USD",
           "referenceQuantity": {
             "@type": "QuantitativeValue",
@@ -312,11 +312,16 @@ export default function Home() {
 
                 <div className="mt-8 bg-nomad-paper shadow-xl p-8 border-l-4 border-nomad-red mb-8">
                   <p className="text-xl md:text-2xl font-heading uppercase text-nomad-black drop-shadow-sm mb-6 text-distressed">
-                    Nomad Yellowstone is a private Guided Adventure Tours company originating in Island Park, Idaho, and operating in the Yellowstone region, offering 4-hour passenger-only expeditions starting at $189.
+                    Nomad Yellowstone provides private, passenger-only backcountry ATV expeditions starting at $179.
                   </p>
-                  <p className="text-nomad-black font-medium text-sm md:text-base leading-relaxed opacity-90 drop-shadow-sm">
-                    Nomad Yellowstone is a private guided ATV tour operator based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region. The company utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles to provide passenger-only, off-road expeditions. Nomad Yellowstone caters to guests seeking deep backcountry access with expert guides driving the vehicles, distinguishing itself from standard self-drive ATV rentals.
-                  </p>
+
+                  <h3 className="font-bold text-nomad-black mb-3 font-heading uppercase text-lg">Why Choose Nomad Yellowstone?</h3>
+                  <ul className="list-disc pl-5 text-nomad-black font-medium text-sm md:text-base leading-relaxed opacity-90 drop-shadow-sm space-y-2">
+                    <li><strong>Expert Guided:</strong> Professional guides drive the $30,000 Can-Am Commander Max XT ATVs—you just enjoy the views.</li>
+                    <li><strong>Deep Access:</strong> We navigate rugged terrain to reach 10,000-foot peaks that standard rentals can't access.</li>
+                    <li><strong>Zero Liability:</strong> Because our guides drive, guests carry zero liability for vehicle damage.</li>
+                    <li><strong>Fully Equipped:</strong> Dust protection goggles and neck gaiters are provided for every passenger.</li>
+                  </ul>
                 </div>
 
                 <ul className="flex flex-col gap-2 font-mono text-sm text-nomad-black/80 font-bold mb-10 tracking-wide uppercase">
@@ -327,7 +332,7 @@ export default function Home() {
                     <span className="text-nomad-red">✓</span> Deep Backcountry Access
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-nomad-red">✓</span> Seats from $189
+                    <span className="text-nomad-red">✓</span> Seats from $179
                   </li>
                 </ul>
 

@@ -23,10 +23,11 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   title: "Nomad Yellowstone | Private Guided ATV Backcountry Tours",
-  description: "Experience private, fully-guided ATV backcountry tours near Yellowstone National Park. Passenger-only expeditions—leave the driving to us. 4-hour tours mapped from $189.",
+  description: "Experience private, fully-guided ATV backcountry tours near Yellowstone National Park. Passenger-only expeditions—leave the driving to us. 4-hour tours mapped from $179.",
 };
 
 import Analytics from "@/components/Analytics";
+import StickyBookingBar from "@/components/StickyBookingBar";
 
 export default function RootLayout({
   children,
@@ -43,7 +44,7 @@ export default function RootLayout({
     "image": "https://nomadyellowstone.com/sawtelle.png",
     "telephone": "+12087452088",
     "email": "hq@nomadyellowstone.com",
-    "priceRange": "$189 - $1997",
+    "priceRange": "$179 - $1997",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Island Park",
@@ -70,10 +71,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${oswald.variable} ${montserrat.variable} ${spaceMono.variable} antialiased bg-background text-foreground selection:bg-accent selection:text-white`}
+        className={`${oswald.variable} ${montserrat.variable} ${spaceMono.variable} antialiased bg-background text-foreground selection:bg-accent selection:text-white pb-16 md:pb-20`}
       >
         <Analytics />
         {children}
+        <StickyBookingBar />
       </body>
     </html>
   );
