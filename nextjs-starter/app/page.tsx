@@ -6,6 +6,7 @@ import GlobalHeader from '@/components/GlobalHeader';
 import FadeIn from '@/components/FadeIn';
 import MissionMap from '@/components/MissionMap';
 import AccordionFAQ from '@/components/AccordionFAQ';
+import ReviewsDossier from '@/components/ReviewsDossier';
 
 const faqData = [
   {
@@ -374,6 +375,9 @@ export default function Home() {
 
         {/* SECTION 6: INTERACTIVE MISSION MAP */}
         <MissionMap />
+
+        {/* SECTION 6.25: REVIEWS DOSSIER */}
+        <ReviewsDossier />
 
         {/* SECTION 6.5: ACCORDION FAQ */}
         <section className="py-24 bg-transparent relative z-10 w-full">
