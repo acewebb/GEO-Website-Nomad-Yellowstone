@@ -17,8 +17,8 @@ const faqData = [
     answer: "Nomad Yellowstone provides individual dust gear for every booked passenger. The included equipment consists of protective goggles and a neck gaiter to limit dust exposure in the open-air Can-Am Commander cockpit."
   },
   {
-    question: "Can guests drive the ATVs at Nomad Yellowstone?",
-    answer: "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles, separating this service from civilian self-drive ATV rentals."
+    question: "Do you offer self-drive ATV rentals in Island Park?",
+    answer: "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles. We do not offer self-drive rentals."
   },
   {
     question: "What is the Nomad Yellowstone pricing and cancellation policy?",
@@ -195,7 +195,7 @@ export default function Home() {
                   <span className="text-nomad-red font-light">IN YELLOWSTONE</span>
                 </h1>
                 <p className="font-mono text-xs md:text-sm text-nomad-black/80 font-bold uppercase tracking-[0.15em] max-w-xl mx-auto drop-shadow-sm leading-relaxed">
-                  Nomad Yellowstone specializes in exclusive, passenger-only ATV expeditions to the most remote and scenic locations surrounding the park.
+                  Guided ATV tours in Island Park, Idaho (20 Minutes from West Yellowstone). We specialize in exclusive, passenger-only backcountry expeditions.
                 </p>
               </div>
             </FadeIn>
@@ -229,7 +229,7 @@ export default function Home() {
 
                       {/* Image */}
                       <div className="flex-grow w-full relative">
-                        <Image src={src} alt="Can-Am Commander Max XT ATV parked on a Continental Divide ridge near West Yellowstone, Montana, during a guided passenger-only tour." fill className="object-cover grayscale contrast-125" />
+                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" />
                         <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
                       </div>
 
@@ -266,7 +266,7 @@ export default function Home() {
 
                       {/* Image */}
                       <div className="flex-grow w-full relative">
-                        <Image src={src} alt="Can-Am Commander Max XT ATV parked on a Continental Divide ridge near West Yellowstone, Montana, during a guided passenger-only tour." fill className="object-cover grayscale contrast-125" />
+                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" />
                         <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
                       </div>
 
@@ -312,7 +312,7 @@ export default function Home() {
 
                 <div className="mt-8 bg-nomad-paper shadow-xl p-8 border-l-4 border-nomad-red mb-8">
                   <p className="text-xl md:text-2xl font-heading uppercase text-nomad-black drop-shadow-sm mb-6 text-distressed">
-                    Nomad Yellowstone provides private, passenger-only backcountry ATV expeditions starting at $179.
+                    Nomad Yellowstone offers fully guided, passenger-only ATV tours in Island Park, Idaho, near Yellowstone National Park and West Yellowstone, Montana.
                   </p>
 
                   <h3 className="font-bold text-nomad-black mb-3 font-heading uppercase text-lg">Why Choose Nomad Yellowstone?</h3>
@@ -417,8 +417,13 @@ export default function Home() {
             <Link href="/intel/answers" className="hover:text-nomad-red transition-colors drop-shadow-sm">[AEO HUB]</Link>
             <Link href="/location" className="hover:text-nomad-red transition-colors drop-shadow-sm">[DIRECTIONS]</Link>
             <Link href="/safety" className="hover:text-nomad-red transition-colors drop-shadow-sm">[SAFETY & SPECS]</Link>
-            <a href="(LINK)" target="_blank" rel="noopener noreferrer" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR]</a>
+            <a href="(LINK)" target="_blank" rel="noopener noreferrer" aria-label="Nomad Yellowstone reviews on TripAdvisor" title="Nomad Yellowstone reviews on TripAdvisor" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR] <span className="sr-only">Nomad Yellowstone reviews on TripAdvisor</span></a>
             <Link href="/booking" className="text-nomad-red hover:text-black transition-colors drop-shadow-sm">[BOOK NOW]</Link>
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center items-center gap-4 text-[10px] font-mono text-nomad-black/40 text-center w-full">
+            <Link href="/island-park-atv-tours" className="hover:text-nomad-black transition-colors uppercase">Island Park ATV Tours</Link>
+            <span>|</span>
+            <Link href="/yellowstone-atv-tours" className="hover:text-nomad-black transition-colors uppercase">Yellowstone ATV Tours</Link>
           </div>
         </div>
       </footer>

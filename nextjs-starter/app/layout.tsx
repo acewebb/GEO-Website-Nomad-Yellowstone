@@ -22,8 +22,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nomad Yellowstone | Private Guided ATV Backcountry Tours",
-  description: "Experience private, fully-guided ATV backcountry tours near Yellowstone National Park. Passenger-only expeditions—leave the driving to us. 4-hour tours mapped from $179.",
+  title: "Nomad Yellowstone – Guided ATV Tours in Island Park, ID (Near West Yellowstone)",
+  description: "Private, passenger‑only ATV tours in Island Park, Idaho. Guided backcountry ATV adventures near Yellowstone and West Yellowstone, from $179 per seat.",
 };
 
 import Analytics from "@/components/Analytics";

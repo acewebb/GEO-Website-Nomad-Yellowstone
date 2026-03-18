@@ -171,8 +171,8 @@ function BookingContent() {
                     <div className="space-y-10">
                         <div>
                             <span className="font-mono text-accent text-xs tracking-widest mb-2 block">// STEP 01: CHOOSE ADVENTURE</span>
-                            <h1 className="font-heading text-5xl md:text-6xl text-white uppercase leading-none mb-6">
-                                Secure Your <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Start Time</span>
+                            <h1 className="font-heading text-4xl md:text-5xl text-white uppercase leading-none mb-6">
+                                {isBuyout ? "The Legend – Private Buyout ATV Tour near Yellowstone (Up to 5 Passengers)" : "Signature Tour – 4-Hour Guided ATV Adventure in Island Park (Passenger-Only)"}
                             </h1>
                             <p className="text-nomad-paper/80 text-sm md:text-base font-light border-l-2 border-accent/20 pl-4 max-w-2xl leading-relaxed">
                                 <strong>How do I book a Nomad Yellowstone ATV tour?</strong> Guests can book a private guided ATV tour by selecting a preferred trip time, such as the Morning Scout or Golden Hour, and entering their group size. The Can-Am Commander Max XT accommodates up to 5 standard passengers, with private vehicle buyouts available. All 4-hour backcountry expeditions start at $179 per seat and include a professional driver, dust protection gear, and headsets. Nomad Yellowstone secures the reservation without charging the payment method until the departure date and guide availability are officially confirmed.

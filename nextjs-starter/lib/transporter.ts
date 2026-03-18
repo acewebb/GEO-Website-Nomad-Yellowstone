@@ -11,8 +11,9 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendConfirmationEmail = async (bookingData: any) => {
-  const { name, email, tourId, date, seats } = bookingData;
-  const timeStr = tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM';
+  const { name, email, tourId, date, seats, tourTime, tourType } = bookingData;
+  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM');
+  const typeStr = tourType || "Standard Tour";
 
   const mailOptions = {
     from: `"Nomad Yellowstone" <${process.env.EMAIL_USER}>`,
@@ -27,11 +28,12 @@ export const sendConfirmationEmail = async (bookingData: any) => {
         <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px;">Mission Details</h3>
         <ul style="list-style: none; padding-left: 0;">
           <li><strong>Date:</strong> ${date}</li>
+          <li><strong>Tour Type:</strong> ${typeStr}</li>
           <li><strong>Departure Time:</strong> ${timeStr}</li>
           <li><strong>Reserved Seats:</strong> ${seats}</li>
         </ul>
 
-        <p><em>Please arrive 15 minutes before departure. All passengers must wear the provided Dust Gear.</em></p>
+        <p><em>Please arrive 15 minutes before departure.</em></p>
         
         <p>See you in the dirt,<br><strong>Nomad Yellowstone Base Camp</strong></p>
       </div>
@@ -47,8 +49,9 @@ export const sendConfirmationEmail = async (bookingData: any) => {
 };
 
 export const sendAdminNotificationEmail = async (bookingData: any) => {
-  const { name, email, phone, tourId, date, seats } = bookingData;
-  const timeStr = tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM';
+  const { name, email, phone, tourId, date, seats, tourTime, tourType } = bookingData;
+  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM');
+  const typeStr = tourType || "Standard Tour";
 
   const mailOptions = {
     from: `"Nomad Yellowstone Bookings" <${process.env.EMAIL_USER}>`,
@@ -69,6 +72,7 @@ export const sendAdminNotificationEmail = async (bookingData: any) => {
         <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px;">Mission Details</h3>
         <ul style="list-style: none; padding-left: 0;">
           <li><strong>Date:</strong> ${date}</li>
+          <li><strong>Tour Type:</strong> ${typeStr}</li>
           <li><strong>Departure Time:</strong> ${timeStr}</li>
           <li><strong>Reserved Seats:</strong> ${seats}</li>
         </ul>

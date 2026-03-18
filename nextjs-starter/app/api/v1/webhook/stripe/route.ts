@@ -29,7 +29,7 @@ export async function POST(request: Request) {
         const session = event.data.object as any;
 
         // Retrieve metadata passed during session creation
-        const { bookingId, Tour_Date, Tour_Time_Slot, Guest_Count, Booking_Type, Guest_Phone } = session.metadata;
+        const { bookingId, Tour_Date, Tour_Time_Slot, Tour_Time, Booking_Type, Tour_Type, Guest_Count, Guest_Phone } = session.metadata;
 
         try {
             const bookingRef = db.collection("bookings").doc(bookingId);
@@ -52,7 +52,9 @@ export async function POST(request: Request) {
                         email: bookingData.email,
                         tourId: Tour_Time_Slot,
                         date: Tour_Date,
-                        seats: Number(Guest_Count)
+                        seats: Number(Guest_Count),
+                        tourTime: bookingData.tourTime,
+                        tourType: bookingData.tourType,
                     });
 
                     // 3. Dispatch admin notification
@@ -62,7 +64,9 @@ export async function POST(request: Request) {
                         phone: Guest_Phone,
                         tourId: Tour_Time_Slot,
                         date: Tour_Date,
-                        seats: Number(Guest_Count)
+                        seats: Number(Guest_Count),
+                        tourTime: bookingData.tourTime,
+                        tourType: bookingData.tourType,
                     });
                 }
 

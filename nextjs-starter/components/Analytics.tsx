@@ -1,13 +1,16 @@
 'use client';
 
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+
 export default function Analytics() {
-    return (
-        <>
-            {/* 
+  return (
+    <>
+      <VercelAnalytics />
+      {/* 
         PLACEHOLDER: Google Analytics / PostHog Integration
         To activate, add your Measurement ID below.
       */}
-            {/* 
+      {/* 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
       <script
         dangerouslySetInnerHTML={{
@@ -20,6 +23,6 @@ export default function Analytics() {
         }}
       />
       */}
-        </>
-    );
+    </>
+  );
 }

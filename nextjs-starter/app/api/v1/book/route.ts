@@ -62,8 +62,8 @@ export async function POST(request: Request) {
                         price_data: {
                             currency: "usd",
                             product_data: {
-                                name: isPrivate ? `Private ATV Tour Buyout (${tourId})` : `Nomad Yellowstone ATV Tour (${tourId})`,
-                                description: `Date: ${date} | Guests: ${seats} | Passenger: ${name}`,
+                                name: isPrivate ? `The Legend – Private Buyout ATV Tour near Yellowstone (Up to 5 Passengers)` : `Signature Tour – 4-Hour Guided ATV Adventure in Island Park (Passenger-Only)`,
+                                description: `Date: ${date} | Time: ${currentSlot.tourTime} | Guests: ${seats} | Passenger: ${name}`,
                             },
                             unit_amount: isPrivate ? PRIVATE_BUYOUT_PRICE * 100 : INDIVIDUAL_PRICE * 100,
                         },
@@ -79,7 +79,9 @@ export async function POST(request: Request) {
                     bookingId: bookingId,
                     Tour_Date: date,
                     Tour_Time_Slot: tourId,
+                    Tour_Time: currentSlot.tourTime,
                     Booking_Type: bookingType,
+                    Tour_Type: isPrivate ? "Private Buyout" : "Standard Tour",
                     Guest_Count: seats,
                     Guest_Phone: phone
                 }
@@ -98,9 +100,11 @@ export async function POST(request: Request) {
                 email,
                 phone,
                 tourId,
+                tourTime: currentSlot.tourTime,
                 date,
                 seats,
                 bookingType,
+                tourType: isPrivate ? "Private Buyout" : "Standard Tour",
                 status: "pending",
                 stripeSessionId: session.id,
                 createdAt: admin.firestore.FieldValue.serverTimestamp(),

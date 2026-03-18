@@ -39,7 +39,7 @@ export default function PricingSection() {
                             <li className="flex gap-3"><span className="text-white/30">✗</span> High Traffic Zones</li>
                         </ul>
                         <div className="text-center font-mono text-[10px] text-nomad-paper/30 uppercase pt-4 border-t border-white/10">
-                            Available Elsewhere in Town
+                            We do not offer self-drive rentals; comparison only
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ export default function PricingSection() {
 
                         <div className="mb-6 pt-4">
                             <h3 className="font-heading text-3xl uppercase text-accent mb-2">Signature Tour</h3>
-                            <p className="font-mono text-xs text-nomad-paper/70 uppercase tracking-widest h-8">Guided Passenger-Only ATV</p>
+                            <p className="font-mono text-xs text-nomad-paper/70 uppercase tracking-widest h-8">4‑Hour Guided ATV Adventure<br />in Island Park (Passenger‑Only)</p>
                         </div>
                         <div className="mb-8 flex items-baseline gap-2">
                             <span className="font-heading text-6xl text-white tracking-tight">$179</span>
@@ -65,8 +65,8 @@ export default function PricingSection() {
                             <li className="flex gap-3"><span className="text-accent">✓</span> Zero Vehicle Liability for Guests</li>
                             <li className="flex gap-3"><span className="text-accent">✓</span> Deep Backcountry Access</li>
                         </ul>
-                        <Link href="/booking" className="btn-primary w-full py-4 text-center">
-                            Secure Your Seat
+                        <Link href="/booking" className="btn-primary w-full py-4 px-2 text-center text-xs leading-relaxed flex items-center justify-center">
+                            Signature Tour – 4‑Hour Guided ATV Adventure in Island Park (Passenger‑Only)
                         </Link>
                     </div>
 
@@ -74,7 +74,7 @@ export default function PricingSection() {
                     <div className="glass-panel p-8 border border-white/5 bg-surface/20 rounded-sm flex flex-col h-full">
                         <div className="mb-6">
                             <h3 className="font-heading text-2xl uppercase text-white mb-2">The Legend</h3>
-                            <p className="font-mono text-[10px] text-nomad-paper/50 uppercase tracking-widest h-8 pr-4">Complete Vehicle Exhaustive Buyout</p>
+                            <p className="font-mono text-[10px] text-nomad-paper/50 uppercase tracking-widest h-8 pr-4">Private Buyout ATV Tour near Yellowstone<br />(Up to 5 Passengers)</p>
                         </div>
                         <div className="mb-8">
                             <span className="font-heading text-5xl text-white tracking-tight">$1,997</span>
@@ -87,8 +87,8 @@ export default function PricingSection() {
                             <li className="flex gap-3"><span className="text-white/50">✓</span> Full Media Package</li>
                             <li className="flex gap-3"><span className="text-white/50">✓</span> Up to 5 Passengers</li>
                         </ul>
-                        <Link href="/booking?buyout=true" className="btn-outline w-full py-4 text-center text-xs">
-                            Request Buyout
+                        <Link href="/booking?buyout=true" className="btn-outline w-full py-4 px-2 text-center text-xs leading-relaxed flex items-center justify-center">
+                            The Legend – Private Buyout ATV Tour near Yellowstone (Up to 5 Passengers)
                         </Link>
                     </div>
 
