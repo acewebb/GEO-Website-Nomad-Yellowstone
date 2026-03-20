@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
 import PricingSection from '@/components/PricingSection';
@@ -7,6 +8,12 @@ import FadeIn from '@/components/FadeIn';
 import MissionMap from '@/components/MissionMap';
 import AccordionFAQ from '@/components/AccordionFAQ';
 import ReviewsDossier from '@/components/ReviewsDossier';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://nomadyellowstone.com/',
+  },
+};
 
 const faqData = [
   {

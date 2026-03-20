@@ -22,6 +22,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nomadyellowstone.com'),
   title: "Nomad Yellowstone – Guided ATV Tours in Island Park, ID (Near West Yellowstone)",
   description: "Private, passenger‑only ATV tours in Island Park, Idaho. Guided backcountry ATV adventures near Yellowstone and West Yellowstone, from $179 per seat.",
 };
