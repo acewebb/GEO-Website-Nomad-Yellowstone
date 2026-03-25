@@ -428,7 +428,7 @@ export default function Home() {
             <Link href="/intel/answers" className="hover:text-nomad-red transition-colors drop-shadow-sm">[AEO HUB]</Link>
             <Link href="/location" className="hover:text-nomad-red transition-colors drop-shadow-sm">[DIRECTIONS]</Link>
             <Link href="/safety" className="hover:text-nomad-red transition-colors drop-shadow-sm">[SAFETY & SPECS]</Link>
-            <a href="(LINK)" target="_blank" rel="noopener noreferrer" aria-label="Nomad Yellowstone reviews on TripAdvisor" title="Nomad Yellowstone reviews on TripAdvisor" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR] <span className="sr-only">Nomad Yellowstone reviews on TripAdvisor</span></a>
+            <a href="https://www.tripadvisor.com/AttractionProductReview-g35494-d33307035-Guided_ATV_Adventure_Island_Park_20_Mins_from_West_Yellowstone-Island_Park_Idaho.html" target="_blank" rel="noopener noreferrer" aria-label="Nomad Yellowstone reviews on TripAdvisor" title="Nomad Yellowstone reviews on TripAdvisor" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR] <span className="sr-only">Nomad Yellowstone reviews on TripAdvisor</span></a>
             <Link href="/booking" className="text-nomad-red hover:text-black transition-colors drop-shadow-sm">[BOOK NOW]</Link>
           </div>
           <div className="mt-8 flex flex-wrap justify-center items-center gap-4 text-[10px] font-mono text-nomad-black/40 text-center w-full">

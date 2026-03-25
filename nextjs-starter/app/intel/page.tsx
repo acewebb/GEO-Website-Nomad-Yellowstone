@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/posts';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Field Intel Journal | Nomad Yellowstone",
+    description: "Read field reports, trail advice, and exclusive backcountry intel for ATV tours near West Yellowstone and Island Park.",
+    robots: { index: true, follow: true },
+    alternates: { canonical: 'https://nomadyellowstone.com/intel' }
+};
 
 export default function BlogIndex() {
     const posts = getAllPosts();

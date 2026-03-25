@@ -9,6 +9,8 @@ import AccordionFAQ from '@/components/AccordionFAQ';
 export const metadata = {
     title: "Island Park ATV Tours | Nomad Yellowstone",
     description: "Experience the best guided ATV tours in Island Park, Idaho. Private, passenger-only off-road adventures near West Yellowstone. Book your Island Park ATV tour today.",
+    robots: { index: true, follow: true },
+    alternates: { canonical: 'https://nomadyellowstone.com/island-park-atv-tours' }
 };
 
 const islandParkFaqData = [

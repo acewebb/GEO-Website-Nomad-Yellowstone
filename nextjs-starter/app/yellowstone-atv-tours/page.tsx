@@ -9,6 +9,8 @@ import AccordionFAQ from '@/components/AccordionFAQ';
 export const metadata = {
     title: "Yellowstone ATV Tours | Backcountry Expeditions | Nomad Yellowstone",
     description: "Book an exclusive Yellowstone ATV tour with Nomad Yellowstone. Explore the deep backcountry near Yellowstone National Park on a guided, passenger-only off-road adventure.",
+    robots: { index: true, follow: true },
+    alternates: { canonical: 'https://nomadyellowstone.com/yellowstone-atv-tours' }
 };
 
 const yellowstoneFaqData = [

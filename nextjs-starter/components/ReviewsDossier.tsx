@@ -91,7 +91,7 @@ export default function ReviewsDossier() {
 
                 <FadeIn delay={0.5} className="mt-20 text-center flex justify-center w-full">
                     <a
-                        href="(LINK)"
+                        href="https://www.tripadvisor.com/AttractionProductReview-g35494-d33307035-Guided_ATV_Adventure_Island_Park_20_Mins_from_West_Yellowstone-Island_Park_Idaho.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-grunge opacity-90 transition-all text-sm md:text-base px-8 py-4"
