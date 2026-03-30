@@ -1,28 +1,31 @@
 'use client';
 
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 export default function Analytics() {
   return (
     <>
       <VercelAnalytics />
-      {/* 
-        PLACEHOLDER: Google Analytics / PostHog Integration
-        To activate, add your Measurement ID below.
-      */}
-      {/* 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-      <script
+
+      {/* Google Analytics Integration */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-C1CPRHB11Z"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
+
+            gtag('config', 'G-C1CPRHB11Z');
           `,
         }}
       />
-      */}
     </>
   );
 }
