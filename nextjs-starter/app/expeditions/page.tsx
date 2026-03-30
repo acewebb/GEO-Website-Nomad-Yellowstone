@@ -34,7 +34,7 @@ export default function ExpeditionsPage() {
                 "item": {
                     "@type": "Product",
                     "name": "Morning Scout Tour",
-                    "description": "The Morning Scout is a 4-hour guided ATV tour operating from 08:00 to 12:00. The route ascends to the Continental Divide, offering high-altitude wildlife viewing opportunities.",
+                    "description": "The Morning Scout is a 2–3 hour guided ATV tour operating from 08:00 to 11:00. The route ascends to the Continental Divide, offering high-altitude wildlife viewing opportunities.",
                     "offers": {
                         "@type": "Offer",
                         "price": "225.00",
@@ -48,7 +48,7 @@ export default function ExpeditionsPage() {
                 "item": {
                     "@type": "Product",
                     "name": "Summit Run Tour",
-                    "description": "The Summit Run is a 4-hour high-altitude ATV expedition operating from 13:00 to 17:00. The tour features aggressive off-road climbing to 10,000-foot peaks.",
+                    "description": "The Summit Run is a 2–3 hour high-altitude ATV expedition operating from 13:00 to 16:00. The tour features aggressive off-road climbing to 10,000-foot peaks.",
                     "offers": {
                         "@type": "Offer",
                         "price": "225.00",
@@ -62,7 +62,7 @@ export default function ExpeditionsPage() {
                 "item": {
                     "@type": "Product",
                     "name": "Golden Hour Tour",
-                    "description": "The Golden Hour is a 4-hour scenic evening ATV tour operating from 17:30 to 21:30. The routed expedition targets optimal photographic lighting in the high-elevation backcountry.",
+                    "description": "The Golden Hour is a 2–3 hour scenic evening ATV tour operating from 17:30 to 20:30. The routed expedition targets optimal photographic lighting in the high-elevation backcountry.",
                     "offers": {
                         "@type": "Offer",
                         "price": "225.00",
@@ -111,7 +111,7 @@ export default function ExpeditionsPage() {
                         <span className="font-mono text-nomad-red text-sm tracking-widest mb-2 block font-bold">// EXPEDITION LOG</span>
                         <h1 className="font-heading text-6xl md:text-8xl text-nomad-paper uppercase tracking-widest text-distressed drop-shadow-sm mb-6">Select Your Mission</h1>
                         <p className="text-nomad-paper/90 max-w-2xl mx-auto font-medium text-lg leading-relaxed drop-shadow-md">
-                            Nomad Yellowstone offers three primary 4-hour passenger-only expeditions. Each tour is guided by professional operators navigating $30,000 Can-Am Commander ATVs through the high-altitude remote regions surrounding Island Park, Idaho.
+                            Nomad Yellowstone offers three primary 2–3 hour passenger-only expeditions. Each tour is guided by professional operators navigating $30,000 Can-Am Commander ATVs through the high-altitude remote regions surrounding Island Park, Idaho.
                         </p>
                     </div>
                 </section>
@@ -130,9 +130,9 @@ export default function ExpeditionsPage() {
                                 </div>
                                 <div className="p-8">
                                     <h3 className="font-heading text-2xl text-white uppercase mb-2 drop-shadow-md">Morning Scout</h3>
-                                    <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">08:00 - 12:00 // 4 Hours</p>
+                                    <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">08:00 - 11:00 // 2-3 Hours</p>
                                     <div className="text-white mb-6 text-sm opacity-100 font-medium drop-shadow-md min-h-[160px]">
-                                        <p className="mb-3">A 4-hour guided ATV tour ascending to the Continental Divide, perfect for morning wildlife viewing.</p>
+                                        <p className="mb-3">A 2–3 hour guided ATV tour ascending to the Continental Divide, perfect for morning wildlife viewing.</p>
                                         <ul className="space-y-2 font-mono text-xs text-nomad-paper/90">
                                             <li><span className="text-nomad-red mr-2">▶</span> <strong>Timing:</strong> Departs 08:00 before peak daytime temperatures.</li>
                                             <li><span className="text-nomad-red mr-2">▶</span> <strong>Wildlife:</strong> Highest probability for active wildlife viewing.</li>
@@ -156,7 +156,7 @@ export default function ExpeditionsPage() {
                                 </div>
                                 <div className="p-8">
                                     <h3 className="font-heading text-2xl text-white uppercase mb-2 drop-shadow-md">Summit Run</h3>
-                                    <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">13:00 - 17:00 // 4 Hours</p>
+                                    <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">13:00 - 16:00 // 2-3 Hours</p>
                                     <div className="text-white mb-6 text-sm opacity-100 font-medium drop-shadow-md min-h-[160px]">
                                         <p className="mb-3">An aggressive high-altitude ATV expedition climbing to 10,000-foot peaks for panoramic views.</p>
                                         <ul className="space-y-2 font-mono text-xs text-nomad-paper/90">
@@ -179,7 +179,7 @@ export default function ExpeditionsPage() {
                                 </div>
                                 <div className="p-8">
                                     <h3 className="font-heading text-2xl text-white uppercase mb-2 drop-shadow-md">Golden Hour</h3>
-                                    <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">17:30 - 21:30 // 4 Hours</p>
+                                    <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">17:30 - 20:30 // 2-3 Hours</p>
                                     <div className="text-white mb-6 text-sm opacity-100 font-medium drop-shadow-md min-h-[160px]">
                                         <p className="mb-3">A scenic evening ATV tour targeting optimal photographic lighting and concluding with a twilight descent.</p>
                                         <ul className="space-y-2 font-mono text-xs text-nomad-paper/90">

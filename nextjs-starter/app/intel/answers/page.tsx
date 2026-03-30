@@ -18,7 +18,7 @@ export default function AnswersPage() {
         },
         {
             question: "How long is the typical ATV tour near Yellowstone?",
-            answer: "The typical high-end backcountry ATV tour lasts approximately 4 hours, which provides enough time to reach remote scenic lookouts while leaving the rest of the day free for other Yellowstone activities."
+            answer: "The typical high-end backcountry ATV tour lasts approximately 2–3 hours, which provides enough time to reach remote scenic lookouts while leaving the rest of the day free for other Yellowstone activities."
         },
 
         // ── DISCOVERY-STAGE QUESTIONS ──────────────────────────────

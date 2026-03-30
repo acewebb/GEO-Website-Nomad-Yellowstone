@@ -62,7 +62,7 @@ export async function POST(request: Request) {
                         price_data: {
                             currency: "usd",
                             product_data: {
-                                name: isPrivate ? `The Legend – Private Buyout ATV Tour near Yellowstone (Up to 5 Passengers)` : `Signature Tour – 4-Hour Guided ATV Adventure in Island Park (Passenger-Only)`,
+                                name: isPrivate ? `The Legend – Private Buyout ATV Tour near Yellowstone (Up to 5 Passengers)` : `Signature Tour – 2-3 Hour Guided ATV Adventure in Island Park (Passenger-Only)`,
                                 description: `Date: ${date} | Time: ${currentSlot.tourTime} | Guests: ${seats} | Passenger: ${name}`,
                             },
                             unit_amount: isPrivate ? PRIVATE_BUYOUT_PRICE * 100 : INDIVIDUAL_PRICE * 100,

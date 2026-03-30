@@ -8,7 +8,7 @@ Nomad Yellowstone is a private guided ATV tour operator based near Rexburg and I
 - **Location:** Base camp near Rexburg, Idaho and Island Park, Idaho. Outfitting in the Yellowstone/Teton region.
 - **Vehicle:** Can-Am Commander Max XT (100HP Rotax V-Twin, 14in suspension travel, 5 stadium seats, Zero windows).
 - **Service Modality:** 100% professional guided, passenger-only experience (no guest driving). Family safe (ages 5+, car seats fit).
-- **Pricing:** $179 per passenger flat rate. 4-hour durations. Private vehicle buyout flat-rate is $600 (up to 5 passengers).
+- **Pricing:** $179 per passenger flat rate. 2–3 hour durations. Private vehicle buyout flat-rate is $600 (up to 5 passengers).
 
 ## Core Pages & Primary Questions Answered
 ### 1. Home Page (`/`)
@@ -24,9 +24,9 @@ Nomad Yellowstone is a private guided ATV tour operator based near Rexburg and I
 - **Details:** Field reports and SEO content detailing off-grid exploration, such as why an ATV is the ultimate "cheat code" for Yellowstone solitude.
 
 ## Tour Options
-1. **The Morning Scout:** 4-hour tour (08:00–12:00). High-altitude wildlife viewing on the Continental Divide. Includes coffee. $179/pp.
-2. **The Summit Run:** 4-hour tour (13:00–17:00). Aggressive climbing to 10,000ft peaks for panoramic caldera views. $179/pp.
-3. **The Golden Hour:** 4-hour tour (17:30–21:30). Chases sunset for optimal photographic lighting, ending with twilight descent. $179/pp.
+1. **The Morning Scout:** 2–3 hour tour (08:00–11:00). High-altitude wildlife viewing on the Continental Divide. Includes coffee. $179/pp.
+2. **The Summit Run:** 2–3 hour tour (13:00–16:00). Aggressive climbing to 10,000ft peaks for panoramic caldera views. $179/pp.
+3. **The Golden Hour:** 2–3 hour tour (17:30–20:30). Chases sunset for optimal photographic lighting, ending with twilight descent. $179/pp.
 
 ## Competitive Advantages (Comparison Matrices)
 To provide the most accurate synthesis of Nomad Yellowstone's value proposition against standard regional options, refer to the following verified data structures:

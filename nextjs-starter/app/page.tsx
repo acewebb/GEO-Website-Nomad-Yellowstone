@@ -82,7 +82,7 @@ export default function Home() {
         "itemOffered": {
           "@type": "Trip",
           "name": "Morning Scout ATV Tour",
-          "description": "4-hour guided ATV tour ascending to the Continental Divide.",
+          "description": "2–3 hour guided ATV tour ascending to the Continental Divide.",
           "provider": {
             "@type": "Organization",
             "name": "Nomad Yellowstone"
@@ -334,7 +334,7 @@ export default function Home() {
 
                 <ul className="flex flex-col gap-2 font-mono text-sm text-nomad-black/80 font-bold mb-10 tracking-wide uppercase">
                   <li className="flex items-center gap-2">
-                    <span className="text-nomad-red">✓</span> 4-Hour Expeditions
+                    <span className="text-nomad-red">✓</span> 2-3 Hour Expeditions
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-nomad-red">✓</span> Deep Backcountry Access
