@@ -9,8 +9,8 @@ function BookingCalendar({ selectedDate, onSelect, disabledDates }: { selectedDa
     const getInitialMonth = () => {
         const today = new Date();
         const month = today.getMonth();
-        if (month < 4) return startOfMonth(new Date(today.getFullYear(), 4, 1)); // May this year
-        if (month > 9) return startOfMonth(new Date(today.getFullYear() + 1, 4, 1)); // May next year
+        if (month < 3) return startOfMonth(new Date(today.getFullYear(), 3, 1)); // April this year
+        if (month > 9) return startOfMonth(new Date(today.getFullYear() + 1, 3, 1)); // April next year
         return startOfMonth(today); // Current month if in season
     };
 
@@ -36,10 +36,10 @@ function BookingCalendar({ selectedDate, onSelect, disabledDates }: { selectedDa
             const isMockDisabled = disabledDates.some(d => isSameDay(d, day));
             const isPast = isBefore(day, today);
 
-            // Allow only May 15 to Oct 31
-            const month = day.getMonth(); // 0-indexed, May is 4, Oct is 9
+            // Allow only April 15 to Oct 31
+            const month = day.getMonth(); // 0-indexed, April is 3, Oct is 9
             const dayOfMonth = day.getDate();
-            const isOutsideSeason = month < 4 || (month === 4 && dayOfMonth < 15) || month > 9;
+            const isOutsideSeason = month < 3 || (month === 3 && dayOfMonth < 15) || month > 9;
 
             const isDisabled = isPast || isMockDisabled || isOutsideSeason;
 

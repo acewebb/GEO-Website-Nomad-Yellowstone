@@ -13,6 +13,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://nomadyellowstone.com/',
   },
+  openGraph: {
+    title: 'Nomad Yellowstone | Private Guided ATV Tours Near Yellowstone',
+    description: 'Private, passenger-only ATV tours in Island Park, Idaho. Guided backcountry adventures near Yellowstone, from $179 per seat.',
+    url: 'https://nomadyellowstone.com/',
+    images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone guided ATV tour in Island Park backcountry' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nomad Yellowstone | Private Guided ATV Tours Near Yellowstone',
+    description: 'Private, passenger-only ATV tours in Island Park, Idaho. Guided backcountry adventures near Yellowstone, from $179 per seat.',
+    images: ['/sawtelle.png'],
+  },
 };
 
 const faqData = [
@@ -174,6 +186,40 @@ export default function Home() {
             "reviewBody": "Being driven was so relaxing. We just enjoyed the views."
           }
         ]
+      },
+      {
+        "@type": "TouristTrip",
+        "name": "Signature Tour – 2-3 Hour Guided ATV Adventure",
+        "description": "2-3 hour guided, passenger-only ATV tour in Island Park, Idaho near Yellowstone National Park. Includes professional guide, dust protection gear, and headsets.",
+        "touristType": "Adventure",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nomad Yellowstone"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "179",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://nomadyellowstone.com/booking"
+        }
+      },
+      {
+        "@type": "TouristTrip",
+        "name": "The Legend – Private Buyout ATV Tour",
+        "description": "Private vehicle buyout ATV tour for up to 5 passengers in Island Park, Idaho near Yellowstone National Park. Exclusive use of the Can-Am Commander with a dedicated guide.",
+        "touristType": "Adventure",
+        "provider": {
+          "@type": "Organization",
+          "name": "Nomad Yellowstone"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1997",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://nomadyellowstone.com/booking"
+        }
       }
     ]
   };
@@ -314,9 +360,9 @@ export default function Home() {
                 <span className="font-mono text-nomad-red text-sm tracking-widest mb-4 block font-bold uppercase drop-shadow-sm">
                   Passenger Only • Expert Guided ATV Tours
                 </span>
-                <h1 className="font-heading text-7xl md:text-[6rem] lg:text-[7rem] font-black text-nomad-black uppercase leading-[0.85] tracking-tight mb-8">
+                <h2 className="font-heading text-7xl md:text-[6rem] lg:text-[7rem] font-black text-nomad-black uppercase leading-[0.85] tracking-tight mb-8">
                   CAPTURE<br />THE WILD
-                </h1>
+                </h2>
 
                 <div className="mt-8 bg-nomad-paper shadow-xl p-8 border-l-4 border-nomad-red mb-8">
                   <p className="text-xl md:text-2xl font-heading uppercase text-nomad-black drop-shadow-sm mb-6 text-distressed">

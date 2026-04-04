@@ -7,7 +7,19 @@ export const metadata: Metadata = {
     title: "Field Intel Journal | Nomad Yellowstone",
     description: "Read field reports, trail advice, and exclusive backcountry intel for ATV tours near West Yellowstone and Island Park.",
     robots: { index: true, follow: true },
-    alternates: { canonical: 'https://nomadyellowstone.com/intel' }
+    alternates: { canonical: 'https://nomadyellowstone.com/intel' },
+    openGraph: {
+        title: 'Field Intel Journal | Nomad Yellowstone',
+        description: 'Read field reports, trail advice, and backcountry intel for ATV tours near West Yellowstone and Island Park.',
+        url: 'https://nomadyellowstone.com/intel',
+        images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone Field Intel Journal' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Field Intel Journal | Nomad Yellowstone',
+        description: 'Read field reports, trail advice, and backcountry intel for ATV tours near West Yellowstone and Island Park.',
+        images: ['/sawtelle.png'],
+    },
 };
 
 export default function BlogIndex() {

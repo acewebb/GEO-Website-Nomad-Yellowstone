@@ -5,6 +5,18 @@ import Link from 'next/link';
 export const metadata = {
     title: 'Our Story & Guides | Nomad Yellowstone',
     description: 'Meet the expert backcountry guides behind Nomad Yellowstone. Decades of combined off-grid wilderness experience.',
+    openGraph: {
+        title: 'Our Story & Guides | Nomad Yellowstone',
+        description: 'Meet the expert backcountry guides behind Nomad Yellowstone. Decades of combined off-grid wilderness experience.',
+        url: 'https://nomadyellowstone.com/about',
+        images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone backcountry guides' }],
+    },
+    twitter: {
+        card: 'summary_large_image' as const,
+        title: 'Our Story & Guides | Nomad Yellowstone',
+        description: 'Meet the expert backcountry guides behind Nomad Yellowstone. Decades of combined off-grid wilderness experience.',
+        images: ['/sawtelle.png'],
+    },
 };
 
 export default function AboutPage() {

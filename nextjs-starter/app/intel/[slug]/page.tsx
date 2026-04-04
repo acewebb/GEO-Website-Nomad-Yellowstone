@@ -3,12 +3,37 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import Image from 'next/image';
 import ComparisonMatrix from '@/components/ComparisonMatrix';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
     const posts = getAllPosts();
     return posts.map((post) => ({
         slug: post.slug,
     }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const post = getPostBySlug(slug);
+    const ogImage = post.image || '/sawtelle.png';
+
+    return {
+        title: `${post.title} | Nomad Yellowstone`,
+        description: post.description,
+        openGraph: {
+            title: post.title,
+            description: post.description,
+            url: `https://nomadyellowstone.com/intel/${slug}`,
+            images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+            type: 'article',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: post.title,
+            description: post.description,
+            images: [ogImage],
+        },
+    };
 }
 
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {

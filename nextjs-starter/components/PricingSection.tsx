@@ -52,7 +52,7 @@ export default function PricingSection() {
 
                         <div className="mb-6 pt-4">
                             <h3 className="font-heading text-3xl uppercase text-accent mb-2">Signature Tour</h3>
-                            <p className="font-mono text-xs text-nomad-paper/70 uppercase tracking-widest h-8">4‑Hour Guided ATV Adventure<br />in Island Park (Passenger‑Only)</p>
+                            <p className="font-mono text-xs text-nomad-paper/70 uppercase tracking-widest h-8">2–3 Hour Guided ATV Adventure<br />in Island Park (Passenger‑Only)</p>
                         </div>
                         <div className="mb-8 flex items-baseline gap-2">
                             <span className="font-heading text-6xl text-white tracking-tight">$179</span>
@@ -66,7 +66,7 @@ export default function PricingSection() {
                             <li className="flex gap-3"><span className="text-accent">✓</span> Deep Backcountry Access</li>
                         </ul>
                         <Link href="/booking" className="btn-primary w-full py-4 px-2 text-center text-xs leading-relaxed flex items-center justify-center">
-                            Signature Tour – 4‑Hour Guided ATV Adventure in Island Park (Passenger‑Only)
+                            Signature Tour – 2–3 Hour Guided ATV Adventure in Island Park (Passenger‑Only)
                         </Link>
                     </div>
 

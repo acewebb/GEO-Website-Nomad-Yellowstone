@@ -4,6 +4,18 @@ import Link from 'next/link';
 export const metadata = {
     title: 'How to Get Here | Driving to Nomad Yellowstone from West Yellowstone',
     description: 'Find drive times from major West Yellowstone hotels to the Nomad Yellowstone Island Park base camp.',
+    openGraph: {
+        title: 'How to Get Here | Nomad Yellowstone',
+        description: 'Driving directions from West Yellowstone hotels to the Nomad Yellowstone base camp in Island Park, Idaho.',
+        url: 'https://nomadyellowstone.com/location',
+        images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Directions to Nomad Yellowstone base camp' }],
+    },
+    twitter: {
+        card: 'summary_large_image' as const,
+        title: 'How to Get Here | Nomad Yellowstone',
+        description: 'Driving directions from West Yellowstone hotels to the Nomad Yellowstone base camp in Island Park, Idaho.',
+        images: ['/sawtelle.png'],
+    },
 };
 
 export default function LocationPage() {
