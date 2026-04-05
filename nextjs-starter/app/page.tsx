@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PricingSection from '@/components/PricingSection';
 import GlobalHeader from '@/components/GlobalHeader';
+import { SeasonCountdownInline } from '@/components/SeasonBanner';
 import FadeIn from '@/components/FadeIn';
 import MissionMap from '@/components/MissionMap';
 import AccordionFAQ from '@/components/AccordionFAQ';
@@ -251,6 +252,7 @@ export default function Home() {
                 <p className="font-mono text-xs md:text-sm text-nomad-black/80 font-bold uppercase tracking-[0.15em] max-w-xl mx-auto drop-shadow-sm leading-relaxed">
                   Guided ATV tours in Island Park, Idaho (20 Minutes from West Yellowstone). We specialize in exclusive, passenger-only backcountry expeditions.
                 </p>
+                <SeasonCountdownInline />
               </div>
             </FadeIn>
           </div>

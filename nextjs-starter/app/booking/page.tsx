@@ -201,8 +201,8 @@ function BookingContent() {
                                             <div className="flex justify-between items-center mt-2">
                                                 <p className="font-mono text-xs tracking-widest">{mission.time}</p>
                                                 {selectedDate && (
-                                                    <span className={`font-mono text-[10px] px-2 py-0.5 rounded-sm ${isSoldOut ? 'bg-red-900/50 text-red-200' : 'bg-white/10 text-nomad-paper/80'}`}>
-                                                        {isLoadingSlots ? '...' : isSoldOut ? 'SOLD OUT' : `${seatsLeft} SEATS`}
+                                                    <span className={`font-mono text-[10px] px-2 py-0.5 rounded-sm ${isSoldOut ? 'bg-red-900/50 text-red-200' : seatsLeft <= 2 ? 'bg-red-900/60 text-red-200 animate-pulse font-bold' : seatsLeft <= 3 ? 'bg-amber-900/50 text-amber-200' : 'bg-white/10 text-nomad-paper/80'}`}>
+                                                        {isLoadingSlots ? '...' : isSoldOut ? 'SOLD OUT' : seatsLeft <= 2 ? `ONLY ${seatsLeft} LEFT` : `${seatsLeft} SEATS`}
                                                     </span>
                                                 )}
                                             </div>

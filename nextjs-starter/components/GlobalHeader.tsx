@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import SeasonBanner from '@/components/SeasonBanner';
 
 export default function GlobalHeader() {
     const [scrolled, setScrolled] = useState(false);
@@ -25,12 +26,15 @@ export default function GlobalHeader() {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${scrolled
-                ? 'py-4 bg-nomad-black/80 backdrop-blur-md border-b border-white/10 shadow-2xl shadow-black/50'
-                : 'py-6 bg-nomad-black border-b-[8px] border-nomad-black'
+            className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 flex flex-col ${scrolled
+                ? 'bg-nomad-black/80 backdrop-blur-md border-b border-white/10 shadow-2xl shadow-black/50'
+                : 'bg-nomad-black border-b-[8px] border-nomad-black'
                 }`}
         >
-            <div className="container mx-auto px-4 md:px-8 flex items-center justify-between w-full h-12 md:h-auto">
+            <div className="w-full">
+                <SeasonBanner />
+            </div>
+            <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between w-full h-12 md:h-auto transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'}`}>
                 {/* Left: Logo */}
                 <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-nomad-paper rounded-full opacity-50 shadow-[0_0_8px_rgba(230,225,215,0.6)] hidden sm:block"></div>
