@@ -248,7 +248,7 @@ function BookingContent() {
                                     {isBuyout && <span className="text-nomad-black font-bold text-xs">✓</span>}
                                 </button>
                                 <span className={`text-sm tracking-wide ${canBuyout ? 'text-nomad-paper/80 cursor-pointer uppercase' : 'text-nomad-paper/40 cursor-not-allowed'}`} onClick={() => { if (canBuyout) { setIsBuyout(!isBuyout); if (!isBuyout) setGuestCount(5); } }}>
-                                    {canBuyout ? `Upgrade to Private Tour (+$${Math.max(0, BUYOUT_PRICE - (guestCount * PRICE_PER_PASSENGER))} flat rate)` : 'Private Tour Unavailable (Seats Already Booked)'}
+                                    {canBuyout ? `Upgrade to Private Buyout — $${BUYOUT_PRICE} total${guestCount >= 4 ? ` (saves $${(guestCount * PRICE_PER_PASSENGER) - BUYOUT_PRICE} vs individual seats)` : ' (saves money for groups of 4+)'}` : 'Private Tour Unavailable (Seats Already Booked)'}
                                 </span>
                             </div>
                         </div>
