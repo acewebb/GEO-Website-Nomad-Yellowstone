@@ -80,6 +80,52 @@ export async function POST(request: Request) {
         }
     }
 
+    // Handle session expiry — restore seats when user abandons checkout
+    if (event.type === "checkout.session.expired") {
+        const session = event.data.object as any;
+        const { bookingId, Tour_Time_Slot } = session.metadata;
+
+        try {
+            await db.runTransaction(async (t) => {
+                const bookingRef = db.collection("bookings").doc(bookingId);
+                const bookingDoc = await t.get(bookingRef);
+
+                if (!bookingDoc.exists) return;
+
+                const bookingData = bookingDoc.data();
+                if (!bookingData || bookingData.status !== "pending") return;
+
+                // Restore seats
+                const tourDocRef = db.collection("tours").doc(bookingData.date);
+                const tourDoc = await t.get(tourDocRef);
+
+                if (tourDoc.exists) {
+                    const tourData = tourDoc.data();
+                    if (tourData) {
+                        const updatedSlots = { ...tourData.slots };
+                        const seatsToRestore = bookingData.bookingType === "private" ? 5 : bookingData.seats;
+                        updatedSlots[Tour_Time_Slot].seatsAvailable = Math.min(
+                            5,
+                            updatedSlots[Tour_Time_Slot].seatsAvailable + seatsToRestore
+                        );
+                        t.update(tourDocRef, { slots: updatedSlots });
+                    }
+                }
+
+                // Mark booking cancelled
+                t.update(bookingRef, {
+                    status: "cancelled",
+                    cancelledAt: admin.firestore.FieldValue.serverTimestamp(),
+                });
+            });
+
+            console.log(`Booking ${bookingId} expired — seats restored.`);
+        } catch (dbError) {
+            console.error("Error restoring seats on session expiry:", dbError);
+            return NextResponse.json({ error: "Database error" }, { status: 500 });
+        }
+    }
+
     // Return a 200 response to acknowledge receipt of the event
     return NextResponse.json({ received: true }, { status: 200 });
 }

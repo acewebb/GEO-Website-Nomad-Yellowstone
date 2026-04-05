@@ -55,8 +55,10 @@ export async function POST(request: Request) {
 
             // 4. Create Stripe Checkout Session
             const isPrivate = bookingType === "private";
+            const thirtyMinutesFromNow = Math.floor(Date.now() / 1000) + 30 * 60;
             const session = await stripe.checkout.sessions.create({
                 payment_method_types: ["card"],
+                expires_at: thirtyMinutesFromNow,
                 line_items: [
                     {
                         price_data: {
