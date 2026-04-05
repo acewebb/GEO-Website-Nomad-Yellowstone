@@ -362,7 +362,7 @@ function BookingContent() {
                                                 {!isSubmitted && <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>}
                                             </button>
                                             <p className="text-center text-xs font-mono text-nomad-paper/30 mt-4 uppercase tracking-widest">
-                                                Secure Booking // No Charge Until Confirmation
+                                                We confirm within 2 hours — your card is only charged once your guide is locked in.
                                             </p>
                                         </div>
                                     </form>
