@@ -85,7 +85,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${oswald.variable} ${montserrat.variable} ${spaceMono.variable} antialiased bg-background text-foreground selection:bg-accent selection:text-white pb-16 md:pb-20`}
+        className={`${oswald.variable} ${montserrat.variable} ${spaceMono.variable} antialiased bg-background text-foreground selection:bg-accent selection:text-white`}
       >
         <Analytics />
         {children}

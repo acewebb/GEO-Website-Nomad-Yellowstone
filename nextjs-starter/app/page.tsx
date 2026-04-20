@@ -250,7 +250,14 @@ export default function Home() {
                   <span className="text-nomad-red font-light">IN YELLOWSTONE</span>
                 </h1>
                 <p className="font-mono text-xs md:text-sm text-nomad-black/80 font-bold uppercase tracking-[0.15em] max-w-xl mx-auto drop-shadow-sm leading-relaxed">
-                  Guided ATV tours in Island Park, Idaho (20 Minutes from West Yellowstone). We specialize in exclusive, passenger-only backcountry expeditions.
+                  You ride, we drive. Professional guides pilot our ATVs through Island Park&apos;s backcountry — 20 minutes from West Yellowstone. No experience needed.
+                </p>
+                <p className="font-mono text-sm md:text-base text-nomad-black font-bold mt-4 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
+                  <span>From $179/seat</span>
+                  <span className="text-nomad-red">·</span>
+                  <span className="text-[#00aa6c]">★★★★★ TripAdvisor</span>
+                  <span className="text-nomad-red">·</span>
+                  <span>Ages 5+</span>
                 </p>
                 <SeasonCountdownInline />
               </div>
@@ -345,9 +352,9 @@ export default function Home() {
           <div className="container mx-auto px-4 overflow-hidden">
             <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-16 font-mono text-[10px] md:text-xs tracking-widest text-nomad-paper/60 uppercase text-center w-full">
               <FadeIn delay={0.1} className="flex items-center gap-2"><span className="text-nomad-red">✪</span> Permitted & Insured</FadeIn>
-              <FadeIn delay={0.2} className="flex items-center gap-2 hidden md:flex"><span className="text-nomad-red">✚</span> Wilderness First Responder Certified</FadeIn>
+              <FadeIn delay={0.2} className="flex items-center gap-2"><span className="text-nomad-red">✚</span> Wilderness First Responder</FadeIn>
               <FadeIn delay={0.3} className="flex items-center gap-2"><span className="text-nomad-red">★</span> Elite TripAdvisor Rated</FadeIn>
-              <FadeIn delay={0.4} className="flex items-center gap-2 hidden lg:flex"><span className="text-nomad-red">✓</span> Zero Client Liability Program</FadeIn>
+              <FadeIn delay={0.4} className="flex items-center gap-2"><span className="text-nomad-red">✓</span> Zero Client Liability</FadeIn>
             </div>
           </div>
         </section>
