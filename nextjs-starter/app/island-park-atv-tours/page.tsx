@@ -29,8 +29,45 @@ const islandParkFaqData = [
 ];
 
 export default function IslandParkAtvTours() {
+    const touristTripSchema = {
+        "@context": "https://schema.org",
+        "@type": "TouristTrip",
+        "name": "Guided ATV Tour — Island Park, Idaho",
+        "description": "A 4-hour guided passenger-only ATV tour through the Island Park, Idaho backcountry. Riders are passengers; certified guides drive Can-Am Commander Max XT side-by-sides. Tours access high-elevation backcountry viewpoints inaccessible to standard vehicles. Family-friendly, no off-road experience required.",
+        "image": "https://nomadyellowstone.com/sawtelle.png",
+        "url": "https://nomadyellowstone.com/island-park-atv-tours",
+        "touristType": ["Family", "Adventure", "Seniors", "First-time off-road"],
+        "itinerary": {
+            "@type": "Place",
+            "name": "Island Park, Idaho backcountry",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Island Park",
+                "addressRegion": "ID",
+                "addressCountry": "US"
+            }
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "179",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://nomadyellowstone.com/island-park-atv-tours",
+            "validFrom": "2026-05-15",
+            "validThrough": "2026-10-31"
+        },
+        "provider": {
+            "@type": "LocalBusiness",
+            "@id": "https://nomadyellowstone.com/#business"
+        }
+    };
+
     return (
         <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripSchema) }}
+            />
             <GlobalHeader />
 
             <main className="flex-grow flex flex-col relative w-full pt-20 md:pt-32">

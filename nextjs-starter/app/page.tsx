@@ -11,19 +11,21 @@ import AccordionFAQ from '@/components/AccordionFAQ';
 import ReviewsDossier from '@/components/ReviewsDossier';
 
 export const metadata: Metadata = {
+  title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
+  description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. From $179/seat. Family-friendly, no experience needed. Book direct.',
   alternates: {
     canonical: 'https://nomadyellowstone.com/',
   },
   openGraph: {
-    title: 'Nomad Yellowstone | Private Guided ATV Tours Near Yellowstone',
-    description: 'Private, passenger-only ATV tours in Island Park, Idaho. Guided backcountry adventures near Yellowstone, from $179 per seat.',
+    title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
+    description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. From $179/seat. Family-friendly, no experience needed. Book direct.',
     url: 'https://nomadyellowstone.com/',
     images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone guided ATV tour in Island Park backcountry' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nomad Yellowstone | Private Guided ATV Tours Near Yellowstone',
-    description: 'Private, passenger-only ATV tours in Island Park, Idaho. Guided backcountry adventures near Yellowstone, from $179 per seat.',
+    title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
+    description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. From $179/seat. Family-friendly, no experience needed. Book direct.',
     images: ['/sawtelle.png'],
   },
 };
@@ -245,15 +247,21 @@ export default function Home() {
                 <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.2em] mb-4 block font-bold uppercase drop-shadow-sm">
                   Premier Private Expeditions
                 </span>
-                <h1 className="font-heading text-5xl md:text-7xl lg:text-[6rem] text-nomad-black uppercase leading-[0.85] tracking-tight mb-6 text-distressed drop-shadow-md">
-                  BACKCOUNTRY TOURS<br />
-                  <span className="text-nomad-red font-light">IN YELLOWSTONE</span>
+                <h1 className="font-heading text-4xl md:text-6xl lg:text-[5rem] text-nomad-black uppercase leading-[0.9] tracking-tight mb-4 text-distressed drop-shadow-md">
+                  Guided ATV Tours Near<br />
+                  <span className="text-nomad-red font-light">West Yellowstone</span>
+                  <span className="block text-2xl md:text-3xl lg:text-4xl mt-2 tracking-wide">— Island Park, Idaho</span>
                 </h1>
-                <p className="font-mono text-xs md:text-sm text-nomad-black/80 font-bold uppercase tracking-[0.15em] max-w-xl mx-auto drop-shadow-sm leading-relaxed">
-                  You ride, we drive. Professional guides pilot our ATVs through Island Park&apos;s backcountry — 20 minutes from West Yellowstone. No experience needed.
+                <h2 className="font-heading text-2xl md:text-3xl text-nomad-black/80 uppercase tracking-wide mb-6 text-distressed drop-shadow-sm">
+                  Backcountry Tours in Yellowstone
+                </h2>
+                <p className="text-sm md:text-base text-nomad-black/90 max-w-2xl mx-auto leading-relaxed mb-6">
+                  Nomad Yellowstone offers fully guided, passenger-only ATV tours from Island Park, Idaho — about 20 minutes from the West Yellowstone entrance of Yellowstone National Park. Our certified guides drive Can-Am Commander Max XT side-by-sides while you ride along, making backcountry views and high-elevation terrain accessible to families, grandparents, and anyone who doesn&apos;t want to drive themselves. Tours run May 15 through October 31 from $179 per seat. No off-road experience required.
                 </p>
-                <p className="font-mono text-sm md:text-base text-nomad-black font-bold mt-4 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
-                  <span>From $179/seat</span>
+                <p className="font-mono text-sm md:text-base text-nomad-black font-bold mt-2 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
+                  <span className="text-lg font-bold">From $179 per seat</span>
+                  <span className="text-nomad-red">·</span>
+                  <a href="tel:+12087452088" className="hover:text-nomad-red transition-colors underline decoration-1 underline-offset-4">(208) 745-2088</a>
                   <span className="text-nomad-red">·</span>
                   <span className="text-[#00aa6c]">★★★★★ TripAdvisor</span>
                   <span className="text-nomad-red">·</span>
@@ -378,11 +386,14 @@ export default function Home() {
                     Nomad Yellowstone offers fully guided, passenger-only ATV tours in Island Park, Idaho, near Yellowstone National Park and West Yellowstone, Montana.
                   </p>
 
-                  <h3 className="font-bold text-nomad-black mb-3 font-heading uppercase text-lg">Why Choose Nomad Yellowstone?</h3>
+                  <h3 className="font-bold text-nomad-black mb-3 font-heading uppercase text-lg">Why Choose a Passenger-Only ATV Tour?</h3>
+                  <p className="text-sm md:text-base text-nomad-black/80 leading-relaxed mb-4">
+                    Unlike self-drive ATV rentals where you&apos;re responsible for navigating unfamiliar terrain, our passenger-only format means a certified guide handles the driving while you soak in the scenery. It&apos;s the safest, most relaxing way to explore the Yellowstone backcountry — and it&apos;s why families with kids as young as five and grandparents in their eighties choose Nomad.
+                  </p>
                   <ul className="list-disc pl-5 text-nomad-black font-medium text-sm md:text-base leading-relaxed opacity-90 drop-shadow-sm space-y-2">
-                    <li><strong>Expert Guided:</strong> Professional guides drive the $30,000 Can-Am Commander Max XT ATVs—you just enjoy the views.</li>
-                    <li><strong>Deep Access:</strong> We navigate rugged terrain to reach 10,000-foot peaks that standard rentals can't access.</li>
-                    <li><strong>Zero Liability:</strong> Because our guides drive, guests carry zero liability for vehicle damage.</li>
+                    <li><strong>Expert Guided:</strong> Professional guides drive the $30,000 Can-Am Commander Max XT ATVs — you just enjoy the views.</li>
+                    <li><strong>Deep Access:</strong> We navigate rugged terrain to reach 10,000-foot peaks that standard rentals can&apos;t access.</li>
+                    <li><strong>Zero Liability:</strong> Because our passenger-only tours are fully guide-driven, guests carry zero liability for vehicle damage.</li>
                     <li><strong>Fully Equipped:</strong> Dust protection goggles and neck gaiters are provided for every passenger.</li>
                   </ul>
                 </div>
@@ -430,8 +441,11 @@ export default function Home() {
         {/* SECTION 5: THE DIVIDER BAR */}
         <section className="relative py-32 w-full flex items-center justify-center border-y border-nomad-black/10">
           {/* The global before/after pseudo elements handle the grunge. We don't need explicit backgrounds here anymore. */}
-          <div className="relative z-10 text-center px-4">
-            <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase tracking-widest text-distressed drop-shadow-sm">NO CROWDS. JUST DIRT.</h2>
+          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase tracking-widest text-distressed drop-shadow-sm mb-6">NO CROWDS. JUST DIRT.</h2>
+            <p className="text-base md:text-lg text-nomad-black/80 leading-relaxed">
+              Most Yellowstone visitors never leave the pavement. Our passenger-only ATV tours take you deep into the backcountry on trails that buses, rental cars, and even self-drive ATVs can&apos;t reach — all while your guide does the driving.
+            </p>
           </div>
         </section>
 
@@ -460,12 +474,20 @@ export default function Home() {
           <Image src="/sawtelle.png" alt="Professional Nomad Yellowstone guide driving a Can-Am Commander ATV through deep backcountry trails in Island Park, Idaho." fill className="object-cover opacity-15 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-t from-nomad-paper via-transparent to-transparent opacity-50 pointer-events-none"></div>
 
-          <div className="relative z-10 text-center px-4">
+          <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
             <FadeIn>
-              <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-12 opacity-100 text-distressed drop-shadow-md">Book Your<br />Expedition</h2>
-              <Link href="/booking" className="btn-primary px-12 py-6 text-xl">
-                CHECK AVAILABILITY
-              </Link>
+              <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-6 opacity-100 text-distressed drop-shadow-md">Book Your<br />Expedition</h2>
+              <p className="text-base md:text-lg text-nomad-black/80 leading-relaxed mb-8">
+                Ready to experience the Yellowstone backcountry without the stress of driving? Our passenger-only ATV tours depart daily from Island Park, Idaho — just 20 minutes from the West Yellowstone entrance. From $179 per seat.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="/booking" className="btn-primary px-12 py-6 text-xl">
+                  CHECK AVAILABILITY
+                </Link>
+                <a href="tel:+12087452088" className="font-mono text-lg font-bold text-nomad-black hover:text-nomad-red transition-colors">
+                  (208) 745-2088
+                </a>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -490,6 +512,8 @@ export default function Home() {
             <Link href="/island-park-atv-tours" className="hover:text-nomad-black transition-colors uppercase">Island Park ATV Tours</Link>
             <span>|</span>
             <Link href="/yellowstone-atv-tours" className="hover:text-nomad-black transition-colors uppercase">Yellowstone ATV Tours</Link>
+            <span>|</span>
+            <Link href="/things-to-do-island-park" className="hover:text-nomad-black transition-colors uppercase">Things to Do in Island Park</Link>
           </div>
         </div>
       </footer>

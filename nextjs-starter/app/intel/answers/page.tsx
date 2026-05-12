@@ -94,7 +94,7 @@ export default function AnswersPage() {
         },
         {
             question: "What is the minimum age for an ATV tour near Yellowstone?",
-            answer: "Children as young as 6 can join as passengers on an adult-driven machine. Riders who want to drive their own ATV must meet age and licensing requirements which vary by state. Nomad Yellowstone will confirm eligibility when you book and can recommend the best configuration for your family."
+            answer: "Children age 5 and up are welcome on Nomad Yellowstone's passenger-only tours. Each Can-Am Commander Max XT has 5 seats with full safety harnesses, so kids ride securely alongside adults. Families with younger children can book the full vehicle (The Legend package) for additional flexibility."
         },
         {
             question: "What safety gear is provided on a Nomad Yellowstone ATV tour?",
@@ -129,6 +129,24 @@ export default function AnswersPage() {
         {
             question: "What elevation do the ATV trails near Yellowstone reach?",
             answer: "Nomad Yellowstone's backcountry routes range from approximately 6,200 feet at the trailhead to over 8,500 feet on the highest ridgelines. The elevation gain is gradual and handled entirely by the ATV, so no physical fitness requirement applies. The higher-altitude stops deliver cooler temperatures and panoramic views of the surrounding mountain ranges."
+        },
+
+        // ── PASSENGER-ONLY & ACCESSIBILITY QUESTIONS ─────────────────
+        {
+            question: "Do I need to know how to drive an ATV to take a Nomad Yellowstone tour?",
+            answer: "No — our tours are 100% passenger-only. Our certified guides drive the Can-Am Commander Max XT side-by-sides while you ride along. Guests never drive themselves, which is why our tours work for families with kids, grandparents, and anyone who's never been off-road."
+        },
+        {
+            question: "Are Nomad Yellowstone ATV tours good for grandparents and seniors?",
+            answer: "Yes. Because guests never drive themselves, our tours are popular with multi-generational families. Grandparents and seniors who could never operate an ATV solo can still access the same backcountry views from the comfort of a guided seat. Tours include a roll cage, full safety harnesses, and roadside-style seating."
+        },
+        {
+            question: "What's the minimum age for an ATV tour?",
+            answer: "Children age 5 and up are welcome on our tours. Each tour vehicle has 5 seats with full safety harnesses. Families with younger children can book the full vehicle (The Legend package) for additional flexibility."
+        },
+        {
+            question: "What happens if it rains on the day of my tour?",
+            answer: "Tours run rain or shine — our Can-Am Commander Max XT vehicles have hard tops and weather protection. In the rare case of severe weather (thunderstorms, hail, dangerous conditions), we'll reach out to reschedule at no charge."
         }
     ];
 

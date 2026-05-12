@@ -50,9 +50,10 @@ export default function RootLayout({
 }>) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": ["SportsActivityLocation", "LocalBusiness"],
+    "@type": ["SportsActivityLocation", "LocalBusiness", "TouristAttraction"],
+    "@id": "https://nomadyellowstone.com/#business",
     "name": "Nomad Yellowstone",
-    "description": "Nomad Yellowstone is a private Guided Adventure Tours company based in Island Park, Idaho, servicing the Yellowstone National Park and Grand Teton backcountry region with high-performance ATVs.",
+    "description": "Guided passenger-only ATV and UTV tours in Island Park, Idaho, 20 minutes from the West Yellowstone entrance. Built for families, seniors, and non-drivers who want backcountry access without driving themselves.",
     "url": "https://nomadyellowstone.com",
     "logo": "https://nomadyellowstone.com/logo.png",
     "image": "https://nomadyellowstone.com/sawtelle.png",
@@ -61,8 +62,10 @@ export default function RootLayout({
     "priceRange": "$179 - $1997",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "[TODO: ADD MEET-POINT STREET ADDRESS]",
       "addressLocality": "Island Park",
       "addressRegion": "ID",
+      "postalCode": "83429",
       "addressCountry": "US"
     },
     "geo": {
@@ -70,6 +73,21 @@ export default function RootLayout({
       "latitude": 44.4221,
       "longitude": -111.3733
     },
+    "areaServed": [
+      { "@type": "City", "name": "West Yellowstone", "address": { "@type": "PostalAddress", "addressRegion": "MT" } },
+      { "@type": "City", "name": "Island Park", "address": { "@type": "PostalAddress", "addressRegion": "ID" } },
+      { "@type": "City", "name": "Ashton", "address": { "@type": "PostalAddress", "addressRegion": "ID" } },
+      { "@type": "City", "name": "Bozeman", "address": { "@type": "PostalAddress", "addressRegion": "MT" } },
+      { "@type": "City", "name": "Big Sky", "address": { "@type": "PostalAddress", "addressRegion": "MT" } }
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "08:00",
+      "closes": "19:00",
+      "validFrom": "2026-05-15",
+      "validThrough": "2026-10-31"
+    }],
     "sameAs": [
       "https://www.instagram.com/nomadyellowstone",
       "https://www.facebook.com/nomadyellowstone"
