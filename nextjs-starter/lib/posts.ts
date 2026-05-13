@@ -48,3 +48,26 @@ export function getAllPosts(): Post[] {
         .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
     return posts;
 }
+
+export function getRelatedPosts(currentSlug: string, count: number = 3): Post[] {
+    const allPosts = getAllPosts();
+    const current = allPosts.find((p) => p.slug === currentSlug);
+    if (!current) return allPosts.filter((p) => p.slug !== currentSlug).slice(0, count);
+
+    const currentTags = current.tags || [];
+
+    // Score each post by number of overlapping tags
+    const scored = allPosts
+        .filter((p) => p.slug !== currentSlug)
+        .map((p) => {
+            const overlap = (p.tags || []).filter((t) => currentTags.includes(t)).length;
+            return { post: p, score: overlap };
+        })
+        .sort((a, b) => {
+            // Sort by tag overlap first, then by date (newest first)
+            if (b.score !== a.score) return b.score - a.score;
+            return b.post.date > a.post.date ? 1 : -1;
+        });
+
+    return scored.slice(0, count).map((s) => s.post);
+}

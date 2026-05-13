@@ -7,6 +7,7 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 export const metadata = {
     title: 'Our Story & Guides | Nomad Yellowstone',
     description: 'Meet the expert backcountry guides behind Nomad Yellowstone. Decades of combined off-grid wilderness experience.',
+    alternates: { canonical: 'https://nomadyellowstone.com/about' },
     openGraph: {
         title: 'Our Story & Guides | Nomad Yellowstone',
         description: 'Meet the expert backcountry guides behind Nomad Yellowstone. Decades of combined off-grid wilderness experience.',

@@ -6,6 +6,7 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 export const metadata = {
     title: "Guided ATV Backcountry Expeditions | Nomad Yellowstone",
     description: "Explore Nomad Yellowstone's passenger-only off-road ATV tours in Island Park, Idaho. Safe, guided access to 10,000-foot peaks.",
+    alternates: { canonical: 'https://nomadyellowstone.com/expeditions' },
     openGraph: {
         title: "Guided ATV Backcountry Expeditions | Nomad Yellowstone",
         description: "Explore Nomad Yellowstone's passenger-only off-road ATV tours in Island Park, Idaho. Safe, guided access to 10,000-foot peaks.",
@@ -121,7 +122,7 @@ export default function ExpeditionsPage() {
                             {/* CARD 1 */}
                             <div className="glass-card group hover:-translate-y-2 transition-transform duration-300">
                                 <div className="h-64 relative bg-gray-800 overflow-hidden">
-                                    <Image src="/hero-bg.png" alt="Wildlife viewing from the safety of a Can-Am Commander ATV on the Morning Scout tour route." fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <Image src="/hero-bg.png" alt="Wildlife viewing from the safety of a Can-Am Commander ATV on the Morning Scout tour route." fill className="object-cover group-hover:scale-105 transition-transform duration-700" priority />
                                     <div className="absolute top-4 left-4 bg-nomad-red text-white font-mono text-xs font-bold px-2 py-1 uppercase tracking-widest">
                                         Best Value
                                     </div>

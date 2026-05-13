@@ -6,6 +6,7 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 export const metadata = {
     title: "Trip Preparation & Knowledge Hub | Nomad Yellowstone",
     description: "Prepare for your Island Park backcountry ATV expedition. View live National Park Service trails status, National Weather Service alerts, and expert guides.",
+    alternates: { canonical: 'https://nomadyellowstone.com/trip-prep' },
     openGraph: {
         title: "Trip Preparation & Knowledge Hub | Nomad Yellowstone",
         description: "Prepare for your Island Park backcountry ATV expedition. View live National Park Service trails status, National Weather Service alerts, and expert guides.",

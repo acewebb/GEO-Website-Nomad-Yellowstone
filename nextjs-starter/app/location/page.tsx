@@ -6,6 +6,7 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 export const metadata = {
     title: 'How to Get Here | Driving to Nomad Yellowstone from West Yellowstone',
     description: 'Find drive times from major West Yellowstone hotels to the Nomad Yellowstone Island Park base camp.',
+    alternates: { canonical: 'https://nomadyellowstone.com/location' },
     openGraph: {
         title: 'How to Get Here | Nomad Yellowstone',
         description: 'Driving directions from West Yellowstone hotels to the Nomad Yellowstone base camp in Island Park, Idaho.',

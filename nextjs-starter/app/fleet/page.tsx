@@ -6,6 +6,7 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 export const metadata = {
     title: "The Fleet: Can-Am Commander MAX XT | Nomad Yellowstone",
     description: "Nomad Yellowstone utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles for all guided off-road excursions.",
+    alternates: { canonical: 'https://nomadyellowstone.com/fleet' },
     openGraph: {
         title: "The Fleet: Can-Am Commander MAX XT | Nomad Yellowstone",
         description: "Nomad Yellowstone utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles for all guided off-road excursions.",
@@ -100,7 +101,7 @@ export default function FleetPage() {
                             </div>
 
                             <div className="relative h-[600px] w-full overflow-hidden shadow-2xl">
-                                <Image src="/can-am-commander.jpg" alt="Rugged Can-Am Commander Max XT showcasing 14-inch suspension travel over backcountry rocks entirely separated from the pavement in Island Park." fill className="object-cover" />
+                                <Image src="/can-am-commander.jpg" alt="Rugged Can-Am Commander Max XT showcasing 14-inch suspension travel over backcountry rocks entirely separated from the pavement in Island Park." fill className="object-cover" priority />
                             </div>
                         </div>
                     </div>

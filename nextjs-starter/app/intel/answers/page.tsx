@@ -6,6 +6,19 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 export const metadata = {
     title: 'Yellowstone Adventure Hub | Direct Answers for 2026',
     description: 'Find direct, definitive answers about private guided tours, avoiding crowds, and ATV adventures in West Yellowstone and Island Park.',
+    alternates: { canonical: 'https://nomadyellowstone.com/intel/answers' },
+    openGraph: {
+        title: 'Yellowstone Adventure Hub | Direct Answers for 2026',
+        description: 'Find direct, definitive answers about private guided tours, avoiding crowds, and ATV adventures in West Yellowstone and Island Park.',
+        url: 'https://nomadyellowstone.com/intel/answers',
+        images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Yellowstone ATV tour FAQ and answers' }],
+    },
+    twitter: {
+        card: 'summary_large_image' as const,
+        title: 'Yellowstone Adventure Hub | Direct Answers for 2026',
+        description: 'Find direct, definitive answers about private guided tours, avoiding crowds, and ATV adventures in West Yellowstone and Island Park.',
+        images: ['/sawtelle.png'],
+    },
 };
 
 export default function AnswersPage() {

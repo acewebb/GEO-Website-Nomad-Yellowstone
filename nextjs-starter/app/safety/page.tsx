@@ -6,6 +6,19 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 export const metadata = {
     title: 'Safety & Wilderness Response | Nomad Yellowstone',
     description: 'We prioritize passenger safety above all else. Review our Can-Am Commander capabilities, guide training, and wilderness emergency protocols.',
+    alternates: { canonical: 'https://nomadyellowstone.com/safety' },
+    openGraph: {
+        title: 'Safety & Wilderness Response | Nomad Yellowstone',
+        description: 'Review our Can-Am Commander capabilities, guide training, and wilderness emergency protocols.',
+        url: 'https://nomadyellowstone.com/safety',
+        images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone safety equipment and guide training' }],
+    },
+    twitter: {
+        card: 'summary_large_image' as const,
+        title: 'Safety & Wilderness Response | Nomad Yellowstone',
+        description: 'Review our Can-Am Commander capabilities, guide training, and wilderness emergency protocols.',
+        images: ['/sawtelle.png'],
+    },
 };
 
 export default function SafetyPage() {

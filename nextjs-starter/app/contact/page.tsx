@@ -6,6 +6,7 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 export const metadata = {
     title: "Contact Base Camp & FAQ | Nomad Yellowstone",
     description: "Get in touch with Nomad Yellowstone's base camp in Island Park, Idaho. Read our field reports, reviews, and frequently asked questions.",
+    alternates: { canonical: 'https://nomadyellowstone.com/contact' },
     openGraph: {
         title: "Contact Base Camp & FAQ | Nomad Yellowstone",
         description: "Get in touch with Nomad Yellowstone's base camp in Island Park, Idaho. Read our field reports, reviews, and frequently asked questions.",

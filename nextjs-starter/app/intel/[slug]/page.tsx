@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts } from '@/lib/posts';
+import { getPostBySlug, getAllPosts, getRelatedPosts } from '@/lib/posts';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 import { buildArticle } from '@/lib/schema/article';
 import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
+import RelatedPosts from '@/components/RelatedPosts';
 
 export async function generateStaticParams() {
     const posts = getAllPosts();
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${post.title} | Nomad Yellowstone`,
         description: post.description,
+        alternates: { canonical: `https://nomadyellowstone.com/intel/${slug}` },
         openGraph: {
             title: post.title,
             description: post.description,
@@ -42,6 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const post = getPostBySlug(slug);
+    const relatedPosts = getRelatedPosts(slug, 3);
 
     const articleSchema = buildArticle({
         headline: post.title,
@@ -133,6 +136,9 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
                         </Link>
                     </div>
                 </div>
+
+                {/* Related Posts — internal cross-links */}
+                <RelatedPosts posts={relatedPosts} />
             </article>
 
             <footer className="py-12 bg-black border-t border-white/10 font-mono text-xs text-nomad-paper/40 mt-20">

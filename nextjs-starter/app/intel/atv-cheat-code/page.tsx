@@ -8,6 +8,19 @@ const outfit = Outfit({ subsets: ["latin"] });
 export const metadata = {
     title: "Why an ATV is the Ultimate 'Cheat Code' for Yellowstone Solitude in 2026",
     description: "Bypass the bison jams and crowds. Discover how a guided ATV tour unlocks 500 miles of rugged terrain, Sawtelle Peak views, and the Continental Divide.",
+    alternates: { canonical: 'https://nomadyellowstone.com/intel/atv-cheat-code' },
+    openGraph: {
+        title: "Why an ATV is the Ultimate 'Cheat Code' for Yellowstone Solitude",
+        description: "Bypass the bison jams and crowds. Discover how a guided ATV tour unlocks 500 miles of rugged terrain and Sawtelle Peak views.",
+        url: 'https://nomadyellowstone.com/intel/atv-cheat-code',
+        images: [{ url: '/atv_action.png', width: 1200, height: 630, alt: 'ATV on Sawtelle Peak near Yellowstone' }],
+    },
+    twitter: {
+        card: 'summary_large_image' as const,
+        title: "Why an ATV is the Ultimate 'Cheat Code' for Yellowstone Solitude",
+        description: "Bypass the bison jams and crowds. Discover how a guided ATV tour unlocks 500 miles of rugged terrain.",
+        images: ['/atv_action.png'],
+    },
 };
 
 export default function BlogPost() {
