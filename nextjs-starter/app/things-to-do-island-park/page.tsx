@@ -5,6 +5,9 @@ import GlobalHeader from '@/components/GlobalHeader';
 import FadeIn from '@/components/FadeIn';
 import AccordionFAQ from '@/components/AccordionFAQ';
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
+import { buildFAQPage } from '@/lib/schema/faqPage';
 
 export const metadata: Metadata = {
     title: "Things to Do in Island Park, Idaho — A Local's Guide",
@@ -143,38 +146,10 @@ const sections = [
 ];
 
 export default function ThingsToDoIslandPark() {
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nomadyellowstone.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Things to Do in Island Park", "item": "https://nomadyellowstone.com/things-to-do-island-park" }
-        ]
-    };
-
-    const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqData.map((item) => ({
-            "@type": "Question",
-            "name": item.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": item.answer,
-            },
-        })),
-    };
-
     return (
         <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
+            <JsonLd data={buildBreadcrumbList([{ name: 'Things to Do in Island Park', url: 'https://nomadyellowstone.com/things-to-do-island-park' }])} />
+            <JsonLd data={buildFAQPage(faqData)} />
 
             <GlobalHeader />
 

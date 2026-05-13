@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata = {
     title: "Guided ATV Backcountry Expeditions | Nomad Yellowstone",
@@ -37,7 +38,7 @@ export default function ExpeditionsPage() {
                     "description": "The Morning Scout is a 2–3 hour guided ATV tour operating from 08:00 to 11:00. The route ascends to the Continental Divide, offering high-altitude wildlife viewing opportunities.",
                     "offers": {
                         "@type": "Offer",
-                        "price": "225.00",
+                        "price": "179.00",
                         "priceCurrency": "USD"
                     }
                 }
@@ -51,7 +52,7 @@ export default function ExpeditionsPage() {
                     "description": "The Summit Run is a 2–3 hour high-altitude ATV expedition operating from 13:00 to 16:00. The tour features aggressive off-road climbing to 10,000-foot peaks.",
                     "offers": {
                         "@type": "Offer",
-                        "price": "225.00",
+                        "price": "179.00",
                         "priceCurrency": "USD"
                     }
                 }
@@ -65,7 +66,7 @@ export default function ExpeditionsPage() {
                     "description": "The Golden Hour is a 2–3 hour scenic evening ATV tour operating from 17:30 to 20:30. The routed expedition targets optimal photographic lighting in the high-elevation backcountry.",
                     "offers": {
                         "@type": "Offer",
-                        "price": "225.00",
+                        "price": "179.00",
                         "priceCurrency": "USD"
                     }
                 }
@@ -75,11 +76,8 @@ export default function ExpeditionsPage() {
 
     return (
         <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
-            <Script
-                id="expeditions-schema"
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
+            <JsonLd data={buildBreadcrumbList([{ name: 'Expeditions', url: 'https://nomadyellowstone.com/expeditions' }])} />
 
             {/* HEADER SECTION */}
             <header className="relative w-full z-50 py-6 bg-nomad-black border-b-[8px] border-nomad-black">

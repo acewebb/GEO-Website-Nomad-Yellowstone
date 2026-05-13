@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getAllPosts } from '@/lib/posts';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata: Metadata = {
     title: "Field Intel Journal | Nomad Yellowstone",
@@ -27,6 +29,7 @@ export default function BlogIndex() {
 
     return (
         <div className="min-h-screen bg-nomad-black text-foreground font-body bg-topo">
+            <JsonLd data={buildBreadcrumbList([{ name: 'Field Reports', url: 'https://nomadyellowstone.com/intel' }])} />
             {/* Header */}
             <header className="p-6 border-b border-white/5 glass-panel sticky top-0 z-50">
                 <div className="container mx-auto flex justify-between items-center">

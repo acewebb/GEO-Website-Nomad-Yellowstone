@@ -9,6 +9,9 @@ import FadeIn from '@/components/FadeIn';
 import MissionMap from '@/components/MissionMap';
 import AccordionFAQ from '@/components/AccordionFAQ';
 import ReviewsDossier from '@/components/ReviewsDossier';
+import JsonLd from '@/components/JsonLd';
+import { buildFAQPage } from '@/lib/schema/faqPage';
+import { signatureTourProduct, legendProduct } from '@/lib/schema/product';
 
 export const metadata: Metadata = {
   title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
@@ -66,173 +69,57 @@ const faqData = [
 ];
 
 export default function Home() {
-  const jsonLd = {
+  const websiteSchema = {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "WebSite",
+    "@id": "https://nomadyellowstone.com/#website",
+    "url": "https://nomadyellowstone.com/",
+    "name": "Nomad Yellowstone",
+    "description": "Nomad Yellowstone provides private, fully-guided Can-Am Commander ATV backcountry tours originating in Island Park, Idaho.",
+    "publisher": {
+      "@id": "https://nomadyellowstone.com/#business"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://nomadyellowstone.com/#business",
+    "name": "Nomad Yellowstone",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "3" // TODO: pull current review count from TripAdvisor
+    },
+    "review": [
       {
-        "@type": "WebSite",
-        "@id": "https://nomadyellowstone.com/#website",
-        "url": "https://nomadyellowstone.com/",
-        "name": "Nomad Yellowstone",
-        "description": "Nomad Yellowstone provides private, fully-guided Can-Am Commander ATV backcountry tours originating in Island Park, Idaho.",
-        "publisher": {
-          "@id": "https://nomadyellowstone.com/#organization"
-        }
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "James D." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "My teenage kids put their phones down. Guide knew every peak and every flower."
       },
       {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqData.map((faq) => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sarah L." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "We saw a grizzly bear on the Morning Scout tour!"
       },
       {
-        "@context": "https://schema.org",
-        "@type": "Demand",
-        "itemOffered": {
-          "@type": "Trip",
-          "name": "Morning Scout ATV Tour",
-          "description": "2–3 hour guided ATV tour ascending to the Continental Divide.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Nomad Yellowstone"
-          }
-        },
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "179.00",
-          "priceCurrency": "USD",
-          "referenceQuantity": {
-            "@type": "QuantitativeValue",
-            "value": "1",
-            "unitCode": "C62"
-          }
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Demand",
-        "itemOffered": {
-          "@type": "Trip",
-          "name": "Summit Run ATV Tour",
-          "description": "Aggressive climbing to 10,000ft peaks for panoramic caldera views.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Nomad Yellowstone"
-          }
-        },
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "179.00",
-          "priceCurrency": "USD",
-          "referenceQuantity": {
-            "@type": "QuantitativeValue",
-            "value": "1",
-            "unitCode": "C62"
-          }
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Demand",
-        "itemOffered": {
-          "@type": "Trip",
-          "name": "Golden Hour ATV Tour",
-          "description": "Chases sunset for optimal photographic lighting, ending with twilight descent.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Nomad Yellowstone"
-          }
-        },
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "179.00",
-          "priceCurrency": "USD",
-          "referenceQuantity": {
-            "@type": "QuantitativeValue",
-            "value": "1",
-            "unitCode": "C62"
-          }
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Nomad Yellowstone",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "3"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "James D." },
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-            "reviewBody": "My teenage kids put their phones down. Guide knew every peak and every flower."
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Sarah L." },
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-            "reviewBody": "We saw a grizzly bear on the Morning Scout tour!"
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Mike K." },
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-            "reviewBody": "Being driven was so relaxing. We just enjoyed the views."
-          }
-        ]
-      },
-      {
-        "@type": "TouristTrip",
-        "name": "Signature Tour – 2-3 Hour Guided ATV Adventure",
-        "description": "2-3 hour guided, passenger-only ATV tour in Island Park, Idaho near Yellowstone National Park. Includes professional guide, dust protection gear, and headsets.",
-        "touristType": "Adventure",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nomad Yellowstone"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "179",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://nomadyellowstone.com/booking"
-        }
-      },
-      {
-        "@type": "TouristTrip",
-        "name": "The Legend – Private Buyout ATV Tour",
-        "description": "Private vehicle buyout ATV tour for up to 5 passengers in Island Park, Idaho near Yellowstone National Park. Exclusive use of the Can-Am Commander with a dedicated guide.",
-        "touristType": "Adventure",
-        "provider": {
-          "@type": "Organization",
-          "name": "Nomad Yellowstone"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "1997",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://nomadyellowstone.com/booking"
-        }
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Mike K." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Being driven was so relaxing. We just enjoyed the views."
       }
     ]
   };
 
   return (
     <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={websiteSchema} />
+      <JsonLd data={buildFAQPage(faqData)} />
+      <JsonLd data={signatureTourProduct} />
+      <JsonLd data={legendProduct} />
+      <JsonLd data={organizationSchema} />
 
       {/* Navigation Header */}
       <GlobalHeader />

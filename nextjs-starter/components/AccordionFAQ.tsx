@@ -60,6 +60,11 @@ export default function AccordionFAQ({ items, className, defaultOpenIndex = null
                             </div>
                         </button>
 
+                        {/* Server-rendered answer text for crawlers (visually hidden) */}
+                        <div className="sr-only" aria-hidden="true">
+                            {item.answer}
+                        </div>
+
                         <AnimatePresence initial={false}>
                             {isOpen && (
                                 <motion.div

@@ -5,6 +5,10 @@ import PricingSection from '@/components/PricingSection';
 import GlobalHeader from '@/components/GlobalHeader';
 import FadeIn from '@/components/FadeIn';
 import AccordionFAQ from '@/components/AccordionFAQ';
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
+import { buildFAQPage } from '@/lib/schema/faqPage';
+import { signatureTourProduct } from '@/lib/schema/product';
 
 export const metadata = {
     title: "Yellowstone ATV Tours | Backcountry Expeditions | Nomad Yellowstone",
@@ -64,10 +68,10 @@ export default function YellowstoneAtvTours() {
 
     return (
         <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripSchema) }}
-            />
+            <JsonLd data={touristTripSchema} />
+            <JsonLd data={buildBreadcrumbList([{ name: 'Yellowstone ATV Tours', url: 'https://nomadyellowstone.com/yellowstone-atv-tours' }])} />
+            <JsonLd data={buildFAQPage(yellowstoneFaqData)} />
+            <JsonLd data={signatureTourProduct} />
             <GlobalHeader />
 
             <main className="flex-grow flex flex-col relative w-full pt-20 md:pt-32">

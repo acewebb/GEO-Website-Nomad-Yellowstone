@@ -1,10 +1,13 @@
 import React, { Suspense } from 'react';
 import Link from 'next/link';
 import BookingForm from '@/components/BookingForm';
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export default function Booking() {
     return (
         <div className="min-h-screen flex flex-col font-body bg-nomad-black text-white selection:bg-accent selection:text-white">
+            <JsonLd data={buildBreadcrumbList([{ name: 'Book a Tour', url: 'https://nomadyellowstone.com/booking' }])} />
             {/* Header — server-rendered, visible to Google */}
             <header className="p-6 border-b border-white/5 glass-panel">
                 <div className="container mx-auto flex justify-between items-center">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata = {
     title: "Contact Base Camp & FAQ | Nomad Yellowstone",
@@ -89,11 +90,8 @@ export default function ContactPage() {
 
     return (
         <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
-            <Script
-                id="faq-schema"
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
+            <JsonLd data={buildBreadcrumbList([{ name: 'Contact', url: 'https://nomadyellowstone.com/contact' }])} />
 
             {/* HEADER SECTION */}
             <header className="relative w-full z-50 py-6 bg-nomad-black border-b-[8px] border-nomad-black">

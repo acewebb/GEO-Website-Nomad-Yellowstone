@@ -5,6 +5,10 @@ import PricingSection from '@/components/PricingSection';
 import GlobalHeader from '@/components/GlobalHeader';
 import FadeIn from '@/components/FadeIn';
 import AccordionFAQ from '@/components/AccordionFAQ';
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
+import { buildFAQPage } from '@/lib/schema/faqPage';
+import { signatureTourProduct } from '@/lib/schema/product';
 
 export const metadata = {
     title: "Island Park ATV Tours | Nomad Yellowstone",
@@ -64,10 +68,10 @@ export default function IslandParkAtvTours() {
 
     return (
         <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripSchema) }}
-            />
+            <JsonLd data={touristTripSchema} />
+            <JsonLd data={buildBreadcrumbList([{ name: 'Island Park ATV Tours', url: 'https://nomadyellowstone.com/island-park-atv-tours' }])} />
+            <JsonLd data={buildFAQPage(islandParkFaqData)} />
+            <JsonLd data={signatureTourProduct} />
             <GlobalHeader />
 
             <main className="flex-grow flex flex-col relative w-full pt-20 md:pt-32">

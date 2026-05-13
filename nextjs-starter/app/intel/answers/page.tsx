@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata = {
     title: 'Yellowstone Adventure Hub | Direct Answers for 2026',
@@ -165,11 +167,11 @@ export default function AnswersPage() {
 
     return (
         <div className="min-h-screen bg-nomad-black text-white font-body selection:bg-accent selection:text-white">
-            {/* Inject JSON-LD Schema for Google & AI scrapers */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-            />
+            <JsonLd data={structuredData} />
+            <JsonLd data={buildBreadcrumbList([
+                { name: 'Field Reports', url: 'https://nomadyellowstone.com/intel' },
+                { name: 'Answers', url: 'https://nomadyellowstone.com/intel/answers' },
+            ])} />
 
             {/* Simple Text Header */}
             <header className="p-6 border-b border-white/5 bg-black">

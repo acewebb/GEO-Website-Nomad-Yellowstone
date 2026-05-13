@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata = {
     title: "Trip Preparation & Knowledge Hub | Nomad Yellowstone",
@@ -29,11 +30,8 @@ export default function TripPrepPage() {
 
     return (
         <div className="min-h-screen flex flex-col font-body bg-background text-foreground selection:bg-accent selection:text-white overflow-x-hidden">
-            <Script
-                id="prep-schema"
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            <JsonLd data={jsonLd} />
+            <JsonLd data={buildBreadcrumbList([{ name: 'Trip Preparation', url: 'https://nomadyellowstone.com/trip-prep' }])} />
 
             {/* HEADER SECTION */}
             <header className="relative w-full z-50 py-6 bg-nomad-black border-b-[8px] border-nomad-black">

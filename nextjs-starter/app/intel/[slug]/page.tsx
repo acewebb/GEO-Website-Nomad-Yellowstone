@@ -4,6 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ComparisonMatrix from '@/components/ComparisonMatrix';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
+import { buildArticle } from '@/lib/schema/article';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export async function generateStaticParams() {
     const posts = getAllPosts();
@@ -40,8 +43,23 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
     const { slug } = await params;
     const post = getPostBySlug(slug);
 
+    const articleSchema = buildArticle({
+        headline: post.title,
+        description: post.description,
+        image: post.image || '/sawtelle.png',
+        datePublished: post.date,
+        slug: post.slug,
+    });
+
+    const breadcrumbSchema = buildBreadcrumbList([
+        { name: 'Field Reports', url: 'https://nomadyellowstone.com/intel' },
+        { name: post.title, url: `https://nomadyellowstone.com/intel/${post.slug}` },
+    ]);
+
     return (
         <div className="min-h-screen bg-nomad-black text-foreground font-body bg-topo">
+            <JsonLd data={articleSchema} />
+            <JsonLd data={breadcrumbSchema} />
             {/* Header */}
             <header className="p-6 border-b border-white/5 glass-panel sticky top-0 z-50">
                 <div className="container mx-auto flex justify-between items-center">

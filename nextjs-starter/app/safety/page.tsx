@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata = {
     title: 'Safety & Wilderness Response | Nomad Yellowstone',
@@ -44,6 +46,7 @@ export default function SafetyPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
+            <JsonLd data={buildBreadcrumbList([{ name: 'Safety & Specs', url: 'https://nomadyellowstone.com/safety' }])} />
 
             <header className="p-6 border-b border-white/5 bg-black">
                 <div className="container mx-auto flex justify-between items-center">

@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata = {
     title: 'How to Get Here | Driving to Nomad Yellowstone from West Yellowstone',
@@ -21,6 +23,7 @@ export const metadata = {
 export default function LocationPage() {
     return (
         <div className="min-h-screen bg-nomad-black text-white font-body selection:bg-accent selection:text-white">
+            <JsonLd data={buildBreadcrumbList([{ name: 'Location', url: 'https://nomadyellowstone.com/location' }])} />
             <header className="p-6 border-b border-white/5 bg-black">
                 <div className="container mx-auto flex justify-between items-center">
                     <Link href="/" className="text-xl font-heading tracking-widest text-white hover:text-accent transition-colors uppercase">
