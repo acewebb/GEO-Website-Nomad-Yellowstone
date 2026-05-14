@@ -36,14 +36,14 @@ export default function GlobalHeader() {
             </div>
             <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between w-full h-12 md:h-auto transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'}`}>
                 {/* Left: Logo */}
-                <Link href="/" className="flex flex-col items-center group text-nomad-paper hover:text-white transition-colors">
-                    <div className="flex items-center gap-2 md:gap-3">
-                        <div className="w-2 h-2 bg-nomad-paper rounded-full opacity-50 shadow-[0_0_8px_rgba(230,225,215,0.6)] hidden sm:block group-hover:opacity-80 group-hover:bg-white transition-all"></div>
-                        <span className="text-xl md:text-3xl font-heading tracking-[0.15em] md:tracking-widest uppercase font-black pl-[0.15em] md:pl-[0.1em]">
+                <Link href="/" className="flex flex-col items-center group text-nomad-paper hover:text-white transition-colors sm:ml-4 md:ml-6">
+                    <div className="relative">
+                        <div className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-6 w-2 h-2 bg-nomad-paper rounded-full opacity-50 shadow-[0_0_8px_rgba(230,225,215,0.6)] hidden sm:block group-hover:opacity-80 group-hover:bg-white transition-all"></div>
+                        <span className="block text-lg md:text-2xl font-heading tracking-[0.15em] md:tracking-[0.12em] uppercase font-black pl-[0.15em] md:pl-[0.12em]">
                             Nomad
                         </span>
                     </div>
-                    <span className="block w-full text-center text-[8px] md:text-[10px] tracking-[0.3em] text-nomad-paper/60 border-t border-nomad-paper/30 mt-1 pt-1 md:mt-1.5 md:pt-1.5 pl-[0.3em] group-hover:text-white/80 group-hover:border-white/50 transition-colors">
+                    <span className="block w-full text-center text-[7px] md:text-[9px] tracking-[0.3em] text-nomad-paper/60 border-t border-nomad-paper/30 mt-0.5 pt-1 md:mt-1 md:pt-1.5 pl-[0.3em] group-hover:text-white/80 group-hover:border-white/50 transition-colors">
                         Yellowstone
                     </span>
                 </Link>
