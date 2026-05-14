@@ -101,7 +101,7 @@ export default function FleetPage() {
                             </div>
 
                             <div className="relative h-[600px] w-full overflow-hidden shadow-2xl">
-                                <Image src="/can-am-commander.jpg" alt="Rugged Can-Am Commander Max XT showcasing 14-inch suspension travel over backcountry rocks entirely separated from the pavement in Island Park." fill className="object-cover" priority />
+                                <Image src="/can-am-commander.jpg" alt="Rugged Can-Am Commander Max XT showcasing 14-inch suspension travel over backcountry rocks entirely separated from the pavement in Island Park." fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 800px" />
                             </div>
                         </div>
                     </div>

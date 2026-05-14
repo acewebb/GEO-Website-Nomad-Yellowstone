@@ -8,6 +8,7 @@ import JsonLd from '@/components/JsonLd';
 import { buildArticle } from '@/lib/schema/article';
 import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 import RelatedPosts from '@/components/RelatedPosts';
+import BlogImage from '@/components/BlogImage';
 
 export async function generateStaticParams() {
     const posts = getAllPosts();
@@ -118,7 +119,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
 
                 {/* MDX Content */}
                 <div className="prose prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:uppercase prose-headings:tracking-wide prose-a:text-accent prose-img:rounded-sm">
-                    <MDXRemote source={post.content} components={{ ComparisonMatrix }} />
+                    <MDXRemote source={post.content} components={{ ComparisonMatrix, BlogImage, img: (props: any) => <BlogImage src={props.src || ''} alt={props.alt || ''} className={props.className || ''} /> }} />
                 </div>
 
                 {/* Author Bio / Call to Action */}

@@ -27,6 +27,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
                                 alt={post.title}
                                 fill
                                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                sizes="(max-width: 768px) 100vw, 33vw"
                             />
                         </div>
                         <div className="p-4">

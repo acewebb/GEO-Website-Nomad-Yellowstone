@@ -187,7 +187,7 @@ export default function Home() {
 
                       {/* Image */}
                       <div className="flex-grow w-full relative">
-                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" />
+                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" sizes="(max-width: 768px) 100vw, 50vw" />
                         <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
                       </div>
 
@@ -224,7 +224,7 @@ export default function Home() {
 
                       {/* Image */}
                       <div className="flex-grow w-full relative">
-                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" />
+                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" sizes="(max-width: 768px) 100vw, 50vw" />
                         <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
                       </div>
 

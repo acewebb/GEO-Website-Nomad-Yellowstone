@@ -45,7 +45,7 @@ export default function GlobalHeader() {
                 </div>
 
                 {/* Right: Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8">
                     <Link href="/about" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">THE GUIDES</Link>
                     <Link href="/location" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">LOCATION</Link>
                     <Link href="/things-to-do-island-park" className="text-xs font-heading font-black tracking-widest text-nomad-paper hover:text-white transition-colors uppercase">PLAN YOUR TRIP</Link>
@@ -86,7 +86,7 @@ export default function GlobalHeader() {
                         transition={{ duration: 0.3 }}
                         className="absolute top-full left-0 w-full bg-nomad-black/95 backdrop-blur-xl border-b border-white/10 md:hidden overflow-hidden shadow-2xl"
                     >
-                        <nav className="flex flex-col px-6 py-6 gap-6">
+                        <nav aria-label="Mobile navigation" className="flex flex-col px-6 py-6 gap-6">
                             <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-heading font-black tracking-[0.2em] text-nomad-paper hover:text-white transition-colors uppercase">THE GUIDES</Link>
                             <div className="w-full h-px bg-white/5"></div>
                             <Link href="/location" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-heading font-black tracking-[0.2em] text-nomad-paper hover:text-white transition-colors uppercase">LOCATION</Link>

@@ -94,7 +94,7 @@ export default function IslandParkAtvTours() {
                     </div>
                     <div className="relative w-full h-[35vh] md:h-[50vh] flex flex-col max-w-5xl mx-auto p-4 md:px-6">
                         <div className="relative w-full h-full bg-nomad-black rounded-sm overflow-hidden shadow-2xl border border-white/5">
-                            <Image src="/sawtelle.png" alt="Guided ATV tours in Island Park Idaho with Nomad Yellowstone traversing the backcountry." fill className="object-cover grayscale contrast-125" priority />
+                            <Image src="/sawtelle.png" alt="Guided ATV tours in Island Park Idaho with Nomad Yellowstone traversing the backcountry." fill className="object-cover grayscale contrast-125" priority sizes="(max-width: 768px) 100vw, 800px" />
                             <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
                         </div>
                     </div>
