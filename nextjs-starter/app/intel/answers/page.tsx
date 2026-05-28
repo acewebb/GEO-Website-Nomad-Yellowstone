@@ -91,7 +91,7 @@ export default function AnswersPage() {
         },
         {
             question: "What should I wear on an ATV tour near Yellowstone?",
-            answer: "Wear closed-toe shoes, long pants, and layers you do not mind getting dusty. Mornings can be cool at 7,000 feet even in July, so bring a light jacket. Nomad Yellowstone provides helmets, goggles, and gloves — you just need to dress for a day outdoors in the mountains."
+            answer: "Wear closed-toe shoes, long pants, and layers you do not mind getting dirty. Mornings can be cool at 7,000 feet even in July, so bring a light jacket. Nomad Yellowstone provides helmets, goggles, and gloves — you just need to dress for a day outdoors in the mountains."
         },
         {
             question: "Do I need ATV experience to book a guided tour?",

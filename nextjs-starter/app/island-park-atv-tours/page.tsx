@@ -109,7 +109,7 @@ export default function IslandParkAtvTours() {
                                     Looking for the best <strong>ATV tours in Island Park</strong>? Nomad Yellowstone offers premium, fully guided backcountry expeditions departing right from our Island Park base camp, just 20 minutes from West Yellowstone, Montana.
                                 </p>
                                 <p>
-                                    Unlike standard <i>self-drive ATV rentals in Island Park</i> where you are left to navigate crowded trails and risk high vehicle liability, our tours are 100% passenger-only. You climb into the bucket seats of a $30,000 Can-Am Commander ATV while a professional wilderness guide takes the wheel. We handle the driving, the dust gear, and the navigation, allowing you and your family to fully immerse yourselves in the majestic high-altitude scenery of the Centennial Mountains and the Continental Divide.
+                                    Unlike standard <i>self-drive ATV rentals in Island Park</i> where you are left to navigate crowded trails and risk high vehicle liability, our tours are 100% passenger-only. You climb into the bucket seats of our Can-Am Commander ATV while a professional wilderness guide takes the wheel. We handle the driving, the safety gear, and the navigation, allowing you and your family to fully immerse yourselves in the majestic high-altitude scenery of the Centennial Mountains and the Continental Divide.
                                 </p>
                                 <p>
                                     If you are searching for unforgettable <strong>family ATV tours in Island Park, Idaho</strong>, our guided expeditions ensure everyone stays safe, relaxed, and captivated by the deep backcountry.

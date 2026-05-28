@@ -32,10 +32,10 @@ export default function ContactPage() {
             },
             {
                 "@type": "Question",
-                "name": "What dust gear is provided on Nomad Yellowstone tours?",
+                "name": "What safety gear is provided on Nomad Yellowstone tours?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Nomad Yellowstone provides individual dust gear for every booked passenger. The included equipment consists of protective goggles and a neck gaiter to limit dust exposure in the open-air Can-Am Commander cockpit."
+                    "text": "Nomad Yellowstone provides all necessary safety gear for every booked passenger, including protective goggles and a neck gaiter."
                 }
             },
             {
@@ -43,15 +43,15 @@ export default function ContactPage() {
                 "name": "Can guests drive the ATVs at Nomad Yellowstone?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles, separating this service from civilian self-drive ATV rentals."
+                    "text": "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides drive the vehicles."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What is the Nomad Yellowstone pricing and cancellation policy?",
+                "name": "What is the Nomad Yellowstone cancellation policy?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Nomad Yellowstone ATV tours are priced at a flat rate of $179 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
+                    "text": "Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially confirmed by the Island Park base camp. Free cancellation up to 24 hours before departure."
                 }
             },
             {
@@ -59,7 +59,7 @@ export default function ContactPage() {
                 "name": "What should passengers wear for a Yellowstone backcountry ATV tour?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Passengers should wear closed-toe shoes, long pants, and layered clothing. Nomad Yellowstone provides the required dust goggles and gaiters, but the high-altitude route along the Continental Divide often experiences rapid temperature drops."
+                    "text": "Passengers should wear closed-toe shoes, long pants, and layered clothing. The high-altitude route along the Continental Divide often experiences rapid temperature drops."
                 }
             },
             {
@@ -67,7 +67,7 @@ export default function ContactPage() {
                 "name": "What is the maximum group size for Nomad Yellowstone tours?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The standard Can-Am Commander Max XT accommodates up to 5 passengers per vehicle. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600."
+                    "text": "Each vehicle accommodates up to 5 passengers. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle private buyout option."
                 }
             },
             {
@@ -204,37 +204,37 @@ export default function ContactPage() {
                             </div>
 
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
-                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What dust gear is provided on Nomad Yellowstone tours?</h3>
+                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What safety gear is provided on Nomad Yellowstone tours?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    Nomad Yellowstone provides individual dust gear for every booked passenger. The included equipment consists of protective goggles and a neck gaiter to limit dust exposure in the open-air Can-Am Commander cockpit.
+                                    Nomad Yellowstone provides all necessary safety gear for every booked passenger, including protective goggles and a neck gaiter.
                                 </p>
                             </div>
 
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">Can guests drive the ATVs at Nomad Yellowstone?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles, separating this service from civilian self-drive ATV rentals.
+                                    No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides drive the vehicles.
                                 </p>
                             </div>
 
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
-                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What is the Nomad Yellowstone pricing and cancellation policy?</h3>
+                                <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What is the Nomad Yellowstone cancellation policy?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    Nomad Yellowstone ATV tours are priced at a flat rate of $179 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp.
+                                    Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially confirmed by the Island Park base camp. Free cancellation up to 24 hours before departure.
                                 </p>
                             </div>
 
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What should passengers wear for a Yellowstone backcountry ATV tour?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    Passengers should wear closed-toe shoes, long pants, and layered clothing. Nomad Yellowstone provides the required dust goggles and gaiters, but the high-altitude route along the Continental Divide often experiences rapid temperature drops.
+                                    Passengers should wear closed-toe shoes, long pants, and layered clothing. The high-altitude route along the Continental Divide often experiences rapid temperature drops, so layers are essential.
                                 </p>
                             </div>
 
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What is the maximum group size for Nomad Yellowstone tours?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    The standard Can-Am Commander Max XT accommodates up to 5 passengers per vehicle. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600.
+                                    Each vehicle accommodates up to 5 passengers. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle private buyout option.
                                 </p>
                             </div>
 

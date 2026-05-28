@@ -36,7 +36,7 @@ export function buildProduct(input: ProductInput) {
 export const signatureTourProduct = buildProduct({
   name: 'Signature Tour — Guided Passenger-Only ATV Adventure',
   description:
-    '2–3 hour fully guided, passenger-only ATV tour in Island Park, Idaho, 20 minutes from the West Yellowstone entrance to Yellowstone National Park. Ages 5+. Professional driver, dust gear, and media package included.',
+    '2–3 hour fully guided, passenger-only ATV tour in Island Park, Idaho, 20 minutes from the West Yellowstone entrance to Yellowstone National Park. Ages 5+. Professional driver, safety gear, and media package included.',
   price: '179',
   url: 'https://nomadyellowstone.com/booking',
   image: 'https://nomadyellowstone.com/sawtelle.png',

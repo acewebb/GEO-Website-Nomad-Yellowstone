@@ -39,7 +39,7 @@ const faqData = [
     },
     {
         question: "What's the best ATV tour in Island Park?",
-        answer: "Nomad Yellowstone offers fully guided, passenger-only ATV tours from Island Park into the Yellowstone-area backcountry. Riders are passengers — guides drive — making it accessible to families, kids age 5+, and non-drivers. Tours from $179/seat."
+        answer: "Nomad Yellowstone offers fully guided, passenger-only ATV tours from Island Park into the Yellowstone-area backcountry. Riders are passengers — guides drive — making it accessible to families, kids age 5+, and non-drivers."
     },
     {
         question: "Is there cell service in Island Park?",
@@ -55,7 +55,7 @@ const sections = [
     {
         id: "atv-tours",
         title: "Guided ATV & UTV Tours",
-        content: `The single most popular activity in Island Park — and the reason many families extend their Yellowstone trip by a day — is a guided backcountry ATV tour. Unlike self-drive ATV rentals where you navigate unfamiliar trails alone and assume full liability for a $30,000 machine, passenger-only ATV tours let you sit back while a certified guide drives. That makes the experience accessible to everyone: kids as young as five, grandparents, couples who've never been off-road, and families who want adventure without the stress of driving.\n\nNomad Yellowstone operates daily guided ATV tours from May 15 through October 31, departing from Island Park. Routes access high-elevation ridgelines in the Caribou-Targhee National Forest, reaching viewpoints above 8,500 feet with panoramic views of the Teton Range and Yellowstone caldera. Tours last 2–4 hours and start at $179 per seat. Dust goggles, neck gaiters, and safety harnesses are included.`,
+        content: `The single most popular activity in Island Park — and the reason many families extend their Yellowstone trip by a day — is a guided backcountry ATV tour. Unlike self-drive ATV rentals where you navigate unfamiliar trails alone, passenger-only ATV tours let you sit back while a certified guide drives. That makes the experience accessible to everyone: kids as young as five, grandparents, couples who've never been off-road, and families who want adventure without the stress of driving.\n\nNomad Yellowstone operates daily guided ATV tours from May 15 through October 31, departing from Island Park. Routes access high-elevation ridgelines in the Caribou-Targhee National Forest, reaching viewpoints above 8,500 feet with panoramic views of the Teton Range and Yellowstone caldera. Tours last 2–4 hours. All safety gear and harnesses are included.`,
         links: [
             { href: "/island-park-atv-tours", label: "Island Park ATV Tour Details →" },
             { href: "/yellowstone-atv-tours", label: "Yellowstone Backcountry ATV Tours →" }
@@ -249,7 +249,7 @@ export default function ThingsToDoIslandPark() {
                                         <Image src="/sawtelle.png" alt="Guided passenger-only ATV tour through Island Park Idaho backcountry near Yellowstone" fill className="object-cover" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                         <div className="absolute bottom-4 left-4 right-4 z-10">
-                                            <p className="text-white font-mono text-xs tracking-widest uppercase">From $179/seat · Passenger-Only · Ages 5+</p>
+                                            <p className="text-white font-mono text-xs tracking-widest uppercase">Passenger-Only · Guided · Ages 5+</p>
                                         </div>
                                     </div>
                                 )}
@@ -295,7 +295,7 @@ export default function ThingsToDoIslandPark() {
                         <FadeIn>
                             <h2 className="font-heading text-5xl md:text-7xl text-nomad-black uppercase mb-6 opacity-100 text-distressed drop-shadow-md">Book Your<br />Island Park Adventure</h2>
                             <p className="text-base md:text-lg text-nomad-black/80 leading-relaxed mb-8">
-                                Guided passenger-only ATV tours departing daily from Island Park, Idaho — 20 minutes from the West Yellowstone entrance. From $179 per seat.
+                                Guided passenger-only ATV tours departing daily from Island Park, Idaho — 20 minutes from the West Yellowstone entrance.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <Link href="/island-park-atv-tours" className="btn-primary px-12 py-6 text-xl">

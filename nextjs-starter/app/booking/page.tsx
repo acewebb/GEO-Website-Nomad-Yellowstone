@@ -39,7 +39,7 @@ export default function Booking() {
                         Book a Guided ATV Tour Near Yellowstone
                     </h1>
                     <p className="text-nomad-paper/80 text-sm md:text-base font-light border-l-2 border-accent/20 pl-4 max-w-2xl leading-relaxed">
-                        <strong>You ride, we drive.</strong> Professional guides pilot our Can-Am Commander ATVs through Island Park&apos;s backcountry — 20 minutes from West Yellowstone. All 2–3 hour tours start at $179 per seat and include dust protection gear and headsets. No experience needed, ages 5+.
+                        <strong>You ride, we drive.</strong> Professional guides pilot our ATVs through Island Park&apos;s backcountry — 20 minutes from West Yellowstone. All tours are 2–3 hours and include safety gear and headsets. No experience needed, ages 5+.
                     </p>
 
                     {/* Trust badge — server-rendered social proof (Fix 6 bonus) */}

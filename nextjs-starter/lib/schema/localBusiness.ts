@@ -14,7 +14,6 @@ export const localBusinessSchema = {
   image: 'https://nomadyellowstone.com/sawtelle.png',
   telephone: '+12087452088',
   email: 'hq@nomadyellowstone.com',
-  priceRange: '$179 - $1997',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '[TODO: ADD MEET-POINT STREET ADDRESS]',

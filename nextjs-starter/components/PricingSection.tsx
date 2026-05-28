@@ -15,7 +15,7 @@ export default function PricingSection() {
                         Transparent <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Access</span>
                     </h2>
                     <p className="font-mono text-sm md:text-base text-nomad-paper/60 max-w-2xl mx-auto leading-relaxed">
-                        Select the access tier that matches your desired level of wilderness immersion. All guided expeditions include dust protection gear and expert navigation.
+                        Select the access tier that matches your desired level of wilderness immersion. All guided expeditions include safety gear and expert navigation.
                     </p>
                 </div>
 
@@ -29,7 +29,7 @@ export default function PricingSection() {
                             <p className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest h-8">Self-Drive E-Bike / Standard ATV</p>
                         </div>
                         <div className="mb-8">
-                            <span className="font-heading text-5xl text-white tracking-tight">$149</span>
+                            <span className="font-heading text-5xl text-white tracking-tight">Basic</span>
                             <span className="font-mono text-xs text-nomad-paper/40 ml-2">/ vehicle</span>
                         </div>
                         <ul className="space-y-4 font-mono text-xs text-nomad-paper/70 tracking-wide flex-grow mb-8">
@@ -55,7 +55,7 @@ export default function PricingSection() {
                             <p className="font-mono text-xs text-nomad-paper/70 uppercase tracking-widest h-8">2–3 Hour Guided ATV Adventure<br />in Island Park (Passenger‑Only)</p>
                         </div>
                         <div className="mb-8 flex items-baseline gap-2">
-                            <span className="font-heading text-6xl text-white tracking-tight">$179</span>
+                            <span className="font-heading text-6xl text-white tracking-tight">Guided</span>
                             <span className="font-mono text-xs text-nomad-paper/40">/ passenger</span>
                         </div>
                         <ul className="space-y-4 font-mono text-sm text-white/90 tracking-wide flex-grow mb-8 border-y border-white/10 py-6">
@@ -77,7 +77,7 @@ export default function PricingSection() {
                             <p className="font-mono text-[10px] text-nomad-paper/50 uppercase tracking-widest h-8 pr-4">Private Buyout ATV Tour near Yellowstone<br />(Up to 5 Passengers)</p>
                         </div>
                         <div className="mb-8">
-                            <span className="font-heading text-5xl text-white tracking-tight">$1,997</span>
+                            <span className="font-heading text-5xl text-white tracking-tight">Private</span>
                             <span className="font-mono text-xs text-nomad-paper/40 ml-2">/ flat rate</span>
                         </div>
                         <ul className="space-y-4 font-mono text-xs text-nomad-paper/70 tracking-wide flex-grow mb-8">

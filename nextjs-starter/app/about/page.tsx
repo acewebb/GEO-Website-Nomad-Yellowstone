@@ -62,7 +62,7 @@ export default function AboutPage() {
                         Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Navigation</span>
                     </h1>
                     <p className="font-mono text-sm md:text-base text-nomad-paper/60 leading-relaxed mx-auto max-w-3xl">
-                        A $30,000 piece of equipment is useless without the human element to guide it. You aren't just paying for the machine; you are paying to ride alongside seasoned backcountry professionals.
+                        Premium equipment is useless without the human element to guide it. You aren't just booking a machine; you are riding alongside seasoned backcountry professionals.
                     </p>
                 </div>
 

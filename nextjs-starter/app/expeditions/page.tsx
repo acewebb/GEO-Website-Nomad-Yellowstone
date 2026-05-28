@@ -110,7 +110,7 @@ export default function ExpeditionsPage() {
                         <span className="font-mono text-nomad-red text-sm tracking-widest mb-2 block font-bold">// EXPEDITION LOG</span>
                         <h1 className="font-heading text-6xl md:text-8xl text-nomad-paper uppercase tracking-widest text-distressed drop-shadow-sm mb-6">Select Your Mission</h1>
                         <p className="text-nomad-paper/90 max-w-2xl mx-auto font-medium text-lg leading-relaxed drop-shadow-md">
-                            Nomad Yellowstone offers three primary 2–3 hour passenger-only expeditions. Each tour is guided by professional operators navigating $30,000 Can-Am Commander ATVs through the high-altitude remote regions surrounding Island Park, Idaho.
+                            Nomad Yellowstone offers three primary 2–3 hour passenger-only expeditions. Each tour is guided by professional operators navigating the high-altitude remote regions surrounding Island Park, Idaho.
                         </p>
                     </div>
                 </section>
@@ -135,11 +135,11 @@ export default function ExpeditionsPage() {
                                         <ul className="space-y-2 font-mono text-xs text-nomad-paper/90">
                                             <li><span className="text-nomad-red mr-2">▶</span> <strong>Timing:</strong> Departs 08:00 before peak daytime temperatures.</li>
                                             <li><span className="text-nomad-red mr-2">▶</span> <strong>Wildlife:</strong> Highest probability for active wildlife viewing.</li>
-                                            <li><span className="text-nomad-red mr-2">▶</span> <strong>Includes:</strong> Professional driver, dust protection gear, and morning coffee.</li>
+                                            <li><span className="text-nomad-red mr-2">▶</span> <strong>Includes:</strong> Professional driver, all safety gear, and morning coffee.</li>
                                         </ul>
                                     </div>
                                     <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                                        <span className="font-heading text-2xl text-white">$179<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
+                                        <span className="font-mono text-xs text-nomad-paper/80 uppercase tracking-widest">Per Person</span>
                                         <Link href="/booking" className="text-nomad-red text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</Link>
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@ export default function ExpeditionsPage() {
                                         </ul>
                                     </div>
                                     <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                                        <span className="font-heading text-2xl text-white">$179<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
+                                        <span className="font-mono text-xs text-nomad-paper/80 uppercase tracking-widest">Per Person</span>
                                         <Link href="/booking" className="text-nomad-red text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</Link>
                                     </div>
                                 </div>
@@ -184,11 +184,11 @@ export default function ExpeditionsPage() {
                                         <ul className="space-y-2 font-mono text-xs text-nomad-paper/90">
                                             <li><span className="text-nomad-red mr-2">▶</span> <strong>Lighting:</strong> Chases the sunset for premium backcountry photography.</li>
                                             <li><span className="text-nomad-red mr-2">▶</span> <strong>Experience:</strong> Cooler evening temperatures and a unique twilight descent.</li>
-                                            <li><span className="text-nomad-red mr-2">▶</span> <strong>Includes:</strong> Professional driver, dust gear, and 2-way comms headsets.</li>
+                                            <li><span className="text-nomad-red mr-2">▶</span> <strong>Includes:</strong> Professional driver, all safety gear, and 2-way comms headsets.</li>
                                         </ul>
                                     </div>
                                     <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                                        <span className="font-heading text-2xl text-white">$179<span className="text-sm text-nomad-paper/80 font-mono">/pp</span></span>
+                                        <span className="font-mono text-xs text-nomad-paper/80 uppercase tracking-widest">Per Person</span>
                                         <Link href="/booking" className="text-nomad-red text-sm font-bold uppercase tracking-widest group-hover:underline">Book Seat</Link>
                                     </div>
                                 </div>

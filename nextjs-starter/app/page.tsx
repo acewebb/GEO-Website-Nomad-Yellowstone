@@ -15,20 +15,20 @@ import { signatureTourProduct, legendProduct } from '@/lib/schema/product';
 
 export const metadata: Metadata = {
   title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
-  description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. From $179/seat. Family-friendly, no experience needed. Book direct.',
+  description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. Family-friendly, no experience needed. Book direct.',
   alternates: {
     canonical: 'https://nomadyellowstone.com/',
   },
   openGraph: {
     title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
-    description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. From $179/seat. Family-friendly, no experience needed. Book direct.',
+    description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. Family-friendly, no experience needed. Book direct.',
     url: 'https://nomadyellowstone.com/',
     images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone guided ATV tour in Island Park backcountry' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
-    description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. From $179/seat. Family-friendly, no experience needed. Book direct.',
+    description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. Family-friendly, no experience needed. Book direct.',
     images: ['/sawtelle.png'],
   },
 };
@@ -39,24 +39,20 @@ const faqData = [
     answer: "Yes. Nomad Yellowstone tours are 100% guide-driven, accommodating passengers ages 5 and older. Child car seats can be secured in the rear stadium seats of the Can-Am Commander Max XT."
   },
   {
-    question: "What dust gear is provided on Nomad Yellowstone tours?",
-    answer: "Nomad Yellowstone provides individual dust gear for every booked passenger. The included equipment consists of protective goggles and a neck gaiter to limit dust exposure in the open-air Can-Am Commander cockpit."
-  },
-  {
     question: "Do you offer self-drive ATV rentals in Island Park?",
-    answer: "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides command the vehicles. We do not offer self-drive rentals."
+    answer: "No. Nomad Yellowstone operates strictly as a passenger-only guided experience. Professional guides handle the driving. We do not offer self-drive rentals."
   },
   {
-    question: "What is the Nomad Yellowstone pricing and cancellation policy?",
-    answer: "Nomad Yellowstone ATV tours are priced at a flat rate of $179 per passenger. Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially verified and confirmed by the Island Park base camp."
+    question: "What is the Nomad Yellowstone cancellation policy?",
+    answer: "Secure bookings require a credit card hold, but guests are not charged until the tour reservation is officially confirmed by the Island Park base camp. Free cancellation up to 24 hours before departure."
   },
   {
     question: "What should passengers wear for a Yellowstone backcountry ATV tour?",
-    answer: "Passengers should wear closed-toe shoes, long pants, and layered clothing. Nomad Yellowstone provides the required dust goggles and gaiters, but the high-altitude route along the Continental Divide often experiences rapid temperature drops."
+    answer: "Passengers should wear closed-toe shoes, long pants, and layered clothing. The high-altitude route along the Continental Divide often experiences rapid temperature drops, so layers are essential."
   },
   {
     question: "What is the maximum group size for Nomad Yellowstone tours?",
-    answer: "The standard Can-Am Commander Max XT accommodates up to 5 passengers per vehicle. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle exclusive buyout option at a flat rate of $600."
+    answer: "Each vehicle accommodates up to 5 passengers. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle private buyout option."
   },
   {
     question: "Where do Nomad Yellowstone guided tours depart from?",
@@ -143,10 +139,10 @@ export default function Home() {
                   Backcountry Tours in Yellowstone
                 </h2>
                 <p className="text-sm md:text-base text-nomad-black/90 max-w-2xl mx-auto leading-relaxed mb-6">
-                  Nomad Yellowstone offers fully guided, passenger-only ATV tours from Island Park, Idaho — about 20 minutes from the West Yellowstone entrance of Yellowstone National Park. Our certified guides drive Can-Am Commander Max XT side-by-sides while you ride along, making backcountry views and high-elevation terrain accessible to families, grandparents, and anyone who doesn&apos;t want to drive themselves. Tours run May 15 through October 31 from $179 per seat. No off-road experience required.
+                  Nomad Yellowstone offers fully guided, passenger-only ATV tours from Island Park, Idaho — about 20 minutes from the West Yellowstone entrance of Yellowstone National Park. Our certified guides drive while you ride along, making backcountry views and high-elevation terrain accessible to families, grandparents, and anyone who doesn&apos;t want to drive themselves. Tours run May 15 through October 31. No off-road experience required.
                 </p>
                 <p className="font-mono text-sm md:text-base text-nomad-black font-bold mt-2 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
-                  <span className="text-lg font-bold">From $179 per seat</span>
+                  <span className="text-lg font-bold">Passenger-Only Tours</span>
                   <span className="text-nomad-red">·</span>
                   <a href="tel:+12087452088" className="hover:text-nomad-red transition-colors underline decoration-1 underline-offset-4">(208) 745-2088</a>
                   <span className="text-nomad-red">·</span>
@@ -278,10 +274,10 @@ export default function Home() {
                     Unlike self-drive ATV rentals where you&apos;re responsible for navigating unfamiliar terrain, our passenger-only format means a certified guide handles the driving while you soak in the scenery. It&apos;s the safest, most relaxing way to explore the Yellowstone backcountry — and it&apos;s why families with kids as young as five and grandparents in their eighties choose Nomad.
                   </p>
                   <ul className="list-disc pl-5 text-nomad-black font-medium text-sm md:text-base leading-relaxed opacity-90 drop-shadow-sm space-y-2">
-                    <li><strong>Expert Guided:</strong> Professional guides drive the $30,000 Can-Am Commander Max XT ATVs — you just enjoy the views.</li>
+                    <li><strong>Expert Guided:</strong> Professional guides drive — you just enjoy the views.</li>
                     <li><strong>Deep Access:</strong> We navigate rugged terrain to reach 10,000-foot peaks that standard rentals can&apos;t access.</li>
                     <li><strong>Zero Liability:</strong> Because our passenger-only tours are fully guide-driven, guests carry zero liability for vehicle damage.</li>
-                    <li><strong>Fully Equipped:</strong> Dust protection goggles and neck gaiters are provided for every passenger.</li>
+                    <li><strong>Fully Equipped:</strong> All safety gear and equipment provided for every passenger.</li>
                   </ul>
                 </div>
 
@@ -293,7 +289,7 @@ export default function Home() {
                     <span className="text-nomad-red">✓</span> Deep Backcountry Access
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-nomad-red">✓</span> Seats from $179
+                    <span className="text-nomad-red">✓</span> Ages 5+ Welcome
                   </li>
                 </ul>
 
@@ -365,7 +361,7 @@ export default function Home() {
             <FadeIn>
               <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-6 opacity-100 text-distressed drop-shadow-md">Book Your<br />Expedition</h2>
               <p className="text-base md:text-lg text-nomad-black/80 leading-relaxed mb-8">
-                Ready to experience the Yellowstone backcountry without the stress of driving? Our passenger-only ATV tours depart daily from Island Park, Idaho — just 20 minutes from the West Yellowstone entrance. From $179 per seat.
+                Ready to experience the Yellowstone backcountry without the stress of driving? Our passenger-only ATV tours depart daily from Island Park, Idaho — just 20 minutes from the West Yellowstone entrance.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/booking" className="btn-primary px-12 py-6 text-xl">

@@ -272,7 +272,7 @@ function BookingFormInner() {
                         <p className="text-accent font-mono text-xs uppercase tracking-widest mb-1">Includes</p>
                         <ul className="text-xs text-nomad-paper/70 text-right space-y-1">
                             <li>Professional Guide</li>
-                            <li>Dust Protection Gear</li>
+                            <li>Safety Gear</li>
                             <li>Binoculars & Headsets</li>
                         </ul>
                     </div>

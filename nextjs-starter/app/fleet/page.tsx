@@ -5,11 +5,11 @@ import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata = {
     title: "The Fleet: Can-Am Commander MAX XT | Nomad Yellowstone",
-    description: "Nomad Yellowstone utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles for all guided off-road excursions.",
+    description: "Nomad Yellowstone utilizes purpose-built Can-Am Commander Max XT vehicles for all guided off-road excursions.",
     alternates: { canonical: 'https://nomadyellowstone.com/fleet' },
     openGraph: {
         title: "The Fleet: Can-Am Commander MAX XT | Nomad Yellowstone",
-        description: "Nomad Yellowstone utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles for all guided off-road excursions.",
+        description: "Nomad Yellowstone utilizes purpose-built Can-Am Commander Max XT vehicles for all guided off-road excursions.",
         url: "https://nomadyellowstone.com/fleet",
         siteName: "Nomad Yellowstone",
         images: [
@@ -31,7 +31,7 @@ export default function FleetPage() {
         "@type": "Product",
         "name": "Can-Am Commander MAX XT",
         "image": "https://nomadyellowstone.com/atv_action.png",
-        "description": "Nomad Yellowstone utilizes $30,000 purpose-built Can-Am Commander Max XT vehicles for all passenger-only guided off-road expeditions. Features 100HP Rotax engines, 14-inch suspension travel, and stadium seating.",
+        "description": "Nomad Yellowstone utilizes purpose-built Can-Am Commander Max XT vehicles for all passenger-only guided off-road expeditions. Features 100HP Rotax engines, 14-inch suspension travel, and stadium seating.",
         "brand": {
             "@type": "Brand",
             "name": "Can-Am"
@@ -76,7 +76,7 @@ export default function FleetPage() {
 
                                 <div className="space-y-6">
                                     <p className="text-nomad-black font-medium text-lg leading-relaxed drop-shadow-sm">
-                                        This isn't a rental beater. It's a $30,000 purpose-built backcountry machine. We trust the Can-Am Commander MAX XT to safely transport our passengers to 10,000-foot peaks that standard vehicles simply cannot reach.
+                                        This isn’t a rental beater. It’s a purpose-built backcountry machine. We trust the Can-Am Commander MAX XT to safely transport our passengers to 10,000-foot peaks that standard vehicles simply cannot reach.
                                     </p>
 
                                     <div className="grid grid-cols-2 gap-6 pt-4">
