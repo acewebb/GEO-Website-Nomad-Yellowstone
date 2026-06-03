@@ -77,10 +77,6 @@
   animation: marquee 120s linear infinite;
 }
 
-.group:hover .animate-marquee {
-  animation-play-state: paused;
-}
-
 
 body {
   color: var(--foreground);

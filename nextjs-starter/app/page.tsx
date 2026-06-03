@@ -158,7 +158,7 @@ export default function Home() {
             {/* Central Scrolling Image Carousel */}
             <div className="flex-grow relative w-full flex flex-row">
               {/* Scrolling wrapper */}
-              <div className="flex flex-row h-full min-w-full group hover:[&>div]:!animate-paused">
+              <div className="flex flex-row h-full min-w-full group">
                 <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full">
                   {[
                     "/creek_bw_film.png",
