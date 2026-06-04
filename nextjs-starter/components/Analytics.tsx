@@ -26,6 +26,25 @@ export default function Analytics() {
           `,
         }}
       />
+
+      {/* Google Ads Integration */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18195711733"
+      />
+      <Script
+        id="google-ads"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18195711733');
+          `,
+        }}
+      />
     </>
   );
 }
