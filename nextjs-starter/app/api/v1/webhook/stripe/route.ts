@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { db, admin } from '@/lib/firebase';
 import { sendConfirmationEmail, sendAdminNotificationEmail } from '@/lib/transporter';
+import { sendCustomerSmsConfirmation, sendOwnerSmsAlert } from '@/lib/sms/send-sms-confirmation';
 
 export async function POST(request: Request) {
     const sig = request.headers.get("stripe-signature");
@@ -70,7 +71,37 @@ export async function POST(request: Request) {
                     });
                 }
 
-                console.log(`Booking ${bookingId} confirmed and emails dispatched.`);
+                // 4. Dispatch SMS alerts if payment succeeded
+                if (session.payment_status === 'paid') {
+                    const amountTotal = session.amount_total ? session.amount_total / 100 : 0;
+                    const bookingSmsData = {
+                        customerName: bookingData?.name || session.metadata?.customerName || "Valued Customer",
+                        customerPhone: session.metadata?.Guest_Phone || session.metadata?.customerPhone || bookingData?.phone || "",
+                        tourId: Tour_Time_Slot || session.metadata?.tourId || "",
+                        tourDate: Tour_Date || session.metadata?.tourDate || "",
+                        numberOfSeats: Number(Guest_Count || session.metadata?.numberOfSeats || 0),
+                        bookingType: Booking_Type || session.metadata?.bookingType || bookingData?.bookingType || "standard",
+                        amountTotal,
+                        tourTime: bookingData?.tourTime || Tour_Time || session.metadata?.tourTime || "",
+                        tourType: bookingData?.tourType || Tour_Type || session.metadata?.tourType || "",
+                    };
+
+                    try {
+                        await sendOwnerSmsAlert(bookingSmsData);
+                    } catch (smsError) {
+                        console.error("Error calling sendOwnerSmsAlert:", smsError);
+                    }
+
+                    try {
+                        await sendCustomerSmsConfirmation(bookingSmsData);
+                    } catch (smsError) {
+                        console.error("Error calling sendCustomerSmsConfirmation:", smsError);
+                    }
+                } else {
+                    console.log(`Payment status for session ${session.id} is "${session.payment_status}", skipping SMS notifications.`);
+                }
+
+                console.log(`Booking ${bookingId} confirmed and emails/SMS dispatched.`);
             }
         } catch (dbError) {
             console.error("Error updating booking on webhook success:", dbError);
