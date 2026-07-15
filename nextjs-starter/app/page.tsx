@@ -11,7 +11,7 @@ import AccordionFAQ from '@/components/AccordionFAQ';
 import ReviewsDossier from '@/components/ReviewsDossier';
 import JsonLd from '@/components/JsonLd';
 import { buildFAQPage } from '@/lib/schema/faqPage';
-import { signatureTourProduct, legendProduct } from '@/lib/schema/product';
+import { signatureTourProduct } from '@/lib/schema/product';
 
 export const metadata: Metadata = {
   title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
@@ -114,7 +114,6 @@ export default function Home() {
       <JsonLd data={websiteSchema} />
       <JsonLd data={buildFAQPage(faqData)} />
       <JsonLd data={signatureTourProduct} />
-      <JsonLd data={legendProduct} />
       <JsonLd data={organizationSchema} />
 
       {/* Navigation Header */}

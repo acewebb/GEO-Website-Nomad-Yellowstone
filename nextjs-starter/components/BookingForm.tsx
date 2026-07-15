@@ -143,7 +143,7 @@ function BookingFormInner() {
 
     // Pricing Constants
     const PRICE_PER_PASSENGER = 179;
-    const BUYOUT_PRICE = 699;
+    const BUYOUT_PRICE = 1997;
 
     const missions = [
         { id: '9am', label: 'Morning Tour', time: '9:00 AM' },
@@ -154,6 +154,7 @@ function BookingFormInner() {
 
     const currentSlotAvailability = availability ? availability[missionType]?.seatsAvailable : 5;
     const maxGuests = currentSlotAvailability !== undefined ? currentSlotAvailability : 5;
+    const isPrivateSlotUnavailable = false;
 
     // Constrain guest count if slot availability drops below selection
     useEffect(() => {
@@ -172,7 +173,7 @@ function BookingFormInner() {
                 <div>
                     <span className="font-mono text-accent text-xs tracking-widest mb-2 block">// STEP 01: CHOOSE ADVENTURE</span>
                     <h2 className="font-heading text-3xl md:text-4xl text-white uppercase leading-none mb-6">
-                        Signature Tour – Guided ATV Adventure
+                        {isBuyout ? "Private UTV Tour Buyout" : "Signature Tour – Guided ATV Adventure"}
                     </h2>
                 </div>
 
@@ -213,30 +214,38 @@ function BookingFormInner() {
                 <div className="space-y-6 bg-surface/30 p-6 rounded-sm border border-white/5">
                     <div className="flex items-center justify-between">
                         <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Group Size</label>
-                        <span className="font-heading text-2xl text-white">{`${guestCount} PASSENGER${guestCount > 1 ? 'S' : ''}`}</span>
+                        <span className="font-heading text-2xl text-white">
+                            {isBuyout ? 'PRIVATE TOUR' : `${guestCount} PASSENGER${guestCount > 1 ? 'S' : ''}`}
+                        </span>
                     </div>
 
-                    <div className="flex items-center justify-center gap-5">
-                        <button
-                            type="button"
-                            onClick={() => setGuestCount(Math.max(1, guestCount - 1))}
-                            disabled={guestCount <= 1}
-                            className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white/20 text-white text-2xl font-bold hover:border-accent hover:text-accent active:scale-90 transition-all disabled:opacity-20 disabled:cursor-not-allowed select-none"
-                            aria-label="Decrease passenger count"
-                        >
-                            −
-                        </button>
-                        <div className="font-heading text-4xl md:text-3xl text-white w-16 text-center tabular-nums">{guestCount}</div>
-                        <button
-                            type="button"
-                            onClick={() => setGuestCount(Math.min(maxGuests || 1, guestCount + 1))}
-                            disabled={guestCount >= (maxGuests || 1)}
-                            className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white/20 text-white text-2xl font-bold hover:border-accent hover:text-accent active:scale-90 transition-all disabled:opacity-20 disabled:cursor-not-allowed select-none"
-                            aria-label="Increase passenger count"
-                        >
-                            +
-                        </button>
-                    </div>
+                    {!isBuyout ? (
+                        <div className="flex items-center justify-center gap-5">
+                            <button
+                                type="button"
+                                onClick={() => setGuestCount(Math.max(1, guestCount - 1))}
+                                disabled={guestCount <= 1}
+                                className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white/20 text-white text-2xl font-bold hover:border-accent hover:text-accent active:scale-90 transition-all disabled:opacity-20 disabled:cursor-not-allowed select-none"
+                                aria-label="Decrease passenger count"
+                            >
+                                −
+                            </button>
+                            <div className="font-heading text-4xl md:text-3xl text-white w-16 text-center tabular-nums">{guestCount}</div>
+                            <button
+                                type="button"
+                                onClick={() => setGuestCount(Math.min(maxGuests || 1, guestCount + 1))}
+                                disabled={guestCount >= (maxGuests || 1)}
+                                className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white/20 text-white text-2xl font-bold hover:border-accent hover:text-accent active:scale-90 transition-all disabled:opacity-20 disabled:cursor-not-allowed select-none"
+                                aria-label="Increase passenger count"
+                            >
+                                +
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="p-3 bg-accent/10 border border-accent/30 text-accent text-xs font-mono text-center">
+                            FULL VEHICLE EXCLUSIVE ACCESS UNLOCKED (UP TO 5 PASSENGERS)
+                        </div>
+                    )}
                 </div>
 
                 {/* Total Estimator */}
@@ -292,8 +301,8 @@ function BookingFormInner() {
                                             phone,
                                             tourId: missionType,
                                             date: format(selectedDate, 'yyyy-MM-dd'),
-                                            seats: guestCount,
-                                            bookingType: 'individual',
+                                            seats: isBuyout ? 5 : guestCount,
+                                            bookingType: isBuyout ? 'private' : 'individual',
                                             notes
                                         })
                                     });
@@ -349,10 +358,16 @@ function BookingFormInner() {
                                     <textarea name="notes" placeholder="DIETARY RESTRICTIONS, SPECIAL OCCASIONS, ETC." className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs h-24 resize-none transition-all"></textarea>
                                 </div>
 
+                                {isPrivateSlotUnavailable && (
+                                    <div className="p-4 bg-red-900/20 border border-red-500/30 text-red-400 text-xs font-mono text-center mb-4">
+                                        Private buyout is unavailable for this time slot because seats have already been booked by another party. Please select a different time slot or date.
+                                    </div>
+                                )}
+
                                 <div className="pt-2">
-                                    <button type="submit" disabled={isSubmitted} className={`btn-primary w-full py-5 text-lg relative overflow-hidden group ${isSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                                    <button type="submit" disabled={isSubmitted || isPrivateSlotUnavailable} className={`btn-primary w-full py-5 text-lg relative overflow-hidden group ${isSubmitted || isPrivateSlotUnavailable ? 'opacity-50 cursor-not-allowed' : ''}`}>
                                         <span className="relative z-10">{isSubmitted ? 'Processing...' : 'Proceed to Checkout'}</span>
-                                        {!isSubmitted && <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>}
+                                        {!(isSubmitted || isPrivateSlotUnavailable) && <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>}
                                     </button>
                                     <p className="text-center text-xs font-mono text-nomad-paper/30 mt-4 uppercase tracking-widest">
                                         ✓ Free cancellation up to 24 hours before departure.<br />

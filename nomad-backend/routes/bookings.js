@@ -8,7 +8,7 @@ const publicRouter = express.Router();
 const adminRouter = express.Router();
 
 const INDIVIDUAL_PRICE = 179;
-const PRIVATE_BUYOUT_PRICE = 699;
+const PRIVATE_BUYOUT_PRICE = 1997;
 
 // -- PUBLIC ROUTES --
 
@@ -54,7 +54,7 @@ publicRouter.post("/", validateBooking, async (req, res, next) => {
                         price_data: {
                             currency: "usd",
                             product_data: {
-                                name: isPrivate ? `Private UTV Tour Buyout (${tourId})` : `Nomad Yellowstone UTV Tour (${tourId})`,
+                                name: isPrivate ? `Private Tour Buyout (${tourId})` : `Nomad Yellowstone UTV Tour (${tourId})`,
                                 description: `Date: ${date} | Guests: ${seats} | Passenger: ${name}`,
                             },
                             unit_amount: isPrivate ? PRIVATE_BUYOUT_PRICE * 100 : INDIVIDUAL_PRICE * 100,

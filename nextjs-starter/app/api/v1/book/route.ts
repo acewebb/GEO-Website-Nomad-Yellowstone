@@ -4,7 +4,7 @@ import { stripe } from '@/lib/stripe';
 import { bookingSchema } from '@/lib/validateInput';
 
 const INDIVIDUAL_PRICE = 179;
-const PRIVATE_BUYOUT_PRICE = 699;
+const PRIVATE_BUYOUT_PRICE = 1997;
 
 export async function POST(request: Request) {
     try {
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
                         price_data: {
                             currency: "usd",
                             product_data: {
-                                name: isPrivate ? `The Legend – Private Buyout ATV Tour near Yellowstone (Up to 5 Passengers)` : `Signature Tour – 2-3 Hour Guided ATV Adventure in Island Park (Passenger-Only)`,
+                                name: isPrivate ? `Private Tour Buyout (Up to 5 Passengers)` : `Signature Tour – Guided ATV Tour`,
                                 description: `Date: ${date} | Time: ${currentSlot.tourTime} | Guests: ${seats} | Passenger: ${name}`,
                             },
                             unit_amount: isPrivate ? PRIVATE_BUYOUT_PRICE * 100 : INDIVIDUAL_PRICE * 100,

@@ -16,7 +16,7 @@ export const localBusinessSchema = {
   email: 'hq@nomadyellowstone.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '[TODO: ADD MEET-POINT STREET ADDRESS]',
+    streetAddress: 'Meet point in Island Park',
     addressLocality: 'Island Park',
     addressRegion: 'ID',
     postalCode: '83429',
@@ -44,10 +44,36 @@ export const localBusinessSchema = {
       validThrough: '2026-10-31',
     },
   ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '3',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'James D.' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5' },
+      reviewBody: 'My teenage kids put their phones down. Guide knew every peak and every flower.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Sarah L.' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5' },
+      reviewBody: 'We saw a grizzly bear on the Morning Scout tour!',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Mike K.' },
+      reviewRating: { '@type': 'Rating', ratingValue: '5' },
+      reviewBody: 'Being driven was so relaxing. We just enjoyed the views.',
+    },
+  ],
   sameAs: [
     'https://www.instagram.com/nomadyellowstone',
     'https://www.facebook.com/nomadyellowstone',
     'https://www.tripadvisor.com/AttractionProductReview-g35494-d33307035-Guided_ATV_Adventure_Island_Park_20_Mins_from_West_Yellowstone-Island_Park_Idaho.html',
-    // TODO: add Google Business Profile URL once claimed
   ],
 };
