@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 const sendConfirmationEmail = async (bookingData) => {
     const { name, email, tourId, date, seats } = bookingData;
-    const timeStr = tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM';
+    const timeStr = tourId === '9am' ? '9:00 AM' : tourId === '12pm' ? '12:00 PM' : tourId === '3pm' ? '3:00 PM' : tourId === '6pm' ? '6:00 PM' : tourId;
 
     const mailOptions = {
         from: `"Nomad Yellowstone" <${process.env.EMAIL_USER}>`,
@@ -21,11 +21,11 @@ const sendConfirmationEmail = async (bookingData) => {
         subject: `Booking Confirmed: Nomad Yellowstone UTV Tour`,
         html: `
       <div style="font-family: Arial, sans-serif; padding: 20px; color: #1a1a1a;">
-        <h1 style="color: #b83b3b;">YOUR EXPEDITION IS CONFIRMED</h1>
+        <h1 style="color: #b83b3b;">YOUR TOUR IS CONFIRMED</h1>
         <p>Hello ${name},</p>
         <p>Your seats are securely reserved. Our guides are ready to take you into the Yellowstone backcountry.</p>
         
-        <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px;">Mission Details</h3>
+        <h3 style="border-bottom: 2px solid #eee; padding-bottom: 5px;">Tour Details</h3>
         <ul style="list-style: none; padding-left: 0;">
           <li><strong>Date:</strong> ${date}</li>
           <li><strong>Departure Time:</strong> ${timeStr}</li>

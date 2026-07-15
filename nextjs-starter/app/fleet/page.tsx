@@ -57,10 +57,10 @@ export default function FleetPage() {
                     </Link>
 
                     <nav className="flex items-center gap-8 font-bold text-sm tracking-widest mt-4 md:mt-0">
-                        <Link href="/expeditions" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[EXPEDITIONS]</Link>
+                        <Link href="/expeditions" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[TOURS]</Link>
                         <Link href="/fleet" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm border-b-2 border-nomad-red">[THE FLEET]</Link>
                         <Link href="/contact" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[CONTACT]</Link>
-                        <Link href="/intel" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[INTEL]</Link>
+                        <Link href="/intel" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[TRIP GUIDES]</Link>
                         <Link href="/booking" className="btn-primary px-6 py-2">BOOK NOW</Link>
                     </nav>
                 </div>
@@ -113,9 +113,9 @@ export default function FleetPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-nomad-paper via-transparent to-transparent opacity-50 pointer-events-none"></div>
 
                     <div className="relative z-10 text-center px-4">
-                        <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-12 opacity-100 text-distressed drop-shadow-md">Select Your Mission</h2>
+                        <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-12 opacity-100 text-distressed drop-shadow-md">Choose Your Tour</h2>
                         <Link href="/expeditions" className="btn-primary px-12 py-6 text-xl">
-                            VIEW EXPEDITIONS
+                            VIEW TOURS
                         </Link>
                     </div>
                 </section>
@@ -129,7 +129,7 @@ export default function FleetPage() {
                     </div>
                     <div className="flex flex-wrap justify-center md:items-center gap-4 md:gap-8 font-bold text-center">
                         <Link href="/" className="hover:text-nomad-red transition-colors drop-shadow-sm">[HOME]</Link>
-                        <Link href="/intel" className="hover:text-nomad-red transition-colors drop-shadow-sm">[JOURNAL]</Link>
+                        <Link href="/intel" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIP GUIDES]</Link>
                         <a href="https://www.tripadvisor.com/AttractionProductReview-g35494-d33307035-Guided_ATV_Adventure_Island_Park_20_Mins_from_West_Yellowstone-Island_Park_Idaho.html" target="_blank" rel="noopener noreferrer" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR]</a>
                         <Link href="/booking" className="text-nomad-red hover:text-black transition-colors drop-shadow-sm">[BOOK NOW]</Link>
                     </div>

@@ -4,11 +4,11 @@ import JsonLd from '@/components/JsonLd';
 import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata = {
-    title: "Guided ATV Backcountry Expeditions | Nomad Yellowstone",
+    title: "Guided ATV Backcountry Tours | Nomad Yellowstone",
     description: "Explore Nomad Yellowstone's passenger-only off-road ATV tours in Island Park, Idaho. Safe, guided access to 10,000-foot peaks.",
     alternates: { canonical: 'https://nomadyellowstone.com/expeditions' },
     openGraph: {
-        title: "Guided ATV Backcountry Expeditions | Nomad Yellowstone",
+        title: "Guided ATV Backcountry Tours | Nomad Yellowstone",
         description: "Explore Nomad Yellowstone's passenger-only off-road ATV tours in Island Park, Idaho. Safe, guided access to 10,000-foot peaks.",
         url: "https://nomadyellowstone.com/expeditions",
         siteName: "Nomad Yellowstone",
@@ -94,10 +94,10 @@ export default function ExpeditionsPage() {
                     </Link>
 
                     <nav className="flex items-center gap-8 font-bold text-sm tracking-widest mt-4 md:mt-0">
-                        <Link href="/expeditions" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm border-b-2 border-nomad-red">[EXPEDITIONS]</Link>
+                        <Link href="/expeditions" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm border-b-2 border-nomad-red">[TOURS]</Link>
                         <Link href="/fleet" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[THE FLEET]</Link>
                         <Link href="/contact" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[CONTACT]</Link>
-                        <Link href="/intel" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[INTEL]</Link>
+                        <Link href="/intel" className="text-nomad-paper hover:text-white transition-colors uppercase drop-shadow-sm">[TRIP GUIDES]</Link>
                         <Link href="/booking" className="btn-primary px-6 py-2">BOOK NOW</Link>
                     </nav>
                 </div>
@@ -107,10 +107,10 @@ export default function ExpeditionsPage() {
                 {/* HERO */}
                 <section className="relative py-24 w-full flex flex-col items-center border-b border-nomad-black/10">
                     <div className="container mx-auto px-4 z-10 text-center">
-                        <span className="font-mono text-nomad-red text-sm tracking-widest mb-2 block font-bold">// EXPEDITION LOG</span>
-                        <h1 className="font-heading text-6xl md:text-8xl text-nomad-paper uppercase tracking-widest text-distressed drop-shadow-sm mb-6">Select Your Mission</h1>
+                        <span className="font-mono text-nomad-red text-sm tracking-widest mb-2 block font-bold">// OUR TOURS</span>
+                        <h1 className="font-heading text-6xl md:text-8xl text-nomad-paper uppercase tracking-widest text-distressed drop-shadow-sm mb-6">Choose Your Tour</h1>
                         <p className="text-nomad-paper/90 max-w-2xl mx-auto font-medium text-lg leading-relaxed drop-shadow-md">
-                            Nomad Yellowstone offers three primary 2–3 hour passenger-only expeditions. Each tour is guided by professional operators navigating the high-altitude remote regions surrounding Island Park, Idaho.
+                            Nomad Yellowstone offers three primary 2–3 hour passenger-only tours. Each tour is led by professional guides navigating the high-altitude remote regions surrounding Island Park, Idaho.
                         </p>
                     </div>
                 </section>
@@ -157,9 +157,9 @@ export default function ExpeditionsPage() {
                                     <h3 className="font-heading text-2xl text-white uppercase mb-2 drop-shadow-md">Summit Run</h3>
                                     <p className="font-mono text-xs text-nomad-paper mb-4 uppercase tracking-widest opacity-90 drop-shadow-md">13:00 - 16:00 // 2-3 Hours</p>
                                     <div className="text-white mb-6 text-sm opacity-100 font-medium drop-shadow-md min-h-[160px]">
-                                        <p className="mb-3">An aggressive high-altitude ATV expedition climbing to 10,000-foot peaks for panoramic views.</p>
+                                        <p className="mb-3">A scenic high-altitude ATV tour climbing to 10,000-foot peaks for panoramic views.</p>
                                         <ul className="space-y-2 font-mono text-xs text-nomad-paper/90">
-                                            <li><span className="text-nomad-red mr-2">▶</span> <strong>Terrain:</strong> Aggressive off-road climbing to high elevation.</li>
+                                            <li><span className="text-nomad-red mr-2">▶</span> <strong>Terrain:</strong> Exciting off-road climbing to high elevation.</li>
                                             <li><span className="text-nomad-red mr-2">▶</span> <strong>Views:</strong> Unmatched panoramic views of the Yellowstone caldera system.</li>
                                             <li><span className="text-nomad-red mr-2">▶</span> <strong>Includes:</strong> Dedicated professional driver and all safety equipment.</li>
                                         </ul>
@@ -219,7 +219,7 @@ export default function ExpeditionsPage() {
                     </div>
                     <div className="flex flex-wrap justify-center md:items-center gap-4 md:gap-8 font-bold text-center">
                         <Link href="/" className="hover:text-nomad-red transition-colors drop-shadow-sm">[HOME]</Link>
-                        <Link href="/intel" className="hover:text-nomad-red transition-colors drop-shadow-sm">[JOURNAL]</Link>
+                        <Link href="/intel" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIP GUIDES]</Link>
                         <a href="https://www.tripadvisor.com/AttractionProductReview-g35494-d33307035-Guided_ATV_Adventure_Island_Park_20_Mins_from_West_Yellowstone-Island_Park_Idaho.html" target="_blank" rel="noopener noreferrer" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR]</a>
                         <Link href="/booking" className="text-nomad-red hover:text-black transition-colors drop-shadow-sm">[BOOK NOW]</Link>
                     </div>

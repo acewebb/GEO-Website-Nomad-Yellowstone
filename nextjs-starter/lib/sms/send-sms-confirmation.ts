@@ -121,10 +121,10 @@ export async function sendCustomerSmsConfirmation(booking: BookingSmsData): Prom
     return;
   }
 
-  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM');
+  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '12pm' ? '12:00 PM' : tourId === '3pm' ? '3:00 PM' : tourId === '6pm' ? '6:00 PM' : tourId);
   const typeStr = tourType || "Standard Tour";
 
-  const content = `Hi ${customerName}, your Nomad Yellowstone booking is confirmed! Details: ${numberOfSeats} seats on ${tourDate} @ ${timeStr} (${typeStr}). Please arrive 15 minutes before departure. See you in the dirt!`;
+  const content = `Hi ${customerName}, your Nomad Yellowstone booking is confirmed! Details: ${numberOfSeats} seats on ${tourDate} @ ${timeStr} (${typeStr}). Please arrive 15 minutes before departure. If you have any questions, text or call this number.`;
 
   try {
     await sendSms(normalizedPhone, content);
@@ -154,7 +154,7 @@ export async function sendOwnerSmsAlert(booking: BookingSmsData): Promise<void> 
 
   const { customerName, customerPhone, tourDate, tourId, tourTime, tourType, numberOfSeats, amountTotal } = booking;
 
-  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM');
+  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '12pm' ? '12:00 PM' : tourId === '3pm' ? '3:00 PM' : tourId === '6pm' ? '6:00 PM' : tourId);
   const typeStr = tourType || "Standard Tour";
   const priceStr = amountTotal !== undefined ? `$${amountTotal.toFixed(2)}` : "N/A";
 

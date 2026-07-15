@@ -43,16 +43,16 @@ export default function ReviewsDossier() {
                 <FadeIn>
                     <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-24">
                         <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl text-nomad-black uppercase leading-[0.85] tracking-tight mb-6 text-distressed drop-shadow-md">
-                            FIELD REPORTS
+                            Reviews from Recent Guests
                         </h2>
                         <p className="font-mono text-sm text-nomad-red font-bold tracking-widest uppercase mb-6 drop-shadow-sm">
-              // Authorized Personnel • Verified Dispatch
+              // Verified Guest Reviews
                         </p>
                         <div className="flex items-center gap-2 text-nomad-red text-2xl md:text-3xl tracking-[0.2em] mb-6">
                             ★★★★★
                         </div>
                         <p className="text-nomad-black/80 font-mono text-xs uppercase tracking-widest max-w-lg mx-auto leading-relaxed border-t border-b border-nomad-black/20 py-4 opacity-90 mix-blend-multiply">
-                            Elite Top-Rated Outfitter. Independent dispatches sourced from TripAdvisor operations logs.
+                            Top-Rated Outfitter. Guest reviews sourced from TripAdvisor.
                         </p>
                     </div>
                 </FadeIn>

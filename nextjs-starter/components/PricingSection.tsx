@@ -9,18 +9,18 @@ export default function PricingSection() {
                 {/* Section Header */}
                 <div className="text-center mb-16 md:mb-24">
                     <span className="font-mono text-accent text-sm tracking-widest mb-4 block font-bold uppercase drop-shadow-sm">
-                        // SECURE YOUR EXPEDITION
+                        // PICK YOUR TOUR
                     </span>
                     <h2 className="font-heading text-4xl md:text-6xl text-white uppercase tracking-tight mb-6">
                         Transparent <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-600">Access</span>
                     </h2>
                     <p className="font-mono text-sm md:text-base text-nomad-paper/60 max-w-2xl mx-auto leading-relaxed">
-                        Select the access tier that matches your desired level of wilderness immersion. All guided expeditions include safety gear and expert navigation.
+                        Select the option that matches your desired level of wilderness adventure. All guided tours include safety gear and expert navigation.
                     </p>
                 </div>
 
-                {/* 3-Column Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8 items-center">
+                {/* 2-Column Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-center">
 
                     {/* Left Column: Basic Frame */}
                     <div className="glass-panel p-8 border border-white/5 bg-surface/20 rounded-sm flex flex-col h-full opacity-80 hover:opacity-100 transition-opacity">
@@ -43,7 +43,7 @@ export default function PricingSection() {
                         </div>
                     </div>
 
-                    {/* Middle Column: The Signature Core (Most Popular) */}
+                    {/* Right Column: The Signature Core (Most Popular) */}
                     <div className="glass-panel p-8 border border-accent relative bg-gradient-to-b from-surface/80 to-nomad-black rounded-sm flex flex-col h-full transform md:-translate-y-4 shadow-2xl">
                         {/* Most Popular Badge */}
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-nomad-black font-bold font-mono text-xs px-4 py-1 uppercase tracking-widest shadow-lg">
@@ -67,28 +67,6 @@ export default function PricingSection() {
                         </ul>
                         <Link href="/booking" className="btn-primary w-full py-4 px-2 text-center text-xs leading-relaxed flex items-center justify-center">
                             Signature Tour – 2–3 Hour Guided ATV Adventure in Island Park (Passenger‑Only)
-                        </Link>
-                    </div>
-
-                    {/* Right Column: The Anchor */}
-                    <div className="glass-panel p-8 border border-white/5 bg-surface/20 rounded-sm flex flex-col h-full">
-                        <div className="mb-6">
-                            <h3 className="font-heading text-2xl uppercase text-white mb-2">The Legend</h3>
-                            <p className="font-mono text-[10px] text-nomad-paper/50 uppercase tracking-widest h-8 pr-4">Private Buyout ATV Tour near Yellowstone<br />(Up to 5 Passengers)</p>
-                        </div>
-                        <div className="mb-8">
-                            <span className="font-heading text-5xl text-white tracking-tight">Private</span>
-                            <span className="font-mono text-xs text-nomad-paper/40 ml-2">/ flat rate</span>
-                        </div>
-                        <ul className="space-y-4 font-mono text-xs text-nomad-paper/70 tracking-wide flex-grow mb-8">
-                            <li className="flex gap-3 text-white"><span className="text-accent font-bold">✓</span> Ultimate Privacy</li>
-                            <li className="flex gap-3"><span className="text-white/50">✓</span> Custom Route Variations</li>
-                            <li className="flex gap-3"><span className="text-white/50">✓</span> Dedicated Professional Driver</li>
-                            <li className="flex gap-3"><span className="text-white/50">✓</span> Full Media Package</li>
-                            <li className="flex gap-3"><span className="text-white/50">✓</span> Up to 5 Passengers</li>
-                        </ul>
-                        <Link href="/booking?buyout=true" className="btn-outline w-full py-4 px-2 text-center text-xs leading-relaxed flex items-center justify-center">
-                            The Legend – Private Buyout ATV Tour near Yellowstone (Up to 5 Passengers)
                         </Link>
                     </div>
 

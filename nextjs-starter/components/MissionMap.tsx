@@ -22,7 +22,7 @@ const waypoints: Waypoint[] = [
         title: 'Nomad Base Camp',
         elevation: '6,293 ft',
         vibe: 'Staging & Anticipation',
-        description: 'Where the pavement ends. Receive your gear loadout and orientation on the Can-Am Commander Max before dispatching directly into the heavy timber.'
+        description: 'Where the pavement ends. Receive your gear and safety overview on the Can-Am Commander Max before heading out directly into the forest.'
     },
     {
         id: 'sawtelle',
@@ -31,7 +31,7 @@ const waypoints: Waypoint[] = [
         title: 'Sawtelle Peak Summit',
         elevation: '9,875 ft',
         vibe: 'High-Altitude Awe',
-        description: 'A punishing climb leading to an absolute panoramic dominance over the Greater Yellowstone Ecosystem. Look down upon three different states at once.'
+        description: 'A scenic climb leading to an absolute panoramic view over the Greater Yellowstone Ecosystem. Look down upon three different states at once.'
     },
     {
         id: 'silent-chapter',
@@ -48,8 +48,8 @@ const waypoints: Waypoint[] = [
         y: 80,
         title: 'Continental Divide Trail',
         elevation: '7,500 ft',
-        vibe: 'Deep Wilderness Navigation',
-        description: 'Following the razor edge of the continent. Tight, technical corners through dense forest that standard rental vehicles cannot safely navigate.'
+        vibe: 'Deep Wilderness Exploring',
+        description: 'Following the edge of the continent. Fun corners through dense forest that standard rental vehicles cannot safely navigate.'
     }
 ];
 
@@ -76,12 +76,12 @@ export default function MissionMap() {
 
                 {/* Left Text Block */}
                 <div className="w-full md:w-1/3 text-left">
-                    <span className="font-mono text-accent text-sm tracking-widest mb-4 block">// TACTICAL EXPLORATION</span>
+                    <span className="font-mono text-accent text-sm tracking-widest mb-4 block">// GUIDED UTV TOURS</span>
                     <h2 className="font-heading text-4xl md:text-5xl text-white uppercase mb-6 leading-tight">
-                        Map Your <span className="text-nomad-paper/60">Extraction</span>
+                        Where We'll <span className="text-nomad-paper/60">Take You</span>
                     </h2>
                     <p className="font-mono text-sm text-nomad-paper/70 leading-relaxed mb-8">
-                        The "Yellowstone Experience" is rarely found on the paved loop. Select a waypoint on the operational grid to preview the true backcountry sectors we navigate daily.
+                        The "Yellowstone Experience" is rarely found on the paved loop. Select a waypoint on the route map to preview the true backcountry trails we navigate daily.
                     </p>
 
                     {/* Active Waypoint Info Panel */}
@@ -113,7 +113,7 @@ export default function MissionMap() {
                                     exit={{ opacity: 0 }}
                                     className="h-full flex items-center justify-center p-6 border border-white/5 border-dashed rounded-sm"
                                 >
-                                    <span className="font-mono text-xs text-nomad-paper/30 tracking-widest uppercase">Select A Waypoint To Load Intel</span>
+                                    <span className="font-mono text-xs text-nomad-paper/30 tracking-widest uppercase">Select A Waypoint To Load Details</span>
                                 </motion.div>
                             )}
                         </AnimatePresence>
@@ -162,8 +162,7 @@ export default function MissionMap() {
                     {/* Map UI Overlay Elements */}
                     <div className="absolute bottom-4 left-4 font-mono text-[8px] text-white/30 tracking-[0.2em] pointer-events-none">
                         LAT: 44.4221 N<br />
-                        LON: 111.3733 W<br />
-                        GRID: OMEGA-7
+                        LON: 111.3733 W
                     </div>
                 </div>
             </div>

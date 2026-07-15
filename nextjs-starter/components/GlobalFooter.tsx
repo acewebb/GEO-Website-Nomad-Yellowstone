@@ -20,7 +20,7 @@ export default function GlobalFooter() {
                         <nav aria-label="Tour pages" className="flex flex-col gap-2">
                             <Link href="/island-park-atv-tours" className="hover:text-white transition-colors">Island Park ATV Tours</Link>
                             <Link href="/yellowstone-atv-tours" className="hover:text-white transition-colors">Yellowstone ATV Tours</Link>
-                            <Link href="/expeditions" className="hover:text-white transition-colors">Expeditions</Link>
+                            <Link href="/expeditions" className="hover:text-white transition-colors">Tours</Link>
                             <Link href="/fleet" className="hover:text-white transition-colors">The Fleet</Link>
                             <Link href="/booking" className="hover:text-white transition-colors text-accent">Book Now</Link>
                         </nav>
@@ -42,9 +42,9 @@ export default function GlobalFooter() {
                         <h3 className="text-white font-heading text-sm uppercase tracking-widest mb-4">Company</h3>
                         <nav aria-label="Company pages" className="flex flex-col gap-2">
                             <Link href="/about" className="hover:text-white transition-colors">Our Story & Guides</Link>
-                            <Link href="/contact" className="hover:text-white transition-colors">Contact Base Camp</Link>
-                            <Link href="/intel" className="hover:text-white transition-colors">Field Reports</Link>
-                            <Link href="/intel/answers" className="hover:text-white transition-colors">FAQ / Answers</Link>
+                            <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
+                            <Link href="/intel" className="hover:text-white transition-colors">Trip Planning Guides</Link>
+                            <Link href="/intel/answers" className="hover:text-white transition-colors">FAQ / Resources</Link>
                         </nav>
                     </div>
 

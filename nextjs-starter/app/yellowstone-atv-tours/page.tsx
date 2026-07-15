@@ -11,7 +11,7 @@ import { buildFAQPage } from '@/lib/schema/faqPage';
 import { signatureTourProduct } from '@/lib/schema/product';
 
 export const metadata = {
-    title: "Yellowstone ATV Tours | Backcountry Expeditions | Nomad Yellowstone",
+    title: "Yellowstone ATV Tours | Backcountry Tours | Nomad Yellowstone",
     description: "Book an exclusive Yellowstone ATV tour with Nomad Yellowstone. Explore the deep backcountry near Yellowstone National Park on a guided, passenger-only off-road adventure.",
     robots: { index: true, follow: true },
     alternates: { canonical: 'https://nomadyellowstone.com/yellowstone-atv-tours' }
@@ -87,7 +87,7 @@ export default function YellowstoneAtvTours() {
                                     <span className="text-nomad-red font-light">ATV TOURS</span>
                                 </h1>
                                 <p className="font-mono text-xs md:text-sm text-nomad-black/80 font-bold uppercase tracking-[0.15em] max-w-xl mx-auto drop-shadow-sm leading-relaxed">
-                                    Experience a guided Yellowstone backcountry ATV tour unlike any crowded park bus tour. Passenger-only expeditions.
+                                    Experience a guided Yellowstone backcountry ATV tour unlike any crowded park bus tour. Passenger-only tours.
                                 </p>
                             </div>
                         </FadeIn>
@@ -112,7 +112,7 @@ export default function YellowstoneAtvTours() {
                                     Our fully guided, passenger-only <strong>Yellowstone backcountry ATV tours</strong> take you up to 10,000-foot peaks along the Continental Divide, offering panoramic views of the very calderas and mountain ranges that shape the park. Leave the crowded tourist paved loops behind. You climb into our enclosed, custom-built Can-Am Commander ATVs, and our professional guides navigate the intense dirt trails and rocky ridges, keeping you 100% safe and free of liability.
                                 </p>
                                 <p>
-                                    Discover the wild, unfiltered side of the ecosystem on a premium, private expedition located just 20 minutes from the West Yellowstone, Montana entrance.
+                                    Discover the wild, unfiltered side of the ecosystem on a premium, private tour located just 20 minutes from the West Yellowstone, Montana entrance.
                                 </p>
                             </div>
                         </FadeIn>
@@ -124,8 +124,8 @@ export default function YellowstoneAtvTours() {
                 <section className="py-24 bg-transparent relative z-10 w-full">
                     <div className="container mx-auto px-4 max-w-5xl">
                         <FadeIn>
-                            <h2 className="font-heading text-4xl text-nomad-black text-center uppercase mb-2 text-distressed drop-shadow-sm">Operations Protocol</h2>
-                            <p className="font-mono text-sm text-nomad-red font-bold tracking-widest text-center uppercase mb-12 drop-shadow-sm">// Frequently Asked Questions</p>
+                            <h2 className="font-heading text-4xl text-nomad-black text-center uppercase mb-2 text-distressed drop-shadow-sm">Frequently Asked Questions</h2>
+                            <p className="font-mono text-sm text-nomad-red font-bold tracking-widest text-center uppercase mb-12 drop-shadow-sm">// Tour Information</p>
                             <AccordionFAQ items={yellowstoneFaqData} defaultOpenIndex={0} />
                         </FadeIn>
                     </div>
@@ -134,7 +134,7 @@ export default function YellowstoneAtvTours() {
                 <section className="py-24 relative flex items-center justify-center overflow-hidden z-10 border-t border-[rgba(0,0,0,0.1)]">
                     <div className="relative z-10 text-center px-4">
                         <FadeIn>
-                            <h2 className="font-heading text-5xl md:text-7xl text-nomad-black uppercase mb-8 opacity-100 text-distressed drop-shadow-md">Book Your <br />Yellowstone Expedition</h2>
+                            <h2 className="font-heading text-5xl md:text-7xl text-nomad-black uppercase mb-8 opacity-100 text-distressed drop-shadow-md">Book Your <br />Yellowstone Tour</h2>
                             <Link href="/booking" className="btn-primary px-12 py-6 text-xl">
                                 CHECK AVAILABILITY
                             </Link>

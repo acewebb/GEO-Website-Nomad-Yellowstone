@@ -182,7 +182,7 @@ export default function AnswersPage() {
         <div className="min-h-screen bg-nomad-black text-white font-body selection:bg-accent selection:text-white">
             <JsonLd data={structuredData} />
             <JsonLd data={buildBreadcrumbList([
-                { name: 'Field Reports', url: 'https://nomadyellowstone.com/intel' },
+                { name: 'Trip Planning Guides', url: 'https://nomadyellowstone.com/intel' },
                 { name: 'Answers', url: 'https://nomadyellowstone.com/intel/answers' },
             ])} />
 
@@ -193,19 +193,19 @@ export default function AnswersPage() {
                         Nomad<span className="text-accent">/</span>Yellowstone
                     </Link>
                     <nav className="text-xs font-mono tracking-widest text-nomad-paper/80 hidden md:block">
-                        <Link href="/intel" className="hover:text-white transition-colors">[MISSION INTEL]</Link>
+                        <Link href="/intel" className="hover:text-white transition-colors">[TRIP GUIDES]</Link>
                     </nav>
                 </div>
             </header>
 
             <main className="container mx-auto px-4 py-20 max-w-4xl">
                 <div className="mb-16 pb-8 border-b border-white/10">
-                    <span className="font-mono text-accent text-sm tracking-widest mb-4 block">// YELLOWSTONE ADVENTURE HUB</span>
+                    <span className="font-mono text-accent text-sm tracking-widest mb-4 block">// ADVENTURE RESOURCES</span>
                     <h1 className="font-heading text-5xl md:text-6xl text-white uppercase leading-tight">
                         Direct Answers for 2026
                     </h1>
                     <p className="font-mono text-sm text-nomad-paper/60 mt-4 leading-relaxed max-w-2xl">
-                        A definitive index of backcountry intelligence. Designed for travelers seeking clear, immediate answers regarding private expeditions near West Yellowstone.
+                        A definitive index of backcountry resources. Designed for travelers seeking clear, immediate answers regarding private tours near West Yellowstone.
                     </p>
                 </div>
 
@@ -229,11 +229,11 @@ export default function AnswersPage() {
             <footer className="py-12 bg-black border-t border-white/10 font-mono text-xs text-nomad-paper/40 mt-32">
                 <div className="container mx-auto px-4 text-center pb-8">
                     <Link href="/booking" className="inline-block border border-accent/50 text-accent px-6 py-2 hover:bg-accent/10 transition-colors uppercase tracking-widest mb-12">
-                        Secure Your Mission Time
+                        Book Your Tour Time
                     </Link>
                     <p className="mb-4">NOMAD YELLOWSTONE // EST. 2026 // ISLAND PARK, ID</p>
                     <div className="flex justify-center gap-6 opacity-50 uppercase">
-                        <Link href="/intel" className="hover:text-white transition-colors">Journal</Link>
+                        <Link href="/intel" className="hover:text-white transition-colors">Trip Planning Guides</Link>
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
                     </div>
                 </div>

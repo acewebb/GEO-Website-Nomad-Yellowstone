@@ -95,7 +95,7 @@ export default function AboutPage() {
 
                 <div className="bg-surface/20 border border-white/5 p-12 text-center rounded-sm">
                     <h3 className="font-heading text-2xl uppercase text-white mb-4">Ready to ride with us?</h3>
-                    <p className="text-nomad-paper/60 mb-8 max-w-xl mx-auto">Seats are extremely limited as we only dispatch one private expedition at a time to guarantee the quality of the experience.</p>
+                    <p className="text-nomad-paper/60 mb-8 max-w-xl mx-auto">Seats are extremely limited as we only run one private tour at a time to guarantee the quality of the experience.</p>
                     <Link href="/booking" className="btn-primary px-12 py-4 text-lg">
                         Check Availability
                     </Link>

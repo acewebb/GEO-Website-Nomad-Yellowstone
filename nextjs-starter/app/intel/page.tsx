@@ -6,20 +6,20 @@ import JsonLd from '@/components/JsonLd';
 import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 
 export const metadata: Metadata = {
-    title: "Field Intel Journal | Nomad Yellowstone",
-    description: "Read field reports, trail advice, and exclusive backcountry intel for ATV tours near West Yellowstone and Island Park.",
+    title: "Trip Planning Guides | Nomad Yellowstone",
+    description: "Read trip planning guides, trail advice, and backcountry resources for ATV tours near West Yellowstone and Island Park.",
     robots: { index: true, follow: true },
     alternates: { canonical: 'https://nomadyellowstone.com/intel' },
     openGraph: {
-        title: 'Field Intel Journal | Nomad Yellowstone',
-        description: 'Read field reports, trail advice, and backcountry intel for ATV tours near West Yellowstone and Island Park.',
+        title: 'Trip Planning Guides | Nomad Yellowstone',
+        description: 'Read trip planning guides, trail advice, and backcountry resources for ATV tours near West Yellowstone and Island Park.',
         url: 'https://nomadyellowstone.com/intel',
-        images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone Field Intel Journal' }],
+        images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone Trip Planning Guides' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Field Intel Journal | Nomad Yellowstone',
-        description: 'Read field reports, trail advice, and backcountry intel for ATV tours near West Yellowstone and Island Park.',
+        title: 'Trip Planning Guides | Nomad Yellowstone',
+        description: 'Read trip planning guides, trail advice, and backcountry resources for ATV tours near West Yellowstone and Island Park.',
         images: ['/sawtelle.png'],
     },
 };
@@ -29,7 +29,7 @@ export default function BlogIndex() {
 
     return (
         <div className="min-h-screen bg-nomad-black text-foreground font-body bg-topo">
-            <JsonLd data={buildBreadcrumbList([{ name: 'Field Reports', url: 'https://nomadyellowstone.com/intel' }])} />
+            <JsonLd data={buildBreadcrumbList([{ name: 'Trip Planning Guides', url: 'https://nomadyellowstone.com/intel' }])} />
             {/* Header */}
             <header className="p-6 border-b border-white/5 glass-panel sticky top-0 z-50">
                 <div className="container mx-auto flex justify-between items-center">
@@ -44,8 +44,8 @@ export default function BlogIndex() {
 
             <main className="container mx-auto px-4 py-20">
                 <div className="text-center mb-16">
-                    <span className="font-mono text-accent text-sm tracking-widest mb-2 block">// MISSION INTEL</span>
-                    <h1 className="font-heading text-5xl md:text-6xl text-white uppercase">Field Reports</h1>
+                    <span className="font-mono text-accent text-sm tracking-widest mb-2 block">// PLANNING GUIDES</span>
+                    <h1 className="font-heading text-5xl md:text-6xl text-white uppercase">Trip Planning Guides</h1>
                     <p className="text-nomad-paper/80 mt-4 max-w-2xl mx-auto text-lg">
                         Guides, tips, and insights from the edge of the wilderness.
                     </p>
@@ -90,7 +90,7 @@ export default function BlogIndex() {
                                     </p>
 
                                     <div className="flex items-center gap-2 text-accent font-mono text-xs uppercase tracking-widest border-t border-white/5 pt-4">
-                                        <span>Read Analysis</span>
+                                        <span>Read Guide</span>
                                         <span className="group-hover:translate-x-1 transition-transform">→</span>
                                     </div>
                                 </div>

@@ -62,8 +62,8 @@ export default function AdminDashboard() {
             <div className="min-h-screen bg-nomad-black flex flex-col items-center justify-center font-body px-4">
                 <div className="glass-panel p-8 md:p-12 max-w-md w-full border border-white/10 rounded-sm">
                     <div className="mb-8 text-center">
-                        <h1 className="font-heading text-3xl uppercase text-white tracking-widest mb-2">Command Center</h1>
-                        <p className="font-mono text-xs text-nomad-paper/50 tracking-widest uppercase">Authorized Personnel Only</p>
+                        <h1 className="font-heading text-3xl uppercase text-white tracking-widest mb-2">Admin Access</h1>
+                        <p className="font-mono text-xs text-nomad-paper/50 tracking-widest uppercase">Admin Access Only</p>
                     </div>
 
                     <form onSubmit={handleLogin} className="space-y-6">
@@ -87,13 +87,13 @@ export default function AdminDashboard() {
                             disabled={isLoading}
                             className={`w-full py-4 text-sm font-heading uppercase tracking-widest border transition-all ${isLoading ? 'border-white/10 text-white/50 cursor-not-allowed' : 'border-accent text-accent hover:bg-accent/10'}`}
                         >
-                            {isLoading ? 'Verifying...' : 'Initialize'}
+                            {isLoading ? 'Verifying...' : 'Login'}
                         </button>
                     </form>
 
                     <div className="mt-8 text-center">
                         <Link href="/" className="font-mono text-[10px] text-nomad-paper/30 hover:text-white uppercase tracking-widest transition-colors">
-                            Return to Basecamp
+                            Return to Home
                         </Link>
                     </div>
                 </div>
@@ -110,7 +110,7 @@ export default function AdminDashboard() {
                         <Link href="/" className="text-xl font-heading tracking-widest text-white hover:text-accent transition-colors uppercase">
                             Nomad<span className="text-accent">/</span>Admin
                         </Link>
-                        <span className="font-mono text-xs bg-accent/20 text-accent px-2 py-1 rounded-[2px] border border-accent/30 hidden md:inline-block">LIVE COMMAND</span>
+                        <span className="font-mono text-xs bg-accent/20 text-accent px-2 py-1 rounded-[2px] border border-accent/30 hidden md:inline-block">ADMIN VIEW</span>
                     </div>
                     <div className="flex items-center gap-4 border-t md:border-t-0 border-white/10 pt-4 md:pt-0 w-full md:w-auto justify-between md:justify-end">
                         <div className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">
@@ -122,7 +122,7 @@ export default function AdminDashboard() {
                                 Sync
                             </button>
                             <button onClick={() => { setIsAuthenticated(false); setApiKey(''); }} className="font-mono text-xs text-red-400 hover:text-red-300 transition-colors uppercase border border-red-900/50 px-3 py-1 hover:bg-red-900/20">
-                                Terminate
+                                Log Out
                             </button>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ export default function AdminDashboard() {
                 <div className="flex justify-between items-end mb-8">
                     <div>
                         <h2 className="font-heading text-4xl uppercase text-white mb-2">Booking Reports</h2>
-                        <p className="font-mono text-xs text-nomad-paper/60 tracking-widest uppercase">Master Ledger of all secure transactions and mission manifests.</p>
+                        <p className="font-mono text-xs text-nomad-paper/60 tracking-widest uppercase">Master ledger of all secure transactions and tour schedules.</p>
                     </div>
                 </div>
 
@@ -143,8 +143,8 @@ export default function AdminDashboard() {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="border-b border-white/10 bg-black/40 font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">
-                                    <th className="p-4 font-normal">Mission Date</th>
-                                    <th className="p-4 font-normal">Deploy Time</th>
+                                    <th className="p-4 font-normal">Tour Date</th>
+                                    <th className="p-4 font-normal">Departure Time</th>
                                     <th className="p-4 font-normal">Passenger</th>
                                     <th className="p-4 font-normal">Seats</th>
                                     <th className="p-4 font-normal">Status</th>
@@ -161,7 +161,7 @@ export default function AdminDashboard() {
                                         ? format(new Date(booking.createdAt._seconds * 1000), 'MMM d, yyyy HH:mm')
                                         : 'Unknown';
 
-                                    const timeLabel = booking.tourId === '9am' ? '0900 HRS' : booking.tourId === '1pm' ? '1300 HRS' : '1700 HRS';
+                                    const timeLabel = booking.tourId === '9am' ? '9:00 AM' : booking.tourId === '12pm' ? '12:00 PM' : booking.tourId === '3pm' ? '3:00 PM' : booking.tourId === '6pm' ? '6:00 PM' : booking.tourId;
                                     const isPaid = booking.paymentStatus === 'paid';
 
                                     return (

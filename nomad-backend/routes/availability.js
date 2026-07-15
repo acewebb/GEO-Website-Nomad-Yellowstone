@@ -7,6 +7,7 @@ const defaultSlots = {
     "9am": { seatsAvailable: 5, tourTime: "09:00 - 12:00" },
     "12pm": { seatsAvailable: 5, tourTime: "12:00 - 15:00" },
     "3pm": { seatsAvailable: 5, tourTime: "15:00 - 18:00" },
+    "6pm": { seatsAvailable: 5, tourTime: "18:00 - 21:00" },
 };
 
 // GET /api/v1/availability/:date
@@ -28,7 +29,14 @@ router.get("/:date", async (req, res, next) => {
             return res.status(200).json({ success: true, date, slots: defaultSlots });
         }
 
-        res.status(200).json({ success: true, date, slots: docSnap.data().slots });
+        const data = docSnap.data();
+        let slots = data.slots || {};
+        if (!slots["6pm"]) {
+            slots = { ...slots, "6pm": { seatsAvailable: 5, tourTime: "18:00 - 21:00" } };
+            await docRef.update({ slots });
+        }
+
+        res.status(200).json({ success: true, date, slots });
     } catch (error) {
         next(error);
     }

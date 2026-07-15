@@ -20,7 +20,7 @@ export const metadata = {
 const islandParkFaqData = [
     {
         question: "Where do Nomad Yellowstone ATV tours depart from?",
-        answer: "Our guided ATV tours depart from our base camp operations area right here in Island Park, Idaho. We are conveniently situated just 20 minutes south of West Yellowstone, Montana, providing prime access to the backcountry."
+        answer: "Our guided ATV tours depart from our base camp right here in Island Park, Idaho. We are conveniently situated just 20 minutes south of West Yellowstone, Montana, providing prime access to the backcountry."
     },
     {
         question: "Do you offer self-drive ATV rentals in Island Park?",
@@ -124,8 +124,8 @@ export default function IslandParkAtvTours() {
                 <section className="py-24 bg-transparent relative z-10 w-full">
                     <div className="container mx-auto px-4 max-w-5xl">
                         <FadeIn>
-                            <h2 className="font-heading text-4xl text-nomad-black text-center uppercase mb-2 text-distressed drop-shadow-sm">Operations Protocol</h2>
-                            <p className="font-mono text-sm text-nomad-red font-bold tracking-widest text-center uppercase mb-12 drop-shadow-sm">// Frequently Asked Questions</p>
+                             <h2 className="font-heading text-4xl text-nomad-black text-center uppercase mb-2 text-distressed drop-shadow-sm">Frequently Asked Questions</h2>
+                             <p className="font-mono text-sm text-nomad-red font-bold tracking-widest text-center uppercase mb-12 drop-shadow-sm">// Tour Information</p>
                             <AccordionFAQ items={islandParkFaqData} defaultOpenIndex={0} />
                         </FadeIn>
                     </div>

@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 
 export const sendConfirmationEmail = async (bookingData: any) => {
   const { name, email, tourId, date, seats, tourTime, tourType } = bookingData;
-  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM');
+  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '12pm' ? '12:00 PM' : tourId === '3pm' ? '3:00 PM' : tourId === '6pm' ? '6:00 PM' : tourId);
   const typeStr = tourType || "Standard Tour";
 
   const mailOptions = {
@@ -50,7 +50,7 @@ export const sendConfirmationEmail = async (bookingData: any) => {
 
 export const sendAdminNotificationEmail = async (bookingData: any) => {
   const { name, email, phone, tourId, date, seats, tourTime, tourType } = bookingData;
-  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '1pm' ? '1:00 PM' : '5:00 PM');
+  const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '12pm' ? '12:00 PM' : tourId === '3pm' ? '3:00 PM' : tourId === '6pm' ? '6:00 PM' : tourId);
   const typeStr = tourType || "Standard Tour";
 
   const mailOptions = {

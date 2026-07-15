@@ -67,7 +67,7 @@ export default function ContactPage() {
                 "name": "What is the maximum group size for Nomad Yellowstone tours?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Each vehicle accommodates up to 5 passengers. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle private buyout option."
+                    "text": "Each vehicle accommodates up to 5 passengers. We sell individual seats on our guided tours, meaning you can book for groups of any size up to the vehicle's capacity."
                 }
             },
             {
@@ -234,7 +234,7 @@ export default function ContactPage() {
                             <div className="glass-panel p-6 border-l-2 border-transparent hover:border-nomad-red transition-colors">
                                 <h3 className="font-heading text-xl text-white mb-2 uppercase drop-shadow-sm">What is the maximum group size for Nomad Yellowstone tours?</h3>
                                 <p className="text-white opacity-100 font-medium drop-shadow-sm">
-                                    Each vehicle accommodates up to 5 passengers. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle private buyout option.
+                                    Each vehicle accommodates up to 5 passengers. We sell individual seats on our guided tours, meaning you can book for groups of any size up to the vehicle's capacity.
                                 </p>
                             </div>
 

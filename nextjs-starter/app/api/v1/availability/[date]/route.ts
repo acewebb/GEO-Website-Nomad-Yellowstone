@@ -6,6 +6,7 @@ const defaultSlots = {
     "9am": { seatsAvailable: 5, tourTime: "09:00 - 12:00" },
     "12pm": { seatsAvailable: 5, tourTime: "12:00 - 15:00" },
     "3pm": { seatsAvailable: 5, tourTime: "15:00 - 18:00" },
+    "6pm": { seatsAvailable: 5, tourTime: "18:00 - 21:00" },
 };
 
 export async function GET(
@@ -32,7 +33,14 @@ export async function GET(
             return NextResponse.json({ success: true, date, slots: defaultSlots }, { status: 200 });
         }
 
-        return NextResponse.json({ success: true, date, slots: docSnap.data()?.slots }, { status: 200 });
+        const data = docSnap.data();
+        let slots = data?.slots || {};
+        if (!slots["6pm"]) {
+            slots = { ...slots, "6pm": { seatsAvailable: 5, tourTime: "18:00 - 21:00" } };
+            await docRef.update({ slots });
+        }
+
+        return NextResponse.json({ success: true, date, slots }, { status: 200 });
     } catch (error: any) {
         return NextResponse.json(
             { success: false, message: error.message || "Internal Server Error" },

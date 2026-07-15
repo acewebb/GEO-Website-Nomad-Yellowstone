@@ -52,11 +52,11 @@ const faqData = [
   },
   {
     question: "What is the maximum group size for Nomad Yellowstone tours?",
-    answer: "Each vehicle accommodates up to 5 passengers. For groups of up to 5 passengers, Nomad Yellowstone offers a full vehicle private buyout option."
+    answer: "Each vehicle accommodates up to 5 passengers. We sell individual seats on our guided tours, meaning you can book for groups of any size up to the vehicle's capacity."
   },
   {
     question: "Where do Nomad Yellowstone guided tours depart from?",
-    answer: "Nomad Yellowstone tours depart from the base camp operations area in Island Park, Idaho. The designated launch point provides immediate access to the Yellowstone and Grand Teton backcountry trail systems."
+    answer: "Nomad Yellowstone tours depart from the base camp in Island Park, Idaho. The launch point provides immediate access to the Yellowstone and Grand Teton backcountry trail systems."
   },
   {
     question: "How does Nomad Yellowstone differ from standard Yellowstone National Park bus tours?",
@@ -244,8 +244,8 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-16 font-mono text-[10px] md:text-xs tracking-widest text-nomad-paper/60 uppercase text-center w-full">
               <FadeIn delay={0.1} className="flex items-center gap-2"><span className="text-nomad-red">✪</span> Permitted & Insured</FadeIn>
               <FadeIn delay={0.2} className="flex items-center gap-2"><span className="text-nomad-red">✚</span> Wilderness First Responder</FadeIn>
-              <FadeIn delay={0.3} className="flex items-center gap-2"><span className="text-nomad-red">★</span> Elite TripAdvisor Rated</FadeIn>
-              <FadeIn delay={0.4} className="flex items-center gap-2"><span className="text-nomad-red">✓</span> Zero Client Liability</FadeIn>
+              <FadeIn delay={0.3} className="flex items-center gap-2"><span className="text-nomad-red">★</span> Top-Rated on TripAdvisor</FadeIn>
+              <FadeIn delay={0.4} className="flex items-center gap-2"><span className="text-nomad-red">✓</span> You never pay for vehicle damage — your guide drives.</FadeIn>
             </div>
           </div>
         </section>
@@ -342,8 +342,8 @@ export default function Home() {
         <section className="py-24 bg-transparent relative z-10 w-full">
           <div className="container mx-auto px-4 max-w-5xl">
             <FadeIn>
-              <h2 className="font-heading text-4xl text-nomad-black text-center uppercase mb-2 text-distressed drop-shadow-sm">Operations Protocol</h2>
-              <p className="font-mono text-sm text-nomad-red font-bold tracking-widest text-center uppercase mb-12 drop-shadow-sm">// Frequently Asked Questions</p>
+              <h2 className="font-heading text-4xl text-nomad-black text-center uppercase mb-2 text-distressed drop-shadow-sm">Frequently Asked Questions</h2>
+              <p className="font-mono text-sm text-nomad-red font-bold tracking-widest text-center uppercase mb-12 drop-shadow-sm">// Tour Information</p>
               <AccordionFAQ items={faqData} defaultOpenIndex={0} />
             </FadeIn>
             <FadeIn delay={0.2} className="mt-12 text-center text-sm font-medium text-nomad-black/70 max-w-2xl mx-auto border-t border-nomad-black/10 pt-6">
@@ -359,7 +359,7 @@ export default function Home() {
 
           <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
             <FadeIn>
-              <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-6 opacity-100 text-distressed drop-shadow-md">Book Your<br />Expedition</h2>
+              <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-6 opacity-100 text-distressed drop-shadow-md">Book Your<br />Tour</h2>
               <p className="text-base md:text-lg text-nomad-black/80 leading-relaxed mb-8">
                 Ready to experience the Yellowstone backcountry without the stress of driving? Our passenger-only ATV tours depart daily from Island Park, Idaho — just 20 minutes from the West Yellowstone entrance.
               </p>
@@ -384,8 +384,8 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center md:items-center gap-4 md:gap-8 font-bold text-center">
             <Link href="/" className="hover:text-nomad-red transition-colors drop-shadow-sm">[HOME]</Link>
-            <Link href="/intel" className="hover:text-nomad-red transition-colors drop-shadow-sm">[JOURNAL]</Link>
-            <Link href="/intel/answers" className="hover:text-nomad-red transition-colors drop-shadow-sm">[AEO HUB]</Link>
+            <Link href="/intel" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIP GUIDES]</Link>
+            <Link href="/intel/answers" className="hover:text-nomad-red transition-colors drop-shadow-sm">[RESOURCES]</Link>
             <Link href="/location" className="hover:text-nomad-red transition-colors drop-shadow-sm">[DIRECTIONS]</Link>
             <Link href="/safety" className="hover:text-nomad-red transition-colors drop-shadow-sm">[SAFETY & SPECS]</Link>
             <a href="https://www.tripadvisor.com/AttractionProductReview-g35494-d33307035-Guided_ATV_Adventure_Island_Park_20_Mins_from_West_Yellowstone-Island_Park_Idaho.html" target="_blank" rel="noopener noreferrer" aria-label="Nomad Yellowstone reviews on TripAdvisor" title="Nomad Yellowstone reviews on TripAdvisor" className="hover:text-nomad-red transition-colors drop-shadow-sm">[TRIPADVISOR] <span className="sr-only">Nomad Yellowstone reviews on TripAdvisor</span></a>
