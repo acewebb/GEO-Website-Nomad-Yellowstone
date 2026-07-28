@@ -16,14 +16,14 @@ export function toE164(phone: string): string {
     return `+${digits}`;
   }
 
-  // If it already had a leading '+' and is a reasonable length, keep it
+  // If it already had a leading '+' and is a reasonable length (10-15 digits), keep it
   const hasPlus = phone.trim().startsWith("+");
-  if (hasPlus && digits.length >= 10) {
+  if (hasPlus && digits.length >= 10 && digits.length <= 15) {
     return `+${digits}`;
   }
 
-  // Fallback: if digits count is at least 10, try prepending '+'
-  if (digits.length >= 10) {
+  // Fallback: if digits count is valid E.164 length (10-15 digits), try prepending '+'
+  if (digits.length >= 10 && digits.length <= 15) {
     return `+${digits}`;
   }
 
@@ -136,6 +136,7 @@ export async function sendCustomerSmsConfirmation(booking: BookingSmsData): Prom
 
 /**
  * Sends an owner alert for a new booking.
+ * Supports comma-separated phone numbers in OWNER_PHONE (e.g. "208-821-6929, 208-353-7088").
  */
 export async function sendOwnerSmsAlert(booking: BookingSmsData): Promise<void> {
   const apiKey = process.env.QUO_API_KEY;
@@ -160,14 +161,26 @@ export async function sendOwnerSmsAlert(booking: BookingSmsData): Promise<void> 
 
   const content = `New Booking Alert!\nName: ${customerName}\nTour: ${typeStr} @ ${timeStr}\nDate: ${tourDate}\nSeats: ${numberOfSeats}\nPaid: ${priceStr}\nPhone: ${customerPhone || "N/A"}`;
 
-  try {
-    const normalizedOwner = toE164(ownerPhone);
-    if (!normalizedOwner) {
-      throw new Error(`Owner phone number in env is invalid: "${ownerPhone}"`);
+  // Split by comma to support multiple owner phone numbers
+  const ownerPhones = ownerPhone.split(",").map(p => p.trim()).filter(Boolean);
+
+  if (ownerPhones.length === 0) {
+    console.warn("Skipping owner SMS: OWNER_PHONE environment variable contains no valid entries.");
+    return;
+  }
+
+  for (const phone of ownerPhones) {
+    try {
+      const normalizedOwner = toE164(phone);
+      if (!normalizedOwner) {
+        console.error(`Owner phone number is invalid: "${phone}"`);
+        continue;
+      }
+      await sendSms(normalizedOwner, content);
+      console.log(`Owner SMS alert successfully sent to ${normalizedOwner}`);
+    } catch (error: any) {
+      console.error(`Error sending owner SMS alert to ${phone}: ${error.message}`);
     }
-    await sendSms(normalizedOwner, content);
-    console.log(`Owner SMS alert successfully sent to ${normalizedOwner}`);
-  } catch (error: any) {
-    console.error(`Error sending owner SMS alert: ${error.message}`);
   }
 }
+
