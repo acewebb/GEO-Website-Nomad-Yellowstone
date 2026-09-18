@@ -121,144 +121,88 @@ export default function Home() {
 
       <main className="flex-grow flex flex-col relative w-full pt-20 md:pt-32">
 
-        {/* SECTION 1: HERO (Individual Film Frames) */}
+        {/* SECTION 1: HERO */}
         <section className="relative w-full py-16 md:py-24 flex flex-col items-center overflow-hidden bg-transparent z-10">
-          <div className="w-full text-center mb-8 z-20 relative px-4">
+          <div className="w-full text-center mb-10 z-20 relative px-4 max-w-4xl mx-auto">
             <FadeIn>
               <div className="flex flex-col items-center justify-center">
-                <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.2em] mb-4 block font-bold uppercase drop-shadow-sm">
-                  Premier Guided Expeditions
+                <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.25em] mb-4 block font-bold uppercase">
+                  Island Park, Idaho · 20 Mins from West Yellowstone
                 </span>
-                <h1 className="font-heading text-4xl md:text-6xl lg:text-[5rem] text-nomad-black uppercase leading-[0.9] tracking-tight mb-4 text-distressed drop-shadow-md">
-                  Guided ATV Tours Near<br />
-                  <span className="text-nomad-red font-light">West Yellowstone</span>
-                  <span className="block text-2xl md:text-3xl lg:text-4xl mt-2 tracking-wide">— Island Park, Idaho</span>
+                <h1 className="font-heading text-5xl md:text-7xl lg:text-[5.5rem] text-nomad-black uppercase leading-[0.92] tracking-tight mb-6 text-distressed drop-shadow-sm">
+                  Yellowstone&apos;s Backcountry.<br />
+                  <span className="text-nomad-red font-light">Uncrowded &amp; Guide-Driven.</span>
                 </h1>
-                <h2 className="font-heading text-2xl md:text-3xl text-nomad-black/80 uppercase tracking-wide mb-6 text-distressed drop-shadow-sm">
-                  Backcountry Tours in Yellowstone
-                </h2>
+                <p className="text-base md:text-lg text-nomad-black/85 max-w-2xl mx-auto leading-relaxed mb-8">
+                  Ascend 10,000-foot Continental Divide summits in passenger-only Can-Am ATVs. Our certified wilderness guides navigate rugged backcountry trails while you take in panoramic mountain vistas — with zero driving stress and zero vehicle liability.
+                </p>
 
-                {/* 2026 SEASON CLOSED & 2027 EARLY BIRD 15% OFF PROMO CARD */}
-                <div className="w-full max-w-2xl mx-auto my-6 p-5 md:p-6 bg-nomad-black text-white rounded-sm border-2 border-nomad-red shadow-2xl relative overflow-hidden text-left">
-                  <div className="absolute top-0 right-0 bg-nomad-red text-white text-[10px] md:text-xs font-mono font-bold uppercase tracking-widest px-3 py-1">
-                    15% OFF 2027
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-nomad-red animate-pulse"></span>
-                    <span className="font-mono text-xs md:text-sm font-bold uppercase tracking-wider text-nomad-red">
-                      2026 Season Closed // 2027 Bookings Open
-                    </span>
-                  </div>
-                  <h3 className="font-heading text-xl md:text-2xl uppercase tracking-wide text-white mb-2">
-                    Early Bird Discount: Save 15% On All 2027 Tours
-                  </h3>
-                  <p className="text-xs md:text-sm text-nomad-paper/80 leading-relaxed mb-4">
-                    Our 2026 season has concluded. We are now accepting reservations for next summer (May 15 – Oct 31, 2027). Book now to lock in your preferred dates with an automatic <strong>15% early bird discount</strong>.
-                  </p>
-                  <div className="flex flex-col sm:flex-row items-center gap-3">
-                    <Link
-                      href="/booking"
-                      className="w-full sm:w-auto text-center px-6 py-2.5 bg-nomad-red hover:bg-nomad-red/90 text-white font-mono text-xs uppercase font-bold tracking-widest transition-colors rounded-sm shadow-md"
-                    >
-                      Book 2027 Season (15% Off) →
-                    </Link>
-                    <span className="font-mono text-[11px] text-nomad-paper/60 uppercase tracking-wider">
-                      Zero Risk • Free 24h Cancellation
-                    </span>
-                  </div>
+                {/* Primary 2027 CTA Group */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                  <Link
+                    href="/booking"
+                    className="btn-primary px-10 py-4 text-base md:text-lg shadow-xl hover:scale-105 transition-all font-bold"
+                  >
+                    RESERVE 2027 TOUR (15% OFF) →
+                  </Link>
+                  <a
+                    href="tel:+12087452088"
+                    className="font-mono text-sm md:text-base font-bold text-nomad-black/80 hover:text-nomad-red transition-colors flex items-center gap-2 border border-nomad-black/15 px-6 py-4 rounded-sm hover:border-nomad-red/40 bg-nomad-paper/40"
+                  >
+                    (208) 745-2088
+                  </a>
                 </div>
 
-                <p className="text-sm md:text-base text-nomad-black/90 max-w-2xl mx-auto leading-relaxed mb-6">
-                  Nomad Yellowstone offers fully guided, passenger-only ATV tours from Island Park, Idaho — about 20 minutes from the West Yellowstone entrance of Yellowstone National Park. Our certified guides drive while you ride along, making backcountry views and high-elevation terrain accessible to families, grandparents, and anyone who doesn&apos;t want to drive themselves. We are closed for the 2026 season and now booking for Summer 2027 (May 15 – October 31, 2027). No off-road experience required.
-                </p>
-                <p className="font-mono text-sm md:text-base text-nomad-black font-bold mt-2 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
-                  <span className="text-lg font-bold">Passenger-Only Tours</span>
-                  <span className="text-nomad-red">·</span>
-                  <a href="tel:+12087452088" className="hover:text-nomad-red transition-colors underline decoration-1 underline-offset-4">(208) 745-2088</a>
-                  <span className="text-nomad-red">·</span>
-                  <span className="text-[#00aa6c]">★★★★★ TripAdvisor</span>
-                  <span className="text-nomad-red">·</span>
-                  <span>Ages 5+</span>
-                </p>
-                <SeasonCountdownInline />
+                {/* Minimalist Trust & Status Line */}
+                <div className="flex items-center justify-center gap-3 md:gap-5 text-xs font-mono text-nomad-black/70 flex-wrap">
+                  <span className="text-[#00aa6c] font-bold">★★★★★ 5.0 TripAdvisor</span>
+                  <span className="text-nomad-red">/</span>
+                  <span>Zero Vehicle Liability</span>
+                  <span className="text-nomad-red">/</span>
+                  <span>Ages 5+ to 85+</span>
+                  <span className="text-nomad-red">/</span>
+                  <span className="text-nomad-red font-bold">2027 Season Opens May 15</span>
+                </div>
               </div>
             </FadeIn>
           </div>
-          <div className="relative w-full h-[35vh] md:h-[50vh] flex flex-col">
-            {/* Central Scrolling Image Carousel */}
+
+          {/* Clean Backcountry Photography Marquee */}
+          <div className="relative w-full h-[32vh] md:h-[46vh] flex flex-col">
             <div className="flex-grow relative w-full flex flex-row">
-              {/* Scrolling wrapper */}
               <div className="flex flex-row h-full min-w-full group">
-                <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full">
+                <div className="animate-marquee flex flex-row shrink-0 gap-6 pr-6 h-full">
                   {[
                     "/creek_bw_film.png",
                     "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
+                    "/sawtelle.png",
                     "/creek_bw_film.png",
                     "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
-                    "/creek_bw_film.png",
-                    "/utv-muddy-tire.jpg",
-                    "/moody-silhouette.jpg"
+                    "/sawtelle.png"
                   ].map((src, idx) => (
-                    <div key={idx} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-xl">
-                      {/* Top film margin */}
-                      <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
-                        {/* Sprocket background */}
-                        <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center top", backgroundSize: "auto 100%" }}></div>
-                        {/* Timestamps / Edge numbers */}
-                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] ml-4 mix-blend-screen opacity-90">KODAK 400TX</span>
-                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] mr-4 mix-blend-screen opacity-90">{`00:00:${(15 + idx * 3).toString().padStart(2, '0')}:${(idx * 12 + 4).toString().padStart(2, '0')}`}</span>
-                      </div>
-
-                      {/* Image */}
-                      <div className="flex-grow w-full relative">
-                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" sizes="(max-width: 768px) 100vw, 50vw" />
-                        <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
-                      </div>
-
-                      {/* Bottom film margin */}
-                      <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
-                        {/* Sprocket background */}
-                        <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center bottom", backgroundSize: "auto 100%", transform: "scaleY(-1)" }}></div>
-                        {/* Timestamps / Edge numbers */}
-                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] ml-8 mix-blend-screen opacity-90">{10 + idx}</span>
-                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] mr-8 mix-blend-screen opacity-90">{10 + idx}A</span>
+                    <div key={idx} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-2 rounded-lg shadow-xl overflow-hidden border border-nomad-black/10">
+                      <div className="w-full h-full relative rounded overflow-hidden">
+                        <Image src={src} alt="Nomad Yellowstone passenger-only guided ATV tour through Island Park backcountry near Yellowstone." fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full" aria-hidden="true">
+                <div className="animate-marquee flex flex-row shrink-0 gap-6 pr-6 h-full" aria-hidden="true">
                   {[
                     "/creek_bw_film.png",
                     "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
+                    "/sawtelle.png",
                     "/creek_bw_film.png",
                     "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
-                    "/creek_bw_film.png",
-                    "/utv-muddy-tire.jpg",
-                    "/moody-silhouette.jpg"
+                    "/sawtelle.png"
                   ].map((src, idx) => (
-                    <div key={`dup-${idx}`} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 shadow-2xl border border-white/5 rounded-xl">
-                      {/* Top film margin */}
-                      <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
-                        <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center top", backgroundSize: "auto 100%" }}></div>
-                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] ml-4 mix-blend-screen opacity-90">KODAK 400TX</span>
-                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] mr-4 mix-blend-screen opacity-90">{`00:00:${(15 + (idx + 9) * 3).toString().padStart(2, '0')}:${((idx + 9) * 12 + 4).toString().padStart(2, '0')}`}</span>
-                      </div>
-
-                      {/* Image */}
-                      <div className="flex-grow w-full relative">
-                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" sizes="(max-width: 768px) 100vw, 50vw" />
-                        <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
-                      </div>
-
-                      {/* Bottom film margin */}
-                      <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
-                        <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center bottom", backgroundSize: "auto 100%", transform: "scaleY(-1)" }}></div>
-                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] ml-8 mix-blend-screen opacity-90">{10 + idx + 9}</span>
-                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] mr-8 mix-blend-screen opacity-90">{10 + idx + 9}A</span>
+                    <div key={`dup-${idx}`} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-2 rounded-lg shadow-xl overflow-hidden border border-nomad-black/10">
+                      <div className="w-full h-full relative rounded overflow-hidden">
+                        <Image src={src} alt="Nomad Yellowstone passenger-only guided ATV tour through Island Park backcountry near Yellowstone." fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
                       </div>
                     </div>
                   ))}
@@ -269,82 +213,87 @@ export default function Home() {
         </section>
 
         {/* TRUST BANNER */}
-        <section className="w-full bg-nomad-black py-5 border-y border-white/5 relative z-20 shadow-xl">
+        <section className="w-full bg-nomad-black py-4 border-y border-white/5 relative z-20 shadow-xl">
           <div className="container mx-auto px-4 overflow-hidden">
-            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-16 font-mono text-[10px] md:text-xs tracking-widest text-nomad-paper/60 uppercase text-center w-full">
-              <FadeIn delay={0.1} className="flex items-center gap-2"><span className="text-nomad-red">✪</span> Permitted & Insured</FadeIn>
-              <FadeIn delay={0.2} className="flex items-center gap-2"><span className="text-nomad-red">✚</span> Wilderness First Responder</FadeIn>
-              <FadeIn delay={0.3} className="flex items-center gap-2"><span className="text-nomad-red">★</span> Top-Rated on TripAdvisor</FadeIn>
-              <FadeIn delay={0.4} className="flex items-center gap-2"><span className="text-nomad-red">✓</span> You never pay for vehicle damage — your guide drives.</FadeIn>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-14 font-mono text-[11px] md:text-xs tracking-widest text-nomad-paper/70 uppercase text-center w-full">
+              <FadeIn delay={0.1} className="flex items-center gap-2"><span className="text-nomad-red font-bold">✪</span> USFS Permitted &amp; Insured</FadeIn>
+              <FadeIn delay={0.2} className="flex items-center gap-2"><span className="text-nomad-red font-bold">✚</span> Wilderness First Responder Guides</FadeIn>
+              <FadeIn delay={0.3} className="flex items-center gap-2"><span className="text-nomad-red font-bold">★</span> Top-Rated on TripAdvisor</FadeIn>
+              <FadeIn delay={0.4} className="flex items-center gap-2"><span className="text-nomad-red font-bold">✓</span> You Never Pay For Vehicle Damage</FadeIn>
             </div>
           </div>
         </section>
 
-        {/* SECTION 2: THE SPLIT (Main Content Grid matching mockup) */}
-        <section id="about" className="py-32 md:py-48 bg-transparent relative z-10">
+        {/* SECTION 2: THE 3 CORE PILLARS */}
+        <section id="about" className="py-24 md:py-36 bg-transparent relative z-10">
           <div className="container mx-auto px-6 max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <FadeIn className="text-center mb-16 md:mb-20">
+              <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.25em] mb-3 block font-bold uppercase">
+                The Passenger-Only Difference
+              </span>
+              <h2 className="font-heading text-4xl md:text-6xl font-black text-nomad-black uppercase tracking-tight mb-4">
+                Elevated Backcountry Expeditions
+              </h2>
+              <p className="text-base md:text-lg text-nomad-black/75 max-w-2xl mx-auto leading-relaxed">
+                Why families, photographers, and travelers choose Nomad Yellowstone over stressful self-drive rentals.
+              </p>
+            </FadeIn>
 
-              {/* Left: Text Block */}
-              <FadeIn className="flex flex-col items-start justify-center">
-                <span className="font-mono text-nomad-red text-sm tracking-widest mb-4 block font-bold uppercase drop-shadow-sm">
-                  Passenger Only • Expert Guided ATV Tours
-                </span>
-                <h2 className="font-heading text-7xl md:text-[6rem] lg:text-[7rem] font-black text-nomad-black uppercase leading-[0.85] tracking-tight mb-8">
-                  CAPTURE<br />THE WILD
-                </h2>
-
-                <div className="mt-8 bg-nomad-paper shadow-xl p-8 border-l-4 border-nomad-red mb-8">
-                  <p className="text-xl md:text-2xl font-heading uppercase text-nomad-black drop-shadow-sm mb-6 text-distressed">
-                    Nomad Yellowstone offers fully guided, passenger-only ATV tours in Island Park, Idaho, near Yellowstone National Park and West Yellowstone, Montana.
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Pillar 1 */}
+              <FadeIn delay={0.1} className="bg-nomad-paper p-8 rounded-sm border border-nomad-black/10 shadow-lg flex flex-col justify-between hover:border-nomad-red/40 transition-colors">
+                <div>
+                  <span className="font-mono text-xs text-nomad-red font-bold tracking-widest block mb-4">01 // EFFORTLESS ACCESS</span>
+                  <h3 className="font-heading text-2xl md:text-3xl uppercase text-nomad-black mb-3">You Ride. We Pilot.</h3>
+                  <p className="text-sm text-nomad-black/80 leading-relaxed mb-6">
+                    Forget white-knuckling unfamiliar logging roads or taking on $20,000 in machine damage liability. Our certified guides handle 100% of the driving so you can relax, shoot photos, and spot wildlife with active two-way headsets.
                   </p>
-
-                  <h3 className="font-bold text-nomad-black mb-3 font-heading uppercase text-lg">Why Choose a Passenger-Only ATV Tour?</h3>
-                  <p className="text-sm md:text-base text-nomad-black/80 leading-relaxed mb-4">
-                    Unlike self-drive ATV rentals where you&apos;re responsible for navigating unfamiliar terrain, our passenger-only format means a certified guide handles the driving while you soak in the scenery. It&apos;s the safest, most relaxing way to explore the Yellowstone backcountry — and it&apos;s why families with kids as young as five and grandparents in their eighties choose Nomad.
-                  </p>
-                  <ul className="list-disc pl-5 text-nomad-black font-medium text-sm md:text-base leading-relaxed opacity-90 drop-shadow-sm space-y-2">
-                    <li><strong>Expert Guided:</strong> Professional guides drive — you just enjoy the views.</li>
-                    <li><strong>Deep Access:</strong> We navigate rugged terrain to reach 10,000-foot peaks that standard rentals can&apos;t access.</li>
-                    <li><strong>Zero Liability:</strong> Because our passenger-only tours are fully guide-driven, guests carry zero liability for vehicle damage.</li>
-                    <li><strong>Fully Equipped:</strong> All safety gear and equipment provided for every passenger.</li>
-                  </ul>
                 </div>
-
-                <ul className="flex flex-col gap-2 font-mono text-sm text-nomad-black/80 font-bold mb-10 tracking-wide uppercase">
-                  <li className="flex items-center gap-2">
-                    <span className="text-nomad-red">✓</span> 2-3 Hour Expeditions
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-nomad-red">✓</span> Deep Backcountry Access
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-nomad-red">✓</span> Ages 5+ Welcome
-                  </li>
-                </ul>
-
-                <Link href="/booking" className="btn-primary px-12 py-4 text-xl hover:text-white transition-colors mt-4">
-                  BOOK 2027 SEASON (15% OFF)
-                </Link>
+                <div className="pt-4 border-t border-nomad-black/10 flex flex-wrap gap-2 font-mono text-[10px] text-nomad-black/60 uppercase">
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">Zero Liability</span>
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">2-Way Headsets</span>
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">WFR Certified</span>
+                </div>
               </FadeIn>
 
-              {/* Right: Map Feature */}
-              <FadeIn delay={0.2} className="relative aspect-square w-full max-w-lg mx-auto bg-nomad-paper shadow-2xl overflow-hidden border border-nomad-black/10 mix-blend-multiply">
-                <Image
-                  src="/map_placeholder.png"
-                  alt="Nomad Yellowstone base camp in Island Park, Idaho, featuring purpose-built backcountry ATV vehicles."
-                  fill
-                  className="object-cover opacity-90 mix-blend-multiply"
-                />
+              {/* Pillar 2 */}
+              <FadeIn delay={0.2} className="bg-nomad-paper p-8 rounded-sm border border-nomad-black/10 shadow-lg flex flex-col justify-between hover:border-nomad-red/40 transition-colors">
+                <div>
+                  <span className="font-mono text-nomad-red font-bold tracking-widest block mb-4">02 // UNTOUCHED TERRAIN</span>
+                  <h3 className="font-heading text-2xl md:text-3xl uppercase text-nomad-black mb-3">Beyond The Pavement.</h3>
+                  <p className="text-sm text-nomad-black/80 leading-relaxed mb-6">
+                    Over 99% of Yellowstone visitors never leave the crowded highway loops. We ascend remote backcountry ridges and private alpine summits along the Continental Divide that rental cars, tour buses, and standard vehicles cannot reach.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-nomad-black/10 flex flex-wrap gap-2 font-mono text-[10px] text-nomad-black/60 uppercase">
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">10,000-Ft Peaks</span>
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">Continental Divide</span>
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">No Crowds</span>
+                </div>
               </FadeIn>
 
+              {/* Pillar 3 */}
+              <FadeIn delay={0.3} className="bg-nomad-paper p-8 rounded-sm border border-nomad-black/10 shadow-lg flex flex-col justify-between hover:border-nomad-red/40 transition-colors">
+                <div>
+                  <span className="font-mono text-nomad-red font-bold tracking-widest block mb-4">03 // ALL AGES</span>
+                  <h3 className="font-heading text-2xl md:text-3xl uppercase text-nomad-black mb-3">Built For Every Generation.</h3>
+                  <p className="text-sm text-nomad-black/80 leading-relaxed mb-6">
+                    From five-year-olds in secure child car seats to grandparents in heated stadium seats, our high-clearance Can-Am Commander fleet makes rugged wilderness exploration comfortable and safe for all ages.
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-nomad-black/10 flex flex-wrap gap-2 font-mono text-[10px] text-nomad-black/60 uppercase">
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">Ages 5 to 85+</span>
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">Child Seats OK</span>
+                  <span className="bg-nomad-black/5 px-2 py-1 rounded">Heated Stadium Seats</span>
+                </div>
+              </FadeIn>
             </div>
-          </div>
-        </section>
 
-        {/* SECTION 3: MAP / DIVIDER BAR */}
-        <section className="relative py-12 w-full bg-nomad-black flex items-center justify-center border-y-2 border-nomad-black/80 z-10 shadow-lg">
-          <div className="relative z-10 text-center px-4">
+            <div className="mt-14 text-center">
+              <Link href="/booking" className="btn-primary px-10 py-4 text-base hover:text-white transition-colors inline-block font-bold">
+                EXPLORE 2027 DATES &amp; SAVE 15% →
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -352,12 +301,11 @@ export default function Home() {
         <PricingSection />
 
         {/* SECTION 5: THE DIVIDER BAR */}
-        <section className="relative py-32 w-full flex items-center justify-center border-y border-nomad-black/10">
-          {/* The global before/after pseudo elements handle the grunge. We don't need explicit backgrounds here anymore. */}
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase tracking-widest text-distressed drop-shadow-sm mb-6">NO CROWDS. JUST DIRT.</h2>
-            <p className="text-base md:text-lg text-nomad-black/80 leading-relaxed">
-              Most Yellowstone visitors never leave the pavement. Our passenger-only ATV tours take you deep into the backcountry on trails that buses, rental cars, and even self-drive ATVs can&apos;t reach — all while your guide does the driving.
+        <section className="relative py-28 w-full flex items-center justify-center border-y border-nomad-black/10">
+          <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+            <h2 className="font-heading text-5xl md:text-7xl text-nomad-black uppercase tracking-widest text-distressed drop-shadow-sm mb-4">NO CROWDS. JUST DIRT.</h2>
+            <p className="text-base md:text-lg text-nomad-black/75 leading-relaxed">
+              Experience the Yellowstone backcountry the way it was meant to be seen: deep in the mountains, surrounded by wildlife, with an expert local guide at the wheel.
             </p>
           </div>
         </section>

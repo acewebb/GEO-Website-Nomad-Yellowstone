@@ -86,42 +86,6 @@ export default function PricingSection() {
 
                 </div>
 
-                {/* Guided vs. Self-Drive Comparison Block */}
-                <div className="mt-24 max-w-4xl mx-auto border-t border-white/10 pt-16">
-                    <h3 className="font-heading text-3xl uppercase text-white text-center mb-12">
-                        Guided Tour vs. Self-Drive Rental: What's the Difference?
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-surface/10 p-6 border border-white/5 rounded-sm">
-                            <h4 className="font-mono text-xs text-accent uppercase tracking-widest mb-3">// Safety & Liability</h4>
-                            <p className="text-nomad-paper/80 text-sm font-medium leading-relaxed">
-                                <strong>Self-Drive:</strong> You take on full responsibility for $20k+ machines. Scratches, rollovers, or trail damages can cost you thousands in deductibles.
-                            </p>
-                            <p className="text-accent text-sm font-medium leading-relaxed mt-3">
-                                <strong>Nomad Guided:</strong> Zero liability. Our WFR-certified professional guides do the driving so you can relax, take photos, and look for wildlife.
-                            </p>
-                        </div>
-                        <div className="bg-surface/10 p-6 border border-white/5 rounded-sm">
-                            <h4 className="font-mono text-xs text-accent uppercase tracking-widest mb-3">// Route Access</h4>
-                            <p className="text-nomad-paper/80 text-sm font-medium leading-relaxed">
-                                <strong>Self-Drive:</strong> Often restricted to flat, dusty county dirt roads due to gate closures or difficulty navigating steep backcountry trails.
-                            </p>
-                            <p className="text-accent text-sm font-medium leading-relaxed mt-3">
-                                <strong>Nomad Guided:</strong> We take you directly up to 10,000-foot summits, the Continental Divide, and remote trails hidden from standard tourists.
-                            </p>
-                        </div>
-                        <div className="bg-surface/10 p-6 border border-white/5 rounded-sm">
-                            <h4 className="font-mono text-xs text-accent uppercase tracking-widest mb-3">// Gear & Navigation</h4>
-                            <p className="text-nomad-paper/80 text-sm font-medium leading-relaxed">
-                                <strong>Self-Drive:</strong> Relies on cell coverage (non-existent in the mountains) or paper maps. No safety backup if you get stranded or lost.
-                            </p>
-                            <p className="text-accent text-sm font-medium leading-relaxed mt-3">
-                                <strong>Nomad Guided:</strong> High-end safety gear, active 2-way headsets, Garmin satellite trackers, bear protection, and local route experts.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
     );
