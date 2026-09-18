@@ -71,7 +71,7 @@ export default function Home() {
     "@id": "https://nomadyellowstone.com/#website",
     "url": "https://nomadyellowstone.com/",
     "name": "Nomad Yellowstone",
-    "description": "Nomad Yellowstone provides private, fully-guided Can-Am Commander ATV backcountry tours originating in Island Park, Idaho.",
+    "description": "Nomad Yellowstone provides fully-guided Can-Am Commander ATV backcountry tours originating in Island Park, Idaho.",
     "publisher": {
       "@id": "https://nomadyellowstone.com/#business"
     }
@@ -127,7 +127,7 @@ export default function Home() {
             <FadeIn>
               <div className="flex flex-col items-center justify-center">
                 <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.2em] mb-4 block font-bold uppercase drop-shadow-sm">
-                  Premier Private Expeditions
+                  Premier Guided Expeditions
                 </span>
                 <h1 className="font-heading text-4xl md:text-6xl lg:text-[5rem] text-nomad-black uppercase leading-[0.9] tracking-tight mb-4 text-distressed drop-shadow-md">
                   Guided ATV Tours Near<br />
@@ -137,8 +137,39 @@ export default function Home() {
                 <h2 className="font-heading text-2xl md:text-3xl text-nomad-black/80 uppercase tracking-wide mb-6 text-distressed drop-shadow-sm">
                   Backcountry Tours in Yellowstone
                 </h2>
+
+                {/* 2026 SEASON CLOSED & 2027 EARLY BIRD 15% OFF PROMO CARD */}
+                <div className="w-full max-w-2xl mx-auto my-6 p-5 md:p-6 bg-nomad-black text-white rounded-sm border-2 border-nomad-red shadow-2xl relative overflow-hidden text-left">
+                  <div className="absolute top-0 right-0 bg-nomad-red text-white text-[10px] md:text-xs font-mono font-bold uppercase tracking-widest px-3 py-1">
+                    15% OFF 2027
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-nomad-red animate-pulse"></span>
+                    <span className="font-mono text-xs md:text-sm font-bold uppercase tracking-wider text-nomad-red">
+                      2026 Season Closed // 2027 Bookings Open
+                    </span>
+                  </div>
+                  <h3 className="font-heading text-xl md:text-2xl uppercase tracking-wide text-white mb-2">
+                    Early Bird Discount: Save 15% On All 2027 Tours
+                  </h3>
+                  <p className="text-xs md:text-sm text-nomad-paper/80 leading-relaxed mb-4">
+                    Our 2026 season has concluded. We are now accepting reservations for next summer (May 15 – Oct 31, 2027). Book now to lock in your preferred dates with an automatic <strong>15% early bird discount</strong>.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center gap-3">
+                    <Link
+                      href="/booking"
+                      className="w-full sm:w-auto text-center px-6 py-2.5 bg-nomad-red hover:bg-nomad-red/90 text-white font-mono text-xs uppercase font-bold tracking-widest transition-colors rounded-sm shadow-md"
+                    >
+                      Book 2027 Season (15% Off) →
+                    </Link>
+                    <span className="font-mono text-[11px] text-nomad-paper/60 uppercase tracking-wider">
+                      Zero Risk • Free 24h Cancellation
+                    </span>
+                  </div>
+                </div>
+
                 <p className="text-sm md:text-base text-nomad-black/90 max-w-2xl mx-auto leading-relaxed mb-6">
-                  Nomad Yellowstone offers fully guided, passenger-only ATV tours from Island Park, Idaho — about 20 minutes from the West Yellowstone entrance of Yellowstone National Park. Our certified guides drive while you ride along, making backcountry views and high-elevation terrain accessible to families, grandparents, and anyone who doesn&apos;t want to drive themselves. Tours run May 15 through October 31. No off-road experience required.
+                  Nomad Yellowstone offers fully guided, passenger-only ATV tours from Island Park, Idaho — about 20 minutes from the West Yellowstone entrance of Yellowstone National Park. Our certified guides drive while you ride along, making backcountry views and high-elevation terrain accessible to families, grandparents, and anyone who doesn&apos;t want to drive themselves. We are closed for the 2026 season and now booking for Summer 2027 (May 15 – October 31, 2027). No off-road experience required.
                 </p>
                 <p className="font-mono text-sm md:text-base text-nomad-black font-bold mt-2 flex items-center justify-center gap-2 md:gap-3 flex-wrap">
                   <span className="text-lg font-bold">Passenger-Only Tours</span>
@@ -293,7 +324,7 @@ export default function Home() {
                 </ul>
 
                 <Link href="/booking" className="btn-primary px-12 py-4 text-xl hover:text-white transition-colors mt-4">
-                  BOOK NOW
+                  BOOK 2027 SEASON (15% OFF)
                 </Link>
               </FadeIn>
 
@@ -358,13 +389,13 @@ export default function Home() {
 
           <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
             <FadeIn>
-              <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-6 opacity-100 text-distressed drop-shadow-md">Book Your<br />Tour</h2>
+              <h2 className="font-heading text-6xl md:text-8xl text-nomad-black uppercase mb-6 opacity-100 text-distressed drop-shadow-md">Book For<br />2027</h2>
               <p className="text-base md:text-lg text-nomad-black/80 leading-relaxed mb-8">
-                Ready to experience the Yellowstone backcountry without the stress of driving? Our passenger-only ATV tours depart daily from Island Park, Idaho — just 20 minutes from the West Yellowstone entrance.
+                Ready to experience the Yellowstone backcountry next summer? Our 2026 season has concluded, and 2027 passenger-only ATV tour reservations are open with an exclusive 15% Early Bird discount.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/booking" className="btn-primary px-12 py-6 text-xl">
-                  CHECK AVAILABILITY
+                  CHECK 2027 AVAILABILITY (15% OFF)
                 </Link>
                 <a href="tel:+12087452088" className="font-mono text-lg font-bold text-nomad-black hover:text-nomad-red transition-colors">
                   (208) 745-2088

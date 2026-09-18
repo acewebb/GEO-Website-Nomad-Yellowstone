@@ -4,29 +4,26 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, endOfWeek, isSameMonth, isSameDay, addDays, isBefore, startOfDay } from 'date-fns';
 
-// Compute the next available (bookable) date from today
+// Compute the next available (bookable) date for 2027 season
 function getNextAvailableDate(disabledDates: Date[]): Date {
-    const today = startOfDay(new Date());
-    let candidate = today;
+    const seasonStart2027 = new Date('2027-05-15T00:00:00-06:00');
+    let candidate = startOfDay(seasonStart2027);
     for (let i = 0; i < 365; i++) {
+        const y = candidate.getFullYear();
         const m = candidate.getMonth();
         const d = candidate.getDate();
-        const inSeason = (m > 3 || (m === 3 && d >= 15)) && m <= 9;
+        const inSeason = y >= 2027 && (m > 3 || (m === 3 && d >= 15)) && m <= 9;
         const isDisabled = disabledDates.some(dd => isSameDay(dd, candidate));
         if (inSeason && !isDisabled) return candidate;
         candidate = addDays(candidate, 1);
     }
-    return today;
+    return seasonStart2027;
 }
 
 function BookingCalendar({ selectedDate, onSelect, disabledDates }: { selectedDate: Date | null, onSelect: (d: Date) => void, disabledDates: Date[] }) {
-    // Automatically start on May if accessed outside of the tour season (May - Oct)
+    // Default to May 2027 (start of 2027 season)
     const getInitialMonth = () => {
-        const today = new Date();
-        const month = today.getMonth();
-        if (month < 3) return startOfMonth(new Date(today.getFullYear(), 3, 1)); // April this year
-        if (month > 9) return startOfMonth(new Date(today.getFullYear() + 1, 3, 1)); // April next year
-        return startOfMonth(today); // Current month if in season
+        return startOfMonth(new Date(2027, 4, 1)); // May 2027
     };
 
     const [currentMonth, setCurrentMonth] = useState(getInitialMonth());
@@ -52,10 +49,11 @@ function BookingCalendar({ selectedDate, onSelect, disabledDates }: { selectedDa
             const isMockDisabled = disabledDates.some(d => isSameDay(d, day));
             const isPast = isBefore(day, today);
 
-            // Allow only April 15 to Oct 31
-            const month = day.getMonth(); // 0-indexed, April is 3, Oct is 9
+            // Allow only 2027 season dates: May 15, 2027 to Oct 31, 2027
+            const year = day.getFullYear();
+            const month = day.getMonth(); // 0-indexed, April is 3, May is 4, Oct is 9
             const dayOfMonth = day.getDate();
-            const isOutsideSeason = month < 3 || (month === 3 && dayOfMonth < 15) || month > 9;
+            const isOutsideSeason = year < 2027 || month < 3 || (month === 3 && dayOfMonth < 15) || month > 9;
 
             const isDisabled = isPast || isMockDisabled || isOutsideSeason;
             const isNextAvailable = !selectedDate && isSameDay(day, nextAvailable);
@@ -115,7 +113,6 @@ function BookingFormInner() {
 
     const [missionType, setMissionType] = useState('9am');
     const [guestCount, setGuestCount] = useState(1);
-    const isBuyout = false; // Deprecated private buyout option
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {
@@ -141,9 +138,10 @@ function BookingFormInner() {
         }
     }, [selectedDate]);
 
-    // Pricing Constants
-    const PRICE_PER_PASSENGER = 179;
-    const BUYOUT_PRICE = 1997;
+    // Pricing Constants (2027 Early Bird 15% Discount)
+    const REGULAR_PRICE_PER_PASSENGER = 179;
+    const DISCOUNT_PERCENT = 15;
+    const PRICE_PER_PASSENGER = 152; // 15% off $179 ($27 savings per passenger)
 
     const missions = [
         { id: '9am', label: 'Morning Tour', time: '9:00 AM' },
@@ -154,7 +152,6 @@ function BookingFormInner() {
 
     const currentSlotAvailability = availability ? availability[missionType]?.seatsAvailable : 5;
     const maxGuests = currentSlotAvailability !== undefined ? currentSlotAvailability : 5;
-    const isPrivateSlotUnavailable = false;
 
     // Constrain guest count if slot availability drops below selection
     useEffect(() => {
@@ -164,6 +161,8 @@ function BookingFormInner() {
     }, [maxGuests, guestCount]);
 
     const currentPrice = guestCount * PRICE_PER_PASSENGER;
+    const originalPrice = guestCount * REGULAR_PRICE_PER_PASSENGER;
+    const totalSavings = originalPrice - currentPrice;
 
     return (
         <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -173,7 +172,7 @@ function BookingFormInner() {
                 <div>
                     <span className="font-mono text-accent text-xs tracking-widest mb-2 block">// STEP 01: CHOOSE ADVENTURE</span>
                     <h2 className="font-heading text-3xl md:text-4xl text-white uppercase leading-none mb-6">
-                        {isBuyout ? "Private UTV Tour Buyout" : "Signature Tour – Guided ATV Adventure"}
+                        Signature Tour – Guided ATV Adventure
                     </h2>
                 </div>
 
@@ -215,44 +214,45 @@ function BookingFormInner() {
                     <div className="flex items-center justify-between">
                         <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Group Size</label>
                         <span className="font-heading text-2xl text-white">
-                            {isBuyout ? 'PRIVATE TOUR' : `${guestCount} PASSENGER${guestCount > 1 ? 'S' : ''}`}
+                            {`${guestCount} PASSENGER${guestCount > 1 ? 'S' : ''}`}
                         </span>
                     </div>
 
-                    {!isBuyout ? (
-                        <div className="flex items-center justify-center gap-5">
-                            <button
-                                type="button"
-                                onClick={() => setGuestCount(Math.max(1, guestCount - 1))}
-                                disabled={guestCount <= 1}
-                                className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white/20 text-white text-2xl font-bold hover:border-accent hover:text-accent active:scale-90 transition-all disabled:opacity-20 disabled:cursor-not-allowed select-none"
-                                aria-label="Decrease passenger count"
-                            >
-                                −
-                            </button>
-                            <div className="font-heading text-4xl md:text-3xl text-white w-16 text-center tabular-nums">{guestCount}</div>
-                            <button
-                                type="button"
-                                onClick={() => setGuestCount(Math.min(maxGuests || 1, guestCount + 1))}
-                                disabled={guestCount >= (maxGuests || 1)}
-                                className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white/20 text-white text-2xl font-bold hover:border-accent hover:text-accent active:scale-90 transition-all disabled:opacity-20 disabled:cursor-not-allowed select-none"
-                                aria-label="Increase passenger count"
-                            >
-                                +
-                            </button>
-                        </div>
-                    ) : (
-                        <div className="p-3 bg-accent/10 border border-accent/30 text-accent text-xs font-mono text-center">
-                            FULL VEHICLE EXCLUSIVE ACCESS UNLOCKED (UP TO 5 PASSENGERS)
-                        </div>
-                    )}
+                    <div className="flex items-center justify-center gap-5">
+                        <button
+                            type="button"
+                            onClick={() => setGuestCount(Math.max(1, guestCount - 1))}
+                            disabled={guestCount <= 1}
+                            className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white/20 text-white text-2xl font-bold hover:border-accent hover:text-accent active:scale-90 transition-all disabled:opacity-20 disabled:cursor-not-allowed select-none"
+                            aria-label="Decrease passenger count"
+                        >
+                            −
+                        </button>
+                        <div className="font-heading text-4xl md:text-3xl text-white w-16 text-center tabular-nums">{guestCount}</div>
+                        <button
+                            type="button"
+                            onClick={() => setGuestCount(Math.min(maxGuests || 1, guestCount + 1))}
+                            disabled={guestCount >= (maxGuests || 1)}
+                            className="w-14 h-14 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white/20 text-white text-2xl font-bold hover:border-accent hover:text-accent active:scale-90 transition-all disabled:opacity-20 disabled:cursor-not-allowed select-none"
+                            aria-label="Increase passenger count"
+                        >
+                            +
+                        </button>
+                    </div>
                 </div>
 
-                {/* Total Estimator */}
+                {/* Total Estimator with 15% Discount */}
                 <div className="flex justify-between items-end border-t border-white/10 pt-8">
                     <div>
-                        <span className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest block mb-1">Estimated Total</span>
-                        <span className="font-heading text-4xl text-accent">${currentPrice}</span>
+                        <div className="flex items-center gap-2 mb-1">
+                            <span className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">2027 Early Bird Rate</span>
+                            <span className="font-mono text-[10px] text-green-400 bg-green-950/60 border border-green-500/30 px-1.5 py-0.5 rounded font-bold uppercase">15% OFF</span>
+                        </div>
+                        <div className="flex items-baseline gap-2">
+                            <span className="font-heading text-4xl text-accent">${currentPrice}</span>
+                            <span className="font-mono text-sm text-nomad-paper/40 line-through">${originalPrice}</span>
+                        </div>
+                        <span className="font-mono text-xs text-green-400 block mt-1">You save ${totalSavings} ({guestCount} seat{guestCount > 1 ? 's' : ''})</span>
                     </div>
                     <div className="text-right">
                         <p className="text-accent font-mono text-xs uppercase tracking-widest mb-1">Includes</p>
@@ -301,8 +301,8 @@ function BookingFormInner() {
                                             phone,
                                             tourId: missionType,
                                             date: format(selectedDate, 'yyyy-MM-dd'),
-                                            seats: isBuyout ? 5 : guestCount,
-                                            bookingType: isBuyout ? 'private' : 'individual',
+                                            seats: guestCount,
+                                            bookingType: 'individual',
                                             notes
                                         })
                                     });
@@ -324,13 +324,15 @@ function BookingFormInner() {
                                         <label className="font-mono text-xs text-nomad-paper/50 uppercase tracking-widest">Preferred Date</label>
                                         {selectedDate && <span className="text-accent font-mono text-sm tracking-widest uppercase bg-accent/10 px-2 py-1 border border-accent/20">{format(selectedDate, 'MMM do, yyyy')}</span>}
                                     </div>
-                                    {/* Same-day / next-day badge for last-minute bookers */}
+                                    {/* 2027 Early Bird Discount Badge */}
                                     {!selectedDate && (
-                                        <div className="flex items-center gap-2 bg-green-900/20 border border-green-500/30 rounded-sm px-3 py-2">
-                                            <span className="inline-block w-2 h-2 bg-green-400 rounded-full animate-pulse flex-shrink-0" />
-                                            <span className="font-mono text-[11px] text-green-300 uppercase tracking-widest">✓ Same-day &amp; next-day booking available</span>
-                                        </div>
-                                    )}
+                                         <div className="flex items-center gap-2 bg-nomad-red/20 border border-nomad-red/40 rounded-sm px-3 py-2">
+                                             <span className="inline-block w-2 h-2 bg-nomad-red rounded-full animate-pulse flex-shrink-0" />
+                                             <span className="font-mono text-[11px] text-nomad-paper uppercase tracking-widest">
+                                                 ★ 2027 Early Bird: <strong>15% Off</strong> Auto-Applied
+                                             </span>
+                                         </div>
+                                     )}
                                     <BookingCalendar
                                         selectedDate={selectedDate}
                                         onSelect={setSelectedDate}
@@ -358,16 +360,10 @@ function BookingFormInner() {
                                     <textarea name="notes" placeholder="DIETARY RESTRICTIONS, SPECIAL OCCASIONS, ETC." className="w-full bg-nomad-black border border-white/10 rounded-sm px-4 py-4 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none font-mono text-xs h-24 resize-none transition-all"></textarea>
                                 </div>
 
-                                {isPrivateSlotUnavailable && (
-                                    <div className="p-4 bg-red-900/20 border border-red-500/30 text-red-400 text-xs font-mono text-center mb-4">
-                                        Private buyout is unavailable for this time slot because seats have already been booked by another party. Please select a different time slot or date.
-                                    </div>
-                                )}
-
                                 <div className="pt-2">
-                                    <button type="submit" disabled={isSubmitted || isPrivateSlotUnavailable} className={`btn-primary w-full py-5 text-lg relative overflow-hidden group ${isSubmitted || isPrivateSlotUnavailable ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                                    <button type="submit" disabled={isSubmitted} className={`btn-primary w-full py-5 text-lg relative overflow-hidden group ${isSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}>
                                         <span className="relative z-10">{isSubmitted ? 'Processing...' : 'Proceed to Checkout'}</span>
-                                        {!(isSubmitted || isPrivateSlotUnavailable) && <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>}
+                                        {!isSubmitted && <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>}
                                     </button>
                                     <p className="text-center text-xs font-mono text-nomad-paper/30 mt-4 uppercase tracking-widest">
                                         ✓ Free cancellation up to 24 hours before departure.<br />
@@ -383,7 +379,7 @@ function BookingFormInner() {
                             </div>
                             <h3 className="font-heading text-4xl text-white uppercase mb-4">Request Received</h3>
                             <p className="text-nomad-paper/80 text-lg mb-8 max-w-md mx-auto">
-                                Stand by. Our team is verifying availability for your requested date. You will receive a confirmation email within 2 hours.
+                                Stand by. Our team is verifying availability for your requested date. You will receive a confirmation text with details within 2 hours.
                             </p>
                             <div className="bg-surface/50 p-6 rounded-sm border border-white/10 mb-8 text-left max-w-xs mx-auto">
                                 <div className="flex justify-between mb-2">

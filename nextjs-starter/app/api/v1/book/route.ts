@@ -3,8 +3,10 @@ import { db, admin } from '@/lib/firebase';
 import { stripe } from '@/lib/stripe';
 import { bookingSchema } from '@/lib/validateInput';
 
-const INDIVIDUAL_PRICE = 179;
-const PRIVATE_BUYOUT_PRICE = 1997;
+const INDIVIDUAL_PRICE_REGULAR = 179;
+const INDIVIDUAL_PRICE_DISCOUNTED = 152; // 15% off $179
+const PRIVATE_BUYOUT_PRICE_REGULAR = 1997;
+const PRIVATE_BUYOUT_PRICE_DISCOUNTED = 1697; // 15% off $1997
 
 export async function POST(request: Request) {
     try {
@@ -20,6 +22,15 @@ export async function POST(request: Request) {
         }
 
         const { name, email, phone, tourId, date, seats, bookingType } = body;
+
+        // Block dates before 2027 season
+        const tourYear = parseInt(date.split('-')[0], 10);
+        if (tourYear < 2027) {
+            return NextResponse.json(
+                { success: false, message: "The 2026 tour season is closed. Reservations are now only available for the 2027 season (May 15 – Oct 31, 2027) with a 15% early bird discount." },
+                { status: 400 }
+            );
+        }
 
         // 2. Check availability inside a Firestore Transaction
         const checkoutSession = await db.runTransaction(async (t) => {
@@ -53,21 +64,23 @@ export async function POST(request: Request) {
             // Get the origin dynamically from headers, with env var and localhost fallbacks
             const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000";
 
-            // 4. Create Stripe Checkout Session
+            // 4. Create Stripe Checkout Session (with 15% Early Bird Discount applied)
             const isPrivate = bookingType === "private";
+            const unitAmount = isPrivate ? PRIVATE_BUYOUT_PRICE_DISCOUNTED * 100 : INDIVIDUAL_PRICE_DISCOUNTED * 100;
             const thirtyMinutesFromNow = Math.floor(Date.now() / 1000) + 30 * 60;
             const session = await stripe.checkout.sessions.create({
                 payment_method_types: ["card"],
+                allow_promotion_codes: true,
                 expires_at: thirtyMinutesFromNow,
                 line_items: [
                     {
                         price_data: {
                             currency: "usd",
                             product_data: {
-                                name: isPrivate ? `Private Tour Buyout (Up to 5 Passengers)` : `Signature Tour – Guided ATV Tour`,
-                                description: `Date: ${date} | Time: ${currentSlot.tourTime} | Guests: ${seats} | Passenger: ${name}`,
+                                name: isPrivate ? `Private Tour Buyout (2027 Early Bird Special - 15% OFF)` : `Signature Tour – Guided ATV Tour (2027 Early Bird - 15% OFF)`,
+                                description: `2027 Season | Date: ${date} | Time: ${currentSlot.tourTime} | Guests: ${seats} | Passenger: ${name}`,
                             },
-                            unit_amount: isPrivate ? PRIVATE_BUYOUT_PRICE * 100 : INDIVIDUAL_PRICE * 100,
+                            unit_amount: unitAmount,
                         },
                         quantity: isPrivate ? 1 : seats,
                     },

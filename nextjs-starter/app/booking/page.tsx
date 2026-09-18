@@ -42,6 +42,24 @@ export default function Booking() {
                         <strong>You ride, we drive.</strong> Professional guides pilot our ATVs through Island Park&apos;s backcountry — 20 minutes from West Yellowstone. All tours are 2–3 hours and include safety gear and headsets. No experience needed, ages 5+.
                     </p>
 
+                    {/* 2026 Closed & 2027 15% Off Banner */}
+                    <div className="mt-6 p-4 md:p-5 bg-surface/40 border border-nomad-red/50 rounded-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div className="flex items-start gap-3">
+                            <span className="w-2.5 h-2.5 rounded-full bg-nomad-red animate-pulse mt-1 flex-shrink-0" />
+                            <div>
+                                <p className="font-mono text-xs font-bold uppercase tracking-wider text-nomad-red mb-1">
+                                    2026 Season Concluded • Now Booking for Summer 2027
+                                </p>
+                                <p className="text-xs md:text-sm text-nomad-paper/90">
+                                    2026 tour operations are now closed for the season. All 2027 reservations (May 15 – Oct 31, 2027) receive an <strong>automatic 15% early bird discount</strong> applied in the booking calculator below.
+                                </p>
+                            </div>
+                        </div>
+                        <span className="self-end sm:self-center bg-nomad-red text-white text-[11px] font-mono font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm whitespace-nowrap">
+                            15% OFF 2027
+                        </span>
+                    </div>
+
                     {/* Trust badge — server-rendered social proof (Fix 6 bonus) */}
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-6 py-4 border-y border-white/10">
                         <div className="flex items-center gap-2">

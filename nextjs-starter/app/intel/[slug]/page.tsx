@@ -9,6 +9,55 @@ import { buildArticle } from '@/lib/schema/article';
 import { buildBreadcrumbList } from '@/lib/schema/breadcrumbList';
 import RelatedPosts from '@/components/RelatedPosts';
 import BlogImage from '@/components/BlogImage';
+import InlineCTA from '@/components/InlineCTA';
+
+function injectCTA(content: string, title: string): string {
+    const lines = content.split('\n');
+    let firstHeadingIndex = -1;
+    let secondHeadingIndex = -1;
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (line.startsWith('#')) {
+            if (firstHeadingIndex === -1) {
+                firstHeadingIndex = i;
+            } else {
+                secondHeadingIndex = i;
+                break;
+            }
+        }
+    }
+
+    // Clean title for comparison
+    const cleanTitle = title.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    // Get the first heading text
+    let isFirstHeadingTitle = false;
+    if (firstHeadingIndex !== -1) {
+        const headingText = lines[firstHeadingIndex]
+            .replace(/^#+\s+/, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]/g, '');
+        if (headingText.includes(cleanTitle) || cleanTitle.includes(headingText)) {
+            isFirstHeadingTitle = true;
+        }
+    }
+
+    // Determine target index where to insert CTA
+    let targetIndex = -1;
+    if (isFirstHeadingTitle && secondHeadingIndex !== -1) {
+        targetIndex = secondHeadingIndex;
+    } else if (firstHeadingIndex !== -1) {
+        targetIndex = firstHeadingIndex;
+    }
+
+    if (targetIndex !== -1) {
+        lines.splice(targetIndex, 0, '\n<InlineCTA />\n');
+        return lines.join('\n');
+    }
+
+    return content + '\n\n<InlineCTA />\n';
+}
 
 export async function generateStaticParams() {
     const posts = getAllPosts();
@@ -119,7 +168,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
 
                 {/* MDX Content */}
                 <div className="prose prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:uppercase prose-headings:tracking-wide prose-a:text-accent prose-img:rounded-sm">
-                    <MDXRemote source={post.content} components={{ ComparisonMatrix, BlogImage, img: (props: any) => <BlogImage src={props.src || ''} alt={props.alt || ''} className={props.className || ''} /> }} />
+                    <MDXRemote source={injectCTA(post.content, post.title)} components={{ ComparisonMatrix, BlogImage, InlineCTA, img: (props: any) => <BlogImage src={props.src || ''} alt={props.alt || ''} className={props.className || ''} /> }} />
                 </div>
 
                 {/* Author Bio / Call to Action */}

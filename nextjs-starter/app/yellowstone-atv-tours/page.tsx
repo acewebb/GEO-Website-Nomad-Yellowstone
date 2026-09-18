@@ -112,7 +112,7 @@ export default function YellowstoneAtvTours() {
                                     Our fully guided, passenger-only <strong>Yellowstone backcountry ATV tours</strong> take you up to 10,000-foot peaks along the Continental Divide, offering panoramic views of the very calderas and mountain ranges that shape the park. Leave the crowded tourist paved loops behind. You climb into our enclosed, custom-built Can-Am Commander ATVs, and our professional guides navigate the intense dirt trails and rocky ridges, keeping you 100% safe and free of liability.
                                 </p>
                                 <p>
-                                    Discover the wild, unfiltered side of the ecosystem on a premium, private tour located just 20 minutes from the West Yellowstone, Montana entrance.
+                                    Discover the wild, unfiltered side of the ecosystem on a premium guided tour located just 20 minutes from the West Yellowstone, Montana entrance.
                                 </p>
                             </div>
                         </FadeIn>

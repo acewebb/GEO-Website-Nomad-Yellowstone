@@ -16,7 +16,7 @@ export const localBusinessSchema = {
   email: 'hq@nomadyellowstone.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Meet point in Island Park',
+    streetAddress: '4292 US Highway 20',
     addressLocality: 'Island Park',
     addressRegion: 'ID',
     postalCode: '83429',

@@ -124,7 +124,7 @@ export default function ContactPage() {
                     <div className="container mx-auto px-4 text-center">
                         <h1 className="font-heading text-6xl text-nomad-black uppercase mb-8 text-distressed drop-shadow-sm">Contact Base Camp</h1>
                         <p className="text-nomad-black font-medium text-xl mb-8 max-w-2xl mx-auto drop-shadow-sm">
-                            Nomad Yellowstone is a private Guided Adventure Tours company operating out of Island Park, Idaho.
+                            Nomad Yellowstone is a premier Guided Adventure Tours company operating out of Island Park, Idaho.
                             Questions about current conditions, custom groups, or gear? We are standing by on coms.
                         </p>
                         <div className="flex flex-col md:flex-row justify-center gap-8 mb-12">

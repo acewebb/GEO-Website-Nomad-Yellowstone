@@ -89,16 +89,3 @@ export const signatureTourProduct = buildProduct({
   reviewCount: '3',
   reviews: tripAdvisorReviews,
 });
-
-/** Pre-built The Legend (Private Buyout) product schema */
-export const legendProduct = buildProduct({
-  name: 'Private Tour Buyout — Exclusive Backcountry UTV Access',
-  description:
-    'Private buyout ATV tour for up to 5 passengers near Yellowstone. Custom routes, dedicated guide, full media package.',
-  price: '1997',
-  url: 'https://nomadyellowstone.com/booking?buyout=true',
-  image: 'https://nomadyellowstone.com/sawtelle.png',
-  ratingValue: '5.0',
-  reviewCount: '3',
-  reviews: tripAdvisorReviews,
-});

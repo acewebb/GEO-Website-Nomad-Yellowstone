@@ -23,15 +23,21 @@ export default function PricingSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto items-stretch">
 
                     {/* Column 1: Signature Tour */}
-                    <div className="glass-panel p-8 border border-white/10 bg-surface/20 rounded-sm flex flex-col h-full hover:border-white/30 transition-colors">
-                        <div className="mb-6">
+                    <div className="glass-panel p-8 border border-white/10 bg-surface/20 rounded-sm flex flex-col h-full hover:border-white/30 transition-colors relative">
+                        {/* Early Bird Badge */}
+                        <div className="absolute top-0 right-6 -translate-y-1/2 bg-nomad-red text-white font-bold font-mono text-[10px] px-3 py-1 uppercase tracking-widest shadow-lg rounded-sm">
+                            2027 Early Bird • 15% OFF
+                        </div>
+
+                        <div className="mb-6 pt-2">
                             <span className="font-mono text-xs text-accent uppercase tracking-widest block mb-2">Guided / Passenger</span>
                             <h3 className="font-heading text-3xl uppercase text-white mb-2">Signature Tour</h3>
-                            <p className="font-mono text-[11px] text-nomad-paper/60 uppercase tracking-widest h-8">2–3 Hour Guided ATV Adventure (Individual Seats)</p>
+                            <p className="font-mono text-[11px] text-nomad-paper/60 uppercase tracking-widest h-8">2–3 Hour Guided ATV Adventure (2027 Season)</p>
                         </div>
-                        <div className="mb-8 flex items-baseline gap-2">
-                            <span className="font-heading text-6xl text-white tracking-tight">$179</span>
-                            <span className="font-mono text-xs text-nomad-paper/40">per seat</span>
+                        <div className="mb-8 flex items-baseline gap-3">
+                            <span className="font-heading text-6xl text-white tracking-tight">$152</span>
+                            <span className="font-mono text-xl text-nomad-paper/40 line-through">$179</span>
+                            <span className="font-mono text-xs text-green-400 font-bold uppercase">15% Off</span>
                         </div>
                         <ul className="space-y-4 font-mono text-xs text-nomad-paper/70 tracking-wide flex-grow mb-8 border-t border-white/5 pt-6">
                             <li className="flex gap-3"><span className="text-accent">✓</span> Professional Driver & Guide</li>
@@ -40,8 +46,8 @@ export default function PricingSection() {
                             <li className="flex gap-3"><span className="text-accent">✓</span> Zero Vehicle Liability for Guests</li>
                             <li className="flex gap-3"><span className="text-accent">✓</span> Deep Backcountry Access</li>
                         </ul>
-                        <Link href="/booking" className="btn-outline w-full py-4 px-2 text-center text-xs leading-relaxed flex items-center justify-center">
-                            Book Seats
+                        <Link href="/booking" className="btn-primary w-full py-4 px-2 text-center text-xs leading-relaxed flex items-center justify-center font-bold">
+                            Book 2027 Season (15% Off)
                         </Link>
                     </div>
 

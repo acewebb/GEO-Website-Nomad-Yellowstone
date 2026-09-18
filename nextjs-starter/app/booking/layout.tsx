@@ -7,14 +7,14 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://nomadyellowstone.com/booking' },
     openGraph: {
         title: 'Book Your ATV Tour | Nomad Yellowstone',
-        description: 'Reserve your private guided ATV tour in Island Park, Idaho. Passenger-only backcountry tours.',
+        description: 'Reserve your passenger-only guided ATV tour in Island Park, Idaho. Backcountry tours.',
         url: 'https://nomadyellowstone.com/booking',
         images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Book a Nomad Yellowstone ATV tour' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Book Your ATV Tour | Nomad Yellowstone',
-        description: 'Reserve your private guided ATV tour in Island Park, Idaho. Passenger-only backcountry tours.',
+        description: 'Reserve your passenger-only guided ATV tour in Island Park, Idaho. Backcountry tours.',
         images: ['/sawtelle.png'],
     },
 };

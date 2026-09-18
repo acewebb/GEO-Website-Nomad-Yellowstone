@@ -124,7 +124,7 @@ export async function sendCustomerSmsConfirmation(booking: BookingSmsData): Prom
   const timeStr = tourTime || (tourId === '9am' ? '9:00 AM' : tourId === '12pm' ? '12:00 PM' : tourId === '3pm' ? '3:00 PM' : tourId === '6pm' ? '6:00 PM' : tourId);
   const typeStr = tourType || "Standard Tour";
 
-  const content = `Hi ${customerName}, your Nomad Yellowstone booking is confirmed! Details: ${numberOfSeats} seats on ${tourDate} @ ${timeStr} (${typeStr}). Please arrive 15 minutes before departure. If you have any questions, text or call this number.`;
+  const content = `Hi ${customerName}, your Nomad Yellowstone booking is confirmed! Details: ${numberOfSeats} seats on ${tourDate} @ ${timeStr} (${typeStr}). Pickup Location: Parking lot of The Parlor at Mack's Inn, 4292 US Highway 20, Island Park, ID 83429. Please arrive 15 minutes before departure. If you have any questions, text or call this number.`;
 
   try {
     await sendSms(normalizedPhone, content);

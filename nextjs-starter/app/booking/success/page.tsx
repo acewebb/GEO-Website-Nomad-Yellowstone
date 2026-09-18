@@ -42,7 +42,7 @@ function SuccessContent() {
             <span className="font-mono text-accent text-xs tracking-widest mb-2 block uppercase">// Booking Confirmed</span>
             <h1 className="font-heading text-3xl md:text-4xl text-white uppercase mb-4">Gear Up for Adventure</h1>
             <p className="text-nomad-paper/85 text-sm md:text-base font-light mb-8 leading-relaxed">
-                Your payment has been successfully processed. We have sent a confirmation email with all your tour details and preparation guidelines.
+                Your payment has been successfully processed. We have sent a confirmation text to your phone with all your tour details, pickup location, and preparation guidelines.
             </p>
 
             {sessionId && (
@@ -57,7 +57,7 @@ function SuccessContent() {
                 <div className="text-left space-y-3 max-w-sm mx-auto mb-8">
                     <div className="flex items-start gap-3">
                         <span className="font-mono text-accent text-xs mt-0.5">[01]</span>
-                        <p className="text-xs text-nomad-paper/70">Check your inbox for the confirmation email containing arrival times and driving directions.</p>
+                        <p className="text-xs text-nomad-paper/70">Check your phone for a confirmation text containing your pickup location (parking lot of The Parlor at Mack&apos;s Inn), arrival times, and driving directions.</p>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="font-mono text-accent text-xs mt-0.5">[02]</span>

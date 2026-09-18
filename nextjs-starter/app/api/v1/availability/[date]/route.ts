@@ -24,6 +24,17 @@ export async function GET(
             );
         }
 
+        const tourYear = parseInt(date.split('-')[0], 10);
+        if (tourYear < 2027 || date < '2027-05-15') {
+            const closedSlots = {
+                "9am": { seatsAvailable: 0, tourTime: "09:00 - 12:00" },
+                "12pm": { seatsAvailable: 0, tourTime: "12:00 - 15:00" },
+                "3pm": { seatsAvailable: 0, tourTime: "15:00 - 18:00" },
+                "6pm": { seatsAvailable: 0, tourTime: "18:00 - 21:00" },
+            };
+            return NextResponse.json({ success: true, date, slots: closedSlots, closed: true }, { status: 200 });
+        }
+
         const docRef = db.collection("tours").doc(date);
         const docSnap = await docRef.get();
 
