@@ -123,27 +123,28 @@ export default function Home() {
 
         {/* SECTION 1: HERO */}
         <section className="relative w-full py-16 md:py-24 flex flex-col items-center overflow-hidden bg-transparent z-10">
-          <div className="w-full text-center mb-10 z-20 relative px-4 max-w-4xl mx-auto">
+          <div className="w-full text-center mb-8 z-20 relative px-4 max-w-4xl mx-auto">
             <FadeIn>
               <div className="flex flex-col items-center justify-center">
-                <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.25em] mb-4 block font-bold uppercase">
-                  Island Park, Idaho · 20 Mins from West Yellowstone
+                <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.2em] mb-4 block font-bold uppercase drop-shadow-sm">
+                  Premier Guided Expeditions
                 </span>
-                <h1 className="font-heading text-5xl md:text-7xl lg:text-[5.5rem] text-nomad-black uppercase leading-[0.92] tracking-tight mb-6 text-distressed drop-shadow-sm">
-                  Yellowstone&apos;s Backcountry.<br />
-                  <span className="text-nomad-red font-light">Uncrowded &amp; Guide-Driven.</span>
+                <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] text-nomad-black uppercase leading-[0.9] tracking-tight mb-4 text-distressed drop-shadow-md">
+                  Guided ATV Tours Near<br />
+                  <span className="text-nomad-red font-light">West Yellowstone</span>
+                  <span className="block text-2xl md:text-3xl lg:text-4xl mt-2 tracking-wide font-normal text-nomad-black/80">— Island Park, Idaho —</span>
                 </h1>
-                <p className="text-base md:text-lg text-nomad-black/85 max-w-2xl mx-auto leading-relaxed mb-8">
-                  Ascend 10,000-foot Continental Divide summits in passenger-only Can-Am ATVs. Our certified wilderness guides navigate rugged backcountry trails while you take in panoramic mountain vistas — with zero driving stress and zero vehicle liability.
+                <p className="text-base md:text-lg text-nomad-black/90 max-w-2xl mx-auto leading-relaxed mb-8">
+                  Fully guided, passenger-only ATV tours in Island Park, Idaho — about 20 minutes from the West Yellowstone park entrance. Our professional guides do the driving while your family rides along, enjoys 10,000-foot backcountry summit views, and spots wildlife. No experience needed. Ages 5+.
                 </p>
 
                 {/* Primary 2027 CTA Group */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
                   <Link
                     href="/booking"
                     className="btn-primary px-10 py-4 text-base md:text-lg shadow-xl hover:scale-105 transition-all font-bold"
                   >
-                    RESERVE 2027 TOUR (15% OFF) →
+                    BOOK 2027 TOUR (15% OFF) →
                   </Link>
                   <a
                     href="tel:+12087452088"
@@ -154,55 +155,91 @@ export default function Home() {
                 </div>
 
                 {/* Minimalist Trust & Status Line */}
-                <div className="flex items-center justify-center gap-3 md:gap-5 text-xs font-mono text-nomad-black/70 flex-wrap">
+                <div className="flex items-center justify-center gap-3 md:gap-5 text-xs font-mono text-nomad-black/75 flex-wrap">
                   <span className="text-[#00aa6c] font-bold">★★★★★ 5.0 TripAdvisor</span>
-                  <span className="text-nomad-red">/</span>
+                  <span className="text-nomad-red">·</span>
+                  <span>Passenger-Only (We Drive)</span>
+                  <span className="text-nomad-red">·</span>
                   <span>Zero Vehicle Liability</span>
-                  <span className="text-nomad-red">/</span>
-                  <span>Ages 5+ to 85+</span>
-                  <span className="text-nomad-red">/</span>
+                  <span className="text-nomad-red">·</span>
+                  <span>Ages 5+</span>
+                  <span className="text-nomad-red">·</span>
                   <span className="text-nomad-red font-bold">2027 Season Opens May 15</span>
                 </div>
               </div>
             </FadeIn>
           </div>
 
-          {/* Clean Backcountry Photography Marquee */}
-          <div className="relative w-full h-[32vh] md:h-[46vh] flex flex-col">
+          {/* Original Kodak Film Strip Carousel */}
+          <div className="relative w-full h-[35vh] md:h-[50vh] flex flex-col">
             <div className="flex-grow relative w-full flex flex-row">
               <div className="flex flex-row h-full min-w-full group">
-                <div className="animate-marquee flex flex-row shrink-0 gap-6 pr-6 h-full">
+                <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full">
                   {[
                     "/creek_bw_film.png",
                     "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
-                    "/sawtelle.png",
                     "/creek_bw_film.png",
                     "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
-                    "/sawtelle.png"
+                    "/creek_bw_film.png",
+                    "/utv-muddy-tire.jpg",
+                    "/moody-silhouette.jpg"
                   ].map((src, idx) => (
-                    <div key={idx} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-2 rounded-lg shadow-xl overflow-hidden border border-nomad-black/10">
-                      <div className="w-full h-full relative rounded overflow-hidden">
-                        <Image src={src} alt="Nomad Yellowstone passenger-only guided ATV tour through Island Park backcountry near Yellowstone." fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                    <div key={idx} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-xl">
+                      {/* Top film margin */}
+                      <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
+                        <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center top", backgroundSize: "auto 100%" }}></div>
+                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] ml-4 mix-blend-screen opacity-90">KODAK 400TX</span>
+                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] mr-4 mix-blend-screen opacity-90">{`00:00:${(15 + idx * 3).toString().padStart(2, '0')}:${(idx * 12 + 4).toString().padStart(2, '0')}`}</span>
+                      </div>
+
+                      {/* Image */}
+                      <div className="flex-grow w-full relative">
+                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" sizes="(max-width: 768px) 100vw, 50vw" />
+                        <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
+                      </div>
+
+                      {/* Bottom film margin */}
+                      <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
+                        <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center bottom", backgroundSize: "auto 100%", transform: "scaleY(-1)" }}></div>
+                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] ml-8 mix-blend-screen opacity-90">{10 + idx}</span>
+                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] mr-8 mix-blend-screen opacity-90">{10 + idx}A</span>
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="animate-marquee flex flex-row shrink-0 gap-6 pr-6 h-full" aria-hidden="true">
+                <div className="animate-marquee flex flex-row shrink-0 gap-8 pr-8 h-full" aria-hidden="true">
                   {[
                     "/creek_bw_film.png",
                     "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
-                    "/sawtelle.png",
                     "/creek_bw_film.png",
                     "/utv-muddy-tire.jpg",
                     "/moody-silhouette.jpg",
-                    "/sawtelle.png"
+                    "/creek_bw_film.png",
+                    "/utv-muddy-tire.jpg",
+                    "/moody-silhouette.jpg"
                   ].map((src, idx) => (
-                    <div key={`dup-${idx}`} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-2 rounded-lg shadow-xl overflow-hidden border border-nomad-black/10">
-                      <div className="w-full h-full relative rounded overflow-hidden">
-                        <Image src={src} alt="Nomad Yellowstone passenger-only guided ATV tour through Island Park backcountry near Yellowstone." fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                    <div key={`dup-${idx}`} className="relative h-full aspect-[4/3] sm:aspect-[3/2] flex-shrink-0 bg-nomad-black p-3 sm:p-5 flex flex-col gap-3 shadow-2xl border border-white/5 rounded-xl">
+                      {/* Top film margin */}
+                      <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
+                        <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center top", backgroundSize: "auto 100%" }}></div>
+                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] ml-4 mix-blend-screen opacity-90">KODAK 400TX</span>
+                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] mr-4 mix-blend-screen opacity-90">{`00:00:${(15 + (idx + 9) * 3).toString().padStart(2, '0')}:${((idx + 9) * 12 + 4).toString().padStart(2, '0')}`}</span>
+                      </div>
+
+                      {/* Image */}
+                      <div className="flex-grow w-full relative">
+                        <Image src={src} alt="Guide driving Can-Am Commander ATV in Island Park backcountry near Yellowstone during a passenger-only tour." fill className="object-cover grayscale contrast-125" sizes="(max-width: 768px) 100vw, 50vw" />
+                        <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.6)] z-10 pointer-events-none"></div>
+                      </div>
+
+                      {/* Bottom film margin */}
+                      <div className="relative w-full h-8 sm:h-12 flex-shrink-0 flex justify-between items-center overflow-hidden">
+                        <div className="absolute inset-0 z-0 opacity-80" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='48' viewBox='0 0 80 48'%3E%3Cmask id='m'%3E%3Crect width='80' height='48' fill='white'/%3E%3Crect x='24' y='14' width='32' height='20' rx='4' fill='black'/%3E%3C/mask%3E%3Crect width='80' height='48' fill='%231a1a1a' mask='url(%23m)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat-x", backgroundPosition: "center bottom", backgroundSize: "auto 100%", transform: "scaleY(-1)" }}></div>
+                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] ml-8 mix-blend-screen opacity-90">{10 + idx + 9}</span>
+                        <span className="text-[#a13d2d] font-mono text-[10px] sm:text-xs z-10 font-bold px-2 tracking-[0.2em] mr-8 mix-blend-screen opacity-90">{10 + idx + 9}A</span>
                       </div>
                     </div>
                   ))}
