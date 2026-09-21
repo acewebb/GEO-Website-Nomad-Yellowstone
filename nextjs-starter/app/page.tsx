@@ -126,9 +126,15 @@ export default function Home() {
           <div className="w-full text-center mb-8 z-20 relative px-4 max-w-4xl mx-auto">
             <FadeIn>
               <div className="flex flex-col items-center justify-center">
-                <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.2em] mb-4 block font-bold uppercase drop-shadow-sm">
-                  Premier Guided Expeditions
-                </span>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nomad-red/10 border border-nomad-red/30 text-nomad-red font-mono text-[11px] md:text-xs font-bold uppercase tracking-wider mb-4">
+                  <span>NOT A RENTAL</span>
+                  <span>·</span>
+                  <span>WE DRIVE</span>
+                  <span>·</span>
+                  <span>AGES 5+</span>
+                  <span>·</span>
+                  <span>20 MIN FROM WEST YELLOWSTONE</span>
+                </div>
                 <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] text-nomad-black uppercase leading-[0.9] tracking-tight mb-4 text-distressed drop-shadow-md">
                   Guided ATV Tours Near<br />
                   <span className="text-nomad-red font-light">West Yellowstone</span>
@@ -148,8 +154,11 @@ export default function Home() {
                   </Link>
                   <a
                     href="tel:+12087452088"
-                    className="font-mono text-sm md:text-base font-bold text-nomad-black/80 hover:text-nomad-red transition-colors flex items-center gap-2 border border-nomad-black/15 px-6 py-4 rounded-sm hover:border-nomad-red/40 bg-nomad-paper/40"
+                    className="font-mono text-sm md:text-base font-bold text-nomad-black/90 hover:text-nomad-red transition-colors flex items-center gap-2 border-2 border-nomad-black/20 px-6 py-4 rounded-sm hover:border-nomad-red bg-nomad-paper/60 shadow-sm"
                   >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-nomad-red">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
                     (208) 745-2088
                   </a>
                 </div>
@@ -326,7 +335,33 @@ export default function Home() {
               </FadeIn>
             </div>
 
-            <div className="mt-14 text-center">
+            {/* Rental vs Guided Comparison Banner */}
+            <div className="mt-12 p-6 bg-nomad-paper/90 border border-nomad-black/15 rounded-sm flex flex-col md:flex-row items-center justify-between gap-4 shadow-md">
+              <div className="text-left">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-nomad-red block mb-1">
+                  Deciding Between a Rental and Guided Tour?
+                </span>
+                <p className="text-sm text-nomad-black/85 font-medium">
+                  Compare damage deposits, driving stress, vehicle liability, family safety, and total costs.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3 flex-shrink-0">
+                <Link
+                  href="/rental-vs-guided"
+                  className="font-mono text-xs font-bold uppercase tracking-wider px-4 py-2.5 bg-nomad-black text-white hover:bg-nomad-red transition-colors rounded-sm shadow-sm"
+                >
+                  Rental vs Guided Matrix →
+                </Link>
+                <Link
+                  href="/west-yellowstone-atv-tours"
+                  className="font-mono text-xs font-bold uppercase tracking-wider px-4 py-2.5 border border-nomad-black/20 text-nomad-black hover:border-nomad-red hover:text-nomad-red transition-colors rounded-sm"
+                >
+                  West Yellowstone Guide →
+                </Link>
+              </div>
+            </div>
+
+            <div className="mt-10 text-center">
               <Link href="/booking" className="btn-primary px-10 py-4 text-base hover:text-white transition-colors inline-block font-bold">
                 EXPLORE 2027 DATES &amp; SAVE 15% →
               </Link>

@@ -75,20 +75,59 @@ export default function YellowstoneAtvTours() {
             <GlobalHeader />
 
             <main className="flex-grow flex flex-col relative w-full pt-20 md:pt-32">
-                <section className="relative w-full py-16 md:py-24 flex flex-col items-center overflow-hidden bg-transparent z-10">
-                    <div className="w-full text-center mb-8 z-20 relative px-4">
+                <section className="relative w-full py-12 md:py-20 flex flex-col items-center overflow-hidden bg-transparent z-10">
+                    <div className="w-full text-center mb-8 z-20 relative px-4 max-w-4xl mx-auto">
                         <FadeIn>
                             <div className="flex flex-col items-center justify-center">
-                                <span className="font-mono text-nomad-red text-xs md:text-sm tracking-[0.2em] mb-4 block font-bold uppercase drop-shadow-sm">
-                                    Deep Wilderness Access
-                                </span>
-                                <h1 className="font-heading text-5xl md:text-7xl lg:text-[6rem] text-nomad-black uppercase leading-[0.85] tracking-tight mb-6 text-distressed drop-shadow-md">
+                                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nomad-red/10 border border-nomad-red/30 text-nomad-red font-mono text-[11px] md:text-xs font-bold uppercase tracking-wider mb-4">
+                                    <span>20 MIN FROM WEST YELLOWSTONE</span>
+                                    <span>·</span>
+                                    <span>PASSENGER-ONLY</span>
+                                    <span>·</span>
+                                    <span>WE DRIVE</span>
+                                    <span>·</span>
+                                    <span>AGES 5+</span>
+                                </div>
+                                <h1 className="font-heading text-5xl md:text-7xl lg:text-[5.5rem] text-nomad-black uppercase leading-[0.88] tracking-tight mb-4 text-distressed drop-shadow-md">
                                     YELLOWSTONE<br />
                                     <span className="text-nomad-red font-light">ATV TOURS</span>
                                 </h1>
-                                <p className="font-mono text-xs md:text-sm text-nomad-black/80 font-bold uppercase tracking-[0.15em] max-w-xl mx-auto drop-shadow-sm leading-relaxed">
-                                    Experience a guided Yellowstone backcountry ATV tour unlike any crowded park bus tour. Passenger-only tours.
+                                <p className="font-heading text-lg sm:text-xl md:text-2xl text-nomad-black/85 uppercase tracking-wide mb-4">
+                                    Guided Backcountry Tours · 20 Minutes from West Yellowstone in Island Park, ID
                                 </p>
+                                <p className="text-sm md:text-base lg:text-lg text-nomad-black/90 max-w-2xl mx-auto leading-relaxed mb-8 font-medium">
+                                    Experience a guided Yellowstone backcountry ATV tour unlike any crowded park bus tour. Our certified guides pilot custom Can-Am side-by-sides up to 10,000-foot Continental Divide summits while you relax. 100% passenger-only, zero vehicle liability, ages 5+.
+                                </p>
+
+                                {/* Hero First Screen Dual CTAs */}
+                                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto mb-6">
+                                    <Link
+                                        href="/booking"
+                                        className="btn-primary w-full sm:w-auto px-8 py-4 text-base md:text-lg font-bold shadow-xl hover:scale-105 transition-all text-center"
+                                    >
+                                        BOOK 2027 TOUR (15% OFF) →
+                                    </Link>
+                                    <a
+                                        href="tel:+12087452088"
+                                        className="w-full sm:w-auto font-mono text-sm md:text-base font-bold text-nomad-black/90 hover:text-nomad-red transition-colors flex items-center justify-center gap-2 border-2 border-nomad-black/20 px-6 py-4 rounded-sm hover:border-nomad-red bg-nomad-paper/60 shadow-sm"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-nomad-red">
+                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                        </svg>
+                                        (208) 745-2088
+                                    </a>
+                                </div>
+
+                                {/* Trust row */}
+                                <div className="flex items-center justify-center gap-2 sm:gap-4 text-xs font-mono text-nomad-black/75 flex-wrap">
+                                    <span className="text-[#00aa6c] font-bold">★★★★★ 5.0 TripAdvisor</span>
+                                    <span className="text-nomad-red">·</span>
+                                    <span>Passenger-Only (We Drive)</span>
+                                    <span className="text-nomad-red">·</span>
+                                    <span>Zero Vehicle Liability</span>
+                                    <span className="text-nomad-red">·</span>
+                                    <span>Ages 5+</span>
+                                </div>
                             </div>
                         </FadeIn>
                     </div>
@@ -100,7 +139,7 @@ export default function YellowstoneAtvTours() {
                     </div>
                 </section>
 
-                <section className="py-24 bg-transparent relative z-10">
+                <section className="py-20 bg-transparent relative z-10">
                     <div className="container mx-auto px-6 max-w-4xl">
                         <FadeIn>
                             <h2 className="font-heading text-4xl text-nomad-black uppercase mb-6 text-distressed text-center md:text-left">The Ultimate Yellowstone Backcountry ATV Tour</h2>
@@ -114,6 +153,16 @@ export default function YellowstoneAtvTours() {
                                 <p>
                                     Discover the wild, unfiltered side of the ecosystem on a premium guided tour located just 20 minutes from the West Yellowstone, Montana entrance.
                                 </p>
+                            </div>
+
+                            {/* Link Callout to Rental vs Guided and West Yellowstone money page */}
+                            <div className="mt-8 p-4 bg-nomad-paper/60 border border-nomad-black/10 rounded-sm flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono">
+                                <Link href="/rental-vs-guided" className="text-nomad-red font-bold hover:underline">
+                                    Rental vs. Guided: Which is right for your group? Read the guide →
+                                </Link>
+                                <Link href="/west-yellowstone-atv-tours" className="text-nomad-black hover:text-nomad-red font-bold transition-colors">
+                                    Visiting West Yellowstone? View local tour info →
+                                </Link>
                             </div>
                         </FadeIn>
                     </div>

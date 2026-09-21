@@ -62,6 +62,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
         },
         {
+            url: `${baseUrl}/west-yellowstone-atv-tours`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/rental-vs-guided`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/island-park-atv-tours`,
             lastModified: new Date(),
             changeFrequency: 'monthly',

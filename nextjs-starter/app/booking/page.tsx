@@ -34,12 +34,18 @@ export default function Booking() {
             <main className="flex-grow container mx-auto px-4 py-12 md:py-20 flex flex-col items-center">
                 {/* Static SEO content — server-rendered, visible to Google */}
                 <div className="max-w-5xl w-full mb-12">
-                    <span className="font-mono text-accent text-xs tracking-widest mb-2 block">// BOOK YOUR TOUR</span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent font-mono text-[11px] md:text-xs font-bold uppercase tracking-wider mb-3">
+                        <span>BASE CAMP: ISLAND PARK, ID</span>
+                        <span>·</span>
+                        <span>20 MIN FROM WEST YELLOWSTONE</span>
+                        <span>·</span>
+                        <span>WE DRIVE</span>
+                    </div>
                     <h1 className="font-heading text-4xl md:text-5xl text-white uppercase leading-none mb-6">
                         Book a Guided ATV Tour Near Yellowstone
                     </h1>
                     <p className="text-nomad-paper/80 text-sm md:text-base font-light border-l-2 border-accent/20 pl-4 max-w-2xl leading-relaxed">
-                        <strong>You ride, we drive.</strong> Professional guides pilot our ATVs through Island Park&apos;s backcountry — 20 minutes from West Yellowstone. All tours are 2–3 hours and include safety gear and headsets. No experience needed, ages 5+.
+                        <strong>You ride, we drive.</strong> Professional guides pilot our ATVs through Island Park&apos;s backcountry — exactly 20 minutes from West Yellowstone. All tours are 2.5–3 hours and include safety gear and headsets. Zero vehicle liability, ages 5+. Prefer to book or ask questions by phone? Call <a href="tel:+12087452088" className="text-accent hover:underline font-bold font-mono">(208) 745-2088</a>.
                     </p>
 
                     {/* 2026 Closed & 2027 15% Off Banner */}

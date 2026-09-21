@@ -18,10 +18,11 @@ export default function GlobalFooter() {
                     <div>
                         <h3 className="text-white font-heading text-sm uppercase tracking-widest mb-4">Tours</h3>
                         <nav aria-label="Tour pages" className="flex flex-col gap-2">
-                            <Link href="/island-park-atv-tours" className="hover:text-white transition-colors">Island Park ATV Tours</Link>
+                            <Link href="/west-yellowstone-atv-tours" className="hover:text-white transition-colors">West Yellowstone ATV Tours</Link>
                             <Link href="/yellowstone-atv-tours" className="hover:text-white transition-colors">Yellowstone ATV Tours</Link>
-                            <Link href="/expeditions" className="hover:text-white transition-colors">Tours</Link>
-                            <Link href="/fleet" className="hover:text-white transition-colors">The Fleet</Link>
+                            <Link href="/island-park-atv-tours" className="hover:text-white transition-colors">Island Park ATV Tours</Link>
+                            <Link href="/rental-vs-guided" className="hover:text-white transition-colors">ATV Rental vs Guided</Link>
+                            <Link href="/expeditions" className="hover:text-white transition-colors">Tours Overview</Link>
                             <Link href="/booking" className="hover:text-white transition-colors text-accent">Book Now</Link>
                         </nav>
                     </div>
@@ -30,8 +31,9 @@ export default function GlobalFooter() {
                     <div>
                         <h3 className="text-white font-heading text-sm uppercase tracking-widest mb-4">Plan Your Trip</h3>
                         <nav aria-label="Trip planning pages" className="flex flex-col gap-2">
+                            <Link href="/rental-vs-guided" className="hover:text-white transition-colors">Rental vs Guided Comparison</Link>
                             <Link href="/things-to-do-island-park" className="hover:text-white transition-colors">Things to Do — Island Park</Link>
-                            <Link href="/location" className="hover:text-white transition-colors">How to Get Here</Link>
+                            <Link href="/location" className="hover:text-white transition-colors">How to Get Here (20 Min Away)</Link>
                             <Link href="/trip-prep" className="hover:text-white transition-colors">Trip Preparation</Link>
                             <Link href="/safety" className="hover:text-white transition-colors">Safety & Protocols</Link>
                         </nav>
