@@ -98,17 +98,6 @@ export default function WestYellowstoneAtvTours() {
                     <div className="w-full text-center mb-8 z-20 relative px-4 max-w-4xl mx-auto">
                         <FadeIn>
                             <div className="flex flex-col items-center justify-center">
-                                {/* Required hook kicker */}
-                                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nomad-red/10 border border-nomad-red/30 text-nomad-red font-mono text-[11px] md:text-xs font-bold uppercase tracking-wider mb-5">
-                                    <span>NOT A RENTAL</span>
-                                    <span>·</span>
-                                    <span>WE DRIVE</span>
-                                    <span>·</span>
-                                    <span>AGES 5+</span>
-                                    <span>·</span>
-                                    <span>HALF-DAY FROM TOWN</span>
-                                </div>
-
                                 <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-nomad-black uppercase leading-[0.88] tracking-tight mb-4 text-distressed drop-shadow-md">
                                     ATV TOURS<br />
                                     <span className="text-nomad-red font-light">WEST YELLOWSTONE</span>

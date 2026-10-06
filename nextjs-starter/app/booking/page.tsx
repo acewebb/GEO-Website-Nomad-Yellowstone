@@ -34,13 +34,6 @@ export default function Booking() {
             <main className="flex-grow container mx-auto px-4 py-12 md:py-20 flex flex-col items-center">
                 {/* Static SEO content — server-rendered, visible to Google */}
                 <div className="max-w-5xl w-full mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent font-mono text-[11px] md:text-xs font-bold uppercase tracking-wider mb-3">
-                        <span>BASE CAMP: ISLAND PARK, ID</span>
-                        <span>·</span>
-                        <span>20 MIN FROM WEST YELLOWSTONE</span>
-                        <span>·</span>
-                        <span>WE DRIVE</span>
-                    </div>
                     <h1 className="font-heading text-4xl md:text-5xl text-white uppercase leading-none mb-6">
                         Book a Guided ATV Tour Near Yellowstone
                     </h1>

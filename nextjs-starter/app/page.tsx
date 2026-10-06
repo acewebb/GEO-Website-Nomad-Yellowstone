@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import PricingSection from '@/components/PricingSection';
 import GlobalHeader from '@/components/GlobalHeader';
-import { SeasonCountdownInline } from '@/components/SeasonBanner';
 import FadeIn from '@/components/FadeIn';
 import MissionMap from '@/components/MissionMap';
 import AccordionFAQ from '@/components/AccordionFAQ';
@@ -126,15 +125,6 @@ export default function Home() {
           <div className="w-full text-center mb-8 z-20 relative px-4 max-w-4xl mx-auto">
             <FadeIn>
               <div className="flex flex-col items-center justify-center">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nomad-red/10 border border-nomad-red/30 text-nomad-red font-mono text-[11px] md:text-xs font-bold uppercase tracking-wider mb-4">
-                  <span>NOT A RENTAL</span>
-                  <span>·</span>
-                  <span>WE DRIVE</span>
-                  <span>·</span>
-                  <span>AGES 5+</span>
-                  <span>·</span>
-                  <span>20 MIN FROM WEST YELLOWSTONE</span>
-                </div>
                 <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] text-nomad-black uppercase leading-[0.9] tracking-tight mb-4 text-distressed drop-shadow-md">
                   Guided ATV Tours Near<br />
                   <span className="text-nomad-red font-light">West Yellowstone</span>

@@ -6,11 +6,10 @@ import Link from 'next/link';
 const SEASON_START_2027 = new Date('2027-05-15T00:00:00-06:00');
 
 export default function SeasonBanner() {
-    const [now, setNow] = useState<Date | null>(null);
+    const [now, setNow] = useState<Date | null>(() => new Date());
     const [dismissed, setDismissed] = useState(false);
 
     useEffect(() => {
-        setNow(new Date());
         const interval = setInterval(() => setNow(new Date()), 60_000);
         return () => clearInterval(interval);
     }, []);
@@ -40,10 +39,9 @@ export default function SeasonBanner() {
 }
 
 export function SeasonCountdownInline() {
-    const [now, setNow] = useState<Date | null>(null);
+    const [now, setNow] = useState<Date | null>(() => new Date());
 
     useEffect(() => {
-        setNow(new Date());
         const interval = setInterval(() => setNow(new Date()), 60_000);
         return () => clearInterval(interval);
     }, []);

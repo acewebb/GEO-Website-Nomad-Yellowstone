@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import SeasonBanner from '@/components/SeasonBanner';
-
 export default function GlobalHeader() {
     const [scrolled, setScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,9 +29,6 @@ export default function GlobalHeader() {
                 : 'bg-nomad-black border-b-[8px] border-nomad-black'
                 }`}
         >
-            <div className="w-full">
-                <SeasonBanner />
-            </div>
             <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between w-full h-12 md:h-auto transition-all duration-300 ${scrolled ? 'py-4' : 'py-6'}`}>
                 {/* Left: Logo */}
                 <Link href="/" className="flex flex-col items-center group text-nomad-paper hover:text-white transition-colors">
