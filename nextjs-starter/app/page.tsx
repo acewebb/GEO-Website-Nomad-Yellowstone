@@ -13,20 +13,20 @@ import { buildFAQPage } from '@/lib/schema/faqPage';
 import { signatureTourProduct } from '@/lib/schema/product';
 
 export const metadata: Metadata = {
-  title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
+  title: 'Yellowstone ATV Tours | West Yellowstone & Island Park',
   description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. Family-friendly, no experience needed. Book direct.',
   alternates: {
     canonical: 'https://nomadyellowstone.com/',
   },
   openGraph: {
-    title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
+    title: 'Yellowstone ATV Tours | West Yellowstone & Island Park',
     description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. Family-friendly, no experience needed. Book direct.',
     url: 'https://nomadyellowstone.com/',
     images: [{ url: '/sawtelle.png', width: 1200, height: 630, alt: 'Nomad Yellowstone guided ATV tour in Island Park backcountry' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guided ATV Tours Near West Yellowstone | Nomad Yellowstone, Island Park ID',
+    title: 'Yellowstone ATV Tours | West Yellowstone & Island Park',
     description: 'Guided passenger-only ATV tours near West Yellowstone in Island Park, Idaho. Family-friendly, no experience needed. Book direct.',
     images: ['/sawtelle.png'],
   },
